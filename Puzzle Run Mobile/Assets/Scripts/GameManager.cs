@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         SpawnWall();
         SpawnPiece();
         RandomizePiecePosition();
+        RandomizePieceRotation();
         CreateHole();
     }
 
@@ -59,6 +60,15 @@ public class GameManager : MonoBehaviour
         if (pos.y == _maxXY.y) pos -= Vector3.up;
 
         _piece.transform.position = pos;
+    }
+
+    private void RandomizePieceRotation()
+    {
+        int randMult = Random.Range(0, 4);
+
+        Vector3 eulerAngles = _piece.transform.eulerAngles;
+        eulerAngles = new Vector3(0, 0, 90) * randMult;
+        _piece.transform.eulerAngles = eulerAngles;
     }
 
     private void CreateHole()
