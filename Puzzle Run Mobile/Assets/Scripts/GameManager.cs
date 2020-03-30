@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab;
 
-    private GameObject _wall;
-    private GameObject _piece;
+    private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
 
     private void Start()
