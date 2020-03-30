@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
-    private float _speed;
+    private float _speed, _initialTime;
+    private int _score = 0;
     private bool _isGameOver = false;
     #endregion
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         _minXY = _maxXY = Vector2.zero;
         _speed = _startSpeed;
+        _initialTime = Time.time;
         
         SpawnObjects();
     }
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (IsWallCrossed())
         {
             _speed += _increaseSpeed;
+            Score();
             RespawnObjects();
         }
     }
@@ -92,6 +95,11 @@ public class GameManager : MonoBehaviour
     private bool IsWallCrossed()
     {
         return _wall.transform.position == Vector3.zero;
+    }
+
+    private void Score()
+    {
+        _score += (int) (Time.time - _initialTime) * _speed;
     }
 
     #region Spawn Objects
