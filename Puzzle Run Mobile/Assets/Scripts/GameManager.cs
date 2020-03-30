@@ -44,6 +44,15 @@ public class GameManager : MonoBehaviour
         SpawnObjects();
     }
 
+    private void Update()
+    {
+        if (IsWallCrossed())
+        {
+            Debug.Log("Crossed");
+        }
+    }
+
+
     public void GameOver()
     {
         // Since several collisions might be triggering gameover
@@ -68,6 +77,13 @@ public class GameManager : MonoBehaviour
     public void RotatePieceRight()
     {
         _piece.GetComponent<PieceController>().RotateRight();
+    }
+
+    // If the wall reaches the zero destination
+    // it has not collided with the piece
+    private bool IsWallCrossed()
+    {
+        return _wall.transform.position == Vector3.zero;
     }
 
     private void SpawnObjects()
