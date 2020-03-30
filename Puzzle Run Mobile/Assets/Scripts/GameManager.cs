@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
         SpawnWall();
         SpawnPiece();
+        RandomizePiecePosition();
         CreateHole();
     }
 
@@ -41,6 +42,23 @@ public class GameManager : MonoBehaviour
     private void SpawnPiece()
     {
         _piece = Instantiate(_piecePrefab, _dynamicContainer.transform) as GameObject;
+    }
+
+    // Randomize a position for the piece 
+    // within the wall boundries
+    private void RandomizePiecePosition()
+    {
+        int i = Random.Range(0, _wall.transform.childCount);
+        Vector3 pos = _wall.transform.GetChild(i).position;
+
+        // If the position is exactly at the border
+        // we need to shift it one unity accordingly
+        if (pos.x == _minXY.x) pos += Vector3.right;
+        if (pos.x == _maxXY.x) pos -= Vector3.right;
+        if (pos.y == _minXY.y) pos += Vector3.up;
+        if (pos.y == _maxXY.y) pos -= Vector3.up;
+
+        _piece.transform.position = pos;
     }
 
     private void CreateHole()
