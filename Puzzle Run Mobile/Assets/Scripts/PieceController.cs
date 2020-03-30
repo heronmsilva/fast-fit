@@ -33,6 +33,20 @@ public class PieceController : MonoBehaviour
         FixIfOutOfBounds();
     }
 
+    public void RotateLeft()
+    {
+        Vector3 eulerAngles = this.transform.eulerAngles;
+        eulerAngles += Vector3.forward * 90;
+        this.transform.eulerAngles = eulerAngles;
+    }
+
+    public void RotateRight()
+    {
+        Vector3 eulerAngles = this.transform.eulerAngles;
+        eulerAngles += Vector3.forward * -90;
+        this.transform.eulerAngles = eulerAngles;
+    }
+
     // If the piece is moved out of the wall bounds
     // it's brought back within
     private void FixIfOutOfBounds()

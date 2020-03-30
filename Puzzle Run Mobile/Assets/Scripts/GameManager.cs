@@ -42,6 +42,16 @@ public class GameManager : MonoBehaviour
         SpawnObjects();
     }
 
+    public void RotatePieceLeft()
+    {
+        _piece.GetComponent<PieceController>().RotateLeft();
+    }
+
+    public void RotatePieceRight()
+    {
+        _piece.GetComponent<PieceController>().RotateRight();
+    }
+
     private void SpawnObjects()
     {
         SpawnWall();
