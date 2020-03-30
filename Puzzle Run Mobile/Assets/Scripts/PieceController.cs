@@ -22,16 +22,16 @@ public class PieceController : MonoBehaviour
 
     private void Update()
     {
-        float h = _joystick.Horizontal;
-        float v = _joystick.Vertical;
-
         if (GameManager.Instance.IsGameOver) return;
 
-        if ((h != 0 || v != 0) && Time.time - _lastMove > _moveDeltaTime)
+        if (Time.time - _lastMove > _moveDeltaTime)
         {
-            this.transform.position += Vector3.right * _joystick.Horizontal;
-            this.transform.position += Vector3.up * _joystick.Vertical;
-            _lastMove = Time.time;
+            if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+            {
+                this.transform.position += Vector3.right * _joystick.Horizontal;
+                this.transform.position += Vector3.up * _joystick.Vertical;
+                _lastMove = Time.time;
+            }
         }
         
         FixIfOutOfBounds();
