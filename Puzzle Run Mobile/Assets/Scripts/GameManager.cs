@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
 
     private GameObject _wall;
     private GameObject _piece;
+    private Vector2 _minXY, _maxXY;
 
     private void Start()
     {
+        _minXY = _maxXY = Vector2.zero;
+
         SpawnWall();
         SpawnPiece();
         CreateHole();
@@ -19,6 +22,21 @@ public class GameManager : MonoBehaviour
     private void SpawnWall()
     {
         _wall = Instantiate(_wallPrefab, _dynamicContainer.transform) as GameObject;
+
+        SetupMinMaxXY();
+    }
+
+    // Once the wall is spawned, we need to know what are the min/max XY positions
+    // in order to limit piece position and movement within the wall location
+    private void SetupMinMaxXY()
+    {
+        foreach (Transform cube in _wall.transform)
+        {
+            _minXY.x = (cube.position.x < _minXY.x) ? cube.position.x : _minXY.x;
+            _minXY.y = (cube.position.y < _minXY.y) ? cube.position.y : _minXY.y;
+            _maxXY.x = (cube.position.x > _maxXY.x) ? cube.position.x : _maxXY.x;
+            _maxXY.y = (cube.position.y > _maxXY.y) ? cube.position.y : _maxXY.y;
+        }
     }
 
     private void SpawnPiece()
