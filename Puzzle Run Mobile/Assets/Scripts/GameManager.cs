@@ -21,6 +21,16 @@ public class GameManager : MonoBehaviour
     private float _speed, _initialTime;
     private int _score = 0;
     private bool _isGameOver = false;
+    private enum Difficulty 
+    {
+        Level0,
+        Level1,
+        Level2,
+        Level3,
+        Level4,
+        Level5
+    }
+    private Difficulty _difficulty;
     #endregion
 
     #region Public properties
@@ -45,6 +55,7 @@ public class GameManager : MonoBehaviour
         _initialTime = Time.time;
         
         SpawnObjects();
+        SetupDifficulty();
     }
 
     private void Update()
@@ -54,6 +65,7 @@ public class GameManager : MonoBehaviour
             _speed += _increaseSpeed;
             Score();
             RespawnObjects();
+            SetupDifficulty();
         }
     }
 
@@ -101,6 +113,45 @@ public class GameManager : MonoBehaviour
     {
         _score += (int) (Time.time - _initialTime) * _speed;
     }
+
+    #region Difficulty
+    private void SetupDifficulty()
+    {
+        SetDifficulty();
+        ApplyDifficulty();
+    }
+
+    private void ApplyDifficulty()
+    {
+        switch (_difficulty)
+        {
+            case Difficulty.Level0:
+                break;
+            case Difficulty.Level1:
+                // TODO: Fade
+                break;
+            case Difficulty.Level2:
+                // TODO: Rotate X
+                break;
+            case Difficulty.Level3:
+                // TODO: Rotate Y
+                break;
+            case Difficulty.Level4:
+                // TODO: Rotate XY
+                break;
+            case Difficulty.Level5:
+                // TODO: Random (none or 1, 2 of them)
+                break;
+        }
+    }
+
+    private void SetDifficulty()
+    {
+        int level = (int) (_speed - _startSpeed) / 2;
+        if (level <= System.Enum.GetValues(typeof(Difficulty)).Length)
+            _difficulty = (Difficulty)level;
+    }
+    #endregion
 
     #region Spawn Objects
     private void RespawnObjects()
