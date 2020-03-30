@@ -23,7 +23,12 @@ public class GameManager : MonoBehaviour
     {
         _minXY = _maxXY = Vector2.zero;
         _speed = _startSpeed;
+        
+        SpawnObjects();
+    }
 
+    private void SpawnObjects()
+    {
         SpawnWall();
         SpawnPiece();
         RandomizePiecePosition();
