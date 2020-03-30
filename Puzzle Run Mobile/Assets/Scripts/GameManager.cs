@@ -18,12 +18,14 @@ public class GameManager : MonoBehaviour
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
     private float _speed;
+    private bool _isGameOver = false;
     #endregion
 
     #region Public properties
     public static GameManager Instance { get { return _instance; } }
     public Vector2 MinXY { get { return _minXY; } }
     public Vector2 MaxXY { get { return _maxXY; } }
+    public bool IsGameOver { get { return _isGameOver; } }
     #endregion
 
     private void Awake()
@@ -40,6 +42,17 @@ public class GameManager : MonoBehaviour
         _speed = _startSpeed;
         
         SpawnObjects();
+    }
+
+    public void GameOver()
+    {
+        // Since several collisions might be triggering gameover
+        // it has to be checked if it has already been triggered
+        if (! _isGameOver)
+        {
+            _isGameOver = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void FlipPiece()

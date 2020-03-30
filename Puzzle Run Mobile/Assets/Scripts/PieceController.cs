@@ -25,6 +25,8 @@ public class PieceController : MonoBehaviour
         float h = _joystick.Horizontal;
         float v = _joystick.Vertical;
 
+        if (GameManager.Instance.IsGameOver) return;
+
         if ((h != 0 || v != 0) && Time.time - _lastMove > _moveDeltaTime)
         {
             this.transform.position += Vector3.right * _joystick.Horizontal;

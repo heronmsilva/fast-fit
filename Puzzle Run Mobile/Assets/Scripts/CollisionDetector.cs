@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class CollisionDetector : MonoBehaviour
 {
-    
+    private void OnCollisionEnter(Collision col)
+    {
+        GameManager.Instance.GameOver();
+    }
 }
