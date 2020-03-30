@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
-    private float _speed, _initialTime;
+    private float _speed, _startTime;
     private int _score = 0;
     private bool _isGameOver = false;
     private enum Difficulty 
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         _minXY = _maxXY = Vector2.zero;
         _speed = _startSpeed;
-        _initialTime = Time.time;
+        _startTime = Time.time;
         
         SpawnObjects();
         SetupDifficulty();
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        _score += (int) ((Time.time - _initialTime) * _speed);
+        _score += (int) ((Time.time - _startTime) * _speed);
     }
 
     #region Difficulty
