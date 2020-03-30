@@ -48,10 +48,9 @@ public class GameManager : MonoBehaviour
     {
         if (IsWallCrossed())
         {
-            Debug.Log("Crossed");
+            RespawnObjects();
         }
     }
-
 
     public void GameOver()
     {
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region Piece movement triggers
     public void FlipPiece()
     {
         _piece.GetComponent<PieceController>().Flip();
@@ -78,12 +78,22 @@ public class GameManager : MonoBehaviour
     {
         _piece.GetComponent<PieceController>().RotateRight();
     }
+    #endregion
 
     // If the wall reaches the zero destination
     // it has not collided with the piece
     private bool IsWallCrossed()
     {
         return _wall.transform.position == Vector3.zero;
+    }
+
+    #region Spawn Objects
+    private void RespawnObjects()
+    {
+        Destroy(_wall);
+        Destroy(_piece);
+
+        SpawnObjects();
     }
 
     private void SpawnObjects()
@@ -191,4 +201,5 @@ public class GameManager : MonoBehaviour
         _piece.transform.rotation = Quaternion.identity;
         _piece.transform.position = _pieceStartPoint.transform.position;
     }
+    #endregion
 }
