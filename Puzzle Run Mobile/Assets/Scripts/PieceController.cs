@@ -14,7 +14,9 @@ public class PieceController : MonoBehaviour
     private void Start()
     {
         _joystick = FindObjectOfType<FixedJoystick>();
-        _joystick = (! _joystick) ? FindObjectOfType<FloatingJoystick>() : null;
+        if (! _joystick)
+            _joystick = FindObjectOfType<FloatingJoystick>();
+            
         _lastMove = Time.time;
         _minXY = GameManager.Instance.MinXY;
         _maxXY = GameManager.Instance.MaxXY;
