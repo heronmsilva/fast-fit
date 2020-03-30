@@ -10,4 +10,10 @@ public class PieceController : MonoBehaviour
     {
         _joystick = FindObjectOfType<FixedJoystick>();
     }
+
+    private void Update()
+    {
+        this.transform.position += Vector3.right * _joystick.Horizontal;
+        this.transform.position += Vector3.up * _joystick.Vertical;
+    }
 }
