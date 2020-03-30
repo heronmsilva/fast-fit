@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        _score += (int) (Time.time - _initialTime) * _speed;
+        _score += (int) ((Time.time - _initialTime) * _speed);
     }
 
     #region Difficulty
