@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     #region Public properties
     public static GameManager Instance { get { return _instance; } }
+    public Vector2 MinXY { get { return _minXY; } }
+    public Vector2 MaxXY { get { return _maxXY; } }
     #endregion
 
     private void Awake()
