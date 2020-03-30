@@ -8,11 +8,14 @@ public class PieceController : MonoBehaviour
 
     private FixedJoystick _joystick;
     private float _lastMove;
+    private Vector2 _minXY, _maxXY;
 
     private void Start()
     {
         _joystick = FindObjectOfType<FixedJoystick>();
         _lastMove = Time.time;
+        _minXY = GameManager.Instance.MinXY;
+        _maxXY = GameManager.Instance.MaxXY;
     }
 
     private void Update()
@@ -27,5 +30,19 @@ public class PieceController : MonoBehaviour
             _lastMove = Time.time;
         }
         
+        FixIfOutOfBounds();
+    }
+
+    // If the piece is moved out of the wall bounds
+    // it's brought back within
+    private void FixIfOutOfBounds()
+    {
+        foreach (Transform container in this.transform)
+        {
+            if (container.position.x < _minXY.x) this.transform.position += Vector3.right;
+            if (container.position.x > _maxXY.x) this.transform.position -= Vector3.right;
+            if (container.position.y < _minXY.y) this.transform.position += Vector3.up;
+            if (container.position.y > _maxXY.y) this.transform.position -= Vector3.up;
+        }
     }
 }
