@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Editor properties
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _piecePrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
+    #endregion
 
+    #region Class properties
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
     private float _speed;
+    #endregion
 
     private void Start()
     {
