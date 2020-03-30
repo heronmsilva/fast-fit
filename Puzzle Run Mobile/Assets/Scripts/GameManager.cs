@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab;
+    [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab, _pieceStartPoint;
+    [SerializeField] private float _wallDistance;
 
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         RandomizePiecePosition();
         RandomizePieceRotation();
         CreateHole();
+        SetupInitialTransforms();
     }
 
     private void SpawnWall()
@@ -104,5 +106,13 @@ public class GameManager : MonoBehaviour
             }
         }
         return cubes;
+    }
+
+    private void SetupInitialTransforms()
+    {
+        _wall.transform.position += Vector3.forward * _wallDistance;
+
+        _piece.transform.rotation = Quaternion.identity;
+        _piece.transform.position = _pieceStartPoint.transform.position;
     }
 }
