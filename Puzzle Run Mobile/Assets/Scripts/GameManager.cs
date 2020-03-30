@@ -14,10 +14,23 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Class properties
+    private static GameManager _instance;
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
     private float _speed;
     #endregion
+
+    #region Public properties
+    public static GameManager Instance { get { return _instance; } }
+    #endregion
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+        else
+            _instance = this;
+    }
 
     private void Start()
     {
