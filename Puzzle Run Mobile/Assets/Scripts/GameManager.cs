@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _wallPrefab, _dynamicContainer, _piecePrefab;
+    [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab;
 
     private GameObject _wall;
     private GameObject _piece;
