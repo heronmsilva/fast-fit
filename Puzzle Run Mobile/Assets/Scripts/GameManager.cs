@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab, _pieceStartPoint;
-    [SerializeField] private float _wallDistance;
+    [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
 
     private GameObject _wall, _piece;
