@@ -355,6 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19a4d8e3047b04590ed9ab2ca040f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
+    type: 3}
+  _dynamicContainer: {fileID: 127126778}
 --- !u!4 &1525496430
 Transform:
   m_ObjectHideFlags: 0
