@@ -6,7 +6,7 @@ public class PieceController : MonoBehaviour
 {
     [SerializeField] private float _moveDeltaTime = .1f;
 
-    private FixedJoystick _joystick;
+    private Joystick _joystick;
     private float _lastMove;
     private Vector2 _minXY, _maxXY;
     private float _isFlipped = 1;
@@ -14,6 +14,7 @@ public class PieceController : MonoBehaviour
     private void Start()
     {
         _joystick = FindObjectOfType<FixedJoystick>();
+        _joystick = (! _joystick) ? FindObjectOfType<FloatingJoystick>() : null;
         _lastMove = Time.time;
         _minXY = GameManager.Instance.MinXY;
         _maxXY = GameManager.Instance.MaxXY;
