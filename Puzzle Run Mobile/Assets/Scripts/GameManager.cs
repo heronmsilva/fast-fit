@@ -6,13 +6,16 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _dynamicContainer, _wallPrefab, _piecePrefab, _pieceStartPoint;
     [SerializeField] private float _wallDistance;
+    [SerializeField] private float _startSpeed = 3f;
 
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
+    private float _speed;
 
     private void Start()
     {
         _minXY = _maxXY = Vector2.zero;
+        _speed = _startSpeed;
 
         SpawnWall();
         SpawnPiece();
@@ -25,6 +28,8 @@ public class GameManager : MonoBehaviour
     private void SpawnWall()
     {
         _wall = Instantiate(_wallPrefab, _dynamicContainer.transform) as GameObject;
+        _wall.GetComponent<MoveTo>().speed = _speed;
+        _wall.GetComponent<MoveTo>().waypoint = Vector3.zero;
 
         SetupMinMaxXY();
     }
