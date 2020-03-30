@@ -358,6 +358,8 @@ MonoBehaviour:
   _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
   _dynamicContainer: {fileID: 127126778}
+  _piecePrefab: {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702,
+    type: 3}
 --- !u!4 &1525496430
 Transform:
   m_ObjectHideFlags: 0

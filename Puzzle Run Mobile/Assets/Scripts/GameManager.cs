@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _wallPrefab, _dynamicContainer;
+    [SerializeField] private GameObject _wallPrefab, _dynamicContainer, _piecePrefab;
 
     private GameObject _wall;
+    private GameObject _piece;
 
     private void Start()
     {
         SpawnWall();
+        SpawnPiece();
     }
 
     private void SpawnWall()
     {
         _wall = Instantiate(_wallPrefab, _dynamicContainer.transform) as GameObject;
+    }
+
+    private void SpawnPiece()
+    {
+        _piece = Instantiate(_piecePrefab, _dynamicContainer.transform) as GameObject;
     }
 }
