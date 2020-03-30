@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void FastForward()
+    {
+        _wall.GetComponent<MoveTo>().speed = 50f;
+    }
+
     #region Piece movement triggers
     public void FlipPiece()
     {
