@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
+    [SerializeField] private float _increaseSpeed = .2f;
     #endregion
 
     #region Class properties
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsWallCrossed())
         {
+            _speed += _increaseSpeed;
             RespawnObjects();
         }
     }
