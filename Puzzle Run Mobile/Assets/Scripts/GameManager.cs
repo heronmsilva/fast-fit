@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
         SpawnObjects();
     }
 
+    public void FlipPiece()
+    {
+        _piece.GetComponent<PieceController>().Flip();
+    }
+
     public void RotatePieceLeft()
     {
         _piece.GetComponent<PieceController>().RotateLeft();

@@ -9,6 +9,7 @@ public class PieceController : MonoBehaviour
     private FixedJoystick _joystick;
     private float _lastMove;
     private Vector2 _minXY, _maxXY;
+    private float _isFlipped = 1;
 
     private void Start()
     {
@@ -33,17 +34,28 @@ public class PieceController : MonoBehaviour
         FixIfOutOfBounds();
     }
 
+    public void Flip()
+    {
+        Vector3 eulerAngles = this.transform.eulerAngles;
+        eulerAngles += Vector3.right * 180;
+        this.transform.eulerAngles = eulerAngles;
+        // Single is inverted in order to
+        // rotate in the correct orientation
+        // once the piece has been flipped
+        _isFlipped = -1 * _isFlipped;
+    }
+
     public void RotateLeft()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles += Vector3.forward * 90;
+        eulerAngles += Vector3.forward * 90 * _isFlipped;
         this.transform.eulerAngles = eulerAngles;
     }
 
     public void RotateRight()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles += Vector3.forward * -90;
+        eulerAngles += Vector3.forward * -90 * _isFlipped;
         this.transform.eulerAngles = eulerAngles;
     }
 
