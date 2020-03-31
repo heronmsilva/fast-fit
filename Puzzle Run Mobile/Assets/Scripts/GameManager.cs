@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     public int AnimationChance { get { return _animationChance; } }
     #endregion
 
+    #region Builtin methods
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -108,6 +109,19 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Game over");
         }
     }
+    #endregion
+
+    #region Game logic
+    public void GameOver()
+    {
+        // Since several collisions might be triggering gameover
+        // it has to be checked if it has already been triggered
+        if (! _isGameOver)
+        {
+            _isGameOver = true;
+            Time.timeScale = 0;
+        }
+    }
 
     private void IncreaseLives()
     {
@@ -123,6 +137,30 @@ public class GameManager : MonoBehaviour
     {
         int curDifficulty = (int) _difficulty;
         _difficulty = (Difficulty) (curDifficulty + 1);
+    }
+
+    private void ApplyDifficulty()
+    {
+        switch (_difficulty)
+        {
+            case Difficulty.Level0:
+                break;
+            case Difficulty.Level1:
+                _wall.GetComponent<WallAnimations>().Fade();
+                break;
+            case Difficulty.Level2:
+                _wall.GetComponent<WallAnimations>().RotateX();
+                break;
+            case Difficulty.Level3:
+                _wall.GetComponent<WallAnimations>().RotateY();
+                break;
+            case Difficulty.Level4:
+                _wall.GetComponent<WallAnimations>().RotateXY();
+                break;
+            case Difficulty.Level5:
+                _wall.GetComponent<WallAnimations>().RandomAnims();
+                break;
+        }
     }
 
     private void ResetCrossSequence()
@@ -154,24 +192,24 @@ public class GameManager : MonoBehaviour
         RespawnObjects();
         ApplyDifficulty();
     }
-
-    public void GameOver()
+    
+    private bool IsWallCrossed()
     {
-        // Since several collisions might be triggering gameover
-        // it has to be checked if it has already been triggered
-        if (! _isGameOver)
-        {
-            _isGameOver = true;
-            Time.timeScale = 0;
-        }
+        return _wall.transform.position == Vector3.zero;
     }
 
+    private void Score()
+    {
+        _score += (int) ((Time.time - _startTime) * _speed);
+    }
+    #endregion
+
+    #region UI actions
     public void FastForward()
     {
         _wall.GetComponent<MoveTo>().speed = 50f;
     }
 
-    #region Piece movement triggers
     public void FlipPiece()
     {
         if (_isGameOver) return;
@@ -191,18 +229,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    // If the wall reaches the zero destination
-    // it has not collided with the piece
-    private bool IsWallCrossed()
-    {
-        return _wall.transform.position == Vector3.zero;
-    }
-
-    private void Score()
-    {
-        _score += (int) ((Time.time - _startTime) * _speed);
-    }
-
     private void UpdateUIHeader()
     {
         timeText.text = ((int) (Time.time - _startTime)).ToString();
@@ -216,45 +242,6 @@ public class GameManager : MonoBehaviour
 
         levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
     }
-
-    #region Difficulty
-    private void SetupDifficulty()
-    {
-        SetDifficulty();
-        ApplyDifficulty();
-    }
-
-    private void ApplyDifficulty()
-    {
-        switch (_difficulty)
-        {
-            case Difficulty.Level0:
-                break;
-            case Difficulty.Level1:
-                _wall.GetComponent<WallAnimations>().Fade();
-                break;
-            case Difficulty.Level2:
-                _wall.GetComponent<WallAnimations>().RotateX();
-                break;
-            case Difficulty.Level3:
-                _wall.GetComponent<WallAnimations>().RotateY();
-                break;
-            case Difficulty.Level4:
-                _wall.GetComponent<WallAnimations>().RotateXY();
-                break;
-            case Difficulty.Level5:
-                _wall.GetComponent<WallAnimations>().RandomAnims();
-                break;
-        }
-    }
-
-    private void SetDifficulty()
-    {
-        int level = (int) (_speed - _startSpeed) / 2;
-        if (level <= System.Enum.GetValues(typeof(Difficulty)).Length)
-            _difficulty = (Difficulty)level;
-    }
-    #endregion
 
     #region Spawn Objects
     private void RespawnObjects()
