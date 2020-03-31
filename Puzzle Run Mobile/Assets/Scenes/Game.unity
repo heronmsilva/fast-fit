@@ -1797,6 +1797,8 @@ MonoBehaviour:
   _piecePrefab: {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702,
     type: 3}
   _pieceStartPoint: {fileID: 823786036}
+  timeText: {fileID: 2137570750}
+  scoreText: {fileID: 1876648626}
   _wallDistance: 30
   _startSpeed: 3
   _increaseSpeed: 0.2

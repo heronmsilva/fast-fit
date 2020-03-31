@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _piecePrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
+    [SerializeField] private Text timeText = null;
+    [SerializeField] private Text scoreText = null;
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
-    [SerializeField] private int _animationChance = 50;
+    [SerializeField] private int _animationChance = 50; 
     #endregion
 
     #region Class properties
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
         
         SpawnObjects();
         SetupDifficulty();
+        UpdateUIHeader();
     }
 
     private void Update()
@@ -73,6 +77,7 @@ public class GameManager : MonoBehaviour
             RespawnObjects();
             SetupDifficulty();
         }
+        UpdateUIHeader();
     }
 
     public void GameOver()
@@ -118,6 +123,12 @@ public class GameManager : MonoBehaviour
     private void Score()
     {
         _score += (int) ((Time.time - _startTime) * _speed);
+    }
+
+    private void UpdateUIHeader()
+    {
+        timeText.text = "TIME: " + (int) (Time.time - _startTime);
+        scoreText.text = "SCORE: " + _score;
     }
 
     #region Difficulty
