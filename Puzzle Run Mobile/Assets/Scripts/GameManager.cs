@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         _isGameOver = false;
         RespawnObjects();
-        UpdateUIHeader();
+        SetupDifficulty();
     }
 
     public void GameOver()
