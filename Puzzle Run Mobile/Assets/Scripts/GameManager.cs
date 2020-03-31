@@ -30,11 +30,6 @@ public class GameManager : MonoBehaviour
     private Vector2 _minXY, _maxXY;
     private float _speed, _startTime;
     private int _lives;
-    private float _animationDelay = 1f;
-    private float _animationSpeed = 1f;
-    private int _score = 0;
-    private int _crossSequence = 0;
-    private bool _isGameOver = false;
     private enum Difficulty 
     {
         Level0,
@@ -44,6 +39,11 @@ public class GameManager : MonoBehaviour
         Level4,
         Level5
     }
+    private float _animationDelay = 1f;
+    private float _animationSpeed = 1f;
+    private int _score = 0;
+    private int _crossSequence = 0;
+    private bool _isGameOver = false;
     private Difficulty _difficulty;
     #endregion
 
