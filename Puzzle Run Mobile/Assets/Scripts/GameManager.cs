@@ -130,10 +130,9 @@ public class GameManager : MonoBehaviour
         switch (_difficulty)
         {
             case Difficulty.Level0:
-                _wall.GetComponent<WallAnimations>().Fade();
                 break;
             case Difficulty.Level1:
-                
+                _wall.GetComponent<WallAnimations>().Fade();
                 break;
             case Difficulty.Level2:
                 // TODO: Rotate X
