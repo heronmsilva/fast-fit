@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _increaseSpeed = .2f;
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 3; 
-    [SerializeField] private int _extraLifeSequence = 10;
+    [SerializeField] private int _maxCrossSequence = 10;
     [SerializeField] private int _maxLives = 5; 
     #endregion
 
@@ -73,25 +73,24 @@ public class GameManager : MonoBehaviour
         _lives = _startLives;
         
         SpawnObjects();
-        SetupDifficulty();
+        ApplyDifficulty();
     }
 
     private void Update()
     {
         if (IsWallCrossed())
         {
-            _speed += _increaseSpeed;
-            _crossSequence += 1;
+            IncreaseSpeed();
+            IncreaseCrossSequence();
+            if (IsCrossSequenceReachedMax())
+            {
+                ResetCrossSequence();
+                IncreaseDifficulty();
+                IncreaseLives();
+            }
             Score();
             RespawnObjects();
-            SetupDifficulty();
-        }
-
-        if (_crossSequence == _extraLifeSequence)
-        {
-            _crossSequence = 0;
-            if (_lives < _maxLives)
-                _lives += 1;
+            ApplyDifficulty();
         }
 
         UpdateUIHeader();
@@ -106,6 +105,37 @@ public class GameManager : MonoBehaviour
             else 
                 Debug.Log("Game over");
         }
+    }
+
+    private void IncreaseLives()
+    {
+        _lives += (_lives < _maxLives) ? 1 : 0;
+    }
+
+    private void IncreaseDifficulty()
+    {
+        int curDifficulty = (int) _difficulty;
+        _difficulty = (Difficulty) (curDifficulty + 1);
+    }
+
+    private void ResetCrossSequence()
+    {
+        _crossSequence = 0;
+    }
+
+    private bool IsCrossSequenceReachedMax()
+    {
+        return _crossSequence == _maxCrossSequence;
+    }
+
+    private void IncreaseCrossSequence()
+    {
+        _crossSequence += 1;
+    }
+
+    private void IncreaseSpeed()
+    {
+        _speed += _increaseSpeed;
     }
 
     private void UseLifeToRestartGame()
@@ -176,7 +206,7 @@ public class GameManager : MonoBehaviour
         else
             levelText.text = ((int) _difficulty).ToString();
 
-        levelFill.fillAmount = (float) _crossSequence / _extraLifeSequence;
+        levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
     }
 
     #region Difficulty

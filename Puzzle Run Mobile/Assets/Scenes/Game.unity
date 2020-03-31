@@ -2558,7 +2558,7 @@ MonoBehaviour:
   _increaseSpeed: 0.2
   _animationChance: 50
   _startLives: 3
-  _extraLifeSequence: 10
+  _maxCrossSequence: 10
   _maxLives: 5
 --- !u!4 &1525496430
 Transform:
