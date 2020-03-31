@@ -8,6 +8,7 @@ public class WallAnimations : MonoBehaviour
     
     private List<string> xAnimations = new List<string>() { "WallRotateX", "WallRotateX-" };
     private List<string> yAnimations = new List<string>() { "WallRotateY", "WallRotateY-" };
+    private List<string> xyAnimations = new List<string>() { "WallRotateXY", "WallRotateX-Y", "WallRotateX-Y-", "WallRotateXY-" };
 
     private void Start()
     {
@@ -33,6 +34,12 @@ public class WallAnimations : MonoBehaviour
     {
         int i = Random.Range(0, yAnimations.Count);
         StartCoroutine(PlayAnimation(yAnimations[i]));
+    }
+
+    public void RotateXY()
+    {
+        int i = Random.Range(0, xyAnimations.Count);
+        StartCoroutine(PlayAnimation(xyAnimations[i]));
     }
 
     IEnumerator PlayAnimation(string animation)
