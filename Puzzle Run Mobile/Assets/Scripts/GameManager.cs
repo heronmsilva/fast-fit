@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _increaseSpeed = .2f;
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 3; 
+    [SerializeField] private int _extraLifeSequence = 10;
+    [SerializeField] private int _maxLives = 5; 
     #endregion
 
     #region Class properties
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     private float _animationDelay = 1f;
     private float _animationSpeed = 1f;
     private int _score = 0;
+    private int _crossSequence = 0;
     private bool _isGameOver = false;
     private enum Difficulty 
     {
@@ -77,10 +80,19 @@ public class GameManager : MonoBehaviour
         if (IsWallCrossed())
         {
             _speed += _increaseSpeed;
+            _crossSequence += 1;
             Score();
             RespawnObjects();
             SetupDifficulty();
         }
+
+        if (_crossSequence == _extraLifeSequence)
+        {
+            _crossSequence = 0;
+            if (_lives < _maxLives)
+                _lives += 1;
+        }
+
         UpdateUIHeader();
     }
 
