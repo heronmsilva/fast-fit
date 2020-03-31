@@ -103,16 +103,19 @@ public class GameManager : MonoBehaviour
     #region Piece movement triggers
     public void FlipPiece()
     {
+        if (_isGameOver) return;
         _piece.GetComponent<PieceController>().Flip();
     }
 
     public void RotatePieceLeft()
     {
+        if (_isGameOver) return;
         _piece.GetComponent<PieceController>().RotateLeft();
     }
 
     public void RotatePieceRight()
     {
+        if (_isGameOver) return;
         _piece.GetComponent<PieceController>().RotateRight();
     }
     #endregion
