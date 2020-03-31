@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class CubeAnimations : MonoBehaviour
 {
+    private Animator _anim;
+
+    private void Start()
+    {
+        _anim = this.gameObject.GetComponent<Animator>();
+        _anim.SetFloat("Speed", GameManager.Instance.AnimationSpeed);
+    }
+
     public void Fade()
     {
         StartCoroutine(PlayAnimation("CubeFade"));
     }
 
-    IEnumerator PlayAnimation(string name)
+    IEnumerator PlayAnimation(string animation)
     {
         float delay = GameManager.Instance.AnimationDelay;
-        float speed = GameManager.Instance.AnimationSpeed;
-        
         yield return new WaitForSeconds(delay);
-        
-        this.GetComponent<Animator>().SetFloat("Speed", speed);
-        this.GetComponent<Animator>().Play(name);
+        _anim.Play(animation);
     }
 }
