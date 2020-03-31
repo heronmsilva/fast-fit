@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 364492806}
   - component: {fileID: 364492805}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Level Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1930,7 +1930,7 @@ GameObject:
   - component: {fileID: 1261697469}
   - component: {fileID: 1261697468}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2551,6 +2551,8 @@ MonoBehaviour:
   timeText: {fileID: 634037937}
   scoreText: {fileID: 1487004835}
   livesText: {fileID: 783480471}
+  levelText: {fileID: 1261697468}
+  levelFill: {fileID: 364492805}
   _wallDistance: 30
   _startSpeed: 3
   _increaseSpeed: 0.2

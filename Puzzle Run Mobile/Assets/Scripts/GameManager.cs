@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text livesText = null;
+    [SerializeField] private Text levelText = null;
+    [SerializeField] private Image levelFill = null;
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
@@ -169,6 +171,13 @@ public class GameManager : MonoBehaviour
         timeText.text = ((int) (Time.time - _startTime)).ToString();
         scoreText.text = _score.ToString();
         livesText.text = _lives.ToString();
+        
+        if (_difficulty == Difficulty.Level5)
+            levelText.text = "MAX";
+        else
+            levelText.text = ((int) _difficulty).ToString();
+
+        levelFill.fillAmount = (float) _crossSequence / _extraLifeSequence;
     }
 
     #region Difficulty
