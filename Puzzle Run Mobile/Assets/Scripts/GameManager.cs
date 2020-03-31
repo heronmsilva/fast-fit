@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
     private float _speed, _startTime;
+    private float _animationDelay = 1f;
+    private float _animationSpeed = 1f;
     private int _score = 0;
     private bool _isGameOver = false;
     private enum Difficulty 
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
     public Vector2 MinXY { get { return _minXY; } }
     public Vector2 MaxXY { get { return _maxXY; } }
     public bool IsGameOver { get { return _isGameOver; } }
+    public float AnimationDelay { get { return _animationDelay; } }
+    public float AnimationSpeed { get { return _animationSpeed; } }
     #endregion
 
     private void Awake()
@@ -126,9 +130,10 @@ public class GameManager : MonoBehaviour
         switch (_difficulty)
         {
             case Difficulty.Level0:
+                _wall.GetComponent<WallAnimations>().Fade();
                 break;
             case Difficulty.Level1:
-                // TODO: Fade
+                
                 break;
             case Difficulty.Level2:
                 // TODO: Rotate X
