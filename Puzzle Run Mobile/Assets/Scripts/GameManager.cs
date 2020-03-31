@@ -84,6 +84,26 @@ public class GameManager : MonoBehaviour
         UpdateUIHeader();
     }
 
+    private void LateUpdate()
+    {
+        if (_isGameOver)
+        {
+            if (_lives > 0)
+                UseLifeToRestartGame();
+            else 
+                Debug.Log("Game over");
+        }
+    }
+
+    private void UseLifeToRestartGame()
+    {
+        _lives -= 1;
+        Time.timeScale = 1;
+        _isGameOver = false;
+        RespawnObjects();
+        UpdateUIHeader();
+    }
+
     public void GameOver()
     {
         // Since several collisions might be triggering gameover
