@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
                 _wall.GetComponent<WallAnimations>().Fade();
                 break;
             case Difficulty.Level2:
-                // TODO: Rotate X
+                _wall.GetComponent<WallAnimations>().RotateX();
                 break;
             case Difficulty.Level3:
                 // TODO: Rotate Y
