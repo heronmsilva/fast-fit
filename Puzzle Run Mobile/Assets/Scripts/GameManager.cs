@@ -114,6 +114,11 @@ public class GameManager : MonoBehaviour
         _lives += (_lives < _maxLives) ? 1 : 0;
     }
 
+    private void DecreaseLives()
+    {
+        _lives -= 1;
+    }
+
     private void IncreaseDifficulty()
     {
         int curDifficulty = (int) _difficulty;
@@ -142,11 +147,12 @@ public class GameManager : MonoBehaviour
 
     private void UseLifeToRestartGame()
     {
-        _lives -= 1;
+        DecreaseLives();
+        ResetCrossSequence();
         Time.timeScale = 1;
         _isGameOver = false;
         RespawnObjects();
-        SetupDifficulty();
+        ApplyDifficulty();
     }
 
     public void GameOver()
