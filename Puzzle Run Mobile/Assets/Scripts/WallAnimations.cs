@@ -42,6 +42,32 @@ public class WallAnimations : MonoBehaviour
         StartCoroutine(PlayAnimation(xyAnimations[i]));
     }
 
+    // Random should play none, fade and/or any rotation
+    // a 50% chance will be set for each of the cases
+    public void RandomAnims()
+    {
+        int animChance = GameManager.Instance.AnimationChance;
+        int shouldPlay = Random.Range(1, 101);
+        if (shouldPlay < animChance)
+        {
+            int shouldFade = Random.Range(1, 101);
+            if (shouldFade < animChance)
+                Fade();
+            int shouldRotate = Random.Range(1, 101);
+            if (shouldRotate < animChance)
+            {
+                List<string> animations = new List<string>();
+                animations.AddRange(xAnimations);
+                animations.AddRange(xAnimations);
+                animations.AddRange(yAnimations);
+                animations.AddRange(yAnimations);
+                animations.AddRange(xyAnimations);
+                int i = Random.Range(0, animations.Count);
+                StartCoroutine(PlayAnimation(animations[i]));
+            }
+        }
+    }
+
     IEnumerator PlayAnimation(string animation)
     {
         float delay = GameManager.Instance.AnimationDelay;
