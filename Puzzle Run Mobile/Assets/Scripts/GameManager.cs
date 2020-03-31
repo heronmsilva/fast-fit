@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
         
         SpawnObjects();
         SetupDifficulty();
-        UpdateUIHeader();
     }
 
     private void Update()
