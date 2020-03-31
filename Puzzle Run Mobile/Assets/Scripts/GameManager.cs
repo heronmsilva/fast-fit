@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
     private int _crossSequence = 0;
     private bool _isGameOver = false;
-    private Difficulty _difficulty;
+    private Difficulty _difficulty = Difficulty.Level0;
     #endregion
 
     #region Public properties
