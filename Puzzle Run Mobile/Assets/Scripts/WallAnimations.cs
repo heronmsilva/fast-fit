@@ -7,6 +7,7 @@ public class WallAnimations : MonoBehaviour
     private Animator _anim;
     
     private List<string> xAnimations = new List<string>() { "WallRotateX", "WallRotateX-" };
+    private List<string> yAnimations = new List<string>() { "WallRotateY", "WallRotateY-" };
 
     private void Start()
     {
@@ -26,6 +27,12 @@ public class WallAnimations : MonoBehaviour
     {
         int i = Random.Range(0, xAnimations.Count);
         StartCoroutine(PlayAnimation(xAnimations[i]));
+    }
+
+    public void RotateY()
+    {
+        int i = Random.Range(0, yAnimations.Count);
+        StartCoroutine(PlayAnimation(yAnimations[i]));
     }
 
     IEnumerator PlayAnimation(string animation)
