@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
+    [SerializeField] private Text livesText = null;
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
     [SerializeField] private int _animationChance = 50; 
+    [SerializeField] private int _startLives = 3; 
     #endregion
 
     #region Class properties
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     private GameObject _wall, _piece;
     private Vector2 _minXY, _maxXY;
     private float _speed, _startTime;
+    private int _lives;
     private float _animationDelay = 1f;
     private float _animationSpeed = 1f;
     private int _score = 0;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
         _minXY = _maxXY = Vector2.zero;
         _speed = _startSpeed;
         _startTime = Time.time;
+        _lives = _startLives;
         
         SpawnObjects();
         SetupDifficulty();
@@ -129,6 +133,7 @@ public class GameManager : MonoBehaviour
     {
         timeText.text = ((int) (Time.time - _startTime)).ToString();
         scoreText.text = _score.ToString();
+        livesText.text = _lives.ToString();
     }
 
     #region Difficulty

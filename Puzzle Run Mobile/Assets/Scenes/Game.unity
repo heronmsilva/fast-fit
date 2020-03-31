@@ -2288,10 +2288,12 @@ MonoBehaviour:
   _pieceStartPoint: {fileID: 823786036}
   timeText: {fileID: 634037937}
   scoreText: {fileID: 1487004835}
+  livesText: {fileID: 783480471}
   _wallDistance: 30
   _startSpeed: 3
   _increaseSpeed: 0.2
   _animationChance: 50
+  _startLives: 3
 --- !u!4 &1525496430
 Transform:
   m_ObjectHideFlags: 0
