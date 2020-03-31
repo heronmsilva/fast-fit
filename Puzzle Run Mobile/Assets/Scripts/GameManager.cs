@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
+    [SerializeField] private int _animationChance = 50;
     #endregion
 
     #region Class properties
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver { get { return _isGameOver; } }
     public float AnimationDelay { get { return _animationDelay; } }
     public float AnimationSpeed { get { return _animationSpeed; } }
+    public int AnimationChance { get { return _animationChance; } }
     #endregion
 
     private void Awake()
@@ -144,7 +146,7 @@ public class GameManager : MonoBehaviour
                 _wall.GetComponent<WallAnimations>().RotateXY();
                 break;
             case Difficulty.Level5:
-                // TODO: Random (none or 1, 2 of them)
+                _wall.GetComponent<WallAnimations>().RandomAnims();
                 break;
         }
     }
