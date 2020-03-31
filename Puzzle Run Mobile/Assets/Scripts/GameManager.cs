@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text livesText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
+    [SerializeField] private Difficulty _initialDifficulty = Difficulty.Level0; 
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
@@ -39,12 +40,12 @@ public class GameManager : MonoBehaviour
         Level4,
         Level5
     }
+    private Difficulty _difficulty;
     private float _animationDelay = 1f;
     private float _animationSpeed = 1f;
     private int _score = 0;
     private int _crossSequence = 0;
     private bool _isGameOver = false;
-    private Difficulty _difficulty = Difficulty.Level0;
     #endregion
 
     #region Public properties
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         _speed = _startSpeed;
         _startTime = Time.time;
         _lives = _startLives;
+        _difficulty = _initialDifficulty;
         
         SpawnObjects();
         ApplyDifficulty();
