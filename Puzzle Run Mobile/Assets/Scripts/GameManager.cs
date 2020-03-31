@@ -127,8 +127,8 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUIHeader()
     {
-        timeText.text = "TIME: " + (int) (Time.time - _startTime);
-        scoreText.text = "SCORE: " + _score;
+        timeText.text = ((int) (Time.time - _startTime)).ToString();
+        scoreText.text = _score.ToString();
     }
 
     #region Difficulty
