@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 594577740924003113}
   - component: {fileID: 8194226674168875796}
   - component: {fileID: -2399267229447692754}
+  - component: {fileID: 3306506958603529458}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -121,6 +122,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f005c9418c7494fa3bed380a00176a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3306506958603529458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343734694358827339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4d118c8568d4f34b9453cdfa88b7f9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &103265161749872782
 PrefabInstance:
   m_ObjectHideFlags: 0
