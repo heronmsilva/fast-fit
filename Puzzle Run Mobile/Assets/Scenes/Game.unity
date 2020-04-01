@@ -2553,6 +2553,7 @@ MonoBehaviour:
   livesText: {fileID: 783480471}
   levelText: {fileID: 1261697468}
   levelFill: {fileID: 364492805}
+  _initialDifficulty: 0
   _wallDistance: 30
   _startSpeed: 3
   _increaseSpeed: 0.2
