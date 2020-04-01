@@ -870,9 +870,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d8987a8f759f0b3488d9eb4140c9a611, type: 3}
+    m_FontSize: 37
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 45
@@ -905,10 +905,10 @@ RectTransform:
   m_Father: {fileID: 43098393}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -162.5, y: 0}
-  m_SizeDelta: {x: 325, y: 60}
+  m_SizeDelta: {x: 325, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705507993
 GameObject:
@@ -1241,9 +1241,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d8987a8f759f0b3488d9eb4140c9a611, type: 3}
+    m_FontSize: 34
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 45
@@ -2215,9 +2215,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d8987a8f759f0b3488d9eb4140c9a611, type: 3}
+    m_FontSize: 37
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
@@ -2548,9 +2548,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: d8987a8f759f0b3488d9eb4140c9a611, type: 3}
+    m_FontSize: 37
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 45
@@ -2583,10 +2583,10 @@ RectTransform:
   m_Father: {fileID: 783000892}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -162.5, y: 0}
-  m_SizeDelta: {x: 325, y: 60}
+  m_SizeDelta: {x: 325, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1491971369
 PrefabInstance:
