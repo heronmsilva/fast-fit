@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviour
         if (_difficulty == Difficulty.Level5)
             levelText.text = "MAX";
         else
-            levelText.text = ((int) _difficulty).ToString();
+            levelText.text = "Lv " + ((int) _difficulty).ToString();
 
         levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
     }
