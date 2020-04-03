@@ -1835,9 +1835,7 @@ MonoBehaviour:
   _dynamicContainer: {fileID: 127126778}
   _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
-  _pointsPrefab: {fileID: 6179163872664714807, guid: 587a785eac713f84db03a6016a01cd93,
-    type: 3}
-  _bigPointsPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
+  _floatingTextPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
     type: 3}
   _pieceStartPoint: {fileID: 823786036}
   timeText: {fileID: 932335984}
@@ -1851,7 +1849,6 @@ MonoBehaviour:
   _animationChance: 50
   _startLives: 1
   _maxCrossSequence: 10
-  _pointsMultiplier: 2
   _piecePrefabs:
   - {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702, type: 3}
   - {fileID: 1897107398019972896, guid: 91959d71108e72f4c80a8ac48d83a443, type: 3}

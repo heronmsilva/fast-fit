@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour
     #region Editor properties
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
-    [SerializeField] private GameObject _pointsPrefab = null;
-    [SerializeField] private GameObject _bigPointsPrefab = null;
+    [SerializeField] private GameObject _floatingTextPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 1; 
     [SerializeField] private int _maxCrossSequence = 10;
-    [SerializeField] private int _pointsMultiplier = 2;
     [SerializeField] private List<GameObject> _piecePrefabs = new List<GameObject>();
     [SerializeField] private List<Image> _lifeImages = new List<Image>();
     #endregion
@@ -223,16 +221,15 @@ public class GameManager : MonoBehaviour
     private void Score()
     {
         int points = (int) ((Time.time - _startTime) * _speed);
-        ShowFloatingPoints(points);
+        ShowFloatingText(points);
         _score += points;
         
     }
 
-    private void ShowFloatingPoints(int points)
+    private void ShowFloatingText(int points)
     {
-        GameObject prefab = _bigPointsPrefab;
         GameObject floatingText = Instantiate(
-            prefab, 
+            _floatingTextPrefab, 
             _piece.transform.position, 
             Quaternion.identity, 
             _dynamicContainer.transform
