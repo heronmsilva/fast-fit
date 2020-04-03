@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text livesText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Difficulty _initialDifficulty = Difficulty.Level0; 
@@ -22,7 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 3; 
     [SerializeField] private int _maxCrossSequence = 10;
-    [SerializeField] private int _maxLives = 5; 
+    [SerializeField] private int _maxLives = 5;
+    [SerializeField] private List<Image> lifeImages = new List<Image>();
     #endregion
 
     #region Class properties
@@ -229,12 +229,27 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region UI Update
     private void UpdateUIHeader()
     {
+        UpdateUITime();
+        UpdateUIScore();
+        UpdateUIDifficulty();
+        UpdateUILives();
+    }
+
+    private void UpdateUITime()
+    {
         timeText.text = ((int) (Time.time - _startTime)).ToString();
+    }
+
+    private void UpdateUIScore()
+    {
         scoreText.text = _score.ToString();
-        livesText.text = _lives.ToString();
-        
+    }
+
+    private void UpdateUIDifficulty()
+    {
         if (_difficulty == Difficulty.Level5)
             levelText.text = "MAX";
         else
@@ -242,6 +257,18 @@ public class GameManager : MonoBehaviour
 
         levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
     }
+
+    private void UpdateUILives()
+    {
+        for (int i = 0; i < lifeImages.Count; i++)
+        {
+            if (i < _lives)
+                lifeImages[i].enabled = true;
+            else
+                lifeImages[i].enabled = false;
+        }
+    }
+    #endregion
 
     #region Spawn Objects
     private void RespawnObjects()
