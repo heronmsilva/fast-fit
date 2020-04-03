@@ -40,10 +40,21 @@ public class PieceController : MonoBehaviour
         FixIfOutOfBounds();
     }
 
-    public void Flip()
+    public void FlipUp()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
         eulerAngles += Vector3.right * 180;
+        this.transform.eulerAngles = eulerAngles;
+        // Single is inverted in order to
+        // rotate in the correct orientation
+        // once the piece has been flipped
+        _isFlipped = -1 * _isFlipped;
+    }
+
+    public void FlipRight()
+    {
+        Vector3 eulerAngles = this.transform.eulerAngles;
+        eulerAngles += Vector3.up * 180;
         this.transform.eulerAngles = eulerAngles;
         // Single is inverted in order to
         // rotate in the correct orientation

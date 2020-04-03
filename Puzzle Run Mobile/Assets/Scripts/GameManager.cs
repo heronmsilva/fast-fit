@@ -252,10 +252,16 @@ public class GameManager : MonoBehaviour
         _fastForwarded = true;
     }
 
-    public void FlipPiece()
+    public void FlipPieceUp()
     {
         if (_isGameOver) return;
-        _piece.GetComponent<PieceController>().Flip();
+        _piece.GetComponent<PieceController>().FlipUp();
+    }
+
+    public void FlipPieceRight()
+    {
+        if (_isGameOver) return;
+        _piece.GetComponent<PieceController>().FlipRight();
     }
 
     public void RotatePieceLeft()
