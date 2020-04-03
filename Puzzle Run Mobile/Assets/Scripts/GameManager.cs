@@ -19,10 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _startSpeed = 3f;
     [SerializeField] private float _increaseSpeed = .2f;
     [SerializeField] private int _animationChance = 50; 
-    [SerializeField] private int _startLives = 3; 
+    [SerializeField] private int _startLives = 1; 
     [SerializeField] private int _maxCrossSequence = 10;
-    [SerializeField] private int _maxLives = 5;
-    [SerializeField] private List<Image> lifeImages = new List<Image>();
+    [SerializeField] private List<Image> _lifeImages = new List<Image>();
     #endregion
 
     #region Class properties
@@ -125,7 +124,7 @@ public class GameManager : MonoBehaviour
 
     private void IncreaseLives()
     {
-        _lives += (_lives < _maxLives) ? 1 : 0;
+        _lives += (_lives < _lifeImages.Count) ? 1 : 0;
     }
 
     private void DecreaseLives()
@@ -260,12 +259,12 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUILives()
     {
-        for (int i = 0; i < lifeImages.Count; i++)
+        for (int i = 0; i < _lifeImages.Count; i++)
         {
             if (i < _lives)
-                lifeImages[i].enabled = true;
+                _lifeImages[i].enabled = true;
             else
-                lifeImages[i].enabled = false;
+                _lifeImages[i].enabled = false;
         }
     }
     #endregion

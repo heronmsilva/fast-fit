@@ -1849,8 +1849,7 @@ MonoBehaviour:
   _animationChance: 50
   _startLives: 1
   _maxCrossSequence: 10
-  _maxLives: 3
-  lifeImages:
+  _lifeImages:
   - {fileID: 832694083}
   - {fileID: 92055546}
   - {fileID: 598127675}
