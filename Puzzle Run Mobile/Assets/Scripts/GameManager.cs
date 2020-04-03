@@ -77,7 +77,9 @@ public class GameManager : MonoBehaviour
         _startTime = Time.time;
         _lives = _startLives;
         _difficulty = _initialDifficulty;
-        
+                
+        SetAnimationDelay();
+        SetAnimationSpeed();
         SpawnObjects();
         ApplyDifficulty();
     }
@@ -95,6 +97,8 @@ public class GameManager : MonoBehaviour
                 IncreaseLives();
             }
             Score();
+            SetAnimationDelay();
+            SetAnimationSpeed();
             RespawnObjects();
             ApplyDifficulty();
         }
@@ -124,6 +128,22 @@ public class GameManager : MonoBehaviour
             _isGameOver = true;
             Time.timeScale = 0;
         }
+    }
+
+    // The animations should be delayed by 1/4
+    // of the total time that the wall takes to
+    // get to the destination
+    private void SetAnimationDelay()
+    {
+        _animationDelay = (_wallDistance / _speed) / 4;
+    }
+
+    // The animations should take 1/4
+    // of the total time that the wall takes to
+    // get to the destination
+    private void SetAnimationSpeed()
+    {
+        _animationSpeed = 1 / ((_wallDistance / _speed) / 4);
     }
 
     private void IncreaseLives()
