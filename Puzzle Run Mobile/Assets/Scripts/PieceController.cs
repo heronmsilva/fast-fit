@@ -10,6 +10,7 @@ public class PieceController : MonoBehaviour
     private float _lastMove;
     private Vector2 _minXY, _maxXY;
     private float _isFlipped = 1;
+    private float _rotationOffset = .1f; // added since rotation slightly changes position
 
     private void Start()
     {
@@ -70,10 +71,10 @@ public class PieceController : MonoBehaviour
     {
         foreach (Transform container in this.transform)
         {
-            if (container.position.x < _minXY.x) this.transform.position += Vector3.right;
-            if (container.position.x > _maxXY.x) this.transform.position -= Vector3.right;
-            if (container.position.y < _minXY.y) this.transform.position += Vector3.up;
-            if (container.position.y > _maxXY.y) this.transform.position -= Vector3.up;
+            if (container.position.x < _minXY.x - _rotationOffset) this.transform.position += Vector3.right;
+            if (container.position.x > _maxXY.x + _rotationOffset) this.transform.position -= Vector3.right;
+            if (container.position.y < _minXY.y - _rotationOffset) this.transform.position += Vector3.up;
+            if (container.position.y > _maxXY.y + _rotationOffset) this.transform.position -= Vector3.up;
         }
     }
 }
