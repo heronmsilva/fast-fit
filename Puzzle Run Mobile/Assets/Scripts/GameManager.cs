@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _floatingPointsPrefab = null;
+    [SerializeField] private GameObject _doublePointsPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
     private int _crossSequence = 0;
     private bool _isGameOver = false;
+    private bool _fastForwarded = false;
     #endregion
 
     #region Public properties
@@ -201,14 +203,24 @@ public class GameManager : MonoBehaviour
     private void Score()
     {
         int points = (int) ((Time.time - _startTime) * _speed);
+        if (_fastForwarded) 
+            points *= 2;
         ShowFloatingPoints(points);
+        _fastForwarded = false;
         _score += points;
+        
     }
 
     private void ShowFloatingPoints(int points)
     {
-        GameObject floatingPoints = Instantiate(_floatingPointsPrefab, _piece.transform.position, Quaternion.identity, _dynamicContainer.transform);
-        floatingPoints.GetComponent<TextMesh>().text = points.ToString();
+        GameObject prefab = (_fastForwarded) ? _doublePointsPrefab : _floatingPointsPrefab;
+        GameObject floatingText = Instantiate(
+            prefab, 
+            _piece.transform.position, 
+            Quaternion.identity, 
+            _dynamicContainer.transform
+        );
+        floatingText.GetComponent<TextMesh>().text = points.ToString();
     }
     #endregion
 
@@ -216,6 +228,7 @@ public class GameManager : MonoBehaviour
     public void FastForward()
     {
         _wall.GetComponent<MoveTo>().speed = 50f;
+        _fastForwarded = true;
     }
 
     public void FlipPiece()
