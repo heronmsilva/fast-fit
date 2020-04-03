@@ -1835,7 +1835,7 @@ MonoBehaviour:
   _dynamicContainer: {fileID: 127126778}
   _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
-  _floatingPointsPrefab: {fileID: 6179163872664714807, guid: 587a785eac713f84db03a6016a01cd93,
+  _pointsPrefab: {fileID: 6179163872664714807, guid: 587a785eac713f84db03a6016a01cd93,
     type: 3}
   _doublePointsPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
     type: 3}
