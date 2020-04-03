@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _pointsPrefab = null;
-    [SerializeField] private GameObject _doublePointsPrefab = null;
+    [SerializeField] private GameObject _bigPointsPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
 
     private void ShowFloatingPoints(int points)
     {
-        GameObject prefab = (_fastForwarded) ? _doublePointsPrefab : _pointsPrefab;
+        GameObject prefab = (_fastForwarded) ? _bigPointsPrefab : _pointsPrefab;
         GameObject floatingText = Instantiate(
             prefab, 
             _piece.transform.position, 
