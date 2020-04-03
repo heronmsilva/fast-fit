@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
     private int _crossSequence = 0;
     private bool _isGameOver = false;
-    private bool _fastForwarded = false;
     #endregion
 
     #region Public properties
@@ -224,17 +223,14 @@ public class GameManager : MonoBehaviour
     private void Score()
     {
         int points = (int) ((Time.time - _startTime) * _speed);
-        if (_fastForwarded) 
-            points *= _pointsMultiplier;
         ShowFloatingPoints(points);
-        _fastForwarded = false;
         _score += points;
         
     }
 
     private void ShowFloatingPoints(int points)
     {
-        GameObject prefab = (_fastForwarded) ? _bigPointsPrefab : _pointsPrefab;
+        GameObject prefab = _bigPointsPrefab;
         GameObject floatingText = Instantiate(
             prefab, 
             _piece.transform.position, 
@@ -246,12 +242,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region UI actions
-    public void FastForward()
-    {
-        _wall.GetComponent<MoveTo>().speed = 50f;
-        _fastForwarded = true;
-    }
-
     public void FlipPieceUp()
     {
         if (_isGameOver) return;

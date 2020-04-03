@@ -1846,7 +1846,7 @@ MonoBehaviour:
   levelFill: {fileID: 364492805}
   _initialDifficulty: 0
   _wallDistance: 40
-  _startSpeed: 0
+  _startSpeed: 3
   _increaseSpeed: 0.2
   _animationChance: 50
   _startLives: 1
