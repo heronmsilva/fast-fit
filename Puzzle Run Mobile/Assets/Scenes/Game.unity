@@ -1835,6 +1835,8 @@ MonoBehaviour:
   _dynamicContainer: {fileID: 127126778}
   _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
+  _floatingPointsPrefab: {fileID: 6179163872664714807, guid: 587a785eac713f84db03a6016a01cd93,
+    type: 3}
   _pieceStartPoint: {fileID: 823786036}
   timeText: {fileID: 932335984}
   scoreText: {fileID: 1736186549}

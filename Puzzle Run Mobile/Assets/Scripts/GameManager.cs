@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     #region Editor properties
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
+    [SerializeField] private GameObject _floatingPointsPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
@@ -199,7 +200,15 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        _score += (int) ((Time.time - _startTime) * _speed);
+        int points = (int) ((Time.time - _startTime) * _speed);
+        ShowFloatingPoints(points);
+        _score += points;
+    }
+
+    private void ShowFloatingPoints(int points)
+    {
+        GameObject floatingPoints = Instantiate(_floatingPointsPrefab, _piece.transform.position, Quaternion.identity, _dynamicContainer.transform);
+        floatingPoints.GetComponent<TextMesh>().text = points.ToString();
     }
     #endregion
 

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2601358252177878725}
   - component: {fileID: 7629920197111241267}
   - component: {fileID: 7933757676528231506}
+  - component: {fileID: 7700149830885793980}
   m_Layer: 0
-  m_Name: Floating Score
+  m_Name: Floating Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,3 +94,15 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4281852901
+--- !u!114 &7700149830885793980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179163872664714807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6d443bd23322144895b0199a406062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
