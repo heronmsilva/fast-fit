@@ -1835,8 +1835,6 @@ MonoBehaviour:
   _dynamicContainer: {fileID: 127126778}
   _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
-  _piecePrefab: {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702,
-    type: 3}
   _pieceStartPoint: {fileID: 823786036}
   timeText: {fileID: 932335984}
   scoreText: {fileID: 1736186549}
@@ -1849,6 +1847,22 @@ MonoBehaviour:
   _animationChance: 50
   _startLives: 1
   _maxCrossSequence: 10
+  _piecePrefabs:
+  - {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702, type: 3}
+  - {fileID: 1897107398019972896, guid: 91959d71108e72f4c80a8ac48d83a443, type: 3}
+  - {fileID: 1897107398019972896, guid: fc1ad239d1da6a44a9c4763f55644636, type: 3}
+  - {fileID: 1897107398019972896, guid: 6082c31a780574045a211c0c7b9b770e, type: 3}
+  - {fileID: 1897107398019972896, guid: cf6c75a6f93a4cb4d935d613e4ca8383, type: 3}
+  - {fileID: 1897107398019972896, guid: cb0c176baa99c5f438b1f970b91be853, type: 3}
+  - {fileID: 1897107398019972896, guid: 5e6c0f5b15e739649b44591c8477710f, type: 3}
+  - {fileID: 1897107398019972896, guid: add49c53d42b22441b1497dc25a84e62, type: 3}
+  - {fileID: 1897107398019972896, guid: 72253b47727bcd4449ec1d335682d885, type: 3}
+  - {fileID: 1897107398019972896, guid: 9a240c8836e057a49a53f00df061517d, type: 3}
+  - {fileID: 1897107398019972896, guid: a8c50c1b7c693fa46bd32685f26e9501, type: 3}
+  - {fileID: 1897107398019972896, guid: f5702a17f89580c4688a8cf06dc7b4d4, type: 3}
+  - {fileID: 1897107398019972896, guid: ae9a4e0a11b558d448f6fb5e0aa21827, type: 3}
+  - {fileID: 1897107398019972896, guid: a94f19c79343bba4c8ed6257021661eb, type: 3}
+  - {fileID: 1897107398019972896, guid: ff356050259c4b643a0250eb53cf29dc, type: 3}
   _lifeImages:
   - {fileID: 832694083}
   - {fileID: 92055546}

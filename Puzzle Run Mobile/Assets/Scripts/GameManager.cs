@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     #region Editor properties
     [SerializeField] private GameObject _dynamicContainer = null; 
     [SerializeField] private GameObject _wallPrefab = null;
-    [SerializeField] private GameObject _piecePrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
@@ -21,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 1; 
     [SerializeField] private int _maxCrossSequence = 10;
+    [SerializeField] private List<GameObject> _piecePrefabs = new List<GameObject>();
     [SerializeField] private List<Image> _lifeImages = new List<Image>();
     #endregion
 
@@ -312,7 +312,8 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPiece()
     {
-        _piece = Instantiate(_piecePrefab, _dynamicContainer.transform) as GameObject;
+        int i = Random.Range(0, _piecePrefabs.Count);
+        _piece = Instantiate(_piecePrefabs[i], _dynamicContainer.transform) as GameObject;
     }
 
     // Randomize a position for the piece 
