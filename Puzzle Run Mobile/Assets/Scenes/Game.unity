@@ -1851,6 +1851,7 @@ MonoBehaviour:
   _animationChance: 50
   _startLives: 1
   _maxCrossSequence: 10
+  _pointsMultiplier: 2
   _piecePrefabs:
   - {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702, type: 3}
   - {fileID: 1897107398019972896, guid: 91959d71108e72f4c80a8ac48d83a443, type: 3}

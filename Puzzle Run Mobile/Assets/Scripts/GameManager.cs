@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 1; 
     [SerializeField] private int _maxCrossSequence = 10;
+    [SerializeField] private int _pointsMultiplier = 2;
     [SerializeField] private List<GameObject> _piecePrefabs = new List<GameObject>();
     [SerializeField] private List<Image> _lifeImages = new List<Image>();
     #endregion
@@ -204,7 +205,7 @@ public class GameManager : MonoBehaviour
     {
         int points = (int) ((Time.time - _startTime) * _speed);
         if (_fastForwarded) 
-            points *= 2;
+            points *= _pointsMultiplier;
         ShowFloatingPoints(points);
         _fastForwarded = false;
         _score += points;
