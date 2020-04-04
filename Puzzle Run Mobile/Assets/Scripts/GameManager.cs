@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     private void StopFastForward()
     {
+        if (_isGameOver) return;
         _touchDetector.StopFastForward();
     }
 
