@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _floatingTextPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
+    [SerializeField] private TouchDetector _touchDetector = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text levelText = null;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _animationChance = 50; 
     [SerializeField] private int _startLives = 1; 
     [SerializeField] private int _maxCrossSequence = 10;
+    [SerializeField] private int _speedUpScale = 25;
     [SerializeField] private List<GameObject> _piecePrefabs = new List<GameObject>();
     [SerializeField] private List<Image> _lifeImages = new List<Image>();
     #endregion
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     public float AnimationDelay { get { return _animationDelay; } }
     public float AnimationSpeed { get { return _animationSpeed; } }
     public int AnimationChance { get { return _animationChance; } }
+    public int SpeedUpScale { get { return _speedUpScale; } }
     #endregion
 
     #region Builtin methods
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsWallCrossed())
         {
+            StopFastForward();
             IncreaseSpeed();
             IncreaseCrossSequence();
             if (IsCrossSequenceReachedMax())
@@ -125,6 +129,11 @@ public class GameManager : MonoBehaviour
             _isGameOver = true;
             Time.timeScale = 0;
         }
+    }
+
+    private void StopFastForward()
+    {
+        _touchDetector.StopFastForward();
     }
 
     // The animations should be delayed by 1/4
@@ -205,6 +214,7 @@ public class GameManager : MonoBehaviour
 
     private void UseLifeToRestartGame()
     {
+        StopFastForward();
         DecreaseLives();
         ResetCrossSequence();
         Time.timeScale = 1;
@@ -275,7 +285,8 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUITime()
     {
-        timeText.text = ((int) (Time.time - _startTime)).ToString();
+        if (_touchDetector.IsFastForwarding) return;
+        timeText.text = ((int) (Time.time - _startTime - _touchDetector.TotalFastForward)).ToString();
     }
 
     private void UpdateUIScore()
