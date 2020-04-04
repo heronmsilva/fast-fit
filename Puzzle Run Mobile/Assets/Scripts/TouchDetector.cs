@@ -28,9 +28,12 @@ public class TouchDetector : MonoBehaviour
 
     public void StopFastForward()
     {
-        _isFastForwarding = false;
-        _totalFF += Time.time - _startFF;
-        Time.timeScale = 1;
+        if (_isFastForwarding)
+        {
+            _isFastForwarding = false;
+            _totalFF += Time.time - _startFF;
+            Time.timeScale = 1;
+        }
     }
 
     private void FastForward()

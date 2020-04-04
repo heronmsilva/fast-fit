@@ -215,11 +215,11 @@ public class GameManager : MonoBehaviour
 
     private void UseLifeToRestartGame()
     {
-        StopFastForward();
         DecreaseLives();
         ResetCrossSequence();
         Time.timeScale = 1;
         _isGameOver = false;
+        StopFastForward();
         RespawnObjects();
         ApplyDifficulty();
     }
