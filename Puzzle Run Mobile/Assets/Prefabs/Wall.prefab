@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8194226674168875796}
   - component: {fileID: -2399267229447692754}
   - component: {fileID: 3306506958603529458}
+  - component: {fileID: 5883956647366141462}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -148,6 +149,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5883956647366141462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343734694358827339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 10, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0.75}
 --- !u!1001 &103265161749872782
 PrefabInstance:
   m_ObjectHideFlags: 0
