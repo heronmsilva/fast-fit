@@ -7272,6 +7272,13 @@ MonoBehaviour:
   - {fileID: 598127675}
   - {fileID: 1093185538}
   - {fileID: 1274845564}
+  _cubeMaterials:
+  - {fileID: 2100000, guid: cb74f12fdf527644da32507ca7759ba6, type: 2}
+  - {fileID: 2100000, guid: 2be78f0c3ca4b3446b45e5767a429699, type: 2}
+  - {fileID: 2100000, guid: 22e566d86358ba04eab17ba257a43a84, type: 2}
+  - {fileID: 2100000, guid: f515a5276fd075144b1d92b23e862197, type: 2}
+  - {fileID: 2100000, guid: afc27402bf00f634ea700ccf067fa1b7, type: 2}
+  - {fileID: 2100000, guid: caf045c42d13c92438ef2191b590535b, type: 2}
 --- !u!4 &1525496430
 Transform:
   m_ObjectHideFlags: 0

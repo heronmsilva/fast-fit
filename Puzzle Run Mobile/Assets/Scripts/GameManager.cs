@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _speedUpScale = 25;
     [SerializeField] private List<GameObject> _piecePrefabs = new List<GameObject>();
     [SerializeField] private List<Image> _lifeImages = new List<Image>();
+    [SerializeField] private List<Material> _cubeMaterials = new List<Material>();
     #endregion
 
     #region Class properties
@@ -346,11 +347,20 @@ public class GameManager : MonoBehaviour
     private void SpawnObjects()
     {
         SpawnWall();
+        UpdateCubeMaterial();
         SpawnPiece();
         RandomizePiecePosition();
         RandomizePieceRotation();
         CreateHole();
         SetupInitialTransforms();
+    }
+
+    private void UpdateCubeMaterial()
+    {
+        foreach (Transform cube in _wall.transform)
+        {
+            cube.gameObject.GetComponent<Renderer>().material = _cubeMaterials[(int) _difficulty];
+        }
     }
 
     private void SpawnWall()
