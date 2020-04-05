@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _floatingTextPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private GameObject _uiLevel = null;
+    [SerializeField] private GameObject _gameOverOverlay = null;
     [SerializeField] private TouchDetector _touchDetector = null;
     [SerializeField] private ParticleSystem _backgroundParticles = null;
     [SerializeField] private Text timeText = null;
@@ -121,7 +123,7 @@ public class GameManager : MonoBehaviour
             if (_lives > 0)
                 UseLifeToRestartGame();
             else 
-                Debug.Log("Game over");
+                _gameOverOverlay.SetActive(true);
         }
     }
     #endregion
@@ -136,6 +138,11 @@ public class GameManager : MonoBehaviour
             _isGameOver = true;
             Time.timeScale = 0;
         }
+    }
+
+    private void LoadScoreScene()
+    {
+        Debug.Log("Load Menu Scene");
     }
 
     private void AnimateOutline()
