@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1117629414268327200}
   - component: {fileID: 6300174565951163866}
   m_Layer: 0
-  m_Name: Floating Points Big
+  m_Name: Floating Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6d443bd23322144895b0199a406062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0.5
+  time: 0.45
 --- !u!95 &6300174565951163866
 Animator:
   serializedVersion: 3
@@ -118,7 +118,7 @@ Animator:
   m_GameObject: {fileID: 3503307598438714283}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac644cb8d0540d14e8adfae81704d8b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2793b8c3c54dd8d41bc76a0593b20174, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
