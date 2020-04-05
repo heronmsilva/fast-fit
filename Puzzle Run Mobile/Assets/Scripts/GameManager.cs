@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LoadScoreScene()
+    public void LoadMenuScene()
     {
         Debug.Log("Load Menu Scene");
     }
