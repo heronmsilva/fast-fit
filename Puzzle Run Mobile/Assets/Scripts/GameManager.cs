@@ -239,7 +239,7 @@ public class GameManager : MonoBehaviour
 
     private void Score()
     {
-        int points = (int) ((Time.time - _startTime) * _speed);
+        int points = (int) ((Time.time - _startTime) * _speed * ((int) _difficulty + 1));
         ShowFloatingText(points);
         _score += points;
         
