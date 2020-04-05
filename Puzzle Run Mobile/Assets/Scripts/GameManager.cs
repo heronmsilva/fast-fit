@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _wallPrefab = null;
     [SerializeField] private GameObject _floatingTextPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
+    [SerializeField] private GameObject _uiLevel = null;
     [SerializeField] private TouchDetector _touchDetector = null;
     [SerializeField] private ParticleSystem _backgroundParticles = null;
     [SerializeField] private Text timeText = null;
@@ -100,6 +101,7 @@ public class GameManager : MonoBehaviour
             {
                 ResetCrossSequence();
                 IncreaseDifficulty();
+                AnimateUILevel();
                 IncreaseLives();
             }
             Score();
@@ -177,6 +179,11 @@ public class GameManager : MonoBehaviour
     {
         int curDifficulty = (int) _difficulty;
         _difficulty = (Difficulty) (curDifficulty + 1);
+    }
+    
+    private void AnimateUILevel()
+    {
+        _uiLevel.GetComponent<Animator>().Play("LevelSwing");
     }
 
     private void ApplyDifficulty()
