@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
+    [SerializeField] private Image _outline = null;
     [SerializeField] private Difficulty _initialDifficulty = Difficulty.Level0; 
     [SerializeField] private float _wallDistance = 30f;
     [SerializeField] private float _startSpeed = 3f;
@@ -100,6 +101,7 @@ public class GameManager : MonoBehaviour
             Score();
             SetAnimationDelay();
             SetAnimationSpeed();
+            AnimateOutline();
             RespawnObjects();
             ApplyDifficulty();
         }
@@ -129,6 +131,11 @@ public class GameManager : MonoBehaviour
             _isGameOver = true;
             Time.timeScale = 0;
         }
+    }
+
+    private void AnimateOutline()
+    {
+        _outline.GetComponent<Animator>().Play("OutlineFill");
     }
 
     private void StopFastForward()
