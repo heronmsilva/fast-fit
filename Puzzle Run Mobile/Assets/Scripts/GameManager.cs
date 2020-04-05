@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _floatingTextPrefab = null;
     [SerializeField] private GameObject _pieceStartPoint = null;
     [SerializeField] private TouchDetector _touchDetector = null;
+    [SerializeField] private ParticleSystem _backgroundParticles = null;
     [SerializeField] private Text timeText = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text levelText = null;
@@ -348,11 +349,25 @@ public class GameManager : MonoBehaviour
     {
         SpawnWall();
         UpdateCubeMaterial();
+        UpdateBackgroundParticles();
         SpawnPiece();
         RandomizePiecePosition();
         RandomizePieceRotation();
         CreateHole();
         SetupInitialTransforms();
+    }
+
+    private void UpdateBackgroundParticles()
+    {
+        ParticleSystem ps = _backgroundParticles.GetComponent<ParticleSystem>();
+        
+        var main = ps.main;
+        main.startColor = _cubeMaterials[(int) _difficulty].color;
+        main.startSpeed = 3 * _speed;
+        main.startLifetime = 60 / (3 * _speed);
+        
+        var emission = ps.emission;
+        emission.rateOverTime = (int) (3 * _speed * 1.6);
     }
 
     private void UpdateCubeMaterial()

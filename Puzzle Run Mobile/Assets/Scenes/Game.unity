@@ -7237,6 +7237,7 @@ MonoBehaviour:
     type: 3}
   _pieceStartPoint: {fileID: 823786036}
   _touchDetector: {fileID: 825125752}
+  _backgroundParticles: {fileID: 837399150}
   timeText: {fileID: 932335984}
   scoreText: {fileID: 1736186549}
   levelText: {fileID: 1261697468}
