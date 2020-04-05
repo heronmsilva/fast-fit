@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
     private int _crossSequence = 0;
     private bool _isGameOver = false;
+    private bool _isRespawning = false;
     #endregion
 
     #region Public properties
@@ -87,8 +88,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (IsWallCrossed())
+        if (IsWallCrossed() && ! _isRespawning)
         {
+            _isRespawning = true;
             StopFastForward();
             IncreaseSpeed();
             IncreaseCrossSequence();
@@ -102,8 +104,7 @@ public class GameManager : MonoBehaviour
             SetAnimationDelay();
             SetAnimationSpeed();
             AnimateOutline();
-            RespawnObjects();
-            ApplyDifficulty();
+            StartCoroutine(DelayRespawn());
         }
 
         UpdateUIHeader();
@@ -325,6 +326,15 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Spawn Objects
+    IEnumerator DelayRespawn()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        RespawnObjects();
+        ApplyDifficulty();
+        _isRespawning = false;
+    }
+
     private void RespawnObjects()
     {
         Destroy(_wall);
