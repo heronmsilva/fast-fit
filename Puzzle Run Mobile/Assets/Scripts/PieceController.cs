@@ -29,10 +29,14 @@ public class PieceController : MonoBehaviour
 
         if (Time.time - _lastMove > _moveDeltaTime)
         {
-            if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+            if (Mathf.Abs(_joystick.Horizontal) > .5f)
             {
-                this.transform.position += Vector3.right * _joystick.Horizontal;
-                this.transform.position += Vector3.up * _joystick.Vertical;
+                this.transform.position += Vector3.right * Mathf.Sign(_joystick.Horizontal);
+                _lastMove = Time.time;
+            }
+            if (Mathf.Abs(_joystick.Vertical) > .5f)
+            {
+                this.transform.position += Vector3.up * Mathf.Sign(_joystick.Vertical);
                 _lastMove = Time.time;
             }
         }
