@@ -8022,10 +8022,13 @@ MonoBehaviour:
   _gameOverOverlay: {fileID: 979503141}
   _touchDetector: {fileID: 825125752}
   _backgroundParticles: {fileID: 837399150}
-  timeText: {fileID: 932335984}
-  scoreText: {fileID: 1736186549}
-  levelText: {fileID: 1261697468}
-  levelFill: {fileID: 364492805}
+  _timeText: {fileID: 932335984}
+  _timeGOText: {fileID: 1431664010}
+  _scoreText: {fileID: 1736186549}
+  _scoreGOText: {fileID: 328308295}
+  _topScoreGOText: {fileID: 1676689792}
+  _levelText: {fileID: 1261697468}
+  _levelFill: {fileID: 364492805}
   _outline: {fileID: 1411462173}
   _initialDifficulty: 0
   _wallDistance: 40

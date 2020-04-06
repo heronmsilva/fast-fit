@@ -17,7 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TouchDetector _touchDetector = null;
     [SerializeField] private ParticleSystem _backgroundParticles = null;
     [SerializeField] private Text _timeText = null;
+    [SerializeField] private Text _timeGOText = null;
     [SerializeField] private Text _scoreText = null;
+    [SerializeField] private Text _scoreGOText = null;
+    [SerializeField] private Text _topScoreGOText = null;
     [SerializeField] private Text _levelText = null;
     [SerializeField] private Image _levelFill = null;
     [SerializeField] private Image _outline = null;
@@ -124,7 +127,11 @@ public class GameManager : MonoBehaviour
             if (_lives > 0)
                 UseLifeToRestartGame();
             else 
+            {
                 _gameOverOverlay.SetActive(true);
+                UpdateGameOverUI();
+            }
+                
         }
     }
     #endregion
@@ -301,6 +308,16 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region UI Update
+    private void UpdateGameOverUI()
+    {
+        int time = (int) (Time.time - _startTime - _touchDetector.TotalFastForward);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+
+        _timeGOText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        _scoreGOText.text = _score.ToString();
+        _topScoreGOText.text = "To Be Calculated";
+    }
+
     private void UpdateUIHeader()
     {
         UpdateUITime();
