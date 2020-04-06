@@ -16,10 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverOverlay = null;
     [SerializeField] private TouchDetector _touchDetector = null;
     [SerializeField] private ParticleSystem _backgroundParticles = null;
-    [SerializeField] private Text timeText = null;
-    [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text levelText = null;
-    [SerializeField] private Image levelFill = null;
+    [SerializeField] private Text _timeText = null;
+    [SerializeField] private Text _scoreText = null;
+    [SerializeField] private Text _levelText = null;
+    [SerializeField] private Image _levelFill = null;
     [SerializeField] private Image _outline = null;
     [SerializeField] private Difficulty _initialDifficulty = Difficulty.Level0; 
     [SerializeField] private float _wallDistance = 30f;
@@ -316,22 +316,22 @@ public class GameManager : MonoBehaviour
         int time = (int) (Time.time - _startTime - _touchDetector.TotalFastForward);
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
 
-        timeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        _timeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
     }
 
     private void UpdateUIScore()
     {
-        scoreText.text = _score.ToString();
+        _scoreText.text = _score.ToString();
     }
 
     private void UpdateUIDifficulty()
     {
         if (_difficulty == Difficulty.Level5)
-            levelText.text = "MAX";
+            _levelText.text = "MAX";
         else
-            levelText.text = "Lv " + ((int) _difficulty).ToString();
+            _levelText.text = "Lv " + ((int) _difficulty).ToString();
 
-        levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
+        _levelFill.fillAmount = (float) _crossSequence / _maxCrossSequence;
     }
 
     private void UpdateUILives()
