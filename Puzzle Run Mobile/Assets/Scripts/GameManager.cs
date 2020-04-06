@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
             else 
             {
                 _gameOverOverlay.SetActive(true);
+                UpdatePlayerPrefs();
                 UpdateGameOverUI();
             }
                 
@@ -151,6 +152,14 @@ public class GameManager : MonoBehaviour
     public void LoadMenuScene()
     {
         Debug.Log("Load Menu Scene");
+    }
+
+    private void UpdatePlayerPrefs()
+    {
+        PlayerPrefManager.SetLastScore(_score);
+        
+        if (_score > PlayerPrefManager.GetTopScore())
+            PlayerPrefManager.SetTopScore(_score);
     }
 
     private void AnimateOutline()
@@ -315,7 +324,7 @@ public class GameManager : MonoBehaviour
 
         _timeGOText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
         _scoreGOText.text = _score.ToString();
-        _topScoreGOText.text = "To Be Calculated";
+        _topScoreGOText.text = PlayerPrefManager.GetTopScore().ToString();
     }
 
     private void UpdateUIHeader()
