@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca9e8d813571bc408266eadfe0d3125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doubleTapDelta: 0.25
+  doubleTapDelta: 0.25
 --- !u!1 &832694081
 GameObject:
   m_ObjectHideFlags: 0
@@ -7996,6 +7996,7 @@ GameObject:
   - component: {fileID: 1525496432}
   - component: {fileID: 1525496433}
   - component: {fileID: 1525496434}
+  - component: {fileID: 1525496429}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -8003,6 +8004,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1525496429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525496428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a69b6be8a52442958851256ddc761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  queueSize: 3
 --- !u!4 &1525496430
 Transform:
   m_ObjectHideFlags: 0
@@ -8035,7 +8049,6 @@ MonoBehaviour:
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
-  animationChance: 50
   speedUpScale: 25
   startDifficulty: 0
   gameOverScreen: {fileID: 979503141}

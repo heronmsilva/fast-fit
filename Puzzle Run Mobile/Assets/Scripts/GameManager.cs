@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxCrossSequence = 10;
     [SerializeField] private int startLives = 1;
     [SerializeField] private int maxLives = 5;
-    [SerializeField] private int animationChance = 50;
     [SerializeField] private int speedUpScale = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject gameOverScreen = null;
@@ -19,6 +18,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     private Spawner spawner;
     private UIHandler UIHandler;
+    private AnimationBuffer animBuffer;
     private Difficulty currDifficulty;
     private float speed, startTime;
     private int lives;
@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
     public int MaxCrossSequence { get { return maxCrossSequence; } }
     public int Lives { get { return lives; } }
     public int MaxLives { get { return maxLives; } }
-    public int AnimationChance { get { return animationChance; } }
     public int SpeedUpScale { get { return speedUpScale; } }
     public Vector2 MinXY { get { return spawner.MinXY; } }
     public Vector2 MaxXY { get { return spawner.MaxXY; } }
@@ -62,6 +61,7 @@ public class GameManager : MonoBehaviour
 
         spawner = GetComponent<Spawner>();
         UIHandler = GetComponent<UIHandler>();
+        animBuffer = GetComponent<AnimationBuffer>();
         touchDetector = touchDetector.GetComponent<TouchDetector>();
     }
 
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         currDifficulty = startDifficulty;
         startTime = Time.time;
 
+        animBuffer.ResetQueue();
         spawner.SpawnObjects();
     }
 
@@ -160,6 +161,7 @@ public class GameManager : MonoBehaviour
         lives -= 1;
         crossSequence = 0;
         StopFastForward();
+        animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
         Time.timeScale = 1;

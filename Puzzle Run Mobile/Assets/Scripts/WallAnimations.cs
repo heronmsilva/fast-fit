@@ -15,8 +15,18 @@ public class WallAnimations : MonoBehaviour
         anim = this.gameObject.GetComponent<Animator>();
         anim.SetFloat("Speed", GameManager.Instance.GetAnimationSpeed());
     }
+
+    public void Play(string animation)
+    {
+        Invoke(animation, 0f);
+    }
+
+    private void None()
+    {
+
+    }
     
-    public void Fade()
+    private void Fade()
     {
         foreach (Transform cube in this.transform)
         {
@@ -24,51 +34,43 @@ public class WallAnimations : MonoBehaviour
         }
     }
 
-    public void RotateX()
+    private void RotateX()
     {
         int i = Random.Range(0, xAnimations.Count);
         StartCoroutine(PlayAnimation(xAnimations[i]));
     }
 
-    public void RotateY()
+    private void RotateY()
     {
         int i = Random.Range(0, yAnimations.Count);
         StartCoroutine(PlayAnimation(yAnimations[i]));
     }
 
-    public void RotateXY()
+    private void RotateXY()
     {
         int i = Random.Range(0, xyAnimations.Count);
         StartCoroutine(PlayAnimation(xyAnimations[i]));
     }
 
-    // Random should play none, fade and/or any rotation
-    // a 50% chance will be set for each of the cases
-    public void RandomAnims()
+    private void FadeRotateX()
     {
-        int animChance = GameManager.Instance.AnimationChance;
-        int shouldPlay = Random.Range(1, 101);
-        if (shouldPlay < animChance)
-        {
-            int shouldFade = Random.Range(1, 101);
-            if (shouldFade < animChance)
-                Fade();
-            int shouldRotate = Random.Range(1, 101);
-            if (shouldRotate < animChance)
-            {
-                List<string> animations = new List<string>();
-                animations.AddRange(xAnimations);
-                animations.AddRange(xAnimations);
-                animations.AddRange(yAnimations);
-                animations.AddRange(yAnimations);
-                animations.AddRange(xyAnimations);
-                int i = Random.Range(0, animations.Count);
-                StartCoroutine(PlayAnimation(animations[i]));
-            }
-        }
+        Fade();
+        RotateX();
     }
 
-    IEnumerator PlayAnimation(string animation)
+    private void FadeRotateY()
+    {
+        Fade();
+        RotateY();
+    }
+
+    private void FadeRotateXY()
+    {
+        Fade();
+        RotateXY();
+    }
+
+    private IEnumerator PlayAnimation(string animation)
     {
         float delay = GameManager.Instance.GetAnimationDelay();
         yield return new WaitForSeconds(delay);

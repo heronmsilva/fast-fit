@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Material> cubeMaterials = new List<Material>();
 
     private GameManager gm;
+    private AnimationBuffer animBuffer;
     private GameObject wall, piece;
     private Vector2 minXY, maxXY;
     private bool respawning = false;
@@ -27,6 +28,7 @@ public class Spawner : MonoBehaviour
     {
         gm = GetComponent<GameManager>();
         backgroundParticles = backgroundParticles.GetComponent<ParticleSystem>();
+        animBuffer = GetComponent<AnimationBuffer>();
 
         minXY = maxXY = Vector2.zero;
     }
@@ -72,31 +74,12 @@ public class Spawner : MonoBehaviour
         CreateHole();
         SetupInitialTransforms();
         SetupWallMovement();
-        ApplyCurrDifficulty();
+        PlayNextAnimation();
     }
 
-    private void ApplyCurrDifficulty()
+    private void PlayNextAnimation()
     {
-        switch (gm.CurrDifficulty)
-        {
-            case GameManager.Difficulty.Level0:
-                break;
-            case GameManager.Difficulty.Level1:
-                wall.GetComponent<WallAnimations>().Fade();
-                break;
-            case GameManager.Difficulty.Level2:
-                wall.GetComponent<WallAnimations>().RotateX();
-                break;
-            case GameManager.Difficulty.Level3:
-                wall.GetComponent<WallAnimations>().RotateY();
-                break;
-            case GameManager.Difficulty.Level4:
-                wall.GetComponent<WallAnimations>().RotateXY();
-                break;
-            case GameManager.Difficulty.Level5:
-                wall.GetComponent<WallAnimations>().RandomAnims();
-                break;
-        }
+        wall.GetComponent<WallAnimations>().Play(animBuffer.Next());
     }
 
     private void SpawnWall()
