@@ -4,42 +4,41 @@ using UnityEngine;
 
 public class TouchDetector : MonoBehaviour
 {
-    [SerializeField] private float _doubleTapDelta = .25f;
+    [SerializeField] private float doubleTapDelta = .25f;
 
-    private float _totalFF = 0;
-    private bool _isFastForwarding = false;
+    private float totalFF = 0;
+    private bool isFastForwarding = false;
 
-    private bool _doubleTap;
-    private float _lastTap, _startFF;
+    private bool doubleTap;
+    private float lastTap, startFF;
 
-    public float TotalFastForward { get { return _totalFF; } }
-    public bool IsFastForwarding { get { return _isFastForwarding; } }
+    public float TotalFastForward { get { return totalFF; } }
 
     public void CheckDoubleTap()
     {
-        _doubleTap = false;
+        doubleTap = false;
         
-        _doubleTap = Time.time - _lastTap < _doubleTapDelta;
-        _lastTap = Time.time;
+        doubleTap = Time.time - lastTap < doubleTapDelta;
+        lastTap = Time.time;
 
-        if (_doubleTap)
+        if (doubleTap)
             FastForward();
     }
 
     public void StopFastForward()
     {
-        if (_isFastForwarding)
+        if (isFastForwarding)
         {
-            _isFastForwarding = false;
-            _totalFF += Time.time - _startFF;
+            isFastForwarding = false;
+            totalFF += Time.time - startFF;
             Time.timeScale = 1;
         }
     }
 
     private void FastForward()
     {
-        _isFastForwarding = true;
-        _startFF = Time.time;
+        isFastForwarding = true;
+        startFF = Time.time;
         Time.timeScale = GameManager.Instance.SpeedUpScale;
     }
 }

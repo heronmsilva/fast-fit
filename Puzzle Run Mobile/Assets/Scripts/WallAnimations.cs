@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallAnimations : MonoBehaviour
 {
-    private Animator _anim;
+    private Animator anim;
     
     private List<string> xAnimations = new List<string>() { "WallRotateX", "WallRotateX-" };
     private List<string> yAnimations = new List<string>() { "WallRotateY", "WallRotateY-" };
@@ -12,8 +12,8 @@ public class WallAnimations : MonoBehaviour
 
     private void Start()
     {
-        _anim = this.gameObject.GetComponent<Animator>();
-        _anim.SetFloat("Speed", GameManager.Instance.AnimationSpeed);
+        anim = this.gameObject.GetComponent<Animator>();
+        anim.SetFloat("Speed", GameManager.Instance.GetAnimationSpeed());
     }
     
     public void Fade()
@@ -70,8 +70,8 @@ public class WallAnimations : MonoBehaviour
 
     IEnumerator PlayAnimation(string animation)
     {
-        float delay = GameManager.Instance.AnimationDelay;
+        float delay = GameManager.Instance.GetAnimationDelay();
         yield return new WaitForSeconds(delay);
-        _anim.Play(animation);
+        anim.Play(animation);
     }
 }

@@ -4,11 +4,30 @@ using UnityEngine;
 
 public class MoveTo : MonoBehaviour
 {
-    public float speed;
-    public Vector3 waypoint;
+    private bool concluded = false;
+    private float speed;
+    private Vector3 waypoint;
+
+    public bool IsConcluded { get { return concluded; } }
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypoint, Time.deltaTime * speed);
+        concluded = this.transform.position == waypoint;
+
+        this.transform.position = Vector3.MoveTowards(
+            this.transform.position, 
+            waypoint, 
+            Time.deltaTime * speed
+        );
+    }
+
+    public void SetSpeed(float value)
+    {
+        speed = value;
+    }
+
+    public void SetWaypoint(Vector3 point)
+    {
+        waypoint = point;
     }
 }

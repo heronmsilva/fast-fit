@@ -6,38 +6,39 @@ public class PieceController : MonoBehaviour
 {
     [SerializeField] private float _moveDeltaTime = .1f;
 
-    private Joystick _joystick;
-    private float _lastMove;
-    private Vector2 _minXY, _maxXY;
-    private float _isFlipped = 1;
-    private float _rotationOffset = .1f; // added since rotation slightly changes position
+    private Joystick joystick;
+    private float lastMove;
+    private Vector2 minXY, maxXY;
+    private float isFlipped = 1;
+    private float rotationOffset = .1f; // added since rotation slightly changes position
 
     private void Start()
     {
-        _joystick = FindObjectOfType<FixedJoystick>();
-        if (! _joystick)
-            _joystick = FindObjectOfType<FloatingJoystick>();
+        joystick = FindObjectOfType<FixedJoystick>();
+        if (! joystick)
+            joystick = FindObjectOfType<FloatingJoystick>();
             
-        _lastMove = Time.time;
-        _minXY = GameManager.Instance.MinXY;
-        _maxXY = GameManager.Instance.MaxXY;
+        lastMove = Time.time;
+        
+        minXY = GameManager.Instance.MinXY;
+        maxXY = GameManager.Instance.MaxXY;
     }
 
     private void Update()
     {
         if (GameManager.Instance.IsGameOver) return;
 
-        if (Time.time - _lastMove > _moveDeltaTime)
+        if (Time.time - lastMove > _moveDeltaTime)
         {
-            if (Mathf.Abs(_joystick.Horizontal) > .5f)
+            if (Mathf.Abs(joystick.Horizontal) > .5f)
             {
-                this.transform.position += Vector3.right * Mathf.Sign(_joystick.Horizontal);
-                _lastMove = Time.time;
+                this.transform.position += Vector3.right * Mathf.Sign(joystick.Horizontal);
+                lastMove = Time.time;
             }
-            if (Mathf.Abs(_joystick.Vertical) > .5f)
+            if (Mathf.Abs(joystick.Vertical) > .5f)
             {
-                this.transform.position += Vector3.up * Mathf.Sign(_joystick.Vertical);
-                _lastMove = Time.time;
+                this.transform.position += Vector3.up * Mathf.Sign(joystick.Vertical);
+                lastMove = Time.time;
             }
         }
         
@@ -52,7 +53,7 @@ public class PieceController : MonoBehaviour
         // Single is inverted in order to
         // rotate in the correct orientation
         // once the piece has been flipped
-        _isFlipped = -1 * _isFlipped;
+        isFlipped = -1 * isFlipped;
     }
 
     public void FlipRight()
@@ -63,20 +64,20 @@ public class PieceController : MonoBehaviour
         // Single is inverted in order to
         // rotate in the correct orientation
         // once the piece has been flipped
-        _isFlipped = -1 * _isFlipped;
+        isFlipped = -1 * isFlipped;
     }
 
     public void RotateLeft()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles += Vector3.forward * 90 * _isFlipped;
+        eulerAngles += Vector3.forward * 90 * isFlipped;
         this.transform.eulerAngles = eulerAngles;
     }
 
     public void RotateRight()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
-        eulerAngles += Vector3.forward * -90 * _isFlipped;
+        eulerAngles += Vector3.forward * -90 * isFlipped;
         this.transform.eulerAngles = eulerAngles;
     }
 
@@ -86,10 +87,10 @@ public class PieceController : MonoBehaviour
     {
         foreach (Transform container in this.transform)
         {
-            if (container.position.x < _minXY.x - _rotationOffset) this.transform.position += Vector3.right;
-            if (container.position.x > _maxXY.x + _rotationOffset) this.transform.position -= Vector3.right;
-            if (container.position.y < _minXY.y - _rotationOffset) this.transform.position += Vector3.up;
-            if (container.position.y > _maxXY.y + _rotationOffset) this.transform.position -= Vector3.up;
+            if (container.position.x < minXY.x - rotationOffset) this.transform.position += Vector3.right;
+            if (container.position.x > maxXY.x + rotationOffset) this.transform.position -= Vector3.right;
+            if (container.position.y < minXY.y - rotationOffset) this.transform.position += Vector3.up;
+            if (container.position.y > maxXY.y + rotationOffset) this.transform.position -= Vector3.up;
         }
     }
 }

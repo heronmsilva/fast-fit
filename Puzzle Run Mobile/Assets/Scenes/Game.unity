@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 92055547}
   - component: {fileID: 92055546}
   m_Layer: 5
-  m_Name: Square
+  m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 364492806}
   - component: {fileID: 364492805}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Level Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525496429}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadMenuScene
         m_Mode: 1
         m_Arguments:
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 598127676}
   - component: {fileID: 598127675}
   m_Layer: 5
-  m_Name: Square
+  m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 832694084}
   - component: {fileID: 832694083}
   m_Layer: 5
-  m_Name: Square
+  m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6551,7 +6551,7 @@ GameObject:
   - component: {fileID: 932335985}
   - component: {fileID: 932335984}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Time Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6820,7 +6820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525496429}
+      - m_Target: {fileID: 1525496433}
         m_MethodName: FlipPieceUp
         m_Mode: 1
         m_Arguments:
@@ -6879,7 +6879,7 @@ GameObject:
   - component: {fileID: 1093185539}
   - component: {fileID: 1093185538}
   m_Layer: 5
-  m_Name: Square
+  m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7132,7 +7132,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525496429}
+      - m_Target: {fileID: 1525496433}
         m_MethodName: FlipPieceRight
         m_Mode: 1
         m_Arguments:
@@ -7364,7 +7364,7 @@ GameObject:
   - component: {fileID: 1261697469}
   - component: {fileID: 1261697468}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7441,7 +7441,7 @@ GameObject:
   - component: {fileID: 1274845565}
   - component: {fileID: 1274845564}
   m_Layer: 5
-  m_Name: Square
+  m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7992,7 +7992,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1525496430}
-  - component: {fileID: 1525496429}
+  - component: {fileID: 1525496431}
+  - component: {fileID: 1525496432}
+  - component: {fileID: 1525496433}
+  - component: {fileID: 1525496434}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -8000,7 +8003,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1525496429
+--- !u!4 &1525496430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525496428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525496431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8009,36 +8026,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1525496428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab19a4d8e3047b04590ed9ab2ca040f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 467a5bc834df7fd469bad442b9d57f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dynamicContainer: {fileID: 127126778}
-  _wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
+  wallDistance: 40
+  startSpeed: 5
+  speedIncreaseDelta: 0.1
+  maxCrossSequence: 10
+  startLives: 1
+  maxLives: 5
+  animationChance: 50
+  speedUpScale: 25
+  startDifficulty: 0
+  gameOverScreen: {fileID: 979503141}
+  touchDetector: {fileID: 825125752}
+--- !u!114 &1525496432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525496428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e67b48ca4ab2a40a0e0b81a06a503a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
     type: 3}
-  _floatingTextPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
+  floatingTextPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
     type: 3}
-  _pieceStartPoint: {fileID: 823786036}
-  _uiLevel: {fileID: 157491351}
-  _gameOverOverlay: {fileID: 979503141}
-  _touchDetector: {fileID: 825125752}
-  _backgroundParticles: {fileID: 837399150}
-  _timeText: {fileID: 932335984}
-  _timeGOText: {fileID: 1431664010}
-  _scoreText: {fileID: 1736186549}
-  _scoreGOText: {fileID: 328308295}
-  _topScoreGOText: {fileID: 1676689792}
-  _levelText: {fileID: 1261697468}
-  _levelFill: {fileID: 364492805}
-  _outline: {fileID: 1411462173}
-  _initialDifficulty: 0
-  _wallDistance: 40
-  _startSpeed: 5
-  _increaseSpeed: 0.1
-  _animationChance: 50
-  _startLives: 1
-  _maxCrossSequence: 10
-  _speedUpScale: 25
-  _piecePrefabs:
+  dynamicContainer: {fileID: 127126778}
+  pieceStartPoint: {fileID: 823786036}
+  backgroundParticles: {fileID: 837399150}
+  piecesPrefabs:
   - {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702, type: 3}
   - {fileID: 1897107398019972896, guid: 91959d71108e72f4c80a8ac48d83a443, type: 3}
   - {fileID: 1897107398019972896, guid: fc1ad239d1da6a44a9c4763f55644636, type: 3}
@@ -8054,33 +8075,52 @@ MonoBehaviour:
   - {fileID: 1897107398019972896, guid: ae9a4e0a11b558d448f6fb5e0aa21827, type: 3}
   - {fileID: 1897107398019972896, guid: a94f19c79343bba4c8ed6257021661eb, type: 3}
   - {fileID: 1897107398019972896, guid: ff356050259c4b643a0250eb53cf29dc, type: 3}
-  _lifeImages:
-  - {fileID: 832694083}
-  - {fileID: 92055546}
-  - {fileID: 598127675}
-  - {fileID: 1093185538}
-  - {fileID: 1274845564}
-  _cubeMaterials:
+  cubeMaterials:
   - {fileID: 2100000, guid: cb74f12fdf527644da32507ca7759ba6, type: 2}
   - {fileID: 2100000, guid: 2be78f0c3ca4b3446b45e5767a429699, type: 2}
   - {fileID: 2100000, guid: 22e566d86358ba04eab17ba257a43a84, type: 2}
   - {fileID: 2100000, guid: f515a5276fd075144b1d92b23e862197, type: 2}
   - {fileID: 2100000, guid: afc27402bf00f634ea700ccf067fa1b7, type: 2}
   - {fileID: 2100000, guid: caf045c42d13c92438ef2191b590535b, type: 2}
---- !u!4 &1525496430
-Transform:
+--- !u!114 &1525496433
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525496428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3236c815f5bdf541828a97582c06eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1525496434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525496428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afab874e4dc58384aa0977b59f2ebdf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 157491351}
+  timeText: {fileID: 932335984}
+  timeGOText: {fileID: 1431664010}
+  scoreText: {fileID: 1736186549}
+  scoreGOText: {fileID: 328308295}
+  topScoreGOText: {fileID: 1676689792}
+  levelText: {fileID: 1261697468}
+  levelFill: {fileID: 364492805}
+  outline: {fileID: 1411462173}
+  lifeImages:
+  - {fileID: 832694083}
+  - {fileID: 92055546}
+  - {fileID: 598127675}
+  - {fileID: 1093185538}
+  - {fileID: 1274845564}
 --- !u!1 &1553871878
 GameObject:
   m_ObjectHideFlags: 0
@@ -8573,7 +8613,7 @@ GameObject:
   - component: {fileID: 1736186550}
   - component: {fileID: 1736186549}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8945,7 +8985,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525496429}
+      - m_Target: {fileID: 1525496433}
         m_MethodName: RotatePieceLeft
         m_Mode: 1
         m_Arguments:
@@ -9189,7 +9229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1525496429}
+      - m_Target: {fileID: 1525496433}
         m_MethodName: RotatePieceRight
         m_Mode: 1
         m_Arguments:
