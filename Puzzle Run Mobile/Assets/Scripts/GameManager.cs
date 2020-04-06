@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -311,7 +312,11 @@ public class GameManager : MonoBehaviour
     private void UpdateUITime()
     {
         if (_touchDetector.IsFastForwarding) return;
-        timeText.text = ((int) (Time.time - _startTime - _touchDetector.TotalFastForward)).ToString();
+
+        int time = (int) (Time.time - _startTime - _touchDetector.TotalFastForward);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+
+        timeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
     }
 
     private void UpdateUIScore()
@@ -416,7 +421,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPiece()
     {
-        int i = Random.Range(0, _piecePrefabs.Count);
+        int i = UnityEngine.Random.Range(0, _piecePrefabs.Count);
         _piece = Instantiate(_piecePrefabs[i], _dynamicContainer.transform) as GameObject;
     }
 
@@ -424,7 +429,7 @@ public class GameManager : MonoBehaviour
     // within the wall boundries
     private void RandomizePiecePosition()
     {
-        int i = Random.Range(0, _wall.transform.childCount);
+        int i = UnityEngine.Random.Range(0, _wall.transform.childCount);
         Vector3 pos = _wall.transform.GetChild(i).position;
 
         // If the position is exactly at the border
@@ -439,7 +444,7 @@ public class GameManager : MonoBehaviour
 
     private void RandomizePieceRotation()
     {
-        int randMult = Random.Range(0, 4);
+        int randMult = UnityEngine.Random.Range(0, 4);
 
         Vector3 eulerAngles = _piece.transform.eulerAngles;
         eulerAngles = new Vector3(0, 0, 90) * randMult;
