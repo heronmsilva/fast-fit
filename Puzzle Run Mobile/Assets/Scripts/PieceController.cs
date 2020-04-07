@@ -8,7 +8,6 @@ public class PieceController : MonoBehaviour
 
     private Joystick joystick;
     private float lastMove;
-    private Vector2 minXY, maxXY;
     private float isFlipped = 1;
     private float rotationOffset = .1f; // added since rotation slightly changes position
 
@@ -19,9 +18,6 @@ public class PieceController : MonoBehaviour
             joystick = FindObjectOfType<FloatingJoystick>();
             
         lastMove = Time.time;
-        
-        minXY = GameManager.Instance.MinXY;
-        maxXY = GameManager.Instance.MaxXY;
     }
 
     private void Update()
@@ -85,6 +81,9 @@ public class PieceController : MonoBehaviour
     // it's brought back within
     private void FixIfOutOfBounds()
     {
+        Vector2 minXY = GameManager.Instance.MinXY;
+        Vector2 maxXY = GameManager.Instance.MaxXY;
+        
         foreach (Transform container in this.transform)
         {
             if (container.position.x < minXY.x - rotationOffset) this.transform.position += Vector3.right;

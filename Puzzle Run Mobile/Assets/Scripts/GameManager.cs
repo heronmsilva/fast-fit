@@ -73,11 +73,12 @@ public class GameManager : MonoBehaviour
         startTime = Time.time;
 
         animBuffer.ResetQueue();
-        spawner.SpawnObjects();
     }
 
     private void Update()
     {
+        if (! spawner.Wall) spawner.SpawnObjects();
+
         if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning)
         {
             StopFastForward();

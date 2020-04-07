@@ -24,12 +24,15 @@ public class Spawner : MonoBehaviour
     public Vector2 MaxXY { get { return maxXY; } }
     public bool IsRespawning { get { return respawning; } }
 
-    private void Start()
+    private void Awake()
     {
         gm = GetComponent<GameManager>();
         backgroundParticles = backgroundParticles.GetComponent<ParticleSystem>();
         animBuffer = GetComponent<AnimationBuffer>();
+    }
 
+    private void Start()
+    {
         minXY = maxXY = Vector2.zero;
     }
 
