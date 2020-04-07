@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationBuffer : MonoBehaviour
 {
-    [SerializeField] private int queueSize = 3;
+    [SerializeField] private int queueSize = 1;
 
     private Queue<string> animationQueue = new Queue<string>();
     
@@ -49,32 +49,20 @@ public class AnimationBuffer : MonoBehaviour
         {
             case GameManager.Difficulty.Level0:
                 animationQueue.Enqueue(animsByDifficulty[0]);
-                animationQueue.Enqueue(animsByDifficulty[0]);
-                animationQueue.Enqueue(animsByDifficulty[0]);
                 break;
             case GameManager.Difficulty.Level1:
-                animationQueue.Enqueue(animsByDifficulty[1]);
-                animationQueue.Enqueue(animsByDifficulty[1]);
                 animationQueue.Enqueue(animsByDifficulty[1]);
                 break;
             case GameManager.Difficulty.Level2:
                 animationQueue.Enqueue(animsByDifficulty[2]);
-                animationQueue.Enqueue(animsByDifficulty[2]);
-                animationQueue.Enqueue(animsByDifficulty[2]);
                 break;
             case GameManager.Difficulty.Level3:
-                animationQueue.Enqueue(animsByDifficulty[3]);
-                animationQueue.Enqueue(animsByDifficulty[3]);
                 animationQueue.Enqueue(animsByDifficulty[3]);
                 break;
             case GameManager.Difficulty.Level4:
                 animationQueue.Enqueue(animsByDifficulty[4]);
-                animationQueue.Enqueue(animsByDifficulty[4]);
-                animationQueue.Enqueue(animsByDifficulty[4]);
                 break;
             case GameManager.Difficulty.Level5:
-                animationQueue.Enqueue(RandomAnim());
-                animationQueue.Enqueue(RandomAnim());
                 animationQueue.Enqueue(RandomAnim());
                 break;
         }
