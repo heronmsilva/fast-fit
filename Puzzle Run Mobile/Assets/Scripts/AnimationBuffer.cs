@@ -50,6 +50,7 @@ public class AnimationBuffer : MonoBehaviour
 
     public void ResetQueue()
     {
+        animationQueue.Clear();
         switch (gm.CurrDifficulty)
         {
             case GameManager.Difficulty.Level0:
