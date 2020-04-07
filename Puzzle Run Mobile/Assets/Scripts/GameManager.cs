@@ -166,12 +166,12 @@ public class GameManager : MonoBehaviour
     {
         lives -= 1;
         crossSequence = 0;
-        StopFastForward();
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         UIHandler.UpdateUIHeader();
         gameOver = false;
         Time.timeScale = 1;
+        StopFastForward();
     }
 
     private void IncreaseDifficulty()
