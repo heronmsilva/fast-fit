@@ -8202,12 +8202,22 @@ MonoBehaviour:
   levelText: {fileID: 1261697468}
   levelFill: {fileID: 364492805}
   outline: {fileID: 1411462173}
+  nextAnimImage: {fileID: 702509068}
   lifeImages:
   - {fileID: 832694083}
   - {fileID: 92055546}
   - {fileID: 598127675}
   - {fileID: 1093185538}
   - {fileID: 1274845564}
+  nextAnimsIcons:
+  - {fileID: 21300000, guid: 6a81cf3e2012f794782fc746de7d5c80, type: 3}
+  - {fileID: 21300000, guid: 72f2beb7c6e659c4ab76c12bccefe3d0, type: 3}
+  - {fileID: 21300000, guid: 0aad6492cc59c3d47a8a3bf99fe3d946, type: 3}
+  - {fileID: 21300000, guid: afc5ddc60193500498e68109521c6e81, type: 3}
+  - {fileID: 21300000, guid: cb994217334462342af8b6927051fd6f, type: 3}
+  - {fileID: 21300000, guid: d898348baaf077d47bc6b07ec9239b92, type: 3}
+  - {fileID: 21300000, guid: fd3cf5ea4f777b34fb6d6007b9f11228, type: 3}
+  - {fileID: 21300000, guid: c81080b55bff26e4889de67a394603d0, type: 3}
 --- !u!1 &1553871878
 GameObject:
   m_ObjectHideFlags: 0

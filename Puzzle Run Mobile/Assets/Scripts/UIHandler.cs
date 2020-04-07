@@ -15,14 +15,18 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
+    [SerializeField] private Image nextAnimImage = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
+    [SerializeField] private List<Sprite> nextAnimsIcons = new List<Sprite>();
     
     private GameManager gm;
+    private AnimationBuffer animBuffer;
     private float startTime;
 
     private void Start()
     {
         gm = GetComponent<GameManager>();
+        animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
     }
@@ -41,6 +45,7 @@ public class UIHandler : MonoBehaviour
         UpdateUIDifficulty();
         UpdateUIDifficultyFill();
         UpdateUILives();
+        UpdateNextAnimation();
     }
 
     public void PlayLevelUpAnimation()
@@ -109,6 +114,37 @@ public class UIHandler : MonoBehaviour
                 lifeImages[i].enabled = true;
             else
                 lifeImages[i].enabled = false;
+        }
+    }
+
+    private void UpdateNextAnimation()
+    {
+        switch (animBuffer.GetNextAnimation())
+        {
+            case "None":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[0];
+                break;
+            case "Fade":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[1];
+                break;
+            case "FadeRotateX":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[2];
+                break;
+            case "FadeRotateXY":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[3];
+                break;
+            case "FadeRotateY":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[4];
+                break;
+            case "RotateX":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[5];
+                break;
+            case "RotateXY":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[6];
+                break;
+            case "RotateY":
+                nextAnimImage.GetComponent<Image>().sprite = nextAnimsIcons[7];
+                break;
         }
     }
 }
