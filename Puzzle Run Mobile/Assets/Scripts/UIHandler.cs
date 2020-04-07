@@ -77,7 +77,7 @@ public class UIHandler : MonoBehaviour
         topScoreGOText.text = PlayerPrefManager.GetTopScore().ToString();
     }
 
-    public void UpdateUITime()
+    private void UpdateUITime()
     {
         if (Time.timeScale != 1) return;
 

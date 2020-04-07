@@ -98,9 +98,8 @@ public class GameManager : MonoBehaviour
             ScorePoints();
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
-            UIHandler.UpdateUIHeader();
         }
-        UIHandler.UpdateUITime();
+        UIHandler.UpdateUIHeader();
     }
 
     private void LateUpdate()
@@ -168,7 +167,6 @@ public class GameManager : MonoBehaviour
         crossSequence = 0;
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
-        UIHandler.UpdateUIHeader();
         gameOver = false;
         Time.timeScale = 1;
         StopFastForward();
