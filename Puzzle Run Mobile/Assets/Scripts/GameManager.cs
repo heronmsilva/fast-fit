@@ -77,7 +77,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (! spawner.Wall) spawner.SpawnObjects();
+        if (! spawner.Wall) // First spawn
+        {
+            spawner.SpawnObjects();
+            UIHandler.UpdateUIHeader();
+        }
 
         if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning)
         {
@@ -94,8 +98,9 @@ public class GameManager : MonoBehaviour
             ScorePoints();
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
+            UIHandler.UpdateUIHeader();
         }
-        UIHandler.UpdateUIHeader();
+        UIHandler.UpdateUITime();
     }
 
     private void LateUpdate()
@@ -164,6 +169,7 @@ public class GameManager : MonoBehaviour
         StopFastForward();
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
+        UIHandler.UpdateUIHeader();
         gameOver = false;
         Time.timeScale = 1;
     }
