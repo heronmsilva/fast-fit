@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float wallDistance = 40;
     [SerializeField] private float startSpeed = 5;
     [SerializeField] private float speedIncreaseDelta = 0.1f;
+    [SerializeField] private float pitchIncreaseDelta = 0.001f;
     [SerializeField] private int maxCrossSequence = 10;
     [SerializeField] private int startLives = 1;
     [SerializeField] private int maxLives = 5;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private TouchDetector touchDetector = null;
+    [SerializeField] private AudioSource audioSource = null;
 
     private static GameManager instance;
     private Spawner spawner;
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         touchDetector = touchDetector.GetComponent<TouchDetector>();
+        audioSource = audioSource.GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -87,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             StopFastForward();
             speed += speedIncreaseDelta;
+            audioSource.pitch += pitchIncreaseDelta;
             crossSequence += 1;
             if (crossSequence == maxCrossSequence)
             {

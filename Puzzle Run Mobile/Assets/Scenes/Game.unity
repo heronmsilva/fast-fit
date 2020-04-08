@@ -8295,6 +8295,7 @@ MonoBehaviour:
   wallDistance: 40
   startSpeed: 5
   speedIncreaseDelta: 0.1
+  pitchIncreaseDelta: 0.001
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
@@ -8302,6 +8303,7 @@ MonoBehaviour:
   startDifficulty: 0
   gameOverScreen: {fileID: 979503141}
   touchDetector: {fileID: 825125752}
+  audioSource: {fileID: 963194229}
 --- !u!114 &1525496432
 MonoBehaviour:
   m_ObjectHideFlags: 0
