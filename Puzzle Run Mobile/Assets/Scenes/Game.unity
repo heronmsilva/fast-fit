@@ -8246,6 +8246,7 @@ GameObject:
   - component: {fileID: 1525496433}
   - component: {fileID: 1525496434}
   - component: {fileID: 1525496429}
+  - component: {fileID: 1525496435}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -8303,7 +8304,6 @@ MonoBehaviour:
   startDifficulty: 0
   gameOverScreen: {fileID: 979503141}
   touchDetector: {fileID: 825125752}
-  audioSource: {fileID: 963194229}
 --- !u!114 &1525496432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8395,6 +8395,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c2d1700d9d4a24d41a9024092bb65d57, type: 3}
   - {fileID: 21300000, guid: 736e95f55231de0468a4709cb4ed1fa0, type: 3}
   - {fileID: 21300000, guid: 9142e3ad37625374180d317a18336f75, type: 3}
+--- !u!114 &1525496435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525496428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84276a8e678bd4543af620fa16c57f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 963194229}
 --- !u!1 &1553871878
 GameObject:
   m_ObjectHideFlags: 0
