@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource backgroundAudioSource;
 
     private void Awake()
     {
-        audioSource = audioSource.GetComponent<AudioSource>();
+        backgroundAudioSource = backgroundAudioSource.GetComponent<AudioSource>();
     }
 
-    public void IncreasePitch(float delta)
+    public void IncreaseBackgroundPitch(float delta)
     {
-        audioSource.pitch += delta;
+        backgroundAudioSource.pitch += delta;
     }
 }

@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         {
             StopFastForward();
             speed += speedIncreaseDelta;
-            audioHandler.IncreasePitch(pitchIncreaseDelta);
+            audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
             crossSequence += 1;
             if (crossSequence == maxCrossSequence)
             {
