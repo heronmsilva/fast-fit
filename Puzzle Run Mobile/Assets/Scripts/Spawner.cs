@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
     [SerializeField] private ParticleSystem backgroundRays = null;
+    [SerializeField] private ParticleSystem backgroundDust = null;
     [SerializeField] private List<GameObject> piecesPrefabs = new List<GameObject>();
     [SerializeField] private List<Material> cubeMaterials = new List<Material>();
 
@@ -70,6 +71,7 @@ public class Spawner : MonoBehaviour
         SpawnWall();
         UpdateCubeMaterial();
         UpdateBackgroundRays();
+        UpdateBackgroundDust();
         SetupMinMaxXY();
         SpawnPiece();
         RandomizePiecePosition();
@@ -107,6 +109,17 @@ public class Spawner : MonoBehaviour
         
         var emission = backgroundRays.emission;
         emission.rateOverTime = (int) (2.4f * gm.Speed * 1.6f);
+    }
+
+    private void UpdateBackgroundDust()
+    {
+        var main = backgroundRays.main;
+        main.startColor = cubeMaterials[(int) gm.CurrDifficulty].color;
+        main.startSpeed = 2f * gm.Speed;
+        main.startLifetime = 60 / (2f * gm.Speed);
+        
+        var emission = backgroundRays.emission;
+        emission.rateOverTime = (int) (2f * gm.Speed * 1.6f);
     }
 
     // Sets up boundries for movement

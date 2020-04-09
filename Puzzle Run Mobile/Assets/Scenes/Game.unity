@@ -13078,7 +13078,8 @@ MonoBehaviour:
     type: 3}
   dynamicContainer: {fileID: 127126778}
   pieceStartPoint: {fileID: 823786036}
-  backgroundParticles: {fileID: 837399150}
+  backgroundRays: {fileID: 837399150}
+  backgroundDust: {fileID: 464800702}
   piecesPrefabs:
   - {fileID: 1897107398019972896, guid: 52518611e95e8454fb0e45d19cc4e702, type: 3}
   - {fileID: 1897107398019972896, guid: 91959d71108e72f4c80a8ac48d83a443, type: 3}
