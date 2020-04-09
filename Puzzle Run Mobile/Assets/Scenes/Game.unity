@@ -8297,7 +8297,7 @@ MonoBehaviour:
   wallDistance: 40
   startSpeed: 5
   speedIncreaseDelta: 0.1
-  pitchIncreaseDelta: 0.0015
+  pitchIncreaseDelta: 0.001
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
