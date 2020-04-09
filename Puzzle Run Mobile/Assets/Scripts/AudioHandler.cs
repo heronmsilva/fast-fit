@@ -6,6 +6,7 @@ public class AudioHandler : MonoBehaviour
 {
     [SerializeField] private AudioSource backgroundAudioSource = null;
     [SerializeField] private AudioClip wallCrossClip = null;
+    [SerializeField] private AudioClip wallBumpClip = null;
 
     private AudioSource audioSource;
 
@@ -25,6 +26,12 @@ public class AudioHandler : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         audioSource.clip = wallCrossClip;
+        audioSource.Play();
+    }
+
+    public void PlayWallBump()
+    {
+        audioSource.clip = wallBumpClip;
         audioSource.Play();
     }
 }
