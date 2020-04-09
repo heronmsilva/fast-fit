@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab = null;
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
-    [SerializeField] private ParticleSystem backgroundParticles = null;
+    [SerializeField] private ParticleSystem backgroundRays = null;
     [SerializeField] private List<GameObject> piecesPrefabs = new List<GameObject>();
     [SerializeField] private List<Material> cubeMaterials = new List<Material>();
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
     private void Awake()
     {
         gm = GetComponent<GameManager>();
-        backgroundParticles = backgroundParticles.GetComponent<ParticleSystem>();
+        backgroundRays = backgroundRays.GetComponent<ParticleSystem>();
         animBuffer = GetComponent<AnimationBuffer>();
     }
 
@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour
     {
         SpawnWall();
         UpdateCubeMaterial();
-        UpdateBackgroundParticles();
+        UpdateBackgroundRays();
         SetupMinMaxXY();
         SpawnPiece();
         RandomizePiecePosition();
@@ -98,15 +98,15 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void UpdateBackgroundParticles()
+    private void UpdateBackgroundRays()
     {
-        var main = backgroundParticles.main;
+        var main = backgroundRays.main;
         main.startColor = cubeMaterials[(int) gm.CurrDifficulty].color;
-        main.startSpeed = 3 * gm.Speed;
-        main.startLifetime = 60 / (3 * gm.Speed);
+        main.startSpeed = 2.4f * gm.Speed;
+        main.startLifetime = 60 / (2.4f * gm.Speed);
         
-        var emission = backgroundParticles.emission;
-        emission.rateOverTime = (int) (3 * gm.Speed * 1.6);
+        var emission = backgroundRays.emission;
+        emission.rateOverTime = (int) (2.4f * gm.Speed * 1.6f);
     }
 
     // Sets up boundries for movement
