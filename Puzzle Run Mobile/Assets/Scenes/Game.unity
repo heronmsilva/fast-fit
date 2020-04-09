@@ -8412,6 +8412,7 @@ MonoBehaviour:
   wallCrossClip: {fileID: 8300000, guid: e05c84ad9b2951345a5e766d78697967, type: 3}
   restartClip: {fileID: 8300000, guid: 47f83f083fc249543a1c49740074439e, type: 3}
   gameOverClip: {fileID: 8300000, guid: 54a6b8468f40e174a9418a109974a818, type: 3}
+  levelUpClip: {fileID: 8300000, guid: a986ede8a974ab0408d727cd77178ec9, type: 3}
 --- !u!82 &1525496436
 AudioSource:
   m_ObjectHideFlags: 0

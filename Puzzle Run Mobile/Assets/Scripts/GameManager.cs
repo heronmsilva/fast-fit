@@ -98,11 +98,15 @@ public class GameManager : MonoBehaviour
                 IncreaseDifficulty();
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
+                StartCoroutine(audioHandler.PlayLevelUp(0.25f));
+            }
+            else
+            {
+                StartCoroutine(audioHandler.PlayWallCross(0.25f));
             }
             ScorePoints();
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
-            StartCoroutine(audioHandler.PlayWallCross(0.25f));
         }
         UIHandler.UpdateUIHeader();
     }

@@ -8,6 +8,7 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] private AudioClip wallCrossClip = null;
     [SerializeField] private AudioClip restartClip = null;
     [SerializeField] private AudioClip gameOverClip = null;
+    [SerializeField] private AudioClip levelUpClip = null;
 
     private AudioSource audioSource;
 
@@ -32,6 +33,14 @@ public class AudioHandler : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         audioSource.clip = wallCrossClip;
+        audioSource.Play();
+    }
+
+    public IEnumerator PlayLevelUp(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        audioSource.clip = levelUpClip;
         audioSource.Play();
     }
 
