@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a8f16789a7624d4fa235faf16be28d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ea56a7492f52e4b95cf90e938f67a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a8f16789a7624d4fa235faf16be28d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ea56a7492f52e4b95cf90e938f67a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a8f16789a7624d4fa235faf16be28d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ea56a7492f52e4b95cf90e938f67a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7092,7 +7092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a8f16789a7624d4fa235faf16be28d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ea56a7492f52e4b95cf90e938f67a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7733,7 +7733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a8f16789a7624d4fa235faf16be28d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43ea56a7492f52e4b95cf90e938f67a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8412,7 +8412,7 @@ MonoBehaviour:
   wallCrossClip: {fileID: 8300000, guid: e05c84ad9b2951345a5e766d78697967, type: 3}
   restartClip: {fileID: 8300000, guid: 47f83f083fc249543a1c49740074439e, type: 3}
   gameOverClip: {fileID: 8300000, guid: 54a6b8468f40e174a9418a109974a818, type: 3}
-  levelUpClip: {fileID: 8300000, guid: a986ede8a974ab0408d727cd77178ec9, type: 3}
+  levelUpClip: {fileID: 8300000, guid: 8d25133860d423742b157cfc2eca62f7, type: 3}
 --- !u!82 &1525496436
 AudioSource:
   m_ObjectHideFlags: 0
