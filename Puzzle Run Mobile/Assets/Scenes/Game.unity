@@ -6397,7 +6397,7 @@ GameObject:
   - component: {fileID: 837399150}
   - component: {fileID: 837399149}
   m_Layer: 0
-  m_Name: Background Particles
+  m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
