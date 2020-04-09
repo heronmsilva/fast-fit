@@ -7,6 +7,7 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] private AudioSource backgroundAudioSource = null;
     [SerializeField] private AudioClip wallCrossClip = null;
     [SerializeField] private AudioClip wallBumpClip = null;
+    [SerializeField] private AudioClip restartClip = null;
 
     private AudioSource audioSource;
 
@@ -32,6 +33,12 @@ public class AudioHandler : MonoBehaviour
     public void PlayWallBump()
     {
         audioSource.clip = wallBumpClip;
+        audioSource.Play();
+    }
+
+    public void PlayRestart()
+    {
+        audioSource.clip = restartClip;
         audioSource.Play();
     }
 }

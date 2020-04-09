@@ -8410,6 +8410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundAudioSource: {fileID: 963194229}
   wallCrossClip: {fileID: 8300000, guid: 0ca4c1031ce51f14290a64aae7907c70, type: 3}
+  wallBumpClip: {fileID: 8300000, guid: ed3d0eb1d4a4b2c40aa8c8afdc59de65, type: 3}
+  restartClip: {fileID: 8300000, guid: 681092b93e8b89848809f9847e66bb79, type: 3}
 --- !u!82 &1525496436
 AudioSource:
   m_ObjectHideFlags: 0

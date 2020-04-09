@@ -169,6 +169,7 @@ public class GameManager : MonoBehaviour
 
     private void UseLife()
     {
+        audioHandler.PlayRestart();
         lives -= 1;
         crossSequence = 0;
         animBuffer.ResetQueue();
