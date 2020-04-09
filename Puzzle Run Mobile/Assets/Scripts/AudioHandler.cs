@@ -8,6 +8,7 @@ public class AudioHandler : MonoBehaviour
     [SerializeField] private AudioClip wallCrossClip = null;
     [SerializeField] private AudioClip wallBumpClip = null;
     [SerializeField] private AudioClip restartClip = null;
+    [SerializeField] private AudioClip gameOverClip = null;
 
     private AudioSource audioSource;
 
@@ -20,6 +21,11 @@ public class AudioHandler : MonoBehaviour
     public void IncreaseBackgroundPitch(float delta)
     {
         backgroundAudioSource.pitch += delta;
+    }
+
+    public void StopBackgroundSound()
+    {
+        backgroundAudioSource.Stop();
     }
 
     public IEnumerator PlayWallCross(float delay)
@@ -39,6 +45,12 @@ public class AudioHandler : MonoBehaviour
     public void PlayRestart()
     {
         audioSource.clip = restartClip;
+        audioSource.Play();
+    }
+
+    public void PlayGameOver()
+    {
+        audioSource.clip = gameOverClip;
         audioSource.Play();
     }
 }

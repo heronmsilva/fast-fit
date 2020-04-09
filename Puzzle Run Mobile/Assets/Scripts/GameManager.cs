@@ -117,9 +117,12 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                audioHandler.StopBackgroundSound();
+                audioHandler.PlayGameOver();
                 gameOverScreen.SetActive(true);
                 UpdatePlayerPrefs();
                 UIHandler.UpdateGameOverUI();
+                gameOver = false;
             }
         }
     }
