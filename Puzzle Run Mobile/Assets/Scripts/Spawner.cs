@@ -113,12 +113,12 @@ public class Spawner : MonoBehaviour
 
     private void UpdateBackgroundDust()
     {
-        var main = backgroundRays.main;
+        var main = backgroundDust.main;
         main.startColor = cubeMaterials[(int) gm.CurrDifficulty].color;
         main.startSpeed = 2f * gm.Speed;
         main.startLifetime = 60 / (2f * gm.Speed);
         
-        var emission = backgroundRays.emission;
+        var emission = backgroundDust.emission;
         emission.rateOverTime = (int) (2f * gm.Speed * 1.6f);
     }
 
