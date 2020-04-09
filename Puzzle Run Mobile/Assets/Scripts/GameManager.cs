@@ -133,7 +133,6 @@ public class GameManager : MonoBehaviour
         // it has to be checked if it has already been triggered
         if (! gameOver)
         {
-            audioHandler.PlayWallBump();
             gameOver = true;
             Time.timeScale = 0;
         }
