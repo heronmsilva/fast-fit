@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
             ScorePoints();
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
+            StartCoroutine(audioHandler.PlayWallCross(0.25f));
         }
         UIHandler.UpdateUIHeader();
     }
