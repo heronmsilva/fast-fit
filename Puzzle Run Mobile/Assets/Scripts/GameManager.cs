@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -129,6 +130,12 @@ public class GameManager : MonoBehaviour
                 gameOver = false;
             }
         }
+    }
+
+    public void TryAgain()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
     }
 
     public void GameOver()

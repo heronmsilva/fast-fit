@@ -5713,8 +5713,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadMenuScene
+      - m_Target: {fileID: 1525496431}
+        m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6066,7 +6066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: MAIN MENU
+  m_Text: TRY AGAIN
 --- !u!222 &717826876
 CanvasRenderer:
   m_ObjectHideFlags: 0
