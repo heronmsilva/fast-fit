@@ -26,12 +26,12 @@ public class PieceController : MonoBehaviour
 
         if (Time.time - lastMove > _moveDeltaTime)
         {
-            if (Mathf.Abs(joystick.Horizontal) > .5f)
+            if (joystick && Mathf.Abs(joystick.Horizontal) > .5f)
             {
                 this.transform.position += Vector3.right * Mathf.Sign(joystick.Horizontal);
                 lastMove = Time.time;
             }
-            if (Mathf.Abs(joystick.Vertical) > .5f)
+            if (joystick && Mathf.Abs(joystick.Vertical) > .5f)
             {
                 this.transform.position += Vector3.up * Mathf.Sign(joystick.Vertical);
                 lastMove = Time.time;
