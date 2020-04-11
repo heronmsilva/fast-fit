@@ -6195,6 +6195,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626449923}
   m_CullTransparentMesh: 0
+--- !u!1 &639614148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18,
+    type: 3}
+  m_PrefabInstance: {fileID: 1838485305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &639614149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639614148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca9e8d813571bc408266eadfe0d3125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleTapDelta: 0.25
 --- !u!1 &702509066
 GameObject:
   m_ObjectHideFlags: 0
@@ -13152,6 +13171,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1431502590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072033061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1431502594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431502590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca9e8d813571bc408266eadfe0d3125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleTapDelta: 0.25
 --- !u!1 &1431664008
 GameObject:
   m_ObjectHideFlags: 0
@@ -13575,7 +13613,6 @@ MonoBehaviour:
   speedUpScale: 25
   startDifficulty: 0
   gameOverScreen: {fileID: 979503141}
-  doubleTapDetector: {fileID: 825125752}
 --- !u!114 &1525496432
 MonoBehaviour:
   m_ObjectHideFlags: 0
