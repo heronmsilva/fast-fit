@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int speedUpScale = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject gameOverScreen = null;
-    [SerializeField] private TouchDetector touchDetector = null;
+    [SerializeField] private DoubleTapDetector doubleTapDetector = null;
 
     private static GameManager instance;
     private Spawner spawner;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public float WallDistance { get { return wallDistance; } }
     public float Speed { get { return speed; } }
-    public float FastForwardedTime { get { return touchDetector.TotalFastForward; } }
+    public float FastForwardedTime { get { return doubleTapDetector.TotalFastForward; } }
     public int Score { get { return score; } }
     public int CrossSequence { get { return crossSequence; } }
     public int MaxCrossSequence { get { return maxCrossSequence; } }
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         audioHandler = GetComponent<AudioHandler>();
-        touchDetector = touchDetector.GetComponent<TouchDetector>();
+        doubleTapDetector = doubleTapDetector.GetComponent<DoubleTapDetector>();
     }
 
     private void Start()
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameOver) return;
         
-        touchDetector.StopFastForward();
+        doubleTapDetector.StopFastForward();
     }
 
     private void UpdatePlayerPrefs()
