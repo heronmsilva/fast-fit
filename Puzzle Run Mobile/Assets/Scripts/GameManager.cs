@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int speedUpScale = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject gameOverScreen = null;
-    [SerializeField] private DoubleTapDetector doubleTapDetector = null;
 
     private static GameManager instance;
     private Spawner spawner;
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
+    private DoubleTapDetector doubleTapDetector;
     private Difficulty currDifficulty;
     private float speed, startTime;
     private int lives;
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         audioHandler = GetComponent<AudioHandler>();
-        doubleTapDetector = doubleTapDetector.GetComponent<DoubleTapDetector>();
+        doubleTapDetector = FindObjectOfType<DoubleTapDetector>();
     }
 
     private void Start()
