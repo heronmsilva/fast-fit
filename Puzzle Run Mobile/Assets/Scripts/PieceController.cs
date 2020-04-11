@@ -41,6 +41,11 @@ public class PieceController : MonoBehaviour
         FixIfOutOfBounds();
     }
 
+    public void Translate(Vector3 position)
+    {
+        this.transform.position = new Vector3(Mathf.Round(position.x), Mathf.Round(position.y), position.z);
+    }
+
     public void FlipUp()
     {
         Vector3 eulerAngles = this.transform.eulerAngles;
