@@ -9,13 +9,6 @@ public class DynamicJoystick : Joystick
 
     [SerializeField] private float moveThreshold = 1;
 
-    private DoubleTapDetector doubleTapDetector;
-
-    private void Awake()
-    {
-        doubleTapDetector = GetComponent<DoubleTapDetector>();
-    }
-
     protected override void Start()
     {
         MoveThreshold = moveThreshold;
@@ -28,11 +21,6 @@ public class DynamicJoystick : Joystick
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
         background.gameObject.SetActive(true);
         base.OnPointerDown(eventData);
-
-        if (background.anchoredPosition != Vector2.zero)
-        {
-            doubleTapDetector.CheckDoubleTap();
-        }
     }
 
     public override void OnPointerUp(PointerEventData eventData)
