@@ -60,7 +60,7 @@ public class UIHandler : MonoBehaviour
 
     private void UpdateGOUITime()
     {
-        int time = (int) (Time.time - startTime - gm.FastForwardedTime);
+        int time = (int) (Time.time - startTime - gm.TotalFastForward);
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
         int minutes = timeSpan.Minutes;
         int seconds = timeSpan.Seconds;
@@ -81,7 +81,7 @@ public class UIHandler : MonoBehaviour
     {
         if (Time.timeScale != 1) return;
 
-        int time = (int) (Time.time - startTime - gm.FastForwardedTime);
+        int time = (int) (Time.time - startTime - gm.TotalFastForward);
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
         int minutes = timeSpan.Minutes;
         int seconds = timeSpan.Seconds;

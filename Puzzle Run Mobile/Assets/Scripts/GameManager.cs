@@ -23,11 +23,13 @@ public class GameManager : MonoBehaviour
     private AudioHandler audioHandler;
     private DoubleTapDetector doubleTapDetector;
     private Difficulty currDifficulty;
-    private float speed, startTime;
+    private float speed, startTime, startFF;
+    private float totalFF;
     private int lives;
     private int score = 0;
     private int crossSequence = 0;
     private bool gameOver = false;
+    private bool fastForward = false;
 
     public static GameManager Instance { get { return instance; } }
     public enum Difficulty 
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     public float WallDistance { get { return wallDistance; } }
     public float Speed { get { return speed; } }
-    public float FastForwardedTime { get { return doubleTapDetector.TotalFastForward; } }
+    public float TotalFastForward { get { return totalFF; } }
     public int Score { get { return score; } }
     public int CrossSequence { get { return crossSequence; } }
     public int MaxCrossSequence { get { return maxCrossSequence; } }
@@ -165,11 +167,23 @@ public class GameManager : MonoBehaviour
         return 1 / ((wallDistance / speed) / 4);
     }
 
+    public void FastForward()
+    {
+        fastForward = true;
+        startFF = Time.time;
+        Time.timeScale = speedUpScale;
+    }
+
     private void StopFastForward()
     {
         if (gameOver) return;
         
-        doubleTapDetector.StopFastForward();
+        if (fastForward)
+        {
+            fastForward = false;
+            totalFF = Time.time - startFF;
+            Time.timeScale = 1;
+        }
     }
 
     private void UpdatePlayerPrefs()
