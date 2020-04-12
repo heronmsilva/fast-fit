@@ -15,6 +15,7 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
+    [SerializeField] private GameObject playButton = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
     private GameManager gm;
@@ -27,6 +28,18 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
+    }
+
+    public void Paused()
+    {
+        levelText.enabled = false;
+        playButton.SetActive(true);
+    }
+
+    public void Resumed()
+    {
+        levelText.enabled = true;
+        playButton.SetActive(false);
     }
 
     public void UpdateGameOverUI()

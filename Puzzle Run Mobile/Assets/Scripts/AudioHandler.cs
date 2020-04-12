@@ -23,6 +23,16 @@ public class AudioHandler : MonoBehaviour
         backgroundAudioSource.pitch += delta;
     }
 
+    public void ResumeBackgroundSound()
+    {
+        backgroundAudioSource.UnPause();
+    }
+
+    public void PauseBackgroundSound()
+    {
+        backgroundAudioSource.Pause();
+    }
+
     public void StopBackgroundSound()
     {
         backgroundAudioSource.Stop();

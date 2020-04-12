@@ -134,6 +134,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        audioHandler.PauseBackgroundSound();
+        UIHandler.Paused();
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        audioHandler.ResumeBackgroundSound();
+        UIHandler.Resumed();
+    }
+
     public void TryAgain()
     {
         Time.timeScale = 1;
