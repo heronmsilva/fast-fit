@@ -6,6 +6,7 @@ public class TouchControls : MonoBehaviour
 {
     [SerializeField] private float deadzone = 50f;
     [SerializeField] private float doubleTapDelta = .25f;
+    [SerializeField] private RectTransform touchArea = null;
     [SerializeField] private bool dragPiece = false;
     [SerializeField] private bool tapRotate = false;
     [SerializeField] private bool doubleTapFF = false;
@@ -103,7 +104,7 @@ public class TouchControls : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (! drag)
+            if (! drag && RectTransformUtility.RectangleContainsScreenPoint(touchArea, Input.mousePosition))
             {
                 tap = true;
                 doubleTap = Time.time - lastTap < doubleTapDelta;
