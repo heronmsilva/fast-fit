@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
-    private DoubleTapDetector doubleTapDetector;
     private Difficulty currDifficulty;
     private float speed, startTime, startFF;
     private float totalFF;
@@ -70,7 +69,6 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         audioHandler = GetComponent<AudioHandler>();
-        doubleTapDetector = FindObjectOfType<DoubleTapDetector>();
     }
 
     private void Start()
