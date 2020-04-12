@@ -6,18 +6,20 @@ public class TouchControls : MonoBehaviour
 {
     [SerializeField] private float deadzone = 50f;
     [SerializeField] private float doubleTapDelta = .25f;
+    [SerializeField] private float longTapDelta = .5f;
     [SerializeField] private RectTransform touchArea = null;
     [SerializeField] private bool dragPiece = false;
     [SerializeField] private bool tapRotate = false;
     [SerializeField] private bool doubleTapFF = false;
+    [SerializeField] private bool longTapFF = false;
     [SerializeField] private bool swipeUpFF = false;
     [SerializeField] private bool swipeSideFlip = false;
     [SerializeField] private bool swipeDownFlip = false;
 
-    private float sqrDeadzone, lastTap;
+    private float sqrDeadzone, lastTap, startTime;
     private Camera cam;
     private GameManager gm;
-    private bool tap, doubleTap, swipeRight, swipeLeft, swipeUp, swipeDown, drag;
+    private bool tap, doubleTap, longTap, swipeRight, swipeLeft, swipeUp, swipeDown, drag;
     private Vector2 startTouch, swipeDelta;
     private GameObject toDrag;
 
@@ -30,7 +32,7 @@ public class TouchControls : MonoBehaviour
 
     private void Update()
     {
-        tap = doubleTap = swipeRight = swipeLeft = swipeDown = swipeUp = false;
+        tap = doubleTap = longTap = swipeRight = swipeLeft = swipeDown = swipeUp = false;
 
         #if UNITY_EDITOR
             CheckMouseInput();    
@@ -64,7 +66,7 @@ public class TouchControls : MonoBehaviour
             return;
         }
 
-        if ((swipeUp && swipeUpFF) || (doubleTap && doubleTapFF))
+        if ((swipeUp && swipeUpFF) || (doubleTap && doubleTapFF) || (longTap && longTapFF))
         {
             FastForward();
             return;
@@ -94,6 +96,7 @@ public class TouchControls : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             startTouch = Input.mousePosition;
+            startTime = Time.time;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(startTouch);
             if (Physics.Raycast(ray, out hit) && GetPieceHit(hit))
@@ -109,6 +112,7 @@ public class TouchControls : MonoBehaviour
             {
                 tap = true;
                 doubleTap = Time.time - lastTap < doubleTapDelta;
+                longTap = Time.time - startTime > longTapDelta;
                 lastTap = Time.time;
                 swipeDelta = (Vector2) Input.mousePosition - startTouch;
             }
@@ -147,6 +151,7 @@ public class TouchControls : MonoBehaviour
             {
                 case TouchPhase.Began:
                     startTouch = touch.position;
+                    startTime = Time.time;
                     RaycastHit hit;
                     Ray ray = cam.ScreenPointToRay(startTouch);
                     if (Physics.Raycast(ray, out hit) && GetPieceHit(hit))
@@ -162,6 +167,7 @@ public class TouchControls : MonoBehaviour
                     {
                         tap = true;
                         doubleTap = Time.time - lastTap < doubleTapDelta;
+                        longTap = Time.time - startTime > longTapDelta;
                         lastTap = Time.time;
                         swipeDelta = (Vector2) touch.position - startTouch;
                     }
