@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxLives = 5;
     [SerializeField] private int speedUpScale = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
-    [SerializeField] private GameObject gameOverScreen = null;
 
     private static GameManager instance;
     private Spawner spawner;
@@ -126,9 +125,8 @@ public class GameManager : MonoBehaviour
             {
                 audioHandler.StopBackgroundSound();
                 audioHandler.PlayGameOver();
-                gameOverScreen.SetActive(true);
                 UpdatePlayerPrefs();
-                UIHandler.UpdateGameOverUI();
+                UIHandler.GameOver();
                 gameOver = false;
             }
         }

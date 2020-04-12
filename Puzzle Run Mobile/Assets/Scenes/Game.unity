@@ -13599,7 +13599,6 @@ MonoBehaviour:
   maxLives: 5
   speedUpScale: 25
   startDifficulty: 0
-  gameOverScreen: {fileID: 979503141}
 --- !u!114 &1525496432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13677,6 +13676,7 @@ MonoBehaviour:
   levelFill: {fileID: 364492805}
   outline: {fileID: 1411462173}
   playButton: {fileID: 401014636}
+  gameOverScreen: {fileID: 979503141}
   lifeImages:
   - {fileID: 832694083}
   - {fileID: 92055546}

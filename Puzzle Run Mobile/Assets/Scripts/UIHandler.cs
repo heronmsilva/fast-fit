@@ -16,6 +16,7 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
     [SerializeField] private GameObject playButton = null;
+    [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
     private GameManager gm;
@@ -40,6 +41,12 @@ public class UIHandler : MonoBehaviour
     {
         levelText.enabled = true;
         playButton.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        UpdateGameOverUI();
+        gameOverScreen.SetActive(true);
     }
 
     public void UpdateGameOverUI()
