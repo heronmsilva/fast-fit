@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PieceController : MonoBehaviour
 {
-    [SerializeField] private float _moveDeltaTime = .1f;
+    [SerializeField] private float moveDeltaTime = .1f;
 
     private Joystick joystick;
     private float lastMove;
@@ -24,7 +24,7 @@ public class PieceController : MonoBehaviour
     {
         if (GameManager.Instance.IsGameOver) return;
 
-        if (Time.time - lastMove > _moveDeltaTime)
+        if (Time.time - lastMove > moveDeltaTime)
         {
             if (joystick && Mathf.Abs(joystick.Horizontal) > .5f)
             {
