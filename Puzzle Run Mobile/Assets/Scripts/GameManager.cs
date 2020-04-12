@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     private int crossSequence = 0;
     private bool gameOver = false;
+    private bool paused = false;
     private bool fastForward = false;
 
     public static GameManager Instance { get { return instance; } }
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
     public Difficulty CurrDifficulty { get { return currDifficulty; } }
     public GameObject Piece { get { return spawner.Piece; } }
     public bool IsGameOver { get { return gameOver; } }
+    public bool IsPaused { get { return paused; } }
 
     private void Awake()
     {
@@ -137,6 +139,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        paused = true;
         audioHandler.PauseBackgroundSound();
         UIHandler.Paused();
     }
@@ -144,6 +147,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
+        paused = false;
         audioHandler.ResumeBackgroundSound();
         UIHandler.Resumed();
     }

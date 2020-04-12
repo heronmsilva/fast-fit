@@ -31,6 +31,8 @@ public class TouchControls : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.IsGameOver || GameManager.Instance.IsPaused) return;
+
         tap = doubleTap = longTap = swipeRight = swipeLeft = swipeDown = swipeUp = false;
 
         #if UNITY_EDITOR
