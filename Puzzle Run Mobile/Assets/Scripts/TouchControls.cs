@@ -131,6 +131,8 @@ public class TouchControls : MonoBehaviour
 
     private void DragEditor()
     {
+        if (! toDrag ) return;
+
         float zDistance = toDrag.transform.position.z - cam.transform.position.z;
         Vector3 v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, zDistance);
         v3 = cam.ScreenToWorldPoint(v3);
