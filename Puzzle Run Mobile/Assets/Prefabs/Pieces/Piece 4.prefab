@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4684684319188227153}
   - component: {fileID: 916042619214235672}
+  - component: {fileID: -5012983387081621161}
   m_Layer: 0
   m_Name: Piece 4
   m_TagString: Piece
@@ -78,6 +79,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDeltaTime: 0.125
+--- !u!65 &-5012983387081621161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897107398019972896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2370073775499158036
 GameObject:
   m_ObjectHideFlags: 0

@@ -78,18 +78,6 @@ public class TouchControls : MonoBehaviour
         }
     }
 
-    private GameObject GetPieceHit(RaycastHit hit)
-    {
-        Transform t = hit.transform;
-        while (t.parent != null)
-        {
-            if (t.parent.tag == "Piece")
-                return t.parent.gameObject;
-            t = t.parent.transform;
-        }
-        return null;
-    }
-
     private void CheckMouseInput()
     {
         if (Input.GetMouseButtonDown(0))
@@ -98,9 +86,9 @@ public class TouchControls : MonoBehaviour
             startTime = Time.time;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(startTouch);
-            if (Physics.Raycast(ray, out hit) && GetPieceHit(hit) && dragPiece)
+            if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Piece" && dragPiece)
             {
-                toDrag = GetPieceHit(hit);
+                toDrag = hit.transform.gameObject;
                 drag = true;
             }
         }
@@ -153,9 +141,9 @@ public class TouchControls : MonoBehaviour
                     startTime = Time.time;
                     RaycastHit hit;
                     Ray ray = cam.ScreenPointToRay(startTouch);
-                    if (Physics.Raycast(ray, out hit) && GetPieceHit(hit) && dragPiece)
+                    if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Piece" && dragPiece)
                     {
-                        toDrag = GetPieceHit(hit);
+                        toDrag = hit.transform.gameObject;
                         drag = true;
                     }
 
