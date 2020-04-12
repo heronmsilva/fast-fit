@@ -13220,7 +13220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadzone: 50
-  doubleTapDelta: 0.25
+  doubleTapDelta: 0.2
   longTapDelta: 0.5
   touchArea: {fileID: 288748447}
   dragPiece: 0
