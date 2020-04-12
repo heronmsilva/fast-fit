@@ -43,10 +43,11 @@ public class TouchControls : MonoBehaviour
         if (drag && dragPiece)
         {
             #if UNITY_EDITOR
-                DragEditor();
+                Drag(Input.mousePosition);
             #endif
             #if UNITY_ANDROID || UNITY_IOS
-                DragMobile();
+                if (Input.touchCount > 0)
+                    Drag(Input.GetTouch(0).position);
             #endif
             return;
         }
@@ -192,23 +193,12 @@ public class TouchControls : MonoBehaviour
         }
     }
 
-    private void DragEditor()
-    {
-        if (! toDrag ) return;
-
-        float zDistance = toDrag.transform.position.z - cam.transform.position.z;
-        Vector3 v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, zDistance);
-        v3 = cam.ScreenToWorldPoint(v3);
-        toDrag.GetComponent<PieceController>().Translate(v3);
-    }
-
-    private void DragMobile()
+    private void Drag(Vector2 position)
     {
         if (! toDrag) return;
 
         float zDistance = toDrag.transform.position.z - cam.transform.position.z;
-        Touch touch = Input.GetTouch(0);
-        Vector3 v3 = new Vector3(touch.position.x, touch.position.y, zDistance);
+        Vector3 v3 = new Vector3(position.x, position.y, zDistance);
         v3 = cam.ScreenToWorldPoint(v3);
         toDrag.GetComponent<PieceController>().Translate(v3);
     }
