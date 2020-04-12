@@ -139,7 +139,57 @@ public class TouchControls : MonoBehaviour
 
     private void CheckScreenTouch()
     {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    startTouch = touch.position;
+                    RaycastHit hit;
+                    Ray ray = cam.ScreenPointToRay(startTouch);
+                    if (Physics.Raycast(ray, out hit) && GetPieceHit(hit))
+                    {
+                        toDrag = GetPieceHit(hit);
+                        drag = true;
+                    }
 
+                    break;
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+                    if (! drag && RectTransformUtility.RectangleContainsScreenPoint(touchArea, startTouch))
+                    {
+                        tap = true;
+                        doubleTap = Time.time - lastTap < doubleTapDelta;
+                        lastTap = Time.time;
+                        swipeDelta = (Vector2) touch.position - startTouch;
+                    }
+                    drag = false;
+                    break;
+            }
+
+            if (swipeDelta.sqrMagnitude > sqrDeadzone)
+            {
+                float x = swipeDelta.x;
+                float y = swipeDelta.y;
+
+                if (Mathf.Abs(x) > Mathf.Abs(y))
+                {
+                    if (x < 0)
+                        swipeLeft = true;
+                    else
+                        swipeRight = true;
+                }
+                else
+                {
+                    if (y < 0)
+                        swipeDown = true;
+                    else
+                        swipeUp = true;
+                }
+                swipeDelta = Vector2.zero;
+            }
+        }
     }
 
     private void DragEditor()
@@ -154,7 +204,13 @@ public class TouchControls : MonoBehaviour
 
     private void DragMobile()
     {
+        if (! toDrag) return;
 
+        float zDistance = toDrag.transform.position.z - cam.transform.position.z;
+        Touch touch = Input.GetTouch(0);
+        Vector3 v3 = new Vector3(touch.position.x, touch.position.y, zDistance);
+        v3 = cam.ScreenToWorldPoint(v3);
+        toDrag.GetComponent<PieceController>().Translate(v3);
     }
 
     private void SwipeSideFlip()
