@@ -12,9 +12,8 @@ public class TouchControls : MonoBehaviour
     [SerializeField] private bool tapRotate = false;
     [SerializeField] private bool doubleTapFF = false;
     [SerializeField] private bool longTapFF = false;
-    [SerializeField] private bool swipeUpFF = false;
-    [SerializeField] private bool swipeSideFlip = false;
-    [SerializeField] private bool swipeDownFlip = false;
+    [SerializeField] private bool swipeHorizontalFlip = false;
+    [SerializeField] private bool swipeVerticalFlip = false;
 
     private float sqrDeadzone, lastTap, startTime;
     private Camera cam;
@@ -54,19 +53,19 @@ public class TouchControls : MonoBehaviour
             return;
         }
 
-        if ((swipeLeft || swipeRight) && swipeSideFlip)
+        if ((swipeLeft || swipeRight) && swipeHorizontalFlip)
         {
-            SwipeSideFlip();
+            SwipeHorizontalFlip();
             return;
         }
 
-        if (swipeDown && swipeDownFlip)
+        if ((swipeDown || swipeUp) && swipeVerticalFlip)
         {
-            SwipeDownFlip();
+            SwipeVerticalFlip();
             return;
         }
 
-        if ((swipeUp && swipeUpFF) || (doubleTap && doubleTapFF) || (longTap && longTapFF))
+        if ((doubleTap && doubleTapFF) || (longTap && longTapFF))
         {
             FastForward();
             return;
@@ -209,13 +208,13 @@ public class TouchControls : MonoBehaviour
         toDrag.GetComponent<PieceController>().Translate(v3);
     }
 
-    private void SwipeSideFlip()
+    private void SwipeHorizontalFlip()
     {
         PieceController pieceController = FindObjectOfType<PieceController>();
         pieceController.FlipRight();
     }
 
-    private void SwipeDownFlip()
+    private void SwipeVerticalFlip()
     {
         PieceController pieceController = FindObjectOfType<PieceController>();
         pieceController.FlipUp();

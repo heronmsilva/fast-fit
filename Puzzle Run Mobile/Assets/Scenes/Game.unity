@@ -13227,9 +13227,8 @@ MonoBehaviour:
   tapRotate: 1
   doubleTapFF: 0
   longTapFF: 1
-  swipeUpFF: 0
-  swipeSideFlip: 1
-  swipeDownFlip: 1
+  swipeHorizontalFlip: 1
+  swipeVerticalFlip: 1
 --- !u!4 &1478293662
 Transform:
   m_ObjectHideFlags: 0
