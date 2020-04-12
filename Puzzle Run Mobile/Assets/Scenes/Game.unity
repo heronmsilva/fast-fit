@@ -11998,7 +11998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &966246328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13223,12 +13223,12 @@ MonoBehaviour:
   doubleTapDelta: 0.25
   longTapDelta: 0.5
   touchArea: {fileID: 288748447}
-  dragPiece: 1
-  tapRotate: 1
-  doubleTapFF: 0
-  longTapFF: 1
-  swipeHorizontalFlip: 1
-  swipeVerticalFlip: 1
+  dragPiece: 0
+  tapRotate: 0
+  doubleTapFF: 1
+  longTapFF: 0
+  swipeHorizontalFlip: 0
+  swipeVerticalFlip: 0
 --- !u!4 &1478293662
 Transform:
   m_ObjectHideFlags: 0

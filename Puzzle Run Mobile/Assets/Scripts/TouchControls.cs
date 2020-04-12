@@ -98,7 +98,7 @@ public class TouchControls : MonoBehaviour
             startTime = Time.time;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(startTouch);
-            if (Physics.Raycast(ray, out hit) && GetPieceHit(hit))
+            if (Physics.Raycast(ray, out hit) && GetPieceHit(hit) && dragPiece)
             {
                 toDrag = GetPieceHit(hit);
                 drag = true;
@@ -153,7 +153,7 @@ public class TouchControls : MonoBehaviour
                     startTime = Time.time;
                     RaycastHit hit;
                     Ray ray = cam.ScreenPointToRay(startTouch);
-                    if (Physics.Raycast(ray, out hit) && GetPieceHit(hit))
+                    if (Physics.Raycast(ray, out hit) && GetPieceHit(hit) && dragPiece)
                     {
                         toDrag = GetPieceHit(hit);
                         drag = true;
