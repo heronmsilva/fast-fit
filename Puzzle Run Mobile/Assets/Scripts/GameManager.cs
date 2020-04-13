@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     private float totalFF;
     private int lives;
     private int score = 0;
+    private int crosses = 0;
     private int crossSequence = 0;
     private bool gameOver = false;
     private bool paused = false;
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour
         {
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
+            crosses += 1;
             crossSequence += 1;
             if (crossSequence == maxCrossSequence)
             {
@@ -180,9 +182,17 @@ public class GameManager : MonoBehaviour
     private void UpdatePlayerPrefs()
     {
         PlayerPrefManager.SetLastScore(score);
-
         if (score > PlayerPrefManager.GetTopScore())
             PlayerPrefManager.SetTopScore(score);
+
+        float totalTime = Time.time - startTime;
+        PlayerPrefManager.SetLastTime(totalTime);
+        if (totalTime > PlayerPrefManager.GetTopTime())
+            PlayerPrefManager.SetTopTime(totalTime);
+
+        PlayerPrefManager.SetLastCrosses(crosses);
+        if (crosses > PlayerPrefManager.GetTopCrosses())
+            PlayerPrefManager.SetTopCrosses(crosses);
     }
 
     private void UseLife()
