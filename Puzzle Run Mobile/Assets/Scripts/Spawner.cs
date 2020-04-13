@@ -37,6 +37,34 @@ public class Spawner : MonoBehaviour
         minXY = maxXY = Vector2.zero;
     }
 
+    private Material GetMaterial()
+    {
+        string animation = animBuffer.Peek();
+        Material material = null;
+        switch (animation)
+        {
+            case "None":
+                material = cubeMaterials[0];
+                break;
+            case "Fade":
+                material = cubeMaterials[1];
+                break;
+            case "RotateX":
+            case "DelayedFadeRotateX":
+                material = cubeMaterials[2];
+                break;
+            case "RotateY":
+            case "DelayedFadeRotateY":
+                material = cubeMaterials[3];
+                break;
+            case "RotateXY":
+            case "DelayedRotateXY":
+                material = cubeMaterials[4];
+                break;
+        }
+        return material;
+    }
+
     public void ShowScoredPoints(int points)
     {
         GameObject floatingText = Instantiate(
