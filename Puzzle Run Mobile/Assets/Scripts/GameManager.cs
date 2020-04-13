@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             UIHandler.UpdateUIHeader();
         }
 
-        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning)
+        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning && ! gameOver)
         {
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
