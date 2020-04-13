@@ -13599,6 +13599,7 @@ MonoBehaviour:
   maxLives: 5
   maxSpeed: 50
   startDifficulty: 0
+  touchControls: {fileID: 1478293660}
 --- !u!114 &1525496432
 MonoBehaviour:
   m_ObjectHideFlags: 0
