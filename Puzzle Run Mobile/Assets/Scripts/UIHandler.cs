@@ -9,12 +9,12 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject level = null;
     [SerializeField] private Text timeGOText = null;
     [SerializeField] private Text scoreText = null;
+    [SerializeField] private Text crossesText = null;
     [SerializeField] private Text scoreGOText = null;
     [SerializeField] private Text topScoreGOText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
-    [SerializeField] private GameObject playButton = null;
     [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
@@ -46,6 +46,7 @@ public class UIHandler : MonoBehaviour
     public void UpdateUIHeader()
     {
         UpdateUIScore();
+        UpdateUICrosses();
         UpdateUIDifficulty();
         UpdateUIDifficultyFill();
         UpdateUILives();
@@ -83,6 +84,11 @@ public class UIHandler : MonoBehaviour
     private void UpdateUIScore()
     {
         scoreText.text = gm.Score.ToString();
+    }
+
+    private void UpdateUICrosses()
+    {
+        crossesText.text = gm.Crosses.ToString();
     }
 
     private void UpdateUIDifficulty()

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public float WallDistance { get { return wallDistance; } }
     public float Speed { get { return speed; } }
     public int Score { get { return score; } }
+    public int Crosses { get { return crosses; } }
     public int CrossSequence { get { return crossSequence; } }
     public int MaxCrossSequence { get { return maxCrossSequence; } }
     public int Lives { get { return lives; } }
