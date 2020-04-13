@@ -36,7 +36,7 @@ public class AnimationBuffer : MonoBehaviour
         gm = GetComponent<GameManager>();
     }
 
-    public string GetNextAnimation()
+    public string Peek()
     {
         return animationQueue.Peek();
     }
