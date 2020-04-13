@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxCrossSequence = 10;
     [SerializeField] private int startLives = 1;
     [SerializeField] private int maxLives = 5;
-    [SerializeField] private int speedUpScale = 25;
+    [SerializeField] private int maxSpeed = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
 
     private static GameManager instance;
@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     private int crossSequence = 0;
     private bool gameOver = false;
     private bool paused = false;
-    private bool fastForward = false;
 
     public static GameManager Instance { get { return instance; } }
     public enum Difficulty 
@@ -43,13 +42,11 @@ public class GameManager : MonoBehaviour
 
     public float WallDistance { get { return wallDistance; } }
     public float Speed { get { return speed; } }
-    public float TotalFastForward { get { return totalFF; } }
     public int Score { get { return score; } }
     public int CrossSequence { get { return crossSequence; } }
     public int MaxCrossSequence { get { return maxCrossSequence; } }
     public int Lives { get { return lives; } }
     public int MaxLives { get { return maxLives; } }
-    public int SpeedUpScale { get { return speedUpScale; } }
     public Vector2 MinXY { get { return spawner.MinXY; } }
     public Vector2 MaxXY { get { return spawner.MaxXY; } }
     public Difficulty CurrDifficulty { get { return currDifficulty; } }
@@ -90,7 +87,6 @@ public class GameManager : MonoBehaviour
 
         if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning)
         {
-            StopFastForward();
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
             crossSequence += 1;
@@ -175,21 +171,8 @@ public class GameManager : MonoBehaviour
 
     public void FastForward()
     {
-        fastForward = true;
-        startFF = Time.time;
-        Time.timeScale = speedUpScale;
-    }
-
-    private void StopFastForward()
-    {
-        if (gameOver) return;
-        
-        if (fastForward)
-        {
-            fastForward = false;
-            totalFF = Time.time - startFF;
-            Time.timeScale = 1;
-        }
+        spawner.Wall.GetComponent<MoveTo>().SetSpeed(maxSpeed);
+        spawner.Wall.GetComponent<WallAnimations>().IncreaseAnimSpeed(1 / (wallDistance / maxSpeed));
     }
 
     private void UpdatePlayerPrefs()
@@ -209,7 +192,6 @@ public class GameManager : MonoBehaviour
         spawner.RespawnObjects();
         gameOver = false;
         Time.timeScale = 1;
-        StopFastForward();
     }
 
     private void IncreaseDifficulty()

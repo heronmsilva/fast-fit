@@ -16,6 +16,15 @@ public class WallAnimations : MonoBehaviour
         anim.SetFloat("Speed", GameManager.Instance.GetAnimationSpeed());
     }
 
+    public void IncreaseAnimSpeed(float speed)
+    {
+        anim.SetFloat("Speed", speed);
+        foreach (Transform cube in this.transform)
+        {
+            cube.gameObject.GetComponent<CubeAnimations>().IncreaseAnimSpeed(speed);
+        }
+    }
+
     public void None()
     {
 

@@ -12,6 +12,11 @@ public class CubeAnimations : MonoBehaviour
         anim.SetFloat("Speed", GameManager.Instance.GetAnimationSpeed());
     }
 
+    public void IncreaseAnimSpeed(float speed)
+    {
+        anim.SetFloat("Speed", speed);
+    }
+
     public void Fade()
     {
         anim.Play("CubeFade");

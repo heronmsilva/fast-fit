@@ -13314,7 +13314,7 @@ MonoBehaviour:
   dragPiece: 1
   tapRotate: 1
   doubleTapFF: 0
-  longTapFF: 0
+  longTapFF: 1
   swipeHorizontalFlip: 1
   swipeVerticalFlip: 1
 --- !u!4 &1478293662
@@ -13597,7 +13597,7 @@ MonoBehaviour:
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
-  speedUpScale: 25
+  maxSpeed: 100
   startDifficulty: 0
 --- !u!114 &1525496432
 MonoBehaviour:
