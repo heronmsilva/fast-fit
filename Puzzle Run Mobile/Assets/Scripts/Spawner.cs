@@ -49,12 +49,12 @@ public class Spawner : MonoBehaviour
             case "Fade":
                 material = cubeMaterials[1];
                 break;
-            case "RotateX":
-            case "DelayedFadeRotateX":
-                material = cubeMaterials[2];
-                break;
             case "RotateY":
             case "DelayedFadeRotateY":
+                material = cubeMaterials[2];
+                break;
+            case "RotateX":
+            case "DelayedFadeRotateX":
                 material = cubeMaterials[3];
                 break;
             case "RotateXY":
@@ -124,14 +124,14 @@ public class Spawner : MonoBehaviour
     {
         foreach (Transform cube in wall.transform)
         {
-            cube.gameObject.GetComponent<Renderer>().material = cubeMaterials[(int) gm.CurrDifficulty];
+            cube.gameObject.GetComponent<Renderer>().material = GetMaterial();
         }
     }
 
     private void UpdateBackgroundRays()
     {
         var main = backgroundRays.main;
-        main.startColor = cubeMaterials[(int) gm.CurrDifficulty].color;
+        main.startColor = GetMaterial().color;
         main.startSpeed = 2.4f * gm.Speed;
         main.startLifetime = 60 / (2.4f * gm.Speed);
         
