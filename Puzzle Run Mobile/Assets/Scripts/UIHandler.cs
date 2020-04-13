@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
-    [SerializeField] private Text timeText = null;
     [SerializeField] private Text timeGOText = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text scoreGOText = null;
@@ -31,18 +30,6 @@ public class UIHandler : MonoBehaviour
         startTime = Time.time;
     }
 
-    public void Paused()
-    {
-        levelText.enabled = false;
-        playButton.SetActive(true);
-    }
-
-    public void Resumed()
-    {
-        levelText.enabled = true;
-        playButton.SetActive(false);
-    }
-
     public void GameOver()
     {
         UpdateGameOverUI();
@@ -58,7 +45,6 @@ public class UIHandler : MonoBehaviour
 
     public void UpdateUIHeader()
     {
-        UpdateUITime();
         UpdateUIScore();
         UpdateUIDifficulty();
         UpdateUIDifficultyFill();
@@ -92,17 +78,6 @@ public class UIHandler : MonoBehaviour
     private void UpdateGOUITopScore()
     {
         topScoreGOText.text = PlayerPrefManager.GetTopScore().ToString();
-    }
-
-    private void UpdateUITime()
-    {
-        if (Time.timeScale != 1) return;
-
-        int time = (int) (Time.time - startTime);
-        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-        int minutes = timeSpan.Minutes;
-        int seconds = timeSpan.Seconds;
-        timeText.text = string.Format("{0:D2}:{1:D2}", minutes, seconds);
     }
 
     private void UpdateUIScore()

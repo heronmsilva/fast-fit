@@ -137,15 +137,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         paused = true;
         audioHandler.PauseBackgroundSound();
-        UIHandler.Paused();
-    }
-
-    public void RestartGame()
-    {
-        Time.timeScale = 1;
-        paused = false;
-        audioHandler.ResumeBackgroundSound();
-        UIHandler.Resumed();
     }
 
     public void TryAgain()
