@@ -13314,7 +13314,7 @@ MonoBehaviour:
   dragPiece: 1
   tapRotate: 1
   doubleTapFF: 0
-  longTapFF: 1
+  longTapFF: 0
   swipeHorizontalFlip: 1
   swipeVerticalFlip: 1
 --- !u!4 &1478293662
