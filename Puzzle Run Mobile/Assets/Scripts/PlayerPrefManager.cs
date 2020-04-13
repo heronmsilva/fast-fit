@@ -23,4 +23,44 @@ public static class PlayerPrefManager
     {
         return (PlayerPrefs.HasKey("Last Score")) ? PlayerPrefs.GetInt("Last Score") : 0;
     }
+
+    public static void SetTopTime(float time)
+    {
+        PlayerPrefs.SetFloat("Top Time", time);
+    }
+
+    public static float GetTopTime()
+    {
+        return (PlayerPrefs.HasKey("Top Time")) ? PlayerPrefs.GetFloat("Top Time") : 0;
+    }
+
+    public static void SetLastTime(float time)
+    {
+        PlayerPrefs.SetFloat("Last Time", time);
+    }
+
+    public static float GetLastTime()
+    {
+        return (PlayerPrefs.HasKey("Last Time")) ? PlayerPrefs.GetFloat("Last Time") : 0;
+    }
+
+    public static void SetTopCrosses(int crosses)
+    {
+        PlayerPrefs.SetInt("Top Crosses", crosses);
+    }
+
+    public static int GetTopCrosses()
+    {
+        return (PlayerPrefs.HasKey("Top Crosses")) ? PlayerPrefs.GetInt("Top Crosses") : 0;
+    }
+
+    public static void SetLastCrosses(int crosses)
+    {
+        PlayerPrefs.SetInt("Last Crosses", crosses);
+    }
+
+    public static int GetLastCrosses()
+    {
+        return (PlayerPrefs.HasKey("Last Crosses")) ? PlayerPrefs.GetInt("Last Crosses") : 0;
+    }
 }
