@@ -12,8 +12,8 @@ public class AnimationBuffer : MonoBehaviour
     { 
         "None", 
         "Fade", 
-        "RotateX", 
         "RotateY", 
+        "RotateX", 
         "RotateXY"
     };
     
@@ -21,11 +21,11 @@ public class AnimationBuffer : MonoBehaviour
     {
         "None",
         "Fade",
-        "RotateX", 
         "RotateY", 
+        "RotateX", 
         "RotateXY",
-        "DelayedFadeRotateX",
         "DelayedFadeRotateY",
+        "DelayedFadeRotateX",
         "DelayedFadeRotateXY"
     };
 
