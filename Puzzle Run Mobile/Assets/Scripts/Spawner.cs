@@ -84,7 +84,7 @@ public class Spawner : MonoBehaviour
 
     private void PlayNextAnimation()
     {
-        wall.GetComponent<WallAnimations>().Play(animBuffer.Next());
+        wall.GetComponent<WallAnimations>().Invoke(animBuffer.Next(), 0f);
     }
 
     private void SpawnWall()

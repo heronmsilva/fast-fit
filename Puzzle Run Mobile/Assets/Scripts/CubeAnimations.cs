@@ -14,13 +14,11 @@ public class CubeAnimations : MonoBehaviour
 
     public void Fade()
     {
-        StartCoroutine(PlayAnimation("CubeFade"));
+        anim.Play("CubeFade");
     }
 
-    IEnumerator PlayAnimation(string animation)
+    public void DelayedFade()
     {
-        float delay = GameManager.Instance.GetAnimationDelay();
-        yield return new WaitForSeconds(delay);
-        anim.Play(animation);
+        anim.Play("CubeDelayedFade");
     }
 }

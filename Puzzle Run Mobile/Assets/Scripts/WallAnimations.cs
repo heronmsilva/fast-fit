@@ -16,17 +16,12 @@ public class WallAnimations : MonoBehaviour
         anim.SetFloat("Speed", GameManager.Instance.GetAnimationSpeed());
     }
 
-    public void Play(string animation)
-    {
-        Invoke(animation, 0f);
-    }
-
-    private void None()
+    public void None()
     {
 
     }
     
-    private void Fade()
+    public void Fade()
     {
         foreach (Transform cube in this.transform)
         {
@@ -34,46 +29,47 @@ public class WallAnimations : MonoBehaviour
         }
     }
 
-    private void RotateX()
+    public void DelayedFade()
+    {
+        foreach (Transform cube in this.transform)
+        {
+            cube.gameObject.GetComponent<CubeAnimations>().DelayedFade();
+        }
+    }
+
+    public void RotateX()
     {
         int i = Random.Range(0, xAnimations.Count);
-        StartCoroutine(PlayAnimation(xAnimations[i]));
+        anim.Play(xAnimations[i]);
     }
 
-    private void RotateY()
+    public void RotateY()
     {
         int i = Random.Range(0, yAnimations.Count);
-        StartCoroutine(PlayAnimation(yAnimations[i]));
+        anim.Play(yAnimations[i]);
     }
 
-    private void RotateXY()
+    public void RotateXY()
     {
         int i = Random.Range(0, xyAnimations.Count);
-        StartCoroutine(PlayAnimation(xyAnimations[i]));
+        anim.Play(xyAnimations[i]);
     }
 
-    private void FadeRotateX()
+    public void DelayedFadeRotateX()
     {
-        Fade();
+        DelayedFade();
         RotateX();
     }
 
-    private void FadeRotateY()
+    public void DelayedFadeRotateY()
     {
-        Fade();
+        DelayedFade();
         RotateY();
     }
 
-    private void FadeRotateXY()
+    public void DelayedFadeRotateXY()
     {
-        Fade();
+        DelayedFade();
         RotateXY();
-    }
-
-    private IEnumerator PlayAnimation(string animation)
-    {
-        float delay = GameManager.Instance.GetAnimationDelay();
-        yield return new WaitForSeconds(delay);
-        anim.Play(animation);
     }
 }

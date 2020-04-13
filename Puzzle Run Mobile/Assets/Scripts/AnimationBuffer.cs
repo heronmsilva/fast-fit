@@ -24,9 +24,9 @@ public class AnimationBuffer : MonoBehaviour
         "RotateX", 
         "RotateY", 
         "RotateXY",
-        "FadeRotateX",
-        "FadeRotateY",
-        "FadeRotateXY"
+        "DelayedFadeRotateX",
+        "DelayedFadeRotateY",
+        "DelayedFadeRotateXY"
     };
 
     private GameManager gm;

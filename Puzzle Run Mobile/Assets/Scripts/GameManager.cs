@@ -164,21 +164,13 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
-    // The animations should be delayed by 1/4
-    // of the total time that the wall takes to
-    // get to the destination
-    public float GetAnimationDelay()
-    {
-        return (wallDistance / speed) / 4;
-    }
     
     // The animations should take 1/4
     // of the total time that the wall takes to
     // get to the destination
     public float GetAnimationSpeed()
     {
-        return 1 / ((wallDistance / speed) / 4);
+        return 1 / (wallDistance / speed);
     }
 
     public void FastForward()
