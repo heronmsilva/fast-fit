@@ -11283,7 +11283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854025609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12937,6 +12937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 157491351}
+  pausedScreen: {fileID: 854025608}
   scoreText: {fileID: 1736186549}
   crossesText: {fileID: 2000766280}
   levelText: {fileID: 1261697468}
@@ -13949,11 +13950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1525496428}
+      objectReference: {fileID: 1525496431}
     - target: {fileID: 653858509828889998, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 653858509828889999, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
@@ -14013,12 +14014,12 @@ PrefabInstance:
     - target: {fileID: 653858509828889999, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13.9
+      value: 0.000005722046
       objectReference: {fileID: 0}
     - target: {fileID: 653858509828889999, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.7
+      value: 0.00000071525574
       objectReference: {fileID: 0}
     - target: {fileID: 653858509828889999, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}

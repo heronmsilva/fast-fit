@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
+    [SerializeField] private GameObject pausedScreen = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
@@ -24,6 +25,16 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
+    }
+
+    public void Pause()
+    {
+        pausedScreen.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        pausedScreen.SetActive(false);
     }
 
     public void UpdateUIHeader()
