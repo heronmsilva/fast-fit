@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     private int crosses = 0;
     private int crossSequence = 0;
+    private int crossMultiplier = 1;
     private bool gameOver = false;
     private bool paused = false;
 
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
             if (crossSequence == maxCrossSequence)
             {
                 crossSequence = 0;
+                crossMultiplier += 1;
                 IncreaseDifficulty();
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
@@ -204,6 +206,7 @@ public class GameManager : MonoBehaviour
         audioHandler.PlayRestart();
         lives -= 1;
         crossSequence = 0;
+        crossMultiplier = 1;
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
