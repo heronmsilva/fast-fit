@@ -129,8 +129,14 @@ public class GameManager : MonoBehaviour
                 UpdatePlayerPrefs();
                 touchControls.SetActive(false);
                 gameOver = false;
+                LoadGameOver();
             }
         }
+    }
+
+    private void LoadGameOver()
+    {
+        SceneManager.LoadScene("Game Over");
     }
 
     public void PauseGame()
