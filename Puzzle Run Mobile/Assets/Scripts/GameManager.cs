@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private int crosses = 0;
     private int crossSequence = 0;
     private int crossMultiplier = 1;
+    private bool fastForward = false;
     private bool gameOver = false;
     private bool paused = false;
 
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(audioHandler.PlayWallCross(0.25f));
             }
             ScorePoints();
+            fastForward = false;
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
         }
@@ -181,6 +183,8 @@ public class GameManager : MonoBehaviour
 
     public void FastForward()
     {
+        fastForward = true;
+
         spawner.Wall.GetComponent<MoveTo>().SetSpeed(maxSpeed);
         spawner.Wall.GetComponent<WallAnimations>().IncreaseAnimSpeed(1 / (wallDistance / maxSpeed));
     }
