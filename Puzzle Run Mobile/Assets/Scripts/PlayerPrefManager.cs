@@ -4,6 +4,16 @@ using UnityEngine;
 
 public static class PlayerPrefManager
 {
+    public static void SetControls(int index)
+    {
+        PlayerPrefs.SetInt("Controls", index);
+    }
+
+    public static int GetControls()
+    {
+        return (PlayerPrefs.HasKey("Controls")) ? PlayerPrefs.GetInt("Controls") : 0;
+    }
+
     public static void SetTopScore(int score)
     {
         PlayerPrefs.SetInt("Top Score", score);

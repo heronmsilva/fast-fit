@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject touchControls = null;
 
     private static GameManager instance;
+    private static List<string> controls = new List<string> { "TOUCH", "FLOATING", "FIXED" };
     private Spawner spawner;
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     private bool paused = false;
 
     public static GameManager Instance { get { return instance; } }
+    public static List<string> Controls { get { return controls; } }
     public enum Difficulty 
     {
         Level0,
