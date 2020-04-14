@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadGameOver()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Game Over");
     }
 
