@@ -231,7 +231,9 @@ public class GameManager : MonoBehaviour
 
     private void ScorePoints()
     {
-        int points = (int) ((Time.time - startTime) * speed * ((int) currDifficulty + 1));
+        int difficultyMultiplier = (int) currDifficulty + 1;
+        int fastForwardMultiplier = (fastForward) ? 2 : 1;
+        int points = (int) (crosses * speed * crossMultiplier * difficultyMultiplier * fastForwardMultiplier);
         spawner.ShowScoredPoints(points);
         score += points;
     }
