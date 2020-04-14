@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
     private Difficulty currDifficulty;
-    private float speed, startTime, startFF;
-    private float totalFF;
+    private float speed, startTime;
     private int lives;
     private int score = 0;
     private int crosses = 0;
