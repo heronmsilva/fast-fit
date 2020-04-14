@@ -8,12 +8,13 @@ public class TouchControls : MonoBehaviour
     [SerializeField] private float doubleTapDelta = .25f;
     [SerializeField] private float longTapDelta = .5f;
     [SerializeField] private RectTransform touchArea = null;
-    [SerializeField] private bool dragPiece = false;
-    [SerializeField] private bool tapRotate = false;
-    [SerializeField] private bool doubleTapFF = false;
-    [SerializeField] private bool longTapFF = false;
-    [SerializeField] private bool swipeHorizontalFlip = false;
-    [SerializeField] private bool swipeVerticalFlip = false;
+ 
+    public bool dragPiece = false;
+    public bool tapRotate = false;
+    public bool doubleTapFF = false;
+    public bool longTapFF = false;
+    public bool swipeHorizontalFlip = false;
+    public bool swipeVerticalFlip = false;
 
     private float sqrDeadzone, lastTap, startTime;
     private Camera cam;
