@@ -58,7 +58,7 @@ public class Spawner : MonoBehaviour
                 material = cubeMaterials[3];
                 break;
             case "RotateXY":
-            case "DelayedRotateXY":
+            case "DelayedFadeRotateXY":
                 material = cubeMaterials[4];
                 break;
         }
