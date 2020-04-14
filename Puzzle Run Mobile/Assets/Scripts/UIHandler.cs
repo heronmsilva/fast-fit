@@ -7,15 +7,11 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
-    [SerializeField] private Text timeGOText = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
-    [SerializeField] private Text scoreGOText = null;
-    [SerializeField] private Text topScoreGOText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
-    [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
     private GameManager gm;
@@ -28,19 +24,6 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
-    }
-
-    public void GameOver()
-    {
-        UpdateGameOverUI();
-        gameOverScreen.SetActive(true);
-    }
-
-    public void UpdateGameOverUI()
-    {
-        UpdateGOUITime();
-        UpdateGOUIScore();
-        UpdateGOUITopScore();
     }
 
     public void UpdateUIHeader()
@@ -60,25 +43,6 @@ public class UIHandler : MonoBehaviour
     public void PlayCrossAnimation()
     {
         outline.GetComponent<Animator>().Play("OutlineFill");
-    }
-
-    private void UpdateGOUITime()
-    {
-        int time = (int) (Time.time - startTime);
-        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-        int minutes = timeSpan.Minutes;
-        int seconds = timeSpan.Seconds;
-        timeGOText.text = string.Format("{0:D2}:{1:D2}", minutes, seconds);
-    }
-
-    private void UpdateGOUIScore()
-    {
-        scoreGOText.text = gm.Score.ToString();
-    }
-
-    private void UpdateGOUITopScore()
-    {
-        topScoreGOText.text = PlayerPrefManager.GetTopScore().ToString();
     }
 
     private void UpdateUIScore()

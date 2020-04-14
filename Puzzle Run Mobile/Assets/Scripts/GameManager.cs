@@ -126,7 +126,6 @@ public class GameManager : MonoBehaviour
                 audioHandler.StopBackgroundSound();
                 audioHandler.PlayGameOver();
                 UpdatePlayerPrefs();
-                UIHandler.GameOver();
                 touchControls.SetActive(false);
                 gameOver = false;
             }
@@ -138,12 +137,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         paused = true;
         audioHandler.PauseBackgroundSound();
-    }
-
-    public void TryAgain()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Game");
     }
 
     public void GameOver()
