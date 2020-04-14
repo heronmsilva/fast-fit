@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour
         paused = true;
         audioHandler.PauseBackgroundSound();
         UIHandler.Pause();
+        touchControls.SetActive(false);
     }
 
     public void ResumeGame()
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
         paused = false;
         audioHandler.ResumeBackgroundSound();
         UIHandler.Resume();
+        touchControls.SetActive(true);
     }
 
     public void GameOver()
