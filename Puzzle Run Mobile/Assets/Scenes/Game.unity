@@ -12578,7 +12578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadzone: 50
-  doubleTapDelta: 0.2
+  doubleTapDelta: 0.15
   longTapDelta: 0.5
   touchArea: {fileID: 288748447}
   dragPiece: 1
@@ -12924,6 +12924,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3236c815f5bdf541828a97582c06eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchControls: {fileID: 1478293660}
+  floatingControls: {fileID: 966246327}
+  fixedControls: {fileID: 345042971}
 --- !u!114 &1525496434
 MonoBehaviour:
   m_ObjectHideFlags: 0
