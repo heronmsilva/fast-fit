@@ -13936,11 +13936,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 854025609}
     m_Modifications:
-    - target: {fileID: 653858509828889985, guid: bcb42da325a8357409fb8c3bc03d3c6b,
-        type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 653858509828889996, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
       propertyPath: m_Name
@@ -13951,11 +13946,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525496431}
-    - target: {fileID: 653858509828889998, guid: bcb42da325a8357409fb8c3bc03d3c6b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     - target: {fileID: 653858509828889999, guid: bcb42da325a8357409fb8c3bc03d3c6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14060,11 +14050,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653858509909466738, guid: bcb42da325a8357409fb8c3bc03d3c6b,
-        type: 3}
-      propertyPath: m_Text
-      value: RESUME
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb42da325a8357409fb8c3bc03d3c6b, type: 3}
