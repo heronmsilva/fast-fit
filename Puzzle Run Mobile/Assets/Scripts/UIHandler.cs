@@ -11,8 +11,6 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
-    [SerializeField] private Text crossBonusText = null;
-    [SerializeField] private Text speedBonusText = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private Image outline = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
@@ -27,18 +25,6 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
-    }
-
-    public void ShowCrossBonus(int bonus)
-    {
-        crossBonusText.text = "SEQUENCE x" + bonus.ToString();
-        crossBonusText.GetComponent<Animator>().Play("InfoTextFade");
-    }
-
-    public void ShowFastForwardBonus(int bonus)
-    {
-        speedBonusText.text = "x" + bonus.ToString() + " FORWARD";
-        speedBonusText.GetComponent<Animator>().Play("InfoTextFade");
     }
 
     public void Pause()

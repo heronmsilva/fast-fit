@@ -234,8 +234,6 @@ public class GameManager : MonoBehaviour
         int difficultyMultiplier = (int) currDifficulty + 1;
         int fastForwardMultiplier = (fastForward) ? 2 : 1;
         int points = (int) (crosses * speed * crossMultiplier * difficultyMultiplier * fastForwardMultiplier);
-        if (crossMultiplier != 1) UIHandler.ShowCrossBonus(crossMultiplier);
-        if (fastForwardMultiplier != 1) UIHandler.ShowFastForwardBonus(fastForwardMultiplier);
         spawner.ShowScoredPoints(points);
         score += points;
     }
