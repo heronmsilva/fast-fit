@@ -7,11 +7,10 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] private Text timeText = null;
-    [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text topScoreText = null;
+    [SerializeField] private Text scoreText = null;    
+    [SerializeField] private Text bestScoreText = null;
     [SerializeField] private Text crossesText = null;
-    [SerializeField] private Text topCrossesText = null;
+    [SerializeField] private Text bestCrossesText = null;
 
     private void Start()
     {
@@ -20,13 +19,21 @@ public class GameOverManager : MonoBehaviour
 
     private void UpdateGameOverUI()
     {
-        TimeSpan time = TimeSpan.FromSeconds(PlayerPrefManager.GetLastTime());
-        string formatedTime = string.Format("{0:D2}:{1:D2}", time.Minutes, time.Seconds);
-        timeText.text = "TIME\n" + formatedTime;
-        scoreText.text = "SCORE\n" + PlayerPrefManager.GetLastScore();
-        topScoreText.text = "TOP SCORE\n" + PlayerPrefManager.GetTopScore();
-        crossesText.text = "CROSSES\n" + PlayerPrefManager.GetLastCrosses();
-        topCrossesText.text = "TOP CROSSES\n" + PlayerPrefManager.GetTopCrosses();
+        int score = PlayerPrefManager.GetLastScore();
+        int crosses = PlayerPrefManager.GetLastCrosses();
+
+        scoreText.text = "SCORE\n" + score;
+        crossesText.text = "CROSSES\n" + crosses;
+
+        if (score == PlayerPrefManager.GetTopScore())
+            bestScoreText.gameObject.SetActive(true);
+        else
+            bestScoreText.gameObject.SetActive(false);
+
+        if (crosses == PlayerPrefManager.GetTopCrosses())
+            bestCrossesText.gameObject.SetActive(true);
+        else
+            bestCrossesText.gameObject.SetActive(false);
     }
 
     public void TryAgain()
