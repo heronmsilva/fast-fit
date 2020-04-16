@@ -4,6 +4,16 @@ using UnityEngine;
 
 public static class PlayerPrefManager
 {
+    public static void SetQualityLevel(int index)
+    {
+        PlayerPrefs.SetInt("Quality Level", index);
+    }
+
+    public static int GetQualityLevel()
+    {
+        return (PlayerPrefs.HasKey("Quality Level")) ? PlayerPrefs.GetInt("Quality Level") : 1;
+    }
+
     public static void SetControls(int index)
     {
         PlayerPrefs.SetInt("Controls", index);
