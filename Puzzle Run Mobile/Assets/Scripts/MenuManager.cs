@@ -16,6 +16,11 @@ public class MenuManager : MonoBehaviour
         controlsDropdown.value = PlayerPrefManager.GetControls();
     }
 
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
+
     public void Main()
     {
         mainScreen.SetActive(true);
