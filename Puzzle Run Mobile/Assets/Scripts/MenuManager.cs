@@ -14,17 +14,39 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject fixedControlsArea = null;
     [SerializeField] private Dropdown controlsDropdown = null;
     [SerializeField] private Dropdown graphicsDropdown = null;
+    [SerializeField] private Text topScoreText = null;
+    [SerializeField] private Text topCrossesText = null;
+    [SerializeField] private Text topTimeText = null;
+    [SerializeField] private Text topStreakText = null;
 
     private void Start()
     {
-        int controls = PlayerPrefManager.GetControls();
-        controlsDropdown.AddOptions(GameManager.Controls);
-        controlsDropdown.value = controls; 
-        ShowControlsInfo(GameManager.Controls[controls]);
-        
+        SetupSavedControls();
+        SetupSavedSettings();
+        SetupRecords();
+    }
+    
+    private void SetupRecords()
+    {
+        topScoreText.text = "TOP SCORE: " + PlayerPrefManager.GetTopScore();
+        topCrossesText.text = "TOP CROSSES: " + PlayerPrefManager.GetTopCrosses();
+        topTimeText.text = "TOP TIME: " + PlayerPrefManager.GetTopTime();
+        topStreakText.text = "TOP STREAK: " + PlayerPrefManager.GetTopStreak();
+    }
+
+    private void SetupSavedSettings()
+    {
         int qualityLevel = PlayerPrefManager.GetQualityLevel();
         QualitySettings.SetQualityLevel(qualityLevel);
         graphicsDropdown.value = qualityLevel;
+    }
+
+    private void SetupSavedControls()
+    {
+        int controls = PlayerPrefManager.GetControls();
+        controlsDropdown.AddOptions(GameManager.Controls);
+        controlsDropdown.value = controls;
+        ShowControlsInfo(GameManager.Controls[controls]);
     }
 
     public void Main()

@@ -24,6 +24,16 @@ public static class PlayerPrefManager
         return (PlayerPrefs.HasKey("Controls")) ? PlayerPrefs.GetInt("Controls") : 0;
     }
 
+    public static void SetTopStreak(int streak)
+    {
+        PlayerPrefs.SetInt("Top Streak", streak);
+    }
+
+    public static int GetTopStreak()
+    {
+        return (PlayerPrefs.HasKey("Top Streak")) ? PlayerPrefs.GetInt("Top Streak") : 0;
+    }
+
     public static void SetTopScore(int score)
     {
         PlayerPrefs.SetInt("Top Score", score);
