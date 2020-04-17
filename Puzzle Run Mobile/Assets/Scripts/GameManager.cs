@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     private int crosses = 0;
     private int crossSequence = 0;
-    private int crossMultiplier = 1;
+    private int crossStreak = 0;
     private bool fastForward = false;
     private bool gameOver = false;
     private bool paused = false;
@@ -97,10 +97,10 @@ public class GameManager : MonoBehaviour
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
             crosses += 1;
             crossSequence += 1;
+            crossStreak += 1;
             if (crossSequence == maxCrossSequence)
             {
                 crossSequence = 0;
-                crossMultiplier += 1;
                 IncreaseDifficulty();
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
@@ -210,7 +210,7 @@ public class GameManager : MonoBehaviour
         audioHandler.PlayRestart();
         lives -= 1;
         crossSequence = 0;
-        crossMultiplier = 1;
+        crossStreak = 0;
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
@@ -233,6 +233,7 @@ public class GameManager : MonoBehaviour
     {
         int difficultyMultiplier = (int) currDifficulty + 1;
         int fastForwardMultiplier = (fastForward) ? 2 : 1;
+        int crossMultiplier = (int) (crossStreak / 10) + 1;
         int points = (int) (crosses * speed * crossMultiplier * difficultyMultiplier * fastForwardMultiplier);
         spawner.ShowScoredPoints(points);
         score += points;
