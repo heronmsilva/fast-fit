@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject mainScreen = null;
     [SerializeField] private GameObject settingsScreen = null;
     [SerializeField] private GameObject controlsScreen = null;
+    [SerializeField] private GameObject recordsScreen = null;
     [SerializeField] private GameObject touchControlsArea = null;
     [SerializeField] private GameObject floatingControlsArea = null;
     [SerializeField] private GameObject fixedControlsArea = null;
@@ -30,7 +32,9 @@ public class MenuManager : MonoBehaviour
     {
         topScoreText.text = "TOP SCORE: " + PlayerPrefManager.GetTopScore();
         topCrossesText.text = "TOP CROSSES: " + PlayerPrefManager.GetTopCrosses();
-        topTimeText.text = "TOP TIME: " + PlayerPrefManager.GetTopTime();
+        TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
+        string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        topTimeText.text = "TOP TIME: " + time;
         topStreakText.text = "TOP STREAK: " + PlayerPrefManager.GetTopStreak();
     }
 
@@ -54,6 +58,7 @@ public class MenuManager : MonoBehaviour
         mainScreen.SetActive(true);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
+        recordsScreen.SetActive(false);
     }
 
     public void Settings()
@@ -61,6 +66,7 @@ public class MenuManager : MonoBehaviour
         mainScreen.SetActive(false);
         settingsScreen.SetActive(true);
         controlsScreen.SetActive(false);
+        recordsScreen.SetActive(false);
     }
 
     public void Controls()
@@ -68,6 +74,15 @@ public class MenuManager : MonoBehaviour
         mainScreen.SetActive(false);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(true);
+        recordsScreen.SetActive(false);
+    }
+
+    public void Records()
+    {
+        mainScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(false);
+        recordsScreen.SetActive(true);
     }
 
     public void SetControls(int index)
