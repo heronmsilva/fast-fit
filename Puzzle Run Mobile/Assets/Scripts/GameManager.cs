@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private int crosses = 0;
     private int crossSequence = 0;
     private int crossStreak = 0;
+    private int bestCrossStreak = 0;
     private bool fastForward = false;
     private bool gameOver = false;
     private bool paused = false;
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
             crosses += 1;
             crossSequence += 1;
             crossStreak += 1;
+            bestCrossStreak = (crossStreak > bestCrossStreak) ? crossStreak : bestCrossStreak;
             if (crossSequence == maxCrossSequence)
             {
                 crossSequence = 0;
@@ -203,6 +205,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefManager.SetLastCrosses(crosses);
         if (crosses > PlayerPrefManager.GetTopCrosses())
             PlayerPrefManager.SetTopCrosses(crosses);
+        
+        PlayerPrefManager.SetLastStreak(bestCrossStreak);
+        if (bestCrossStreak > PlayerPrefManager.GetTopStreak())
+            PlayerPrefManager.SetTopStreak(bestCrossStreak);
     }
 
     private void UseLife()
