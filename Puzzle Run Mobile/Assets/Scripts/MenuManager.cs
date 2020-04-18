@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text topStreakText = null;
     [SerializeField] private AudioClip UIButtonClick = null;
     [SerializeField] private AudioClip UIButtonClose = null;
+    [SerializeField] private AudioMixer audioMixer = null;
+    [SerializeField] private Slider musicSlider = null;
+    [SerializeField] private Slider sfxSlider = null;
 
     private AudioSource audioSource;
 
@@ -52,6 +56,13 @@ public class MenuManager : MonoBehaviour
         int qualityLevel = PlayerPrefManager.GetQualityLevel();
         QualitySettings.SetQualityLevel(qualityLevel);
         graphicsDropdown.value = qualityLevel;
+
+        float musicVolume = PlayerPrefManager.GetMusicVolume();
+        audioMixer.SetFloat("Music", musicVolume);
+        musicSlider.value = musicVolume;
+        float sfxVolume = PlayerPrefManager.GetSFXVolume();
+        audioMixer.SetFloat("SFX", sfxVolume);
+        sfxSlider.value = sfxVolume;
     }
 
     private void SetupSavedControls()
@@ -127,6 +138,18 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefManager.SetQualityLevel(index);
         QualitySettings.SetQualityLevel(index);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("Music", volume);
+        PlayerPrefManager.SetMusicVolume(volume);
+    }
+    
+    public void SetSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFX", volume);
+        PlayerPrefManager.SetSFXVolume(volume);
     }
 
     public void Play()

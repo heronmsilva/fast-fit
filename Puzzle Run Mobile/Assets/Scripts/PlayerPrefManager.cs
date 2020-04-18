@@ -4,6 +4,26 @@ using UnityEngine;
 
 public static class PlayerPrefManager
 {
+    public static void SetSFXVolume(float index)
+    {
+        PlayerPrefs.SetFloat("SFX Volume", index);
+    }
+
+    public static float GetSFXVolume()
+    {
+        return (PlayerPrefs.HasKey("SFX Volume")) ? PlayerPrefs.GetFloat("SFX Volume") : 1;
+    }
+
+    public static void SetMusicVolume(float index)
+    {
+        PlayerPrefs.SetFloat("Music Volume", index);
+    }
+
+    public static float GetMusicVolume()
+    {
+        return (PlayerPrefs.HasKey("Music Volume")) ? PlayerPrefs.GetFloat("Music Volume") : 1;
+    }
+
     public static void SetQualityLevel(int index)
     {
         PlayerPrefs.SetInt("Quality Level", index);

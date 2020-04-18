@@ -5186,6 +5186,9 @@ MonoBehaviour:
   topStreakText: {fileID: 687688461}
   UIButtonClick: {fileID: 8300000, guid: ae134556d4342b24b86ac3655668eb72, type: 3}
   UIButtonClose: {fileID: 8300000, guid: 162698dd02f00ed469c7d7bea16cf0c0, type: 3}
+  audioMixer: {fileID: 24100000, guid: e5f75ca6cb599e745a078cd7f5120c74, type: 2}
+  musicSlider: {fileID: 1351940483}
+  sfxSlider: {fileID: 1589233778}
 --- !u!82 &1169416256
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6413,13 +6416,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 967455084}
   m_HandleRect: {fileID: 860892746}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1169416255}
+        m_MethodName: SetMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &1360384919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7666,13 +7680,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 949956827}
   m_HandleRect: {fileID: 1828679966}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1169416255}
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &1598685520
 GameObject:
   m_ObjectHideFlags: 0
