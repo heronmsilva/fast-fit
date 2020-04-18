@@ -20,6 +20,15 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Text topCrossesText = null;
     [SerializeField] private Text topTimeText = null;
     [SerializeField] private Text topStreakText = null;
+    [SerializeField] private AudioClip UIButtonClick = null;
+    [SerializeField] private AudioClip UIButtonClose = null;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -55,6 +64,7 @@ public class MenuManager : MonoBehaviour
 
     public void Main()
     {
+        audioSource.PlayOneShot(UIButtonClose);
         mainScreen.SetActive(true);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
@@ -63,6 +73,7 @@ public class MenuManager : MonoBehaviour
 
     public void Settings()
     {
+        audioSource.PlayOneShot(UIButtonClick);
         mainScreen.SetActive(false);
         settingsScreen.SetActive(true);
         controlsScreen.SetActive(false);
@@ -71,6 +82,7 @@ public class MenuManager : MonoBehaviour
 
     public void Controls()
     {
+        audioSource.PlayOneShot(UIButtonClick);
         mainScreen.SetActive(false);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(true);
@@ -79,6 +91,7 @@ public class MenuManager : MonoBehaviour
 
     public void Records()
     {
+        audioSource.PlayOneShot(UIButtonClick);
         mainScreen.SetActive(false);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
