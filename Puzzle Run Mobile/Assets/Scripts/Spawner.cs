@@ -171,14 +171,15 @@ public class Spawner : MonoBehaviour
     private void RandomizePiecePosition()
     {
         int i = UnityEngine.Random.Range(0, wall.transform.childCount);
+        if (i == 0) RandomizePiecePosition();
         Vector3 pos = wall.transform.GetChild(i).position;
 
         // If the position is exactly at the border
         // we need to shift it one unity accordingly
-        if (pos.x == minXY.x) pos += Vector3.right;
-        if (pos.x == maxXY.x) pos -= Vector3.right;
-        if (pos.y == minXY.y) pos += Vector3.up;
-        if (pos.y == maxXY.y) pos -= Vector3.up;
+        if (pos.x == minXY.x || pos.x == 1) pos += Vector3.right;
+        if (pos.x == maxXY.x || pos.x == -1) pos -= Vector3.right;
+        if (pos.y == minXY.y || pos.y == 1) pos += Vector3.up;
+        if (pos.y == maxXY.y || pos.y == -1) pos -= Vector3.up;
 
         piece.transform.position = pos;
     }
