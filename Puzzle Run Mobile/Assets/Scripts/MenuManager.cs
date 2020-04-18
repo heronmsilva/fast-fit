@@ -106,8 +106,6 @@ public class MenuManager : MonoBehaviour
 
     private void ShowControlsInfo(string controls)
     {
-        Debug.Log("here");
-        
         touchControlsArea.SetActive(false);
         floatingControlsArea.SetActive(false);
         fixedControlsArea.SetActive(false);

@@ -8,9 +8,13 @@ using UnityEngine.UI;
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private Text scoreText = null;    
-    [SerializeField] private Text bestScoreText = null;
+    [SerializeField] private Text topScoreText = null;
     [SerializeField] private Text crossesText = null;
-    [SerializeField] private Text bestCrossesText = null;
+    [SerializeField] private Text topCrossesText = null;
+    [SerializeField] private Text timeText = null;
+    [SerializeField] private Text topTimeText = null;
+    [SerializeField] private Text streakText = null;
+    [SerializeField] private Text topStreakText = null;
 
     private void Start()
     {
@@ -19,21 +23,19 @@ public class GameOverManager : MonoBehaviour
 
     private void UpdateGameOverUI()
     {
-        int score = PlayerPrefManager.GetLastScore();
-        int crosses = PlayerPrefManager.GetLastCrosses();
+        TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetLastTime());
+        string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
+        string topTime = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
 
-        scoreText.text = "SCORE\n" + score;
-        crossesText.text = "CROSSES\n" + crosses;
-
-        if (score == PlayerPrefManager.GetTopScore())
-            bestScoreText.gameObject.SetActive(true);
-        else
-            bestScoreText.gameObject.SetActive(false);
-
-        if (crosses == PlayerPrefManager.GetTopCrosses())
-            bestCrossesText.gameObject.SetActive(true);
-        else
-            bestCrossesText.gameObject.SetActive(false);
+        scoreText.text = PlayerPrefManager.GetLastScore().ToString();
+        topScoreText.text = "(" + PlayerPrefManager.GetTopScore().ToString() + ")";
+        crossesText.text = PlayerPrefManager.GetLastCrosses().ToString();
+        topCrossesText.text = "(" + PlayerPrefManager.GetTopCrosses().ToString() + ")";
+        streakText.text = PlayerPrefManager.GetLastStreak().ToString();
+        topStreakText.text = "(" + PlayerPrefManager.GetTopStreak().ToString() + ")";
+        timeText.text = time;
+        topTimeText.text = "(" + topTime + ")";
     }
 
     public void TryAgain()
