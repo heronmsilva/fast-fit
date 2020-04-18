@@ -1446,7 +1446,7 @@ PrefabInstance:
     - target: {fileID: 2960506866241545205, guid: 335b7723a73fb3c4d998031051795d35,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2960506866241545206, guid: 335b7723a73fb3c4d998031051795d35,
         type: 3}
@@ -2658,7 +2658,7 @@ PrefabInstance:
     - target: {fileID: 2960506866241545205, guid: 335b7723a73fb3c4d998031051795d35,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2960506866241545206, guid: 335b7723a73fb3c4d998031051795d35,
         type: 3}
@@ -6433,7 +6433,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!1 &1360384919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7697,7 +7697,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!1 &1598685520
 GameObject:
   m_ObjectHideFlags: 0
@@ -10789,6 +10789,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetControls
       objectReference: {fileID: 0}
+    - target: {fileID: 2960506866241545205, guid: 335b7723a73fb3c4d998031051795d35,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2960506866241545206, guid: 335b7723a73fb3c4d998031051795d35,
         type: 3}
       propertyPath: m_PreserveAspect
@@ -10881,7 +10886,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &2047611940466244345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11010,7 +11015,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &2047611941014424249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11170,7 +11175,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &2047611941389912075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11335,7 +11340,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!4 &3099402836254044171
 Transform:
   m_ObjectHideFlags: 0
