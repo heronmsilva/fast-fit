@@ -30,12 +30,12 @@ public class MenuManager : MonoBehaviour
     
     private void SetupRecords()
     {
-        topScoreText.text = "TOP SCORE: " + PlayerPrefManager.GetTopScore();
-        topCrossesText.text = "TOP CROSSES: " + PlayerPrefManager.GetTopCrosses();
+        topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
+        topCrossesText.text = PlayerPrefManager.GetTopCrosses().ToString();
+        topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
-        topTimeText.text = "TOP TIME: " + time;
-        topStreakText.text = "TOP STREAK: " + PlayerPrefManager.GetTopStreak();
+        topTimeText.text = time;
     }
 
     private void SetupSavedSettings()
