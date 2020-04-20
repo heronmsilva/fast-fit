@@ -80,7 +80,6 @@ public class GameManager : MonoBehaviour
         speed = startSpeed;
         lives = startLives;
         currDifficulty = startDifficulty;
-        startTime = Time.time;
         audioHandler.StopBackgroundSound();
 
         animBuffer.ResetQueue();
@@ -107,6 +106,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         audioHandler.PlayBackgroundSound();
+        startTime = Time.time;
         countDown = false;
     }
 
