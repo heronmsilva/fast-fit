@@ -37,6 +37,11 @@ public class AudioHandler : MonoBehaviour
     {
         backgroundAudioSource.Stop();
     }
+    
+    public void PlayBackgroundSound()
+    {
+        backgroundAudioSource.Play();
+    }
 
     public IEnumerator PlayWallCross(float delay)
     {

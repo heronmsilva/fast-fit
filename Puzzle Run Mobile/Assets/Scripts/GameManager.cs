@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private bool fastForward = false;
     private bool gameOver = false;
     private bool paused = false;
+    private bool countDown = false;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
@@ -80,17 +81,33 @@ public class GameManager : MonoBehaviour
         lives = startLives;
         currDifficulty = startDifficulty;
         startTime = Time.time;
+        audioHandler.StopBackgroundSound();
 
         animBuffer.ResetQueue();
+
+        StartCoroutine(CountDown());
     }
 
     private void Update()
     {
-        if (!spawner.Wall) spawner.SpawnObjects();
+        if (countDown) return;
+        
+        if (! spawner.Wall) spawner.SpawnObjects();
         
         CheckWallCross();
 
         UIHandler.UpdateUIHeader();
+    }
+
+    private IEnumerator CountDown()
+    {
+        countDown = true;
+        spawner.SpawnCountDown();
+
+        yield return new WaitForSeconds(3f);
+
+        audioHandler.PlayBackgroundSound();
+        countDown = false;
     }
 
     private void CheckWallCross()

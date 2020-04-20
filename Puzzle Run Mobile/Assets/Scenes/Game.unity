@@ -3405,6 +3405,8 @@ MonoBehaviour:
     type: 3}
   dynamicContainer: {fileID: 127126778}
   pieceStartPoint: {fileID: 823786036}
+  countDownPrefab: {fileID: 8842106767339318471, guid: 2a9427f4a7a284740a0e2d8e6f5e33de,
+    type: 3}
   backgroundRays: {fileID: 837399150}
   backgroundDust: {fileID: 464800702}
   piecesPrefabs:

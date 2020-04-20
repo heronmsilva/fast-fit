@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab = null;
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
+    [SerializeField] private GameObject countDownPrefab = null;
     [SerializeField] private ParticleSystem backgroundRays = null;
     [SerializeField] private ParticleSystem backgroundDust = null;
     [SerializeField] private List<GameObject> piecesPrefabs = new List<GameObject>();
@@ -35,6 +36,11 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         minXY = maxXY = Vector2.zero;
+    }
+
+    public void SpawnCountDown()
+    {
+        GameObject countDown = Instantiate(countDownPrefab, dynamicContainer.transform) as GameObject;
     }
 
     private Material GetMaterial()
