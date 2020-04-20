@@ -86,11 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (! spawner.Wall) // First spawn
-        {
-            spawner.SpawnObjects();
-            UIHandler.UpdateUIHeader();
-        }
+        if (! spawner.Wall) spawner.SpawnObjects();
 
         if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning && ! gameOver)
         {
