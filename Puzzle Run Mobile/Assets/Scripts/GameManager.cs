@@ -86,9 +86,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (! spawner.Wall) spawner.SpawnObjects();
+        if (!spawner.Wall) spawner.SpawnObjects();
+        
+        CheckWallCross();
 
-        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning && ! gameOver)
+        UIHandler.UpdateUIHeader();
+    }
+
+    private void CheckWallCross()
+    {
+        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && !spawner.IsRespawning && !gameOver)
         {
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
@@ -113,7 +120,6 @@ public class GameManager : MonoBehaviour
             UIHandler.PlayCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
         }
-        UIHandler.UpdateUIHeader();
     }
 
     private void LateUpdate()
