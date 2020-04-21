@@ -4,6 +4,24 @@ using UnityEngine;
 
 public static class PlayerPrefManager
 {
+    public static void SetTutorialDone(int done)
+    {
+        PlayerPrefs.SetInt("Tutorial Done", done);
+    }
+
+    public static bool getTutorialDone()
+    {
+        if (PlayerPrefs.HasKey("Tutorial Done"))
+        {
+            if (PlayerPrefs.GetInt("Tutorial Done") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
     public static void SetSFXVolume(float index)
     {
         PlayerPrefs.SetFloat("SFX Volume", index);
