@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject touchControls = null;
 
     private static GameManager instance;
-    private static List<string> controls = new List<string> { "TOUCH", "FLOATING", "FIXED" };
+    private static List<string> controls = new List<string> { "FLOATING", "FIXED", "TOUCH" };
     private Spawner spawner;
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
