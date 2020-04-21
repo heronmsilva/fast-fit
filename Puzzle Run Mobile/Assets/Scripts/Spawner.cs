@@ -183,8 +183,8 @@ public class Spawner : MonoBehaviour
     private void RandomizePiecePosition()
     {
         int i = UnityEngine.Random.Range(0, wall.transform.childCount);
-        if (i == 0) RandomizePiecePosition();
         Vector3 pos = wall.transform.GetChild(i).position;
+        if (pos.x == 0 && pos.y == 0) RandomizePiecePosition();
 
         // If the position is exactly at the border
         // we need to shift it one unity accordingly
