@@ -107,6 +107,47 @@ public class GameManager : MonoBehaviour
         spawner.StopParticles();
     }
 
+    public void TutorialPart2()
+    {
+        UIHandler.ShowTutorialPart2();
+    }
+
+    public void TutorialPart3()
+    {
+        UIHandler.ShowTutorialPart3();
+    }
+
+    public void TutorialPart4()
+    {
+        UIHandler.ShowTutorialPart4();
+    }
+
+    public void TutorialPart5()
+    {
+        UIHandler.ShowTutorialPart5();
+    }
+
+    public void TutorialPart6()
+    {
+        UIHandler.ShowTutorialPart6();
+    }
+
+    public void SkipTutorial()
+    {
+        FinishTutorial();
+    }
+
+    public void FinishTutorial()
+    {
+        PlayerPrefManager.SetTutorialDone(1);
+        SceneManager.LoadScene("Game");
+    }
+
+    public void RestartTutorial()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
     private IEnumerator CountDown()
     {
         countDown = true;
