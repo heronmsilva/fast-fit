@@ -9414,7 +9414,6 @@ MonoBehaviour:
   crossesText: {fileID: 2000766280}
   levelText: {fileID: 1261697468}
   levelFill: {fileID: 364492805}
-  outline: {fileID: 1411462173}
   lifeImages:
   - {fileID: 832694083}
   - {fileID: 92055546}

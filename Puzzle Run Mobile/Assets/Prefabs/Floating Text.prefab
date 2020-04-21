@@ -88,7 +88,7 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 25
+  m_FontSize: 35
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: d8987a8f759f0b3488d9eb4140c9a611, type: 3}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6d443bd23322144895b0199a406062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1.2
+  time: 1
 --- !u!95 &6300174565951163866
 Animator:
   serializedVersion: 3
