@@ -176,11 +176,11 @@ public class GameManager : MonoBehaviour
                 IncreaseDifficulty();
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
-                StartCoroutine(audioHandler.PlayLevelUp(0.25f));
+                audioHandler.PlayLevelUp();
             }
             else
             {
-                StartCoroutine(audioHandler.PlayWallCross(0.25f));
+                audioHandler.PlayWallCross();
             }
             ScorePoints();
             fastForward = false;
