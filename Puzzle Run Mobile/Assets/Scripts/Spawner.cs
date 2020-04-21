@@ -38,6 +38,12 @@ public class Spawner : MonoBehaviour
         minXY = maxXY = Vector2.zero;
     }
 
+    public void StopParticles()
+    {
+        backgroundDust.Pause();
+        backgroundRays.Pause();
+    }
+
     public void SpawnCountDown()
     {
         GameObject countDown = Instantiate(countDownPrefab, dynamicContainer.transform) as GameObject;

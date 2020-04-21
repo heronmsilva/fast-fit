@@ -3460,6 +3460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 157491351}
   pausedScreen: {fileID: 854025608}
+  UIHeader: {fileID: 370670145}
+  controller: {fileID: 1701819410}
   scoreText: {fileID: 1736186549}
   crossesText: {fileID: 2000766280}
   levelText: {fileID: 1261697468}

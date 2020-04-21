@@ -84,18 +84,27 @@ public class GameManager : MonoBehaviour
 
         animBuffer.ResetQueue();
 
-        StartCoroutine(CountDown());
+        if (PlayerPrefManager.getTutorialDone())
+            StartCoroutine(CountDown());
     }
 
     private void Update()
     {
-        if (countDown) return;
-        
-        if (! spawner.Wall) spawner.SpawnObjects();
-        
-        CheckWallCross();
+        if (! PlayerPrefManager.getTutorialDone())
+            ShowTutorial();    
+        else 
+        {
+            if (countDown) return;
+            if (! spawner.Wall) spawner.SpawnObjects();
+            CheckWallCross();
+            UIHandler.UpdateUIHeader();
+        }
+    }
 
-        UIHandler.UpdateUIHeader();
+    private void ShowTutorial()
+    {
+        UIHandler.ShowTutorial();
+        spawner.StopParticles();
     }
 
     private IEnumerator CountDown()
