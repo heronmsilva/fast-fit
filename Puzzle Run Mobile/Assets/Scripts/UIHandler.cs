@@ -25,7 +25,6 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
     [SerializeField] private Image levelFill = null;
-    [SerializeField] private Image outline = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
     private GameManager gm;
@@ -112,11 +111,6 @@ public class UIHandler : MonoBehaviour
     public void PlayLevelUpAnimation()
     {
         level.GetComponent<Animator>().Play("LevelSwing");
-    }
-
-    public void PlayCrossAnimation()
-    {
-        outline.GetComponent<Animator>().Play("OutlineFill");
     }
 
     private void UpdateUIScore()

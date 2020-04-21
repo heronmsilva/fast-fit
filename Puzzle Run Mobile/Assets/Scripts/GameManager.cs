@@ -184,8 +184,7 @@ public class GameManager : MonoBehaviour
             }
             ScorePoints();
             fastForward = false;
-            UIHandler.PlayCrossAnimation();
-            StartCoroutine(spawner.DelayedRespawn(0.5f));
+            spawner.RespawnObjects();
         }
     }
 
