@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private bool paused = false;
     private bool countDown = false;
+    private bool onTutorial = false;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
@@ -87,19 +88,19 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefManager.getTutorialDone())
             StartCoroutine(CountDown());
+        else
+        {
+            ShowTutorial();
+            onTutorial = true;
+        }
     }
 
     private void Update()
     {
-        if (! PlayerPrefManager.getTutorialDone())
-            ShowTutorial();    
-        else 
-        {
-            if (countDown) return;
-            if (! spawner.Wall) spawner.SpawnObjects();
-            CheckWallCross();
-            UIHandler.UpdateUIHeader();
-        }
+        if (countDown || onTutorial) return;
+        if (! spawner.Wall) spawner.SpawnObjects();
+        CheckWallCross();
+        UIHandler.UpdateUIHeader();
     }
 
     private void SetupCamera()
