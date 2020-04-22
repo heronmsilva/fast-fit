@@ -3937,7 +3937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966246328}
   m_Layer: 5
-  m_Name: Floating Controls
+  m_Name: Floating
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5783,8 +5783,8 @@ MonoBehaviour:
   tutorialObjects: {fileID: 264275063}
   tutorialObjects2: {fileID: 119161952}
   tutorialObjects4: {fileID: 597838575}
-  floatingControls: {fileID: 0}
-  fixedControls: {fileID: 0}
+  floatingControls: {fileID: 966246327}
+  fixedControls: {fileID: 345042971}
   scoreText: {fileID: 1736186549}
   crossesText: {fileID: 2000766280}
   levelText: {fileID: 1261697468}
