@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
         currDifficulty = startDifficulty;
         audioHandler.StopBackgroundSound();
 
+        SetupCamera();
         animBuffer.ResetQueue();
 
         if (PlayerPrefManager.getTutorialDone())
@@ -99,6 +100,23 @@ public class GameManager : MonoBehaviour
             CheckWallCross();
             UIHandler.UpdateUIHeader();
         }
+    }
+
+    private void SetupCamera()
+    {
+        float fov = Camera.main.fieldOfView;
+        float adaptedFov = GetCameraAspect() * fov / GetDefaultAspect();
+        Camera.main.fieldOfView = adaptedFov;
+    }
+
+    private float GetCameraAspect()
+    {
+        return Mathf.Round(100f / Camera.main.aspect) / 100f;
+    }
+
+    private float GetDefaultAspect()
+    {
+        return Mathf.Round(100f * 16 / 9) / 100f;
     }
 
     private void ShowTutorial()
