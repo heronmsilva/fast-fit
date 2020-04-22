@@ -19,8 +19,9 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject tutorialPart6 = null;
     [SerializeField] private GameObject tutorialObjects = null;
     [SerializeField] private GameObject tutorialObjects2 = null;
-    [SerializeField] private GameObject tutorialObjects3 = null;
     [SerializeField] private GameObject tutorialObjects4 = null;
+    [SerializeField] private GameObject floatingControls = null;
+    [SerializeField] private GameObject fixedControls = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
@@ -57,15 +58,15 @@ public class UIHandler : MonoBehaviour
         tutorialPart2.SetActive(false);
         tutorialPart3.SetActive(true);
         tutorialObjects2.SetActive(false);
-        tutorialObjects3.SetActive(true);
         controller.SetActive(true);
+        floatingControls.SetActive(true);
+        fixedControls.SetActive(false);
     }
 
     public void ShowTutorialPart4()
     {
         tutorialPart3.SetActive(false);
         tutorialPart4.SetActive(true);
-        tutorialObjects3.SetActive(false);
         tutorialObjects4.SetActive(true);
     }
 
