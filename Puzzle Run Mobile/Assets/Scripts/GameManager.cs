@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         Camera.main.fieldOfView = adaptedFov;
     }
 
-    private float GetCameraAspect()
+    public float GetCameraAspect()
     {
         return Mathf.Round(100f / Camera.main.aspect) / 100f;
     }

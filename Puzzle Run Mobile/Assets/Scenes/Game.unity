@@ -9166,7 +9166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e67b48ca4ab2a40a0e0b81a06a503a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
+  defaultWallPrefab: {fileID: 5343734694358827339, guid: 3fe3f15cf96205843947fd0d9adc1312,
+    type: 3}
+  tallWallPrefab: {fileID: 1434127403852060324, guid: 17c02f09dc1ef9a4eababbf7154f6d92,
     type: 3}
   floatingTextPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
     type: 3}

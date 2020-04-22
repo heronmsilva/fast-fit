@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject wallPrefab = null;
+    [SerializeField] private GameObject defaultWallPrefab = null;
+    [SerializeField] private GameObject tallWallPrefab = null;
     [SerializeField] private GameObject floatingTextPrefab = null;
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
@@ -16,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private GameManager gm;
     private AnimationBuffer animBuffer;
-    private GameObject wall, piece;
+    private GameObject wall, piece, wallPrefab;
     private Vector2 minXY, maxXY;
     private bool respawning = false;
 
@@ -36,6 +37,19 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         minXY = maxXY = Vector2.zero;
+
+        SetWallPrefab();
+    }
+
+    private void SetWallPrefab()
+    {
+        if (gm.GetCameraAspect() >= 2)
+        {
+            wallPrefab = tallWallPrefab;
+            return;
+        }
+        
+        wallPrefab = defaultWallPrefab;
     }
 
     public void StopParticles()
