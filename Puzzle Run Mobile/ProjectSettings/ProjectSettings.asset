@@ -756,10 +756,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 32b7c016-5a7b-41fb-a40f-1aebb8b508eb
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Fast Fit
-  organizationId: heronsilva
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
