@@ -250,6 +250,12 @@ public class GameManager : MonoBehaviour
         touchControls.SetActive(true);
     }
 
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");
+    }
+
     public void GameOver()
     {
         // Since several collisions might be triggering gameover
