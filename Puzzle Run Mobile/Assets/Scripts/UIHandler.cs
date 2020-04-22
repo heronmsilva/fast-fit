@@ -8,20 +8,6 @@ public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
     [SerializeField] private GameObject pausedScreen = null;
-    [SerializeField] private GameObject UIHeader = null;
-    [SerializeField] private GameObject controller = null;
-    [SerializeField] private GameObject tutorial = null;
-    [SerializeField] private GameObject tutorialPart1 = null;
-    [SerializeField] private GameObject tutorialPart2 = null;
-    [SerializeField] private GameObject tutorialPart3 = null;
-    [SerializeField] private GameObject tutorialPart4 = null;
-    [SerializeField] private GameObject tutorialPart5 = null;
-    [SerializeField] private GameObject tutorialPart6 = null;
-    [SerializeField] private GameObject tutorialObjects = null;
-    [SerializeField] private GameObject tutorialObjects2 = null;
-    [SerializeField] private GameObject tutorialObjects4 = null;
-    [SerializeField] private GameObject floatingControls = null;
-    [SerializeField] private GameObject fixedControls = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
@@ -38,56 +24,6 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
-    }
-
-    public void ShowTutorial()
-    {
-        HideUI();
-        tutorial.SetActive(true);
-    }
-
-    public void ShowTutorialPart2()
-    {
-        tutorialPart1.SetActive(false);
-        tutorialPart2.SetActive(true);
-        tutorialObjects.SetActive(true);
-    }
-
-    public void ShowTutorialPart3()
-    {
-        tutorialPart2.SetActive(false);
-        tutorialPart3.SetActive(true);
-        tutorialObjects2.SetActive(false);
-        controller.SetActive(true);
-        floatingControls.SetActive(true);
-        fixedControls.SetActive(false);
-    }
-
-    public void ShowTutorialPart4()
-    {
-        tutorialPart3.SetActive(false);
-        tutorialPart4.SetActive(true);
-        tutorialObjects4.SetActive(true);
-    }
-
-    public void ShowTutorialPart5()
-    {
-        tutorialPart4.SetActive(false);
-        tutorialPart5.SetActive(true);
-        tutorialObjects4.SetActive(false);
-    }
-
-    public void ShowTutorialPart6()
-    {
-        tutorialPart5.SetActive(false);
-        tutorialPart6.SetActive(true);
-        UIHeader.SetActive(true);
-    }
-
-    public void HideUI()
-    {
-        UIHeader.SetActive(false);
-        controller.SetActive(false);
     }
 
     public void Pause()

@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private bool paused = false;
     private bool countDown = false;
-    private bool onTutorial = false;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
@@ -86,18 +85,12 @@ public class GameManager : MonoBehaviour
         SetupCamera();
         animBuffer.ResetQueue();
 
-        if (PlayerPrefManager.getTutorialDone())
-            StartCoroutine(CountDown());
-        else
-        {
-            ShowTutorial();
-            onTutorial = true;
-        }
+        StartCoroutine(CountDown());
     }
 
     private void Update()
     {
-        if (countDown || onTutorial) return;
+        if (countDown) return;
         if (! spawner.Wall) spawner.SpawnObjects();
         CheckWallCross();
         UIHandler.UpdateUIHeader();
@@ -118,53 +111,6 @@ public class GameManager : MonoBehaviour
     private float GetDefaultAspect()
     {
         return Mathf.Round(100f * 16 / 9) / 100f;
-    }
-
-    private void ShowTutorial()
-    {
-        UIHandler.ShowTutorial();
-        spawner.StopParticles();
-    }
-
-    public void TutorialPart2()
-    {
-        UIHandler.ShowTutorialPart2();
-    }
-
-    public void TutorialPart3()
-    {
-        UIHandler.ShowTutorialPart3();
-    }
-
-    public void TutorialPart4()
-    {
-        UIHandler.ShowTutorialPart4();
-    }
-
-    public void TutorialPart5()
-    {
-        UIHandler.ShowTutorialPart5();
-    }
-
-    public void TutorialPart6()
-    {
-        UIHandler.ShowTutorialPart6();
-    }
-
-    public void SkipTutorial()
-    {
-        FinishTutorial();
-    }
-
-    public void FinishTutorial()
-    {
-        PlayerPrefManager.SetTutorialDone(1);
-        SceneManager.LoadScene("Game");
-    }
-
-    public void RestartTutorial()
-    {
-        SceneManager.LoadScene("Game");
     }
 
     private IEnumerator CountDown()
