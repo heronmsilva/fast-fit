@@ -28,7 +28,7 @@ public class GameOverManager : MonoBehaviour
     {
         UpdateGameOverUI();
 
-        StartCoroutine(adManager.ShowBannerAd());
+        // StartCoroutine(adManager.ShowBannerAd());
 
         int attempts = PlayerPrefManager.GetAttempts();
         if (attempts % adAttempts == 0)
