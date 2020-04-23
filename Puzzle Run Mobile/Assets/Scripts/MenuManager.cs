@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainScreen = null;
     [SerializeField] private GameObject settingsScreen = null;
+    [SerializeField] private GameObject controlsButton = null;
     [SerializeField] private GameObject controlsScreen = null;
     [SerializeField] private GameObject recordsScreen = null;
     [SerializeField] private GameObject touchControlsArea = null;
@@ -39,6 +40,9 @@ public class MenuManager : MonoBehaviour
         SetupSavedControls();
         SetupSavedSettings();
         SetupRecords();
+
+        if (! PlayerPrefManager.getTutorialDone())
+            controlsButton.GetComponent<Animator>().Play("ControlsScale");
     }
     
     private void SetupRecords()
@@ -93,6 +97,8 @@ public class MenuManager : MonoBehaviour
 
     public void Controls()
     {
+        PlayerPrefManager.SetTutorialDone(1);
+        controlsButton.GetComponent<Animator>().Play("New State");
         audioSource.PlayOneShot(UIButtonClick);
         mainScreen.SetActive(false);
         settingsScreen.SetActive(false);

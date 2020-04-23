@@ -5678,6 +5678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScreen: {fileID: 1679098275}
   settingsScreen: {fileID: 178575721}
+  controlsButton: {fileID: 2047611940466244346}
   controlsScreen: {fileID: 945192419}
   recordsScreen: {fileID: 1777980709}
   touchControlsArea: {fileID: 1294648504}
@@ -11509,6 +11510,7 @@ GameObject:
   - component: {fileID: 2047611940466244326}
   - component: {fileID: 2047611940466244345}
   - component: {fileID: 2047611940466244344}
+  - component: {fileID: 2047611940466244348}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -11536,6 +11538,25 @@ RectTransform:
   m_AnchoredPosition: {x: 115, y: 150}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &2047611940466244348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047611940466244346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8479a5b3841695b429b56c74c6ce120d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!222 &2047611941014424230
 CanvasRenderer:
   m_ObjectHideFlags: 0
