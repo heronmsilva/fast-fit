@@ -86,6 +86,9 @@ public class GameManager : MonoBehaviour
         animBuffer.ResetQueue();
 
         StartCoroutine(CountDown());
+
+        int attempts = PlayerPrefManager.GetAttempts() + 1;
+        PlayerPrefManager.SetAttempts(attempts);
     }
 
     private void Update()
