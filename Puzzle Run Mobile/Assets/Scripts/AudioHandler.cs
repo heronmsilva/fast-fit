@@ -43,14 +43,18 @@ public class AudioHandler : MonoBehaviour
         backgroundAudioSource.Play();
     }
 
-    public void PlayWallCross()
+    public IEnumerator PlayWallCross(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         audioSource.clip = wallCrossClip;
         audioSource.Play();
     }
 
-    public void PlayLevelUp()
+    public IEnumerator PlayLevelUp(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         audioSource.clip = levelUpClip;
         audioSource.Play();
     }
