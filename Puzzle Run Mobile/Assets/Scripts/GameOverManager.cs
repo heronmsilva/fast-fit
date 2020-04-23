@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] private Text scoreText = null;    
+    [SerializeField] private Text scoreText = null;
     [SerializeField] private Text topScoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text topCrossesText = null;
@@ -16,9 +16,18 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private Text streakText = null;
     [SerializeField] private Text topStreakText = null;
 
+    private AdManager adManager;
+
+    private void Awake()
+    {
+        adManager = GetComponent<AdManager>();
+    }
+
     private void Start()
     {
         UpdateGameOverUI();
+
+        StartCoroutine(adManager.ShowBannerAd());
     }
 
     private void UpdateGameOverUI()

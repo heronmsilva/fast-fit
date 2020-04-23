@@ -508,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351364876}
   - component: {fileID: 351364875}
+  - component: {fileID: 351364877}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -549,6 +550,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351364877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351364874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721b519fd04ace240a7138914110e110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iOSGameID: 3568509
+  androidGameID: 3568508
+  nonRewardedPID: video
+  rewardedPID: rewardedVideo
+  bannerPID: banner
 --- !u!1 &364779140
 GameObject:
   m_ObjectHideFlags: 0
