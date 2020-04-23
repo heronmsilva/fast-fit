@@ -3421,7 +3421,7 @@ MonoBehaviour:
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
-  maxSpeed: 50
+  maxSpeed: 100
   startDifficulty: 0
   touchControls: {fileID: 1478293660}
 --- !u!114 &1525496432
@@ -3727,9 +3727,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iOSGameID: 3568509
   androidGameID: 3568508
-  placementId_nonRewarded: video
-  placementId_rewarded: rewardedVideo
-  placementId_banner: banner
+  nonRewardedPID: video
+  rewardedPID: rewardedVideo
+  bannerPID: banner
 --- !u!4 &1546267819
 Transform:
   m_ObjectHideFlags: 0
