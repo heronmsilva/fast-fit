@@ -15,6 +15,7 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private Text topTimeText = null;
     [SerializeField] private Text streakText = null;
     [SerializeField] private Text topStreakText = null;
+    [SerializeField] private int adAttempts = 5;
 
     private AdManager adManager;
 
@@ -28,6 +29,10 @@ public class GameOverManager : MonoBehaviour
         UpdateGameOverUI();
 
         StartCoroutine(adManager.ShowBannerAd());
+
+        int attempts = PlayerPrefManager.GetAttempts();
+        if (attempts % adAttempts == 0)
+            adManager.ShowNonRewardedAd();
     }
 
     private void UpdateGameOverUI()
