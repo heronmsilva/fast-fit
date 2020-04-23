@@ -41,6 +41,21 @@ public class Spawner : MonoBehaviour
         SetWallPrefab();
     }
 
+    public void PlayWallCrossAnimation()
+    {
+        foreach (Transform cube in wall.transform)
+        {
+            cube.GetComponent<Animator>().Play("WallCross");
+        }
+        foreach (Transform container in piece.transform)
+        {
+            foreach (Transform cube in container)
+            {
+                cube.GetComponent<Animator>().Play("WallCross");
+            }
+        }
+    }
+
     private void SetWallPrefab()
     {
         if (gm.GetCameraAspect() >= 2)

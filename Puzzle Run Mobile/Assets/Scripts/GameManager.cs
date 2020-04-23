@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
             }
             ScorePoints();
             fastForward = false;
+            spawner.PlayWallCrossAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
         }
     }
