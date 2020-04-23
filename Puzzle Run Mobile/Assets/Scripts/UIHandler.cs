@@ -19,11 +19,14 @@ public class UIHandler : MonoBehaviour
     private AnimationBuffer animBuffer;
     private float startTime;
 
-    private void Start()
+    private void Awake()
     {
         gm = GetComponent<GameManager>();
         animBuffer = GetComponent<AnimationBuffer>();
+    }
 
+    private void Start()
+    {
         startTime = Time.time;
     }
 

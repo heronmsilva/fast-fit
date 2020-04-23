@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
 
         int attempts = PlayerPrefManager.GetAttempts() + 1;
         PlayerPrefManager.SetAttempts(attempts);
+        UIHandler.UpdateUIHeader();
     }
 
     private void Update()
