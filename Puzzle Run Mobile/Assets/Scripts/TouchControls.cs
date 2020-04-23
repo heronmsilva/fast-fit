@@ -81,7 +81,7 @@ public class TouchControls : MonoBehaviour
 
     private void CheckMouseInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && RectTransformUtility.RectangleContainsScreenPoint(touchArea, Input.mousePosition))
         {
             startTouch = Input.mousePosition;
             startTime = Time.time;
@@ -132,7 +132,7 @@ public class TouchControls : MonoBehaviour
 
     private void CheckScreenTouch()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && RectTransformUtility.RectangleContainsScreenPoint(touchArea, Input.mousePosition))
         {
             Touch touch = Input.GetTouch(0);
             switch (touch.phase)
