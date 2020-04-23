@@ -8,6 +8,7 @@ public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
     [SerializeField] private GameObject pausedScreen = null;
+    [SerializeField] private GameObject gameOverScreen = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
@@ -24,6 +25,16 @@ public class UIHandler : MonoBehaviour
         animBuffer = GetComponent<AnimationBuffer>();
 
         startTime = Time.time;
+    }
+
+    public void HideGameOver()
+    {
+        gameOverScreen.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 
     public void Pause()

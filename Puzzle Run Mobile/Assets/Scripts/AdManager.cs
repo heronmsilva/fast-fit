@@ -11,8 +11,14 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     [SerializeField] private string rewardedPID = "rewardedVideo";
     [SerializeField] private string bannerPID = "banner";
 
+    private GameManager gm;
     private string gameId;
     private bool testMode = true;
+
+    private void Awake()
+    {
+        gm = GetComponent<GameManager>();
+    }
 
     private void Start()
     {
@@ -61,11 +67,13 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         switch (showResult)
         {
             case ShowResult.Finished:
-                // REWARD
+                gm.RewardGameOver();
                 break;
             case ShowResult.Skipped:
+                gm.LoadGameOver();
                 break;
             case ShowResult.Failed:
+                gm.LoadGameOver();
                 break;
         }
     }

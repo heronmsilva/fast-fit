@@ -118,6 +118,12 @@ public class Spawner : MonoBehaviour
         floatingText.GetComponent<TextMesh>().text = points.ToString();
     }
 
+    public void DestroyGameObjects()
+    {
+        Destroy(wall);
+        Destroy(piece);
+    }
+
     public IEnumerator DelayedRespawn(float delay)
     {
         respawning = true;

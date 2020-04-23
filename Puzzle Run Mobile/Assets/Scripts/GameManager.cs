@@ -176,15 +176,25 @@ public class GameManager : MonoBehaviour
             audioHandler.StopBackgroundSound();
             audioHandler.PlayGameOver();
             touchControls.SetActive(false);
-            // UpdatePlayerPrefs();
-
+            UIHandler.GameOver();
             handledGameOver = true;
         }
     }
 
-    private void LoadGameOver()
+    public void RewardGameOver()
     {
-        Time.timeScale = 1;
+        lives = 1;
+        touchControls.SetActive(true);
+        UIHandler.HideGameOver();
+        StartCoroutine(CountDown());
+        spawner.DestroyGameObjects();
+        gameOver = false;
+        handledGameOver = false;
+    }
+
+    public void LoadGameOver()
+    {
+        UpdatePlayerPrefs();
         SceneManager.LoadScene("Game Over");
     }
 
@@ -262,7 +272,6 @@ public class GameManager : MonoBehaviour
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
-        Time.timeScale = 1;
     }
 
     private void IncreaseDifficulty()
