@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private bool paused = false;
     private bool countDown = false;
+    private bool handledGameOver = false;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckWallCross()
     {
-        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && !spawner.IsRespawning && !gameOver)
+        if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning && ! gameOver)
         {
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
@@ -162,18 +163,22 @@ public class GameManager : MonoBehaviour
         if (gameOver)
         {
             if (lives > 0)
-            {
                 UseLife();
-            }
             else
-            {
-                audioHandler.StopBackgroundSound();
-                audioHandler.PlayGameOver();
-                UpdatePlayerPrefs();
-                touchControls.SetActive(false);
-                gameOver = false;
-                LoadGameOver();
-            }
+                HandleGameOver();
+        }
+    }
+
+    private void HandleGameOver()
+    {
+        if (! handledGameOver)
+        {
+            audioHandler.StopBackgroundSound();
+            audioHandler.PlayGameOver();
+            touchControls.SetActive(false);
+            // UpdatePlayerPrefs();
+
+            handledGameOver = true;
         }
     }
 
@@ -209,13 +214,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // Since several collisions might be triggering gameover
-        // it has to be checked if it has already been triggered
-        if (! gameOver)
-        {
-            gameOver = true;
-            Time.timeScale = 0;
-        }
+        gameOver = true;
     }
     
     // The animations should take 1/4
