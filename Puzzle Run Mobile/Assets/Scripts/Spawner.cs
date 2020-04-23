@@ -44,16 +44,16 @@ public class Spawner : MonoBehaviour
 
     public void PlayWallCrossAnimation()
     {
-        foreach (Transform cube in wall.transform)
-        {
-            cube.GetComponent<Animator>().Play("WallCross");
-        }
         foreach (Transform container in piece.transform)
         {
             foreach (Transform cube in container)
             {
-                cube.GetComponent<Animator>().Play("WallCross");
+                cube.parent = wall.transform;
             }
+        }
+        foreach (Transform cube in wall.transform)
+        {
+            cube.GetComponent<Animator>().Play("WallCross");
         }
     }
 
