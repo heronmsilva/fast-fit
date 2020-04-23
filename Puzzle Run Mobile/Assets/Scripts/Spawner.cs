@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject floatingTextPrefab = null;
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
+    [SerializeField] private GameObject floatingTextPoint = null;
     [SerializeField] private GameObject countDownPrefab = null;
     [SerializeField] private ParticleSystem backgroundRays = null;
     [SerializeField] private ParticleSystem backgroundDust = null;
@@ -110,7 +111,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject floatingText = Instantiate(
             floatingTextPrefab, 
-            piece.transform.position, 
+            floatingTextPoint.transform.position, 
             Quaternion.identity, 
             dynamicContainer.transform
         );
