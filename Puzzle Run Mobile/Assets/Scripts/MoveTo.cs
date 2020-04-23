@@ -12,13 +12,21 @@ public class MoveTo : MonoBehaviour
 
     private void Update()
     {
-        concluded = this.transform.position == waypoint;
+        if (this.transform.position == waypoint)
+            StartCoroutine(SetConclusion());
 
         this.transform.position = Vector3.MoveTowards(
             this.transform.position, 
             waypoint, 
             Time.deltaTime * speed
         );
+    }
+
+    private IEnumerator SetConclusion()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        concluded = true;
     }
 
     public void SetSpeed(float value)
