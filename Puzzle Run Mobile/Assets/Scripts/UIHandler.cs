@@ -59,6 +59,23 @@ public class UIHandler : MonoBehaviour
         UpdateUILives();
     }
 
+    public void PlayUseLifeAnimation()
+    {
+        Image life = GetLastLife();
+        if (life)
+            life.GetComponent<Animator>().Play("LifeFade");
+    }
+
+    private Image GetLastLife()
+    {
+        for (int i = lifeImages.Count - 1; i >= 0; i--)
+        {
+            if (lifeImages[i].enabled)
+                return lifeImages[i];
+        }
+        return null;
+    }
+
     public void PlayLevelUpAnimation()
     {
         level.GetComponent<Animator>().Play("LevelSwing");

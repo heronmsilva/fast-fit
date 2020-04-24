@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     private bool paused = false;
     private bool countDown = false;
     private bool handledGameOver = false;
+    private bool handledLifeUsage = false;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
@@ -164,10 +165,36 @@ public class GameManager : MonoBehaviour
         if (gameOver)
         {
             if (lives > 0)
-                UseLife();
+                HandleLifeUsage();
             else
                 HandleGameOver();
         }
+    }
+
+    private void HandleLifeUsage()
+    {
+        if (! handledLifeUsage)
+        {
+            StartCoroutine(UseLife());
+            handledLifeUsage = true;
+        }
+        
+    }
+
+    private IEnumerator UseLife()
+    {
+        audioHandler.PlayRestart();
+        UIHandler.PlayUseLifeAnimation();
+
+        yield return new WaitForSeconds(1f);
+
+        lives -= 1;
+        crossSequence = 0;
+        crossStreak = 0;
+        animBuffer.ResetQueue();
+        spawner.RespawnObjects();
+        gameOver = false;
+        handledLifeUsage = false;
     }
 
     private void HandleGameOver()
@@ -262,17 +289,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefManager.SetLastStreak(bestCrossStreak);
         if (bestCrossStreak > PlayerPrefManager.GetTopStreak())
             PlayerPrefManager.SetTopStreak(bestCrossStreak);
-    }
-
-    private void UseLife()
-    {
-        audioHandler.PlayRestart();
-        lives -= 1;
-        crossSequence = 0;
-        crossStreak = 0;
-        animBuffer.ResetQueue();
-        spawner.RespawnObjects();
-        gameOver = false;
     }
 
     private void IncreaseDifficulty()
