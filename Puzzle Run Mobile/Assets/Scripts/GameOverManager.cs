@@ -26,8 +26,6 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateGameOverUI();
-
         // StartCoroutine(adManager.ShowBannerAd());
 
         int attempts = PlayerPrefManager.GetAttempts();
@@ -35,21 +33,46 @@ public class GameOverManager : MonoBehaviour
             adManager.ShowNonRewardedAd();
     }
 
+    private void Update()
+    {
+        UpdateGameOverUI();
+    }
+
     private void UpdateGameOverUI()
+    {
+        UpdateTime();
+        UpdateScore();
+        UpdateCrosses();
+        UpdateStreak();
+    }
+
+    private void UpdateTime()
     {
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetLastTime());
         string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
         TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         string topTime = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
-
-        scoreText.text = PlayerPrefManager.GetLastScore().ToString();
-        topScoreText.text = "(" + PlayerPrefManager.GetTopScore().ToString() + ")";
-        crossesText.text = PlayerPrefManager.GetLastCrosses().ToString();
-        topCrossesText.text = "(" + PlayerPrefManager.GetTopCrosses().ToString() + ")";
-        streakText.text = PlayerPrefManager.GetLastStreak().ToString();
-        topStreakText.text = "(" + PlayerPrefManager.GetTopStreak().ToString() + ")";
+        
         timeText.text = time;
         topTimeText.text = "(" + topTime + ")";
+    }
+
+    private void UpdateScore()
+    {
+        scoreText.text = PlayerPrefManager.GetLastScore().ToString();
+        topScoreText.text = "(" + PlayerPrefManager.GetTopScore().ToString() + ")";
+    }
+
+    private void UpdateCrosses()
+    {
+        crossesText.text = PlayerPrefManager.GetLastCrosses().ToString();
+        topCrossesText.text = "(" + PlayerPrefManager.GetTopCrosses().ToString() + ")";
+    }
+
+    private void UpdateStreak()
+    {
+        streakText.text = PlayerPrefManager.GetLastStreak().ToString();
+        topStreakText.text = "(" + PlayerPrefManager.GetTopStreak().ToString() + ")";
     }
 
     public void TryAgain()
