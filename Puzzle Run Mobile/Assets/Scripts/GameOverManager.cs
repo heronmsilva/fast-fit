@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
+    [SerializeField] private NumberWriter numberWriter = null;
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text topScoreText = null;
     [SerializeField] private Text crossesText = null;
@@ -26,53 +27,60 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        // StartCoroutine(adManager.ShowBannerAd());
+        StartCoroutine(UpdateGameOverUI());
 
         int attempts = PlayerPrefManager.GetAttempts();
         if (attempts % adAttempts == 0)
             adManager.ShowNonRewardedAd();
     }
 
-    private void Update()
-    {
-        UpdateGameOverUI();
-    }
-
-    private void UpdateGameOverUI()
+    private IEnumerator UpdateGameOverUI()
     {
         UpdateTime();
+
+        while (! numberWriter.IsReady())
+            yield return null;
+
         UpdateScore();
+
+        while (! numberWriter.IsReady())
+            yield return null;
+
         UpdateCrosses();
+
+        while (! numberWriter.IsReady())
+            yield return null;
+
         UpdateStreak();
     }
 
     private void UpdateTime()
     {
-        TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetLastTime());
-        string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        numberWriter.Write(timeText, PlayerPrefManager.GetLastTime(), 1f, true);
+
         TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
-        string topTime = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
-        
-        timeText.text = time;
-        topTimeText.text = "(" + topTime + ")";
+        topTimeText.text = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
     }
 
     private void UpdateScore()
     {
-        scoreText.text = PlayerPrefManager.GetLastScore().ToString();
-        topScoreText.text = "(" + PlayerPrefManager.GetTopScore().ToString() + ")";
+        numberWriter.Write(scoreText, PlayerPrefManager.GetLastScore(), 1f);
+    
+        topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
     }
 
     private void UpdateCrosses()
     {
-        crossesText.text = PlayerPrefManager.GetLastCrosses().ToString();
-        topCrossesText.text = "(" + PlayerPrefManager.GetTopCrosses().ToString() + ")";
+        numberWriter.Write(crossesText, PlayerPrefManager.GetLastCrosses(), 1f);
+        
+        topCrossesText.text = PlayerPrefManager.GetTopCrosses().ToString();
     }
 
     private void UpdateStreak()
     {
-        streakText.text = PlayerPrefManager.GetLastStreak().ToString();
-        topStreakText.text = "(" + PlayerPrefManager.GetTopStreak().ToString() + ")";
+        numberWriter.Write(streakText, PlayerPrefManager.GetLastStreak(), 1f);
+        
+        topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
     }
 
     public void TryAgain()
