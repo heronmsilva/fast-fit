@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float startSpeed = 5;
     [SerializeField] private float speedIncreaseDelta = 0.1f;
     [SerializeField] private float pitchIncreaseDelta = 0.001f;
+    [SerializeField] private float watchAnAdTimer = 3f;
     [SerializeField] private int maxCrossSequence = 10;
     [SerializeField] private int startLives = 1;
     [SerializeField] private int maxLives = 5;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
     private Difficulty currDifficulty;
-    private float speed, startTime;
+    private float speed, startTime, gameOverTimer;
     private int lives, score, crosses, crossSequence, crossStreak, bestCrossStreak;
     private bool fastForward, gameOver, paused, countDown, handledGameOver, handledLifeUsage;
 
@@ -72,11 +73,12 @@ public class GameManager : MonoBehaviour
         speed = startSpeed;
         lives = startLives;
         currDifficulty = startDifficulty;
-        audioHandler.StopBackgroundSound();
+        gameOverTimer = watchAnAdTimer;
 
-        SetupCamera();
+        audioHandler.StopBackgroundSound();
         animBuffer.ResetQueue();
 
+        SetupCamera();
         StartCoroutine(CountDown());
 
         int attempts = PlayerPrefManager.GetAttempts() + 1;
@@ -87,9 +89,19 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (countDown) return;
+
         if (! spawner.Wall) spawner.SpawnObjects();
+
         CheckWallCross();
+
         UIHandler.UpdateUIHeader();
+
+        if (gameOver)
+        {
+            gameOverTimer -= Time.deltaTime;
+            if (gameOverTimer < 0)
+                LoadGameOver();
+        }
     }
 
     private void SetupCamera()
@@ -184,6 +196,7 @@ public class GameManager : MonoBehaviour
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
+        gameOverTimer = watchAnAdTimer;
         handledLifeUsage = false;
     }
 
@@ -207,6 +220,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CountDown());
         spawner.DestroyGameObjects();
         gameOver = false;
+        gameOverTimer = watchAnAdTimer;
         handledGameOver = false;
     }
 

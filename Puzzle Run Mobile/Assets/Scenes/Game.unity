@@ -3673,6 +3673,7 @@ MonoBehaviour:
   startSpeed: 5
   speedIncreaseDelta: 0.1
   pitchIncreaseDelta: 0.001
+  watchAnAdTimer: 3
   maxCrossSequence: 10
   startLives: 1
   maxLives: 5
