@@ -24,18 +24,8 @@ public class GameManager : MonoBehaviour
     private AudioHandler audioHandler;
     private Difficulty currDifficulty;
     private float speed, startTime;
-    private int lives;
-    private int score = 0;
-    private int crosses = 0;
-    private int crossSequence = 0;
-    private int crossStreak = 0;
-    private int bestCrossStreak = 0;
-    private bool fastForward = false;
-    private bool gameOver = false;
-    private bool paused = false;
-    private bool countDown = false;
-    private bool handledGameOver = false;
-    private bool handledLifeUsage = false;
+    private int lives, score, crosses, crossSequence, crossStreak, bestCrossStreak;
+    private bool fastForward, gameOver, paused, countDown, handledGameOver, handledLifeUsage;
 
     public static GameManager Instance { get { return instance; } }
     public static List<string> Controls { get { return controls; } }
