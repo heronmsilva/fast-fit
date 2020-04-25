@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class PlayerPrefManager
 {
+    public static void Clear()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public static void SetAttempts(int attempts)
     {
         PlayerPrefs.SetInt("Attempts", attempts);
