@@ -12,6 +12,7 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private Text scoreText = null;
     [SerializeField] private Text crossesText = null;
     [SerializeField] private Text levelText = null;
+    [SerializeField] private Image watchAdTimer = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
@@ -38,6 +39,7 @@ public class UIHandler : MonoBehaviour
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
+        watchAdTimer.GetComponent<Animator>().Play("ReduceFillAnimation");
     }
 
     public void Pause()
