@@ -11,6 +11,8 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     [SerializeField] private string rewardedPID = "rewardedVideo";
     [SerializeField] private string bannerPID = "banner";
 
+    public bool isAdPlaying;
+
     private GameManager gm;
     private string gameId;
     private bool testMode = true;
@@ -57,11 +59,14 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         while (! Advertisement.IsReady(placementId))
             yield return null;
 
+        isAdPlaying = true;
         Advertisement.Show(placementId);
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
+        isAdPlaying = false;
+
         if (placementId != rewardedPID) return;
 
         switch (showResult)

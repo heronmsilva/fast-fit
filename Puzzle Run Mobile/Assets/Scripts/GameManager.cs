@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
+    private AdManager adManager;
     private Difficulty currDifficulty;
     private float speed, startTime, gameOverTimer;
     private int lives, score, crosses, crossSequence, crossStreak, bestCrossStreak;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         audioHandler = GetComponent<AudioHandler>();
+        adManager = GetComponent<AdManager>();
     }
 
     private void Start()
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
 
         UIHandler.UpdateUIHeader();
 
-        if (gameOver)
+        if (gameOver && ! adManager.isAdPlaying)
         {
             gameOverTimer -= Time.deltaTime;
             if (gameOverTimer < 0)
