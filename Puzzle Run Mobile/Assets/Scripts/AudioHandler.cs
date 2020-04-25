@@ -6,9 +6,9 @@ public class AudioHandler : MonoBehaviour
 {
     [SerializeField] private AudioSource backgroundAudioSource = null;
     [SerializeField] private AudioClip wallCrossClip = null;
-    [SerializeField] private AudioClip restartClip = null;
     [SerializeField] private AudioClip gameOverClip = null;
     [SerializeField] private AudioClip levelUpClip = null;
+    [SerializeField] private AudioClip impactClip = null;
 
     private AudioSource audioSource;
 
@@ -43,6 +43,12 @@ public class AudioHandler : MonoBehaviour
         backgroundAudioSource.Play();
     }
 
+    public void PlayImpactSound()
+    {
+        audioSource.clip = impactClip;
+        audioSource.Play();
+    }
+
     public IEnumerator PlayWallCross(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -56,12 +62,6 @@ public class AudioHandler : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         audioSource.clip = levelUpClip;
-        audioSource.Play();
-    }
-
-    public void PlayRestart()
-    {
-        audioSource.clip = restartClip;
         audioSource.Play();
     }
 

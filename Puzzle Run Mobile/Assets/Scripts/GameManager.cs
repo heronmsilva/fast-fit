@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator UseLife()
     {
-        audioHandler.PlayRestart();
+        audioHandler.PlayImpactSound();
         UIHandler.PlayUseLifeAnimation();
 
         yield return new WaitForSeconds(1f);
