@@ -757,7 +757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CROSSES
+  m_Text: FITS
 --- !u!222 &481239821
 CanvasRenderer:
   m_ObjectHideFlags: 0
