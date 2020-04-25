@@ -33,7 +33,7 @@ public class NumberWriter : MonoBehaviour
         if (uiText != null)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0)
+            while (timer <= 0)
             {
                 if (isTime)
                 {
@@ -47,7 +47,10 @@ public class NumberWriter : MonoBehaviour
                 currentNumber++;
 
                 if (currentNumber > numberToWrite)
+                {
                     uiText = null;
+                    return;
+                }  
             }
         }
     }
