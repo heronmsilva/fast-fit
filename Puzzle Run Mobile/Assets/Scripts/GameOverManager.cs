@@ -27,15 +27,17 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(UpdateGameOverUI());
-
         int attempts = PlayerPrefManager.GetAttempts();
         if (attempts % adAttempts == 0)
             adManager.ShowNonRewardedAd();
+
+        StartCoroutine(UpdateGameOverUI());
     }
 
     private IEnumerator UpdateGameOverUI()
     {
+        while (adManager.isAdPlaying) yield return null;
+
         UpdateTime();
 
         while (! numberWriter.IsReady())
