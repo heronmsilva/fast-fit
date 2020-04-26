@@ -19,10 +19,12 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private int adAttempts = 5;
 
     private AdManager adManager;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         adManager = GetComponent<AdManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -37,23 +39,30 @@ public class GameOverManager : MonoBehaviour
     private IEnumerator UpdateGameOverUI()
     {
         while (adManager.isAdPlaying) yield return null;
+        
+        audioSource.Play();
 
         UpdateTime();
 
         while (! numberWriter.IsReady())
             yield return null;
-
+            
         UpdateScore();
 
         while (! numberWriter.IsReady())
             yield return null;
-
+            
         UpdateCrosses();
 
         while (! numberWriter.IsReady())
             yield return null;
 
         UpdateStreak();
+
+        while (! numberWriter.IsReady())
+            yield return null;
+        
+        audioSource.Stop();
     }
 
     private void UpdateTime()
