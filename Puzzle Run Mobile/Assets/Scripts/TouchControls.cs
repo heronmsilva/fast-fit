@@ -34,6 +34,8 @@ public class TouchControls : MonoBehaviour
     {
         tap = doubleTap = longTap = swipeRight = swipeLeft = swipeDown = swipeUp = false;
 
+        if (gm.IsWallTooClose()) return;
+
         #if UNITY_EDITOR
             CheckMouseInput();    
         #endif

@@ -3992,6 +3992,7 @@ MonoBehaviour:
   nonRewardedPID: video
   rewardedPID: rewardedVideo
   bannerPID: banner
+  isAdPlaying: 0
 --- !u!1 &1542929846
 GameObject:
   m_ObjectHideFlags: 0

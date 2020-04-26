@@ -22,7 +22,7 @@ public class PieceController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.IsGameOver || GameManager.Instance.IsPaused) return;
+        if (GameManager.Instance.IsGameOver || GameManager.Instance.IsPaused || GameManager.Instance.IsWallTooClose()) return;
 
         if (Time.time - lastMove > moveDeltaTime)
         {

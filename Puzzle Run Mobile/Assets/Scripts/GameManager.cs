@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         if (! spawner.Wall) spawner.SpawnObjects();
 
-        CheckWallCross();
+        // CheckWallCross();
 
         UIHandler.UpdateUIHeader();
 
@@ -104,6 +104,14 @@ public class GameManager : MonoBehaviour
             if (gameOverTimer < 0)
                 LoadGameOver();
         }
+    }
+
+    public bool IsWallTooClose()
+    {
+        if (! spawner.Wall)
+            return false;
+
+        return spawner.Wall.GetComponent<MoveTo>().IsClose();
     }
 
     private void SetupCamera()

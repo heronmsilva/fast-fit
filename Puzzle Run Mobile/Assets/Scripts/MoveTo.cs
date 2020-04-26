@@ -29,6 +29,11 @@ public class MoveTo : MonoBehaviour
         concluded = true;
     }
 
+    public bool IsClose()
+    {
+        return transform.position.z - waypoint.z < 0.5f;
+    }
+
     public void SetSpeed(float value)
     {
         speed = value;

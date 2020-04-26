@@ -73,28 +73,28 @@ public class Controls : MonoBehaviour
 
     public void FlipPieceUp()
     {
-        if (gm.IsGameOver || gm.IsPaused) return;
+        if (gm.IsGameOver || gm.IsPaused || gm.IsWallTooClose()) return;
 
         gm.Piece.GetComponent<PieceController>().FlipUp();
     }
 
     public void FlipPieceRight()
     {
-        if (gm.IsGameOver || gm.IsPaused) return;
+        if (gm.IsGameOver || gm.IsPaused || gm.IsWallTooClose()) return;
 
         gm.Piece.GetComponent<PieceController>().FlipRight();
     }
 
     public void RotatePieceLeft()
     {
-        if (gm.IsGameOver || gm.IsPaused) return;
+        if (gm.IsGameOver || gm.IsPaused || gm.IsWallTooClose()) return;
 
         gm.Piece.GetComponent<PieceController>().RotateLeft();
     }
 
     public void RotatePieceRight()
     {
-        if (gm.IsGameOver || gm.IsPaused) return;
+        if (gm.IsGameOver || gm.IsPaused || gm.IsWallTooClose()) return;
 
         gm.Piece.GetComponent<PieceController>().RotateRight();
     }
