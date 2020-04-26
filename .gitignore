@@ -2,6 +2,10 @@
 # Created by https://www.gitignore.io/api/unity,macos,windows
 # Edit at https://www.gitignore.io/?templates=unity,macos,windows
 
+### UI Package ###
+Modern UI Package.meta
+Modern UI Package/
+
 ### macOS ###
 # General
 .DS_Store
