@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
         SetupRecords();
 
         if (! PlayerPrefManager.getTutorialDone())
-            controlsButton.GetComponent<Animator>().Play("ControlsScale");
+            controlsButton.GetComponent<Animator>().Play("ControlsAnimation");
     }
     
     private void SetupRecords()
