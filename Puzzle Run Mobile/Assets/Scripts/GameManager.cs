@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         if (! spawner.Wall) spawner.SpawnObjects();
 
-        // CheckWallCross();
+        CheckWallCross();
 
         UIHandler.UpdateUIHeader();
 
