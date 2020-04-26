@@ -77,9 +77,14 @@ public class MenuManager : MonoBehaviour
         ShowControlsInfo(GameManager.Controls[controls]);
     }
 
-    public void Main()
+    public void Close()
     {
         audioSource.PlayOneShot(UIButtonClose);
+        Main();
+    }
+
+    public void Main()
+    {
         mainScreen.SetActive(true);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
