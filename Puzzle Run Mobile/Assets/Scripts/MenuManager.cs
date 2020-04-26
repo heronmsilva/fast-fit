@@ -42,7 +42,7 @@ public class MenuManager : MonoBehaviour
         SetupRecords();
 
         if (! PlayerPrefManager.getTutorialDone())
-            controlsButton.GetComponent<Animator>().Play("ControlsAnimation");
+            controlsButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
     }
     
     private void SetupRecords()
@@ -80,10 +80,10 @@ public class MenuManager : MonoBehaviour
     public void Close()
     {
         audioSource.PlayOneShot(UIButtonClose);
-        Main();
+        ShowMainScreen();
     }
 
-    public void Main()
+    public void ShowMainScreen()
     {
         mainScreen.SetActive(true);
         settingsScreen.SetActive(false);
@@ -91,33 +91,37 @@ public class MenuManager : MonoBehaviour
         recordsScreen.SetActive(false);
     }
 
-    public void Settings()
-    {
-        audioSource.PlayOneShot(UIButtonClick);
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(true);
-        controlsScreen.SetActive(false);
-        recordsScreen.SetActive(false);
-    }
-
-    public void Controls()
-    {
-        PlayerPrefManager.SetTutorialDone(1);
-        controlsButton.GetComponent<Animator>().Play("New State");
-        audioSource.PlayOneShot(UIButtonClick);
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        controlsScreen.SetActive(true);
-        recordsScreen.SetActive(false);
-    }
-
-    public void Records()
+    public void ShowRecordsScreen()
     {
         audioSource.PlayOneShot(UIButtonClick);
         mainScreen.SetActive(false);
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
         recordsScreen.SetActive(true);
+    }
+
+    public void ShowRankingsScreen()
+    {
+
+    }
+
+    public void ShowControllerScreen()
+    {
+        PlayerPrefManager.SetTutorialDone(1);
+        controlsButton.GetComponent<Animator>().Play("New State");
+        mainScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(true);
+        recordsScreen.SetActive(false);
+    }
+
+    public void ShowSettingsScreen()
+    {
+        audioSource.PlayOneShot(UIButtonClick);
+        mainScreen.SetActive(false);
+        settingsScreen.SetActive(true);
+        controlsScreen.SetActive(false);
+        recordsScreen.SetActive(false);
     }
 
     public void SetControls(int index)
