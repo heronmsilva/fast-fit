@@ -58,7 +58,7 @@ public class GameOverManager : MonoBehaviour
 
     private void UpdateTime()
     {
-        numberWriter.Write(timeText, PlayerPrefManager.GetLastTime(), 1f, true);
+        numberWriter.WriteTime(timeText, PlayerPrefManager.GetLastTime(), 0.01f);
 
         TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         topTimeText.text = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
@@ -66,21 +66,21 @@ public class GameOverManager : MonoBehaviour
 
     private void UpdateScore()
     {
-        numberWriter.Write(scoreText, PlayerPrefManager.GetLastScore(), 1f);
+        numberWriter.WriteInt(scoreText, PlayerPrefManager.GetLastScore(), 0.01f);
     
         topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
     }
 
     private void UpdateCrosses()
     {
-        numberWriter.Write(crossesText, PlayerPrefManager.GetLastCrosses(), 1f);
+        numberWriter.WriteInt(crossesText, PlayerPrefManager.GetLastCrosses(), 0.01f);
         
         topCrossesText.text = PlayerPrefManager.GetTopCrosses().ToString();
     }
 
     private void UpdateStreak()
     {
-        numberWriter.Write(streakText, PlayerPrefManager.GetLastStreak(), 1f);
+        numberWriter.WriteInt(streakText, PlayerPrefManager.GetLastStreak(), 0.01f);
         
         topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
     }
