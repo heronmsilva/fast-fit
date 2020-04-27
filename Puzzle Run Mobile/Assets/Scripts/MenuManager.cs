@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using TMPro;   
 
 public class MenuManager : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject fixedControlsArea = null;
     [SerializeField] private Dropdown controlsDropdown = null;
     [SerializeField] private Dropdown graphicsDropdown = null;
-    [SerializeField] private Text topScoreText = null;
-    [SerializeField] private Text topCrossesText = null;
-    [SerializeField] private Text topTimeText = null;
-    [SerializeField] private Text topStreakText = null;
+    [SerializeField] private TextMeshProUGUI topScoreText = null;
+    [SerializeField] private TextMeshProUGUI topCrossesText = null;
+    [SerializeField] private TextMeshProUGUI topTimeText = null;
+    [SerializeField] private TextMeshProUGUI topStreakText = null;
     [SerializeField] private AudioClip UIButtonClick = null;
     [SerializeField] private AudioClip UIButtonClose = null;
     [SerializeField] private AudioMixer audioMixer = null;
