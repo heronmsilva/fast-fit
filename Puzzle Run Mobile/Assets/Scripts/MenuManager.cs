@@ -39,7 +39,6 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        SetupSavedControls();
         SetupSavedSettings();
         SetupRecords();
 
@@ -69,14 +68,6 @@ public class MenuManager : MonoBehaviour
         float sfxVolume = PlayerPrefManager.GetSFXVolume();
         audioMixer.SetFloat("SFX", sfxVolume);
         sfxSlider.value = sfxVolume;
-    }
-
-    private void SetupSavedControls()
-    {
-        int controls = PlayerPrefManager.GetControls();
-        controlsDropdown.AddOptions(GameManager.Controls);
-        controlsDropdown.value = controls;
-        ShowControlsInfo(GameManager.Controls[controls]);
     }
 
     public void Close()
