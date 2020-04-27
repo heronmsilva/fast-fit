@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject controlsButton = null;
     [SerializeField] private GameObject controlsScreen = null;
     [SerializeField] private GameObject recordsScreen = null;
+    [SerializeField] private GameObject rankingsScreen = null;
     [SerializeField] private GameObject touchControlsArea = null;
     [SerializeField] private GameObject floatingControlsArea = null;
     [SerializeField] private GameObject fixedControlsArea = null;
@@ -90,6 +91,7 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
         recordsScreen.SetActive(false);
+        rankingsScreen.SetActive(false);
     }
 
     public void ShowRecordsScreen()
@@ -99,11 +101,16 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(false);
         recordsScreen.SetActive(true);
+        rankingsScreen.SetActive(false);
     }
 
     public void ShowRankingsScreen()
     {
-
+        mainScreen.SetActive(false);
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(false);
+        recordsScreen.SetActive(false);
+        rankingsScreen.SetActive(true);
     }
 
     public void ShowControllerScreen()
@@ -114,6 +121,7 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(false);
         controlsScreen.SetActive(true);
         recordsScreen.SetActive(false);
+        rankingsScreen.SetActive(false);
     }
 
     public void ShowSettingsScreen()
@@ -123,6 +131,7 @@ public class MenuManager : MonoBehaviour
         settingsScreen.SetActive(true);
         controlsScreen.SetActive(false);
         recordsScreen.SetActive(false);
+        rankingsScreen.SetActive(false);
     }
 
     public void SetControls(int index)
