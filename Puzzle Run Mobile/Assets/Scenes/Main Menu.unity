@@ -7196,6 +7196,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rankings Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.18039216
+      objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.size
