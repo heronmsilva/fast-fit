@@ -9,26 +9,19 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainScreen = null;
-    [SerializeField] private GameObject settingsScreen = null;
-    [SerializeField] private GameObject controlsButton = null;
-    [SerializeField] private GameObject controlsScreen = null;
-    [SerializeField] private GameObject recordsScreen = null;
-    [SerializeField] private GameObject rankingsScreen = null;
-    [SerializeField] private GameObject touchControlsArea = null;
-    [SerializeField] private GameObject floatingControlsArea = null;
-    [SerializeField] private GameObject fixedControlsArea = null;
-    [SerializeField] private Dropdown controlsDropdown = null;
-    [SerializeField] private Dropdown graphicsDropdown = null;
+    [SerializeField] private GameObject mainWindow = null;
+    [SerializeField] private GameObject settingsWindow = null;
+    [SerializeField] private GameObject controllerButton = null;
+    [SerializeField] private GameObject controllerWindow = null;
+    [SerializeField] private GameObject recordsWindow = null;
+    [SerializeField] private GameObject rankingsWindow = null;
+
     [SerializeField] private TextMeshProUGUI topScoreText = null;
-    [SerializeField] private TextMeshProUGUI topCrossesText = null;
+    [SerializeField] private TextMeshProUGUI topFitsText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
     [SerializeField] private TextMeshProUGUI topStreakText = null;
-    [SerializeField] private AudioClip UIButtonClick = null;
-    [SerializeField] private AudioClip UIButtonClose = null;
+
     [SerializeField] private AudioMixer audioMixer = null;
-    [SerializeField] private Slider musicSlider = null;
-    [SerializeField] private Slider sfxSlider = null;
 
     private AudioSource audioSource;
 
@@ -39,115 +32,70 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        SetupSavedSettings();
-        SetupRecords();
+        UpdateRecords();
 
         if (! PlayerPrefManager.getTutorialDone())
-            controlsButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
+            controllerButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
+
+        HideWindows();
+        mainWindow.SetActive(true);
     }
     
-    private void SetupRecords()
+    private void UpdateRecords()
     {
         topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
-        topCrossesText.text = PlayerPrefManager.GetTopCrosses().ToString();
+        topFitsText.text = PlayerPrefManager.GetTopCrosses().ToString();
         topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
+        
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
-        string time = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
-        topTimeText.text = time;
+        topTimeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
     }
 
-    private void SetupSavedSettings()
+    private void HideWindows()
     {
-        int qualityLevel = PlayerPrefManager.GetQualityLevel();
-        QualitySettings.SetQualityLevel(qualityLevel);
-        graphicsDropdown.value = qualityLevel;
-
-        float musicVolume = PlayerPrefManager.GetMusicVolume();
-        audioMixer.SetFloat("Music", musicVolume);
-        musicSlider.value = musicVolume;
-        float sfxVolume = PlayerPrefManager.GetSFXVolume();
-        audioMixer.SetFloat("SFX", sfxVolume);
-        sfxSlider.value = sfxVolume;
+        mainWindow.SetActive(false);
+        settingsWindow.SetActive(false);
+        controllerWindow.SetActive(false);
+        recordsWindow.SetActive(false);
+        rankingsWindow.SetActive(false);
     }
 
     public void Close()
     {
-        audioSource.PlayOneShot(UIButtonClose);
-        ShowMainScreen();
+        HideWindows();
+        mainWindow.SetActive(true);
     }
 
-    public void ShowMainScreen()
+    public void ShowRecordsWindow()
     {
-        mainScreen.SetActive(true);
-        settingsScreen.SetActive(false);
-        controlsScreen.SetActive(false);
-        recordsScreen.SetActive(false);
-        rankingsScreen.SetActive(false);
+        HideWindows();
+        recordsWindow.SetActive(true);
     }
 
-    public void ShowRecordsScreen()
+    public void ShowRankingsWindow()
     {
-        audioSource.PlayOneShot(UIButtonClick);
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        controlsScreen.SetActive(false);
-        recordsScreen.SetActive(true);
-        rankingsScreen.SetActive(false);
+        HideWindows();
+        rankingsWindow.SetActive(true);
     }
 
-    public void ShowRankingsScreen()
-    {
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        controlsScreen.SetActive(false);
-        recordsScreen.SetActive(false);
-        rankingsScreen.SetActive(true);
-    }
-
-    public void ShowControllerScreen()
+    public void ShowControllerWindow()
     {
         PlayerPrefManager.SetTutorialDone(1);
-        controlsButton.GetComponent<Animator>().Play("New State");
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        controlsScreen.SetActive(true);
-        recordsScreen.SetActive(false);
-        rankingsScreen.SetActive(false);
+        controllerButton.GetComponent<Animator>().Play("New State");
+
+        HideWindows();
+        controllerWindow.SetActive(true);
     }
 
-    public void ShowSettingsScreen()
+    public void ShowSettingsWindow()
     {
-        audioSource.PlayOneShot(UIButtonClick);
-        mainScreen.SetActive(false);
-        settingsScreen.SetActive(true);
-        controlsScreen.SetActive(false);
-        recordsScreen.SetActive(false);
-        rankingsScreen.SetActive(false);
+        HideWindows();
+        settingsWindow.SetActive(true);
     }
 
     public void SetControls(int index)
     {
         PlayerPrefManager.SetControls(index);
-        ShowControlsInfo(GameManager.Controls[index]);
-    }
-
-    private void ShowControlsInfo(string controls)
-    {
-        touchControlsArea.SetActive(false);
-        floatingControlsArea.SetActive(false);
-        fixedControlsArea.SetActive(false);
-        switch (controls)
-        {
-            case "TOUCH":
-                touchControlsArea.SetActive(true);
-                break;
-            case "FLOATING":
-                floatingControlsArea.SetActive(true);
-                break;
-            case "FIXED":
-                fixedControlsArea.SetActive(true);
-                break;
-        }
     }
 
     public void SetQuality(int index)
