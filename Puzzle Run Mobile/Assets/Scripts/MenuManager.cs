@@ -19,6 +19,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject rookieControllerInfo = null;
     [SerializeField] private GameObject proControllerInfo = null;
 
+    [SerializeField] private Slider musicSlider = null;
+    [SerializeField] private Slider sfxSlider = null;
+
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI topFitsText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
@@ -36,13 +39,34 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         UpdateRecords();
+
         ShowControllerInfo(GameManager.Controls[PlayerPrefManager.GetControls()]);
+
+        SetupQualitySettings();
+        SetupSoundSettings();
 
         if (! PlayerPrefManager.getTutorialDone())
             controllerButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
 
         HideWindows();
         mainWindow.SetActive(true);
+    }
+
+    private void SetupQualitySettings()
+    {
+        QualitySettings.SetQualityLevel(PlayerPrefManager.GetQualityLevel());
+    }
+
+    private void SetupSoundSettings()
+    {
+        float musicVolume = PlayerPrefManager.GetMusicVolume();
+        float sfxVolume = PlayerPrefManager.GetSFXVolume();
+
+        audioMixer.SetFloat("Music", musicVolume);
+        audioMixer.SetFloat("SFX", sfxVolume);
+
+        musicSlider.value = musicVolume;
+        sfxSlider.value = sfxVolume;
     }
     
     private void UpdateRecords()
