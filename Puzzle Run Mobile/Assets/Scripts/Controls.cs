@@ -2,9 +2,8 @@
 
 public class Controls : MonoBehaviour
 {
-    [SerializeField] private GameObject touchControls = null;
-    [SerializeField] private GameObject floatingControls = null;
-    [SerializeField] private GameObject fixedControls = null;
+    [SerializeField] private GameObject rookieControls = null;
+    [SerializeField] private GameObject proControls = null;
 
     private GameManager gm;
 
@@ -20,55 +19,25 @@ public class Controls : MonoBehaviour
         string control = GameManager.Controls[index];
         switch (control)
         {
-            case "TOUCH":
-                SetupTouchControls();
+            case "ROOKIE":
+                SetupRookieControls();
                 break;
-            case "FLOATING":
-                SetupFloatingControls();
-                break;
-            case "FIXED":
-                SetupFixedControls();
+            case "PRO":
+                SetupProControls();
                 break;
         }
     }
 
-    private void SetupTouchControls()
+    private void SetupRookieControls()
     {
-        floatingControls.SetActive(false);
-        fixedControls.SetActive(false);
-        
-        touchControls.GetComponent<TouchControls>().dragPiece = true;
-        touchControls.GetComponent<TouchControls>().tapRotate = true;
-        touchControls.GetComponent<TouchControls>().doubleTapFF = false;
-        touchControls.GetComponent<TouchControls>().longTapFF = true;
-        touchControls.GetComponent<TouchControls>().swipeHorizontalFlip = true;
-        touchControls.GetComponent<TouchControls>().swipeVerticalFlip = true;
+        rookieControls.SetActive(true);
+        proControls.SetActive(false);
     }
 
-    private void SetupFloatingControls()
+    private void SetupProControls()
     {
-        floatingControls.SetActive(true);
-        fixedControls.SetActive(false);
-        
-        touchControls.GetComponent<TouchControls>().dragPiece = false;
-        touchControls.GetComponent<TouchControls>().tapRotate = false;
-        touchControls.GetComponent<TouchControls>().doubleTapFF = true;
-        touchControls.GetComponent<TouchControls>().longTapFF = false;
-        touchControls.GetComponent<TouchControls>().swipeHorizontalFlip = false;
-        touchControls.GetComponent<TouchControls>().swipeVerticalFlip = false;
-    }
-
-    private void SetupFixedControls()
-    {
-        fixedControls.SetActive(true);
-        floatingControls.SetActive(false);
-        
-        touchControls.GetComponent<TouchControls>().dragPiece = false;
-        touchControls.GetComponent<TouchControls>().tapRotate = false;
-        touchControls.GetComponent<TouchControls>().doubleTapFF = true;
-        touchControls.GetComponent<TouchControls>().longTapFF = false;
-        touchControls.GetComponent<TouchControls>().swipeHorizontalFlip = false;
-        touchControls.GetComponent<TouchControls>().swipeVerticalFlip = false;
+        rookieControls.SetActive(false);
+        proControls.SetActive(true);
     }
 
     public void FlipPieceUp()
