@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;   
 
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
     [SerializeField] private GameObject pausedScreen = null;
     [SerializeField] private GameObject gameOverScreen = null;
-    [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text crossesText = null;
-    [SerializeField] private Text levelText = null;
+    [SerializeField] private TextMeshProUGUI scoreText = null;
+    [SerializeField] private TextMeshProUGUI fitsText = null;
+    [SerializeField] private TextMeshProUGUI levelText = null;
     [SerializeField] private Image watchAdTimer = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
@@ -55,7 +56,7 @@ public class UIHandler : MonoBehaviour
     public void UpdateUIHeader()
     {
         UpdateUIScore();
-        UpdateUICrosses();
+        UpdateUIFits();
         UpdateUIDifficulty();
         UpdateUIDifficultyFill();
         UpdateUILives();
@@ -85,12 +86,16 @@ public class UIHandler : MonoBehaviour
 
     private void UpdateUIScore()
     {
+        if (gm.Score == 0) return;
+        
         scoreText.text = gm.Score.ToString();
     }
 
-    private void UpdateUICrosses()
+    private void UpdateUIFits()
     {
-        crossesText.text = gm.Crosses.ToString();
+        if (gm.Crosses == 0) return;
+        
+        fitsText.text = gm.Crosses.ToString();
     }
 
     private void UpdateUIDifficulty()
