@@ -16,6 +16,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject recordsWindow = null;
     [SerializeField] private GameObject rankingsWindow = null;
 
+    [SerializeField] private GameObject rookieControllerInfo = null;
+    [SerializeField] private GameObject proControllerInfo = null;
+
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI topFitsText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
@@ -33,6 +36,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         UpdateRecords();
+        ShowControllerInfo(GameManager.Controls[PlayerPrefManager.GetControls()]);
 
         if (! PlayerPrefManager.getTutorialDone())
             controllerButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
@@ -49,6 +53,25 @@ public class MenuManager : MonoBehaviour
         
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         topTimeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+    }
+
+    private void ShowControllerInfo(string controls)
+    {
+        rookieControllerInfo.SetActive(false);
+        proControllerInfo.SetActive(false);
+
+        switch (controls)
+        {
+            case "ROOKIE":
+                rookieControllerInfo.SetActive(true);
+                break;
+            case "PRO":
+                proControllerInfo.SetActive(true);
+                break;
+            default:
+                proControllerInfo.SetActive(true);
+                break;
+        }
     }
 
     private void HideWindows()
@@ -96,6 +119,7 @@ public class MenuManager : MonoBehaviour
     public void SetControls(int index)
     {
         PlayerPrefManager.SetControls(index);
+        ShowControllerInfo(GameManager.Controls[index]);
     }
 
     public void SetQuality(int index)

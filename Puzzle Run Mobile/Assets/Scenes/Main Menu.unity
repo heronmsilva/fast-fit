@@ -4384,7 +4384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869570912}
   m_Layer: 5
-  m_Name: Pro
+  m_Name: Pro Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6582,6 +6582,8 @@ MonoBehaviour:
   controllerWindow: {fileID: 1529365610}
   recordsWindow: {fileID: 303547510}
   rankingsWindow: {fileID: 1752861202}
+  rookieControllerInfo: {fileID: 1823786844}
+  proControllerInfo: {fileID: 869570911}
   topScoreText: {fileID: 2101250988}
   topFitsText: {fileID: 2085594765}
   topTimeText: {fileID: 508962210}
@@ -10525,7 +10527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823786845}
   m_Layer: 5
-  m_Name: Rookie
+  m_Name: Rookie Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
