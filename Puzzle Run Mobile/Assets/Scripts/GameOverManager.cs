@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private NumberWriter numberWriter = null;
-    [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text topScoreText = null;
-    [SerializeField] private Text crossesText = null;
-    [SerializeField] private Text topCrossesText = null;
-    [SerializeField] private Text timeText = null;
-    [SerializeField] private Text topTimeText = null;
-    [SerializeField] private Text streakText = null;
-    [SerializeField] private Text topStreakText = null;
+    [SerializeField] private TextMeshProUGUI scoreText = null;
+    [SerializeField] private TextMeshProUGUI topScoreText = null;
+    [SerializeField] private TextMeshProUGUI crossesText = null;
+    [SerializeField] private TextMeshProUGUI topCrossesText = null;
+    [SerializeField] private TextMeshProUGUI timeText = null;
+    [SerializeField] private TextMeshProUGUI topTimeText = null;
+    [SerializeField] private TextMeshProUGUI streakText = null;
+    [SerializeField] private TextMeshProUGUI topStreakText = null;
     [SerializeField] private int adAttempts = 5;
 
     private AdManager adManager;
@@ -70,28 +71,32 @@ public class GameOverManager : MonoBehaviour
         numberWriter.WriteTime(timeText, PlayerPrefManager.GetLastTime(), 0.01f);
 
         TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
-        topTimeText.text = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
+        string topTime = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
+        topTimeText.text = "Your Best " + topTime;
     }
 
     private void UpdateScore()
     {
         numberWriter.WriteInt(scoreText, PlayerPrefManager.GetLastScore(), 0.01f);
     
-        topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
+        string topScore = PlayerPrefManager.GetTopScore().ToString();
+        topScoreText.text = "Your Best " + topScore;
     }
 
     private void UpdateCrosses()
     {
         numberWriter.WriteInt(crossesText, PlayerPrefManager.GetLastCrosses(), 0.01f);
         
-        topCrossesText.text = PlayerPrefManager.GetTopCrosses().ToString();
+        string topCrosses = PlayerPrefManager.GetTopCrosses().ToString();
+        topCrossesText.text = "Your Best " + topCrosses;
     }
 
     private void UpdateStreak()
     {
         numberWriter.WriteInt(streakText, PlayerPrefManager.GetLastStreak(), 0.01f);
         
-        topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
+        string topStreak = PlayerPrefManager.GetTopStreak().ToString();
+        topStreakText.text = "Your Best " + topStreak;
     }
 
     public void TryAgain()

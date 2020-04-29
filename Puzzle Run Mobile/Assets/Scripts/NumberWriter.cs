@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NumberWriter : MonoBehaviour
 {
-    private Text uiText;
+    private TextMeshProUGUI uiText;
     private int intToWrite;
     private int currentInt;
     private float floatToWrite;
@@ -20,7 +21,7 @@ public class NumberWriter : MonoBehaviour
         return uiText == null;
     }
 
-    public void WriteTime(Text uiText, float floatToWrite, float timePerSum)
+    public void WriteTime(TextMeshProUGUI uiText, float floatToWrite, float timePerSum)
     {
         this.uiText = uiText;
         this.floatToWrite = floatToWrite;
@@ -30,7 +31,7 @@ public class NumberWriter : MonoBehaviour
         currentFloat = 0;
     }
 
-    public void WriteInt(Text uiText, int intToWrite, float timePerSum)
+    public void WriteInt(TextMeshProUGUI uiText, int intToWrite, float timePerSum)
     {
         this.uiText = uiText;
         this.intToWrite = intToWrite;
