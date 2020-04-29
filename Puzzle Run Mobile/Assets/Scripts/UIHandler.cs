@@ -8,12 +8,12 @@ using TMPro;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject level = null;
-    [SerializeField] private GameObject pausedScreen = null;
-    [SerializeField] private GameObject gameOverScreen = null;
+    [SerializeField] private GameObject pausedWindow = null;
+    [SerializeField] private GameObject gameOverWindow = null;
+    [SerializeField] private GameObject watchAdTimer = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI fitsText = null;
     [SerializeField] private TextMeshProUGUI levelText = null;
-    [SerializeField] private Image watchAdTimer = null;
     [SerializeField] private Image levelFill = null;
     [SerializeField] private List<Image> lifeImages = new List<Image>();
     
@@ -34,23 +34,25 @@ public class UIHandler : MonoBehaviour
 
     public void HideGameOver()
     {
-        gameOverScreen.SetActive(false);
+        gameOverWindow.SetActive(false);
     }
 
     public void GameOver()
     {
-        gameOverScreen.SetActive(true);
-        watchAdTimer.GetComponent<Animator>().Play("ReduceFillAnimation");
+        gameOverWindow.SetActive(true);
+        
+        watchAdTimer.GetComponent<Animator>().SetFloat("Speed", 1 / GameManager.Instance.WatchAnAdTimer);
+        watchAdTimer.GetComponent<Animator>().Play("Circle Pie");
     }
 
     public void Pause()
     {
-        pausedScreen.SetActive(true);
+        pausedWindow.SetActive(true);
     }
 
     public void Resume()
     {
-        pausedScreen.SetActive(false);
+        pausedWindow.SetActive(false);
     }
 
     public void UpdateUIHeader()
