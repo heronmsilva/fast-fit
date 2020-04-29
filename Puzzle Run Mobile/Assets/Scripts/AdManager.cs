@@ -5,7 +5,6 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour, IUnityAdsListener
 {
-    [SerializeField] private string iOSGameID = "3568509";
     [SerializeField] private string androidGameID = "3568508";
     [SerializeField] private string nonRewardedPID = "video";
     [SerializeField] private string rewardedPID = "rewardedVideo";
@@ -24,13 +23,8 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        #if UNITY_IOS
-            gameId = iOSGameID;
-        #endif
-        #if UNITY_ANDROID
-            gameId = androidGameID;
-        #endif
-
+        gameId = androidGameID;
+        
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
     }
