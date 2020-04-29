@@ -3173,7 +3173,7 @@ MonoBehaviour:
   indicatorObject: {fileID: 1323806087491500, guid: d761d163a9f3c244a97cdaa6e14fafc1,
     type: 3}
   saveValue: 1
-  selectorTag: Tag Text
+  selectorTag: Graphics
   enableIndicators: 1
   invokeAtStart: 0
   invertAnimation: 0
@@ -4779,8 +4779,8 @@ MonoBehaviour:
   mainSlider: {fileID: 717240191}
   valueText: {fileID: 0}
   popupValueText: {fileID: 0}
-  enableSaving: 0
-  sliderTag: Tag Text
+  enableSaving: 1
+  sliderTag: Music Volume
   usePercent: 0
   showValue: 0
   showPopupValue: 0
@@ -11775,7 +11775,7 @@ MonoBehaviour:
   indicatorObject: {fileID: 1323806087491500, guid: d761d163a9f3c244a97cdaa6e14fafc1,
     type: 3}
   saveValue: 1
-  selectorTag: Tag Text
+  selectorTag: Controller
   enableIndicators: 1
   invokeAtStart: 0
   invertAnimation: 0
@@ -14761,8 +14761,8 @@ MonoBehaviour:
   mainSlider: {fileID: 1899670644}
   valueText: {fileID: 0}
   popupValueText: {fileID: 0}
-  enableSaving: 0
-  sliderTag: Tag Text
+  enableSaving: 1
+  sliderTag: SFX Volume
   usePercent: 0
   showValue: 0
   showPopupValue: 0

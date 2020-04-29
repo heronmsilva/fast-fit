@@ -19,9 +19,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject rookieControllerInfo = null;
     [SerializeField] private GameObject proControllerInfo = null;
 
-    [SerializeField] private Slider musicSlider = null;
-    [SerializeField] private Slider sfxSlider = null;
-
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI topFitsText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
@@ -64,9 +61,6 @@ public class MenuManager : MonoBehaviour
 
         audioMixer.SetFloat("Music", musicVolume);
         audioMixer.SetFloat("SFX", sfxVolume);
-
-        musicSlider.value = musicVolume;
-        sfxSlider.value = sfxVolume;
     }
     
     private void UpdateRecords()
