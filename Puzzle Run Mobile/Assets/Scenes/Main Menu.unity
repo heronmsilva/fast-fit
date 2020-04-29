@@ -15370,6 +15370,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.24705882
       objectReference: {fileID: 0}
+    - target: {fileID: 3165501252122548713, guid: 4e0271af2705aa745be5a8fd54469801,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1169416256}
     - target: {fileID: 3165501252281765125, guid: 4e0271af2705aa745be5a8fd54469801,
         type: 3}
       propertyPath: m_Color.r
