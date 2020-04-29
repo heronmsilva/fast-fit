@@ -24,7 +24,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     private void Start()
     {
         gameId = androidGameID;
-        
+
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
     }
@@ -72,6 +72,9 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
                 gm.LoadGameOver();
                 break;
             case ShowResult.Failed:
+                gm.LoadGameOver();
+                break;
+            default:
                 gm.LoadGameOver();
                 break;
         }
