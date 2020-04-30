@@ -11,12 +11,16 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private NumberWriter numberWriter = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI topScoreText = null;
+    [SerializeField] private TextMeshProUGUI newBestScoreText = null;
     [SerializeField] private TextMeshProUGUI crossesText = null;
     [SerializeField] private TextMeshProUGUI topCrossesText = null;
+    [SerializeField] private TextMeshProUGUI newBestCrossesText = null;
     [SerializeField] private TextMeshProUGUI timeText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
+    [SerializeField] private TextMeshProUGUI newBestTimeText = null;
     [SerializeField] private TextMeshProUGUI streakText = null;
     [SerializeField] private TextMeshProUGUI topStreakText = null;
+    [SerializeField] private TextMeshProUGUI newBestStreakText = null;
     [SerializeField] private int adAttempts = 5;
 
     private AdManager adManager;
@@ -48,22 +52,70 @@ public class GameOverManager : MonoBehaviour
         while (! numberWriter.IsReady())
             yield return null;
             
+        ShowTopTime();
         UpdateScore();
 
         while (! numberWriter.IsReady())
             yield return null;
             
+        ShowTopScore();
         UpdateCrosses();
 
         while (! numberWriter.IsReady())
             yield return null;
 
+        ShowTopCrosses();
         UpdateStreak();
 
         while (! numberWriter.IsReady())
             yield return null;
         
+        ShowTopStreak();
         audioSource.Stop();
+    }
+
+    private void ShowTopTime()
+    {
+        if (PlayerPrefManager.GetLastTime() < PlayerPrefManager.GetTopTime())
+        {
+            topTimeText.GetComponent<Animator>().Play("TopTimeShow");
+            return;
+        }
+
+        newBestTimeText.GetComponent<Animator>().Play("NewBestTimeShow");
+    }
+
+    private void ShowTopScore()
+    {
+        if (PlayerPrefManager.GetLastScore() < PlayerPrefManager.GetTopScore())
+        {
+            topScoreText.GetComponent<Animator>().Play("TopScoreShow");
+            return;
+        }
+
+        newBestScoreText.GetComponent<Animator>().Play("NewBestScoreShow");
+    }
+
+    private void ShowTopCrosses()
+    {
+        if (PlayerPrefManager.GetLastCrosses() < PlayerPrefManager.GetTopCrosses())
+        {
+            topCrossesText.GetComponent<Animator>().Play("TopFitsShow");
+            return;
+        }
+
+        newBestCrossesText.GetComponent<Animator>().Play("NewBestFitsShow");
+    }
+
+    private void ShowTopStreak()
+    {
+        if (PlayerPrefManager.GetLastStreak() < PlayerPrefManager.GetTopStreak())
+        {
+            topStreakText.GetComponent<Animator>().Play("TopStreakShow");
+            return;
+        }
+
+        newBestStreakText.GetComponent<Animator>().Play("NewBestStreakShow");
     }
 
     private void UpdateTime()
