@@ -692,9 +692,9 @@ MonoBehaviour:
   scoreText: {fileID: 1084302828}
   topScoreText: {fileID: 773176736}
   newBestScoreText: {fileID: 1478510234}
-  crossesText: {fileID: 461983213}
-  topCrossesText: {fileID: 82406357}
-  newBestCrossesText: {fileID: 204005526}
+  fitsText: {fileID: 461983213}
+  topFitsText: {fileID: 82406357}
+  newBestFitsText: {fileID: 204005526}
   timeText: {fileID: 1465437148}
   topTimeText: {fileID: 1087134930}
   newBestTimeText: {fileID: 1853927129}

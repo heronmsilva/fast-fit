@@ -78,13 +78,13 @@ public class AnimationBuffer : MonoBehaviour
     {
         int difficulty = (int) gm.CurrDifficulty;
         
-        if (gm.CurrDifficulty == GameManager.Difficulty.Level5 || gm.MaxCrossSequence - gm.CrossSequence <= queueSize && gm.CurrDifficulty == GameManager.Difficulty.Level4)
+        if (gm.CurrDifficulty == GameManager.Difficulty.Level5 || gm.MaxFitSequence - gm.FitSequence <= queueSize && gm.CurrDifficulty == GameManager.Difficulty.Level4)
         {
             animationQueue.Enqueue(RandomAnim());
             return;
         }
         
-        if (gm.MaxCrossSequence - gm.CrossSequence <= queueSize)
+        if (gm.MaxFitSequence - gm.FitSequence <= queueSize)
         {
             animationQueue.Enqueue(animsByDifficulty[difficulty + 1]);
             return;

@@ -13,9 +13,9 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI newBestScoreText = null;
-    [SerializeField] private TextMeshProUGUI crossesText = null;
-    [SerializeField] private TextMeshProUGUI topCrossesText = null;
-    [SerializeField] private TextMeshProUGUI newBestCrossesText = null;
+    [SerializeField] private TextMeshProUGUI fitsText = null;
+    [SerializeField] private TextMeshProUGUI topFitsText = null;
+    [SerializeField] private TextMeshProUGUI newBestFitsText = null;
     [SerializeField] private TextMeshProUGUI timeText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
     [SerializeField] private TextMeshProUGUI newBestTimeText = null;
@@ -52,12 +52,12 @@ public class GameOverManager : MonoBehaviour
             yield return null;
             
         ShowTopScore();
-        UpdateCrosses();
+        UpdateFits();
 
         while (! numberWriter.IsReady())
             yield return null;
 
-        ShowTopCrosses();
+        ShowTopFits();
         UpdateStreak();
 
         while (! numberWriter.IsReady())
@@ -89,15 +89,15 @@ public class GameOverManager : MonoBehaviour
         newBestScoreText.GetComponent<Animator>().Play("NewBestScoreShow");
     }
 
-    private void ShowTopCrosses()
+    private void ShowTopFits()
     {
-        if (PlayerPrefManager.GetLastCrosses() < PlayerPrefManager.GetTopCrosses())
+        if (PlayerPrefManager.GetLastFits() < PlayerPrefManager.GetTopFits())
         {
-            topCrossesText.GetComponent<Animator>().Play("TopFitsShow");
+            topFitsText.GetComponent<Animator>().Play("TopFitsShow");
             return;
         }
 
-        newBestCrossesText.GetComponent<Animator>().Play("NewBestFitsShow");
+        newBestFitsText.GetComponent<Animator>().Play("NewBestFitsShow");
     }
 
     private void ShowTopStreak()
@@ -128,12 +128,12 @@ public class GameOverManager : MonoBehaviour
         topScoreText.text = "Your Best " + topScore;
     }
 
-    private void UpdateCrosses()
+    private void UpdateFits()
     {
-        numberWriter.WriteInt(crossesText, PlayerPrefManager.GetLastCrosses(), 0.01f);
+        numberWriter.WriteInt(fitsText, PlayerPrefManager.GetLastFits(), 0.01f);
         
-        string topCrosses = PlayerPrefManager.GetTopCrosses().ToString();
-        topCrossesText.text = "Your Best " + topCrosses;
+        string topFits = PlayerPrefManager.GetTopFits().ToString();
+        topFitsText.text = "Your Best " + topFits;
     }
 
     private void UpdateStreak()

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedIncreaseDelta = 0.1f;
     [SerializeField] private float pitchIncreaseDelta = 0.001f;
     [SerializeField] private float watchAnAdTimer = 3f;
-    [SerializeField] private int maxCrossSequence = 10;
+    [SerializeField] private int maxFitSequence = 10;
     [SerializeField] private int startLives = 1;
     [SerializeField] private int maxLives = 5;
     [SerializeField] private int maxSpeed = 25;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private AudioHandler audioHandler;
     private Difficulty currDifficulty;
     private float speed, startTime, gameOverTimer;
-    private int lives, score, crosses, crossSequence, crossStreak, bestCrossStreak;
+    private int lives, score, fits, fitSequence, streak, bestStreak;
     private bool fastForward, gameOver, paused, countDown, handledGameOver, handledLifeUsage;
 
     public static GameManager Instance { get { return instance; } }
@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
     public float Speed { get { return speed; } }
     public float WatchAnAdTimer { get { return watchAnAdTimer; } }
     public int Score { get { return score; } }
-    public int Crosses { get { return crosses; } }
-    public int CrossSequence { get { return crossSequence; } }
-    public int MaxCrossSequence { get { return maxCrossSequence; } }
+    public int Fits { get { return fits; } }
+    public int FitSequence { get { return fitSequence; } }
+    public int MaxFitSequence { get { return maxFitSequence; } }
     public int Lives { get { return lives; } }
     public int MaxLives { get { return maxLives; } }
     public Vector2 MinXY { get { return spawner.MinXY; } }
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         if (! spawner.Wall) spawner.SpawnObjects();
 
-        CheckWallCross();
+        CheckWallFit();
 
         UIHandler.UpdateUIHeader();
 
@@ -143,19 +143,19 @@ public class GameManager : MonoBehaviour
         countDown = false;
     }
 
-    private void CheckWallCross()
+    private void CheckWallFit()
     {
         if (spawner.Wall.GetComponent<MoveTo>().IsConcluded && ! spawner.IsRespawning && ! gameOver)
         {
             speed += speedIncreaseDelta;
             audioHandler.IncreaseBackgroundPitch(pitchIncreaseDelta);
-            crosses += 1;
-            crossSequence += 1;
-            crossStreak += 1;
-            bestCrossStreak = (crossStreak > bestCrossStreak) ? crossStreak : bestCrossStreak;
-            if (crossSequence == maxCrossSequence)
+            fits += 1;
+            fitSequence += 1;
+            streak += 1;
+            bestStreak = (streak > bestStreak) ? streak : bestStreak;
+            if (fitSequence == maxFitSequence)
             {
-                crossSequence = 0;
+                fitSequence = 0;
                 IncreaseDifficulty();
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
@@ -163,11 +163,11 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(audioHandler.PlayWallCross(0.4f));
+                StartCoroutine(audioHandler.PlayWallFit(0.4f));
             }
             ScorePoints();
             fastForward = false;
-            spawner.PlayWallCrossAnimation();
+            spawner.PlayWallFitAnimation();
             StartCoroutine(spawner.DelayedRespawn(0.5f));
         }
     }
@@ -201,8 +201,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         lives -= 1;
-        crossSequence = 0;
-        crossStreak = 0;
+        fitSequence = 0;
+        streak = 0;
         animBuffer.ResetQueue();
         spawner.RespawnObjects();
         gameOver = false;
@@ -296,13 +296,13 @@ public class GameManager : MonoBehaviour
         if (totalTime > PlayerPrefManager.GetTopTime())
             PlayerPrefManager.SetTopTime(totalTime);
 
-        PlayerPrefManager.SetLastCrosses(crosses);
-        if (crosses > PlayerPrefManager.GetTopCrosses())
-            PlayerPrefManager.SetTopCrosses(crosses);
+        PlayerPrefManager.SetLastFits(fits);
+        if (fits > PlayerPrefManager.GetTopFits())
+            PlayerPrefManager.SetTopFits(fits);
         
-        PlayerPrefManager.SetLastStreak(bestCrossStreak);
-        if (bestCrossStreak > PlayerPrefManager.GetTopStreak())
-            PlayerPrefManager.SetTopStreak(bestCrossStreak);
+        PlayerPrefManager.SetLastStreak(streak);
+        if (streak > PlayerPrefManager.GetTopStreak())
+            PlayerPrefManager.SetTopStreak(streak);
     }
 
     private void IncreaseDifficulty()
@@ -321,8 +321,8 @@ public class GameManager : MonoBehaviour
     {
         int difficultyMultiplier = (int) currDifficulty + 1;
         int fastForwardMultiplier = (fastForward) ? 2 : 1;
-        int crossMultiplier = (int) (crossStreak / 10) + 1;
-        int points = (int) (crosses * speed * crossMultiplier * difficultyMultiplier * fastForwardMultiplier);
+        int streakMultiplier = (int) (streak / 10) + 1;
+        int points = (int) (fits * speed * streakMultiplier * difficultyMultiplier * fastForwardMultiplier);
         spawner.ShowScoredPoints(points);
         score += points;
     }

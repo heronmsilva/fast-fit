@@ -3605,7 +3605,7 @@ MonoBehaviour:
   speedIncreaseDelta: 0.1
   pitchIncreaseDelta: 0.001
   watchAnAdTimer: 5
-  maxCrossSequence: 10
+  maxFitSequence: 10
   startLives: 1
   maxLives: 5
   maxSpeed: 100
@@ -3712,7 +3712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundAudioSource: {fileID: 963194229}
-  wallCrossClip: {fileID: 8300000, guid: e05c84ad9b2951345a5e766d78697967, type: 3}
+  wallFitClip: {fileID: 8300000, guid: e05c84ad9b2951345a5e766d78697967, type: 3}
   gameOverClip: {fileID: 8300000, guid: 54a6b8468f40e174a9418a109974a818, type: 3}
   levelUpClip: {fileID: 8300000, guid: 8d25133860d423742b157cfc2eca62f7, type: 3}
   impactClip: {fileID: 8300000, guid: 1ca6bcf8a7beb5f4b8a2e55eb8121c5f, type: 3}

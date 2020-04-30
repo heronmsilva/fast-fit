@@ -66,7 +66,7 @@ public class MenuManager : MonoBehaviour
     private void UpdateRecords()
     {
         topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
-        topFitsText.text = PlayerPrefManager.GetTopCrosses().ToString();
+        topFitsText.text = PlayerPrefManager.GetTopFits().ToString();
         topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
         
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());

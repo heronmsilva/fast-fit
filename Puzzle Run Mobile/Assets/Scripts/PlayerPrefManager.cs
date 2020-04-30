@@ -137,23 +137,23 @@ public static class PlayerPrefManager
         return (PlayerPrefs.HasKey("Last Time")) ? PlayerPrefs.GetFloat("Last Time") : 0;
     }
 
-    public static void SetTopCrosses(int crosses)
+    public static void SetTopFits(int fits)
     {
-        PlayerPrefs.SetInt("Top Crosses", crosses);
+        PlayerPrefs.SetInt("Top Fits", fits);
     }
 
-    public static int GetTopCrosses()
+    public static int GetTopFits()
     {
-        return (PlayerPrefs.HasKey("Top Crosses")) ? PlayerPrefs.GetInt("Top Crosses") : 0;
+        return (PlayerPrefs.HasKey("Top Fits")) ? PlayerPrefs.GetInt("Top Fits") : 0;
     }
 
-    public static void SetLastCrosses(int crosses)
+    public static void SetLastFits(int fits)
     {
-        PlayerPrefs.SetInt("Last Crosses", crosses);
+        PlayerPrefs.SetInt("Last Fits", fits);
     }
 
-    public static int GetLastCrosses()
+    public static int GetLastFits()
     {
-        return (PlayerPrefs.HasKey("Last Crosses")) ? PlayerPrefs.GetInt("Last Crosses") : 0;
+        return (PlayerPrefs.HasKey("Last Fits")) ? PlayerPrefs.GetInt("Last Fits") : 0;
     }
 }

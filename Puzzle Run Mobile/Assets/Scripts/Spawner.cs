@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
         SetWallPrefab();
     }
 
-    public void PlayWallCrossAnimation()
+    public void PlayWallFitAnimation()
     {
         foreach (Transform container in piece.transform)
         {
@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour
         }
         foreach (Transform cube in wall.transform)
         {
-            cube.GetComponent<Animator>().Play("WallCross");
+            cube.GetComponent<Animator>().Play("WallFit");
         }
     }
 

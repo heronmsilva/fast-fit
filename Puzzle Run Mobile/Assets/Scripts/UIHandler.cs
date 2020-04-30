@@ -95,9 +95,9 @@ public class UIHandler : MonoBehaviour
 
     private void UpdateUIFits()
     {
-        if (gm.Crosses == 0) return;
+        if (gm.Fits == 0) return;
         
-        fitsText.text = gm.Crosses.ToString();
+        fitsText.text = gm.Fits.ToString();
     }
 
     private void UpdateUIDifficulty()
@@ -110,7 +110,7 @@ public class UIHandler : MonoBehaviour
 
     private void UpdateUIDifficultyFill()
     {
-        levelFill.fillAmount = (float) gm.CrossSequence / gm.MaxCrossSequence;
+        levelFill.fillAmount = (float) gm.FitSequence / gm.MaxFitSequence;
     }
 
     private void UpdateUILives()

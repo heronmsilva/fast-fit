@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioHandler : MonoBehaviour
 {
     [SerializeField] private AudioSource backgroundAudioSource = null;
-    [SerializeField] private AudioClip wallCrossClip = null;
+    [SerializeField] private AudioClip wallFitClip = null;
     [SerializeField] private AudioClip gameOverClip = null;
     [SerializeField] private AudioClip levelUpClip = null;
     [SerializeField] private AudioClip impactClip = null;
@@ -49,11 +49,11 @@ public class AudioHandler : MonoBehaviour
         audioSource.Play();
     }
 
-    public IEnumerator PlayWallCross(float delay)
+    public IEnumerator PlayWallFit(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        audioSource.clip = wallCrossClip;
+        audioSource.clip = wallFitClip;
         audioSource.Play();
     }
 
