@@ -43,9 +43,6 @@ public class MenuManager : MonoBehaviour
         SetupQualitySettings();
         SetupSoundSettings();
 
-        if (! PlayerPrefManager.getTutorialDone())
-            controllerButton.GetComponent<Animator>().Play("ControllerScaleAnimation");
-
         HideWindows();
         mainWindow.SetActive(true);
     }
@@ -123,9 +120,6 @@ public class MenuManager : MonoBehaviour
 
     public void ShowControllerWindow()
     {
-        PlayerPrefManager.SetTutorialDone(1);
-        controllerButton.GetComponent<Animator>().Play("New State");
-
         HideWindows();
         controllerWindow.SetActive(true);
     }
