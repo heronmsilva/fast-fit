@@ -300,9 +300,9 @@ public class GameManager : MonoBehaviour
         if (fits > PlayerPrefManager.GetTopFits())
             PlayerPrefManager.SetTopFits(fits);
         
-        PlayerPrefManager.SetLastStreak(streak);
-        if (streak > PlayerPrefManager.GetTopStreak())
-            PlayerPrefManager.SetTopStreak(streak);
+        PlayerPrefManager.SetLastStreak(bestStreak);
+        if (bestStreak > PlayerPrefManager.GetTopStreak())
+            PlayerPrefManager.SetTopStreak(bestStreak);
     }
 
     private void IncreaseDifficulty()
