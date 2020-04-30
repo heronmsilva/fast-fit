@@ -6363,6 +6363,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902588469}
   m_CullTransparentMesh: 0
+--- !u!114 &905037576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7971088438278376524, guid: daa6f8f843983e749b000b4bfb8e31c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1325602949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920283639
 GameObject:
   m_ObjectHideFlags: 0
@@ -8382,6 +8394,7 @@ MonoBehaviour:
   topFitsText: {fileID: 2143246805}
   topTimeText: {fileID: 1393380728}
   topStreakText: {fileID: 295842706}
+  attemptsText: {fileID: 905037576}
   audioMixer: {fileID: 24100000, guid: e5f75ca6cb599e745a078cd7f5120c74, type: 2}
 --- !u!82 &1169416256
 AudioSource:

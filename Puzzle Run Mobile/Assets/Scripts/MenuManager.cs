@@ -23,6 +23,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI topFitsText = null;
     [SerializeField] private TextMeshProUGUI topTimeText = null;
     [SerializeField] private TextMeshProUGUI topStreakText = null;
+    [SerializeField] private TextMeshProUGUI attemptsText = null;
 
     [SerializeField] private AudioMixer audioMixer = null;
 
@@ -68,6 +69,7 @@ public class MenuManager : MonoBehaviour
         topScoreText.text = PlayerPrefManager.GetTopScore().ToString();
         topFitsText.text = PlayerPrefManager.GetTopFits().ToString();
         topStreakText.text = PlayerPrefManager.GetTopStreak().ToString();
+        attemptsText.text = PlayerPrefManager.GetAttempts().ToString();
         
         TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         topTimeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
