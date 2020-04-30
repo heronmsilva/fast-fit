@@ -34,17 +34,11 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        int attempts = PlayerPrefManager.GetAttempts();
-        if (attempts % adAttempts == 0)
-            adManager.ShowNonRewardedAd();
-
         StartCoroutine(UpdateGameOverUI());
     }
 
     private IEnumerator UpdateGameOverUI()
     {
-        while (adManager.isAdPlaying) yield return null;
-        
         audioSource.Play();
 
         UpdateTime();
@@ -153,6 +147,19 @@ public class GameOverManager : MonoBehaviour
 
     public void TryAgain()
     {
+        StartCoroutine(TryAgainRoutine());
+    }
+
+    private IEnumerator TryAgainRoutine()
+    {
+        audioSource.Stop();
+
+        int attempts = PlayerPrefManager.GetAttempts();
+        if (attempts % adAttempts == 0)
+            adManager.ShowNonRewardedAd();
+
+        while (adManager.isAdPlaying) yield return null;
+        
         SceneManager.LoadScene("Game");
     }
 
