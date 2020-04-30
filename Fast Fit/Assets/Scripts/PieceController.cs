@@ -15,9 +15,7 @@ public class PieceController : MonoBehaviour
 
     private void Start()
     {
-        joystick = FindObjectOfType<FixedJoystick>();
-        if (! joystick) joystick = FindObjectOfType<FloatingJoystick>();
-        if (! joystick) joystick = FindObjectOfType<DynamicJoystick>();
+        joystick = FindObjectOfType<DynamicJoystick>();
             
         lastMove = Time.time;
     }

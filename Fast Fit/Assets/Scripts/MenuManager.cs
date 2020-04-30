@@ -11,7 +11,6 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainWindow = null;
     [SerializeField] private GameObject settingsWindow = null;
-    [SerializeField] private GameObject controllerButton = null;
     [SerializeField] private GameObject controllerWindow = null;
     [SerializeField] private GameObject recordsWindow = null;
     [SerializeField] private GameObject rankingsWindow = null;
