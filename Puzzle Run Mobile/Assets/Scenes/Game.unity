@@ -641,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -668,6 +668,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 162698dd02f00ed469c7d7bea16cf0c0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4aed08f885250846ab4e6fa87574d39, type: 3}
 --- !u!224 &330829965 stripped
@@ -1431,7 +1441,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -1458,6 +1468,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 36973871990623446a6281b5a021d6ad, type: 3}
     - target: {fileID: 4846834284262041696, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4039,7 +4059,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -4066,6 +4086,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 162698dd02f00ed469c7d7bea16cf0c0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4aed08f885250846ab4e6fa87574d39, type: 3}
 --- !u!224 &1627574336 stripped
@@ -4554,7 +4584,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -4581,6 +4611,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 162698dd02f00ed469c7d7bea16cf0c0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4aed08f885250846ab4e6fa87574d39, type: 3}
 --- !u!224 &1698359310 stripped
@@ -4799,7 +4839,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -4826,6 +4866,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 36973871990623446a6281b5a021d6ad, type: 3}
     - target: {fileID: 4846834284262041696, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5285,7 +5335,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: enableButtonSounds
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -5312,6 +5362,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 36973871990623446a6281b5a021d6ad, type: 3}
     - target: {fileID: 4846834284262041696, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
