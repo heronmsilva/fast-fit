@@ -11,6 +11,8 @@ public class PieceController : MonoBehaviour
     private float isFlipped = 1;
     private float rotationOffset = .1f; // added since rotation slightly changes position
 
+    public float LastMove { get { return lastMove; } }
+
     private void Start()
     {
         joystick = FindObjectOfType<FixedJoystick>();
