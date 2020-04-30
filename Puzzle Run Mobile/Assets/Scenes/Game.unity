@@ -5057,6 +5057,16 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ae134556d4342b24b86ac3655668eb72, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4aed08f885250846ab4e6fa87574d39, type: 3}
 --- !u!224 &1822140068 stripped
@@ -6321,6 +6331,26 @@ PrefabInstance:
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525496431}
+    - target: {fileID: 5044421725629957896, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: enableButtonSounds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044421725629957896, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: useHoverSound
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044421725629957896, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: soundSource
+      value: 
+      objectReference: {fileID: 1525496436}
+    - target: {fileID: 5044421725629957896, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 162698dd02f00ed469c7d7bea16cf0c0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1a54e26d4a2ad4c8004f95d42512c6, type: 3}
 --- !u!1001 &7688204596934296922
