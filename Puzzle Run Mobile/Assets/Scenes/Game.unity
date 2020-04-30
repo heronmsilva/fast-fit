@@ -3825,7 +3825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721b519fd04ace240a7138914110e110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iOSGameID: 3568509
   androidGameID: 3568508
   nonRewardedPID: video
   rewardedPID: rewardedVideo
@@ -4218,7 +4217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655345464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
