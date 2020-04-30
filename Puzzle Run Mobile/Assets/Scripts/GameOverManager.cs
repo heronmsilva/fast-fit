@@ -9,6 +9,7 @@ using TMPro;
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private NumberWriter numberWriter = null;
+    [SerializeField] private AdManager adManager = null;    
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI newBestScoreText = null;
@@ -23,12 +24,10 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI newBestStreakText = null;
     [SerializeField] private int adAttempts = 5;
 
-    private AdManager adManager;
     private AudioSource audioSource;
 
     private void Awake()
     {
-        adManager = GetComponent<AdManager>();
         audioSource = GetComponent<AudioSource>();
     }
 
