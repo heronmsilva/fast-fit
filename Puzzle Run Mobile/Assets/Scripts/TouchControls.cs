@@ -156,8 +156,9 @@ public class TouchControls : MonoBehaviour
                 case TouchPhase.Canceled:
                     if (! drag && RectTransformUtility.RectangleContainsScreenPoint(touchArea, startTouch))
                     {
+                        PieceController pieceController = FindObjectOfType<PieceController>();
                         tap = true;
-                        doubleTap = Time.time - lastTap < doubleTapDelta;
+                        doubleTap = Time.time - lastTap < doubleTapDelta && lastTap > pieceController.LastMove;
                         longTap = Time.time - startTime > longTapDelta;
                         lastTap = Time.time;
                         swipeDelta = (Vector2) touch.position - startTouch;
