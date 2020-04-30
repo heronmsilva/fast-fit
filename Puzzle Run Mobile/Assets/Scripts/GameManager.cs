@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSpeed = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject touchControls = null;
-    [SerializeField] private AdManager adManager;
+    [SerializeField] private AdManager adManager = null;
 
     private static GameManager instance;
     private static List<string> controls = new List<string> { "ROOKIE", "PRO" };
