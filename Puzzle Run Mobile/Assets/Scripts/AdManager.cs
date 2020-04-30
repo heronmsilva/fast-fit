@@ -12,14 +12,8 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
     public bool isAdPlaying;
 
-    private GameManager gm;
     private string gameId;
     private bool testMode = true;
-
-    private void Awake()
-    {
-        gm = GetComponent<GameManager>();
-    }
 
     private void Start()
     {
@@ -66,16 +60,16 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         switch (showResult)
         {
             case ShowResult.Finished:
-                gm.RewardGameOver();
+                GameManager.Instance.RewardGameOver();
                 break;
             case ShowResult.Skipped:
-                gm.LoadGameOver();
+                GameManager.Instance.LoadGameOver();
                 break;
             case ShowResult.Failed:
-                gm.LoadGameOver();
+                GameManager.Instance.LoadGameOver();
                 break;
             default:
-                gm.LoadGameOver();
+                GameManager.Instance.LoadGameOver();
                 break;
         }
     }

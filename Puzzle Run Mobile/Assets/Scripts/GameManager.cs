@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSpeed = 25;
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject touchControls = null;
+    [SerializeField] private AdManager adManager;
 
     private static GameManager instance;
     private static List<string> controls = new List<string> { "ROOKIE", "PRO" };
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     private UIHandler UIHandler;
     private AnimationBuffer animBuffer;
     private AudioHandler audioHandler;
-    private AdManager adManager;
     private Difficulty currDifficulty;
     private float speed, startTime, gameOverTimer;
     private int lives, score, crosses, crossSequence, crossStreak, bestCrossStreak;
@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         UIHandler = GetComponent<UIHandler>();
         animBuffer = GetComponent<AnimationBuffer>();
         audioHandler = GetComponent<AudioHandler>();
-        adManager = GetComponent<AdManager>();
     }
 
     private void Start()
