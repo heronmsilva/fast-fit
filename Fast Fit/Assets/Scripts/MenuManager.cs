@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainWindow = null;
     [SerializeField] private GameObject settingsWindow = null;
-    [SerializeField] private GameObject controllerWindow = null;
+    [SerializeField] private GameObject controlsWindow = null;
     [SerializeField] private GameObject recordsWindow = null;
     [SerializeField] private GameObject rankingsWindow = null;
 
@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
     {
         mainWindow.SetActive(false);
         settingsWindow.SetActive(false);
-        controllerWindow.SetActive(false);
+        controlsWindow.SetActive(false);
         recordsWindow.SetActive(false);
         rankingsWindow.SetActive(false);
     }
@@ -116,10 +116,10 @@ public class MenuManager : MonoBehaviour
         rankingsWindow.SetActive(true);
     }
 
-    public void ShowControllerWindow()
+    public void ShowControlsWindow()
     {
         HideWindows();
-        controllerWindow.SetActive(true);
+        controlsWindow.SetActive(true);
     }
 
     public void ShowSettingsWindow()

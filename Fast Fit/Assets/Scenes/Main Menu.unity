@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 4814727508399970884, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_Name
-      value: Controller Button
+      value: Controls Button
       objectReference: {fileID: 0}
     - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -682,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: buttonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowControllerWindow
+      value: ShowControlsWindow
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -8826,7 +8826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainWindow: {fileID: 1679098275}
   settingsWindow: {fileID: 2030127064}
-  controllerWindow: {fileID: 1529365610}
+  controlsWindow: {fileID: 1529365610}
   recordsWindow: {fileID: 303547510}
   rankingsWindow: {fileID: 1752861202}
   rookieControllerInfo: {fileID: 1823786844}
@@ -11794,7 +11794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1538813661}
   m_Layer: 5
-  m_Name: Controller Info
+  m_Name: Controls Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13320,7 +13320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1679098276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15890,7 +15890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050976828}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -16812,7 +16812,7 @@ PrefabInstance:
     - target: {fileID: 3165501253063132470, guid: 4e0271af2705aa745be5a8fd54469801,
         type: 3}
       propertyPath: m_Name
-      value: Controller Window
+      value: Controls Window
       objectReference: {fileID: 0}
     - target: {fileID: 3165501253063132470, guid: 4e0271af2705aa745be5a8fd54469801,
         type: 3}
@@ -16998,6 +16998,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165501253856978429, guid: 4e0271af2705aa745be5a8fd54469801,
+        type: 3}
+      propertyPath: m_Name
+      value: Controls Title Text
       objectReference: {fileID: 0}
     - target: {fileID: 3165501253856978430, guid: 4e0271af2705aa745be5a8fd54469801,
         type: 3}
