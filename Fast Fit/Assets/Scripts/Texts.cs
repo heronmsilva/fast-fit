@@ -353,4 +353,94 @@ public static class Texts
             }
         }
     }
+
+    public static string Time
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Tempo";
+                case Texts.English:
+                default:
+                    return "Time";
+            }
+        }
+    }
+
+    public static string Score
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Pontuação";
+                case Texts.English:
+                default:
+                    return "Score";
+            }
+        }
+    }
+
+    public static string Fits
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Acertos";
+                case Texts.English:
+                default:
+                    return "Fits";
+            }
+        }
+    }
+
+    public static string NewRecord
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Novo Recorde";
+                case Texts.English:
+                default:
+                    return "New Record";
+            }
+        }
+    }
+
+    public static string YourRecord
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Seu Recorde";
+                case Texts.English:
+                default:
+                    return "Your Record";
+            }
+        }
+    }
+
+    public static string TryAgain
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Tentar Novamente";
+                case Texts.English:
+                default:
+                    return "Try Again";
+            }
+        }
+    }
 }
