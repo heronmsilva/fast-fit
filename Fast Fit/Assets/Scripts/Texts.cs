@@ -278,4 +278,49 @@ public static class Texts
             }
         }
     }
+
+    public static string GamePaused
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Jogo Pausado";
+                case Texts.English:
+                default:
+                    return "Game Paused";
+            }
+        }
+    }
+
+    public static string Resume
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Despausar";
+                case Texts.English:
+                default:
+                    return "Resume";
+            }
+        }
+    }
+
+    public static string Finish
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Finalizar";
+                case Texts.English:
+                default:
+                    return "Finish";
+            }
+        }
+    }
 }
