@@ -9,6 +9,12 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject pausedWindow = null;
     [SerializeField] private GameObject gameOverWindow = null;
     [SerializeField] private GameObject watchAdTimer = null;
+    [SerializeField] private GameObject moveTutorial = null;
+    [SerializeField] private GameObject fastForwardTutorial = null;
+    [SerializeField] private GameObject rookieRotateTutorial = null;
+    [SerializeField] private GameObject rookieFlipTutorial = null;
+    [SerializeField] private GameObject proRotateTutorial = null;
+    [SerializeField] private GameObject proFlipTutorial = null;
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private TextMeshProUGUI fitsText = null;
     [SerializeField] private TextMeshProUGUI levelText = null;
@@ -28,6 +34,50 @@ public class UIHandler : MonoBehaviour
     private void Start()
     {
         startTime = Time.time;
+    }
+
+    public void ShowMoveTutorial()
+    {
+        moveTutorial.SetActive(true);
+        moveTutorial.GetComponent<Animator>().Play("MoveTutorialAnimation");
+    }
+
+    public void ShowFastForwardTutorial()
+    {
+        fastForwardTutorial.SetActive(true);
+        fastForwardTutorial.GetComponent<Animator>().Play("FastForwardTutorialAnimation");
+    }
+
+    public void ShowRotateTutorial()
+    {
+        string controls = GameManager.Controls[PlayerPrefManager.GetControls()];
+        switch (controls)
+        {
+            case "ROOKIE":
+                rookieRotateTutorial.SetActive(true);
+                rookieRotateTutorial.GetComponent<Animator>().Play("RookieRotateTutorialAnimation");
+                break;
+            case "PRO":
+                proRotateTutorial.SetActive(true);
+                proRotateTutorial.GetComponent<Animator>().Play("ProRotateTutorialAnimation");
+                break;
+        }
+    }
+
+    public void ShowFlipTutorial()
+    {
+        string controls = GameManager.Controls[PlayerPrefManager.GetControls()];
+        switch (controls)
+        {
+            case "ROOKIE":
+                rookieFlipTutorial.SetActive(true);
+                rookieFlipTutorial.GetComponent<Animator>().Play("RookieFlipTutorialAnimation");
+                break;
+            case "PRO":
+                proFlipTutorial.SetActive(true);
+                proFlipTutorial.GetComponent<Animator>().Play("ProFlipTutorialAnimation");
+                break;
+        }
     }
 
     public void HideGameOver()

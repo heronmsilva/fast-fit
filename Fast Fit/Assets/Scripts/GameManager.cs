@@ -92,7 +92,27 @@ public class GameManager : MonoBehaviour
     {
         if (countDown) return;
 
-        if (! spawner.Wall) spawner.SpawnObjects();
+        if (! spawner.Wall) {
+            if (! PlayerPrefManager.GetMoveTutorialDone())
+            {
+                spawner.SpawnTutorialMoveObjects();
+                UIHandler.ShowMoveTutorial();
+                PlayerPrefManager.SetMoveTutorialDone(1);
+            }
+            else
+                spawner.SpawnObjects();
+        }
+
+        if (fits == 0 && ! PlayerPrefManager.GetFastForwardTutorialDone())
+        {
+            float x = spawner.Piece.transform.position.x;
+            float y = spawner.Piece.transform.position.y;
+            if (x == spawner.MaxXY.x - 1 && y == spawner.MaxXY.y - 1) 
+            {
+                UIHandler.ShowFastForwardTutorial();
+                PlayerPrefManager.SetFastForwardTutorialDone(1);
+            }
+        }
 
         CheckWallFit();
 
@@ -168,7 +188,22 @@ public class GameManager : MonoBehaviour
             ScorePoints();
             fastForward = false;
             spawner.PlayWallFitAnimation();
-            StartCoroutine(spawner.DelayedRespawn(0.5f));
+            if (fits == 1 && ! PlayerPrefManager.GetRotateTutorialDone())
+            {
+                spawner.DestroyGameObjects();
+                spawner.SpawnTutorialRotateObjects();
+                UIHandler.ShowRotateTutorial();
+                PlayerPrefManager.SetRotateTutorialDone(1);
+            }
+            else if (fits == 2 && ! PlayerPrefManager.GetFlipTutorialDone())
+            {
+                spawner.DestroyGameObjects();
+                spawner.SpawnTutorialFlipObjects();
+                UIHandler.ShowFlipTutorial();
+                PlayerPrefManager.SetFlipTutorialDone(1);
+            }
+            else
+                StartCoroutine(spawner.DelayedRespawn(0.5f));
         }
     }
 

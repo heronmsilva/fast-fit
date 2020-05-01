@@ -17,16 +17,70 @@ public static class PlayerPrefManager
         return (PlayerPrefs.HasKey("Attempts")) ? PlayerPrefs.GetInt("Attempts") : 0;
     }
 
-    public static void SetTutorialDone(int done)
+    public static void SetMoveTutorialDone(int done)
     {
-        PlayerPrefs.SetInt("Tutorial Done", done);
+        PlayerPrefs.SetInt("Move Tutorial Done", done);
     }
 
-    public static bool getTutorialDone()
+    public static bool GetMoveTutorialDone()
     {
-        if (PlayerPrefs.HasKey("Tutorial Done"))
+        if (PlayerPrefs.HasKey("Move Tutorial Done"))
         {
-            if (PlayerPrefs.GetInt("Tutorial Done") == 1)
+            if (PlayerPrefs.GetInt("Move Tutorial Done") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
+    public static void SetFastForwardTutorialDone(int done)
+    {
+        PlayerPrefs.SetInt("FastForward Tutorial Done", done);
+    }
+
+    public static bool GetFastForwardTutorialDone()
+    {
+        if (PlayerPrefs.HasKey("FastForward Tutorial Done"))
+        {
+            if (PlayerPrefs.GetInt("FastForward Tutorial Done") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
+    public static void SetRotateTutorialDone(int done)
+    {
+        PlayerPrefs.SetInt("Rotate Tutorial Done", done);
+    }
+
+    public static bool GetRotateTutorialDone()
+    {
+        if (PlayerPrefs.HasKey("Rotate Tutorial Done"))
+        {
+            if (PlayerPrefs.GetInt("Rotate Tutorial Done") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
+    public static void SetFlipTutorialDone(int done)
+    {
+        PlayerPrefs.SetInt("Flip Tutorial Done", done);
+    }
+
+    public static bool GetFlipTutorialDone()
+    {
+        if (PlayerPrefs.HasKey("Flip Tutorial Done"))
+        {
+            if (PlayerPrefs.GetInt("Flip Tutorial Done") == 1)
             {
                 return true;
             }

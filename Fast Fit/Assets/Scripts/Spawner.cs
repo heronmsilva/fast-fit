@@ -42,6 +42,68 @@ public class Spawner : MonoBehaviour
         SetWallPrefab();
     }
 
+    public void SpawnTutorialMoveObjects()
+    {
+        SpawnWall();
+        UpdateCubeMaterial();
+        UpdateBackgroundRays();
+        UpdateBackgroundDust();
+        SetupMinMaxXY();
+        
+        piece = Instantiate(piecesPrefabs[14], dynamicContainer.transform) as GameObject;
+        
+        piece.transform.position = new Vector3(maxXY.x - 1, maxXY.y - 1);
+
+        CreateHole();
+        SetupInitialTransforms();
+        SetupWallMovement();
+        PlayNextAnimation();
+    }
+
+    public void SpawnTutorialRotateObjects()
+    {
+        SpawnWall();
+        UpdateCubeMaterial();
+        UpdateBackgroundRays();
+        UpdateBackgroundDust();
+        SetupMinMaxXY();
+        
+        piece = Instantiate(piecesPrefabs[0], dynamicContainer.transform) as GameObject;
+
+        piece.transform.position = new Vector3(minXY.x + 1, maxXY.y - 1);
+        
+        Vector3 eulerAngles = piece.transform.eulerAngles;
+        eulerAngles = new Vector3(0, 0, -90);
+        piece.transform.eulerAngles = eulerAngles;
+
+        CreateHole();
+        SetupInitialTransforms();
+        SetupWallMovement();
+        PlayNextAnimation();
+    }
+
+    public void SpawnTutorialFlipObjects()
+    {
+        SpawnWall();
+        UpdateCubeMaterial();
+        UpdateBackgroundRays();
+        UpdateBackgroundDust();
+        SetupMinMaxXY();
+        
+        piece = Instantiate(piecesPrefabs[7], dynamicContainer.transform) as GameObject;
+
+        piece.transform.position = new Vector3(minXY.x + 1, maxXY.y - 1);
+        
+        Vector3 eulerAngles = piece.transform.eulerAngles;
+        eulerAngles = new Vector3(0, 180, 0);
+        piece.transform.eulerAngles = eulerAngles;
+
+        CreateHole();
+        SetupInitialTransforms();
+        SetupWallMovement();
+        PlayNextAnimation();
+    }
+
     public void PlayWallFitAnimation()
     {
         foreach (Transform container in piece.transform)
