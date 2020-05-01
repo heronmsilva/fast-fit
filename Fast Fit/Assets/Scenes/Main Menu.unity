@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 95122063}
   - component: {fileID: 95122062}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1688,6 +1688,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107257418}
   m_CullTransparentMesh: 0
+--- !u!114 &115077375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1165717258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118218853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1712,7 @@ GameObject:
   - component: {fileID: 118218856}
   - component: {fileID: 118218855}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2594,7 +2606,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Flip Horizontally Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -2792,6 +2804,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344222705}
   m_CullTransparentMesh: 0
+--- !u!114 &346456938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 386770273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349396242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,7 +3063,7 @@ PrefabInstance:
     - target: {fileID: 4814727508399970884, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_Name
-      value: Flip Horizontal Button
+      value: Flip Horizontally Button
       objectReference: {fileID: 0}
     - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -3218,7 +3242,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Flip Vertically Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -3353,7 +3377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412161134}
   m_Layer: 5
-  m_Name: Flip Vertical Text
+  m_Name: Flip Vertically Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3520,7 +3544,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Move Text
+      value: Move Info Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -4656,6 +4680,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 514690287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &534112006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 343125516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &561365914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,6 +5686,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &704327729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1539793765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,11 +5949,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapToPlayText: {fileID: 77810268}
   recordsTitleText: {fileID: 88286714}
+  controlsTitleText: {fileID: 1104508843}
   topScoreText: {fileID: 622515768}
   longestRunText: {fileID: 1322565110}
   topFitsInARunText: {fileID: 212403910}
   topStreakText: {fileID: 1306453833}
   runsText: {fileID: 356362847}
+  moveInfoText: {fileID: 1404303615}
+  fastForwardInfoText: {fileID: 115077375}
+  rookieRotateLeftText: {fileID: 704327729}
+  rookieRotateRightText: {fileID: 1540398615}
+  rookieFlipHorizontally: {fileID: 534112006}
+  rookieFlipVertically: {fileID: 346456938}
+  proRotateRightText: {fileID: 1528089204}
+  proFlipVerticallyText: {fileID: 1316356106}
 --- !u!4 &726732423
 Transform:
   m_ObjectHideFlags: 0
@@ -6088,7 +6145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 741449279}
   m_Layer: 5
-  m_Name: Flip Horizontal Text
+  m_Name: Flip Horizontally Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6128,7 +6185,7 @@ GameObject:
   - component: {fileID: 772522625}
   - component: {fileID: 772522624}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6349,7 +6406,7 @@ GameObject:
   - component: {fileID: 868225360}
   - component: {fileID: 868225359}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6425,7 +6482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &869570912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6459,7 +6516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 901306986}
   m_Layer: 5
-  m_Name: Rotate Text
+  m_Name: Rotate Right Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7936,7 +7993,7 @@ GameObject:
   - component: {fileID: 1026506907}
   - component: {fileID: 1026506906}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8289,6 +8346,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1082442272}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104508843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3165501253856978431, guid: 4e0271af2705aa745be5a8fd54469801,
+    type: 3}
+  m_PrefabInstance: {fileID: 2138534750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1107534970
 GameObject:
   m_ObjectHideFlags: 0
@@ -8655,7 +8724,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Fast Forward Text
+      value: Fast Forward Info Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -8981,7 +9050,7 @@ GameObject:
   - component: {fileID: 1199184442}
   - component: {fileID: 1199184441}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9541,7 +9610,7 @@ PrefabInstance:
     - target: {fileID: 4814727508399970884, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_Name
-      value: Flip Button
+      value: Flip Vertically Button
       objectReference: {fileID: 0}
     - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -9956,6 +10025,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
     type: 3}
   m_PrefabInstance: {fileID: 514690287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1316356106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467780591}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -10628,12 +10709,12 @@ PrefabInstance:
     - target: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_text
-      value: Rotate
+      value: Rotate Right
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Rotate Right Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -10693,7 +10774,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -28
+      value: -223
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -10743,6 +10824,11 @@ PrefabInstance:
     - target: {fileID: 5700195103741179621, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700195103741179621, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10929,6 +11015,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7971088438278376524, guid: daa6f8f843983e749b000b4bfb8e31c8,
     type: 3}
   m_PrefabInstance: {fileID: 1393380726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1404303615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 445825508}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11303,12 +11401,12 @@ PrefabInstance:
     - target: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_text
-      value: Flip
+      value: Flip Vertically
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Flip Vertically Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -11368,7 +11466,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2
+      value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -11418,6 +11516,11 @@ PrefabInstance:
     - target: {fileID: 5700195103741179621, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700195103741179621, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11493,7 +11596,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Rotate Right Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -11693,6 +11796,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523321235}
   m_CullTransparentMesh: 0
+--- !u!114 &1528089204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1393013577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1529365610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3165501253063132470, guid: 4e0271af2705aa745be5a8fd54469801,
@@ -11888,7 +12003,7 @@ PrefabInstance:
     - target: {fileID: 3096141197426328122, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Rotate Left Text
       objectReference: {fileID: 0}
     - target: {fileID: 3096141197426328123, guid: c659a622141808d4d9fc05daaf3ec05e,
         type: 3}
@@ -12013,6 +12128,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1539793765}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540398615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096141197426328120, guid: c659a622141808d4d9fc05daaf3ec05e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1518961292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555614114
 GameObject:
   m_ObjectHideFlags: 0
@@ -13320,7 +13447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1679098276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14041,7 +14168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1823786845
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14081,7 +14208,7 @@ GameObject:
   - component: {fileID: 1823817041}
   - component: {fileID: 1823817040}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14757,7 +14884,7 @@ PrefabInstance:
     - target: {fileID: 4814727508399970884, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_Name
-      value: Flip Vertical Button
+      value: Flip Vertically Button
       objectReference: {fileID: 0}
     - target: {fileID: 4846505022939903594, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -15271,7 +15398,7 @@ PrefabInstance:
     - target: {fileID: 4814727508399970884, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
       propertyPath: m_Name
-      value: Rotate Button
+      value: Rotate Right Button
       objectReference: {fileID: 0}
     - target: {fileID: 4846713503223711632, guid: e4aed08f885250846ab4e6fa87574d39,
         type: 3}
@@ -15390,7 +15517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1986819830}
   m_Layer: 5
-  m_Name: Flip Text
+  m_Name: Flip Vertically Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15890,7 +16017,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050976828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -15930,7 +16057,7 @@ GameObject:
   - component: {fileID: 2056812082}
   - component: {fileID: 2056812081}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

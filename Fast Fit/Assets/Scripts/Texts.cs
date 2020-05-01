@@ -113,4 +113,109 @@ public static class Texts
             }
         }
     }
+
+    public static string Controls
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Controles";
+                case Texts.English:
+                default:
+                    return "Controls";
+            }
+        }
+    }
+
+    public static string MoveInfo
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Toque na tela, segure e arraste para mover a peça";
+                case Texts.English:
+                default:
+                    return "Tap the screen, hold and move to move the piece";
+            }
+        }
+    }
+
+    public static string FastForwardInfo
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Toque duas vezes na tela para Avançar Rapidamente";
+                case Texts.English:
+                default:
+                    return "Double tap the screen to Fast Forward";
+            }
+        }
+    }
+
+    public static string RotateLeft
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Gira para Esquerda";
+                case Texts.English:
+                default:
+                    return "Rotate Left";
+            }
+        }
+    }
+
+    public static string RotateRight
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Gira para Direita";
+                case Texts.English:
+                default:
+                    return "Rotate Right";
+            }
+        }
+    }
+
+    public static string FlipHorizontally
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Vira Horizontalmente";
+                case Texts.English:
+                default:
+                    return "Flip Horizontally";
+            }
+        }
+    }
+
+    public static string FlipVertically
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Vira Verticalmente";
+                case Texts.English:
+                default:
+                    return "Flip Vertically";
+            }
+        }
+    }
 }
