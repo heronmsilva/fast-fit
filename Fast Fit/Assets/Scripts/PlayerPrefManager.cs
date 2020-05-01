@@ -96,7 +96,7 @@ public static class PlayerPrefManager
 
     public static float GetSFXVolume()
     {
-        return (PlayerPrefs.HasKey("SFX Volume")) ? PlayerPrefs.GetFloat("SFX Volume") : 1;
+        return (PlayerPrefs.HasKey("SFX Volume")) ? PlayerPrefs.GetFloat("SFX Volume") : 0;
     }
 
     public static void SetMusicVolume(float index)
@@ -106,7 +106,7 @@ public static class PlayerPrefManager
 
     public static float GetMusicVolume()
     {
-        return (PlayerPrefs.HasKey("Music Volume")) ? PlayerPrefs.GetFloat("Music Volume") : 1;
+        return (PlayerPrefs.HasKey("Music Volume")) ? PlayerPrefs.GetFloat("Music Volume") : 0;
     }
 
     public static void SetMasterVolume(float index)
@@ -116,7 +116,7 @@ public static class PlayerPrefManager
 
     public static float GetMasterVolume()
     {
-        return (PlayerPrefs.HasKey("Master Volume")) ? PlayerPrefs.GetFloat("Master Volume") : 1;
+        return (PlayerPrefs.HasKey("Master Volume")) ? PlayerPrefs.GetFloat("Master Volume") : 0;
     }
 
     public static void SetQualityLevel(int index)
