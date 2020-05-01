@@ -50,9 +50,11 @@ public class MenuManager : MonoBehaviour
 
     private void SetupSoundSettings()
     {
+        float masterVolume = PlayerPrefManager.GetMasterVolume();
         float musicVolume = PlayerPrefManager.GetMusicVolume();
         float sfxVolume = PlayerPrefManager.GetSFXVolume();
 
+        audioMixer.SetFloat("Master", masterVolume);
         audioMixer.SetFloat("Music", musicVolume);
         audioMixer.SetFloat("SFX", sfxVolume);
     }
@@ -136,6 +138,12 @@ public class MenuManager : MonoBehaviour
     {
         PlayerPrefManager.SetQualityLevel(index);
         QualitySettings.SetQualityLevel(index);
+    }
+
+    public void SetMasterVolume(float volume)
+    {
+        audioMixer.SetFloat("Master", volume);
+        PlayerPrefManager.SetMasterVolume(volume);
     }
 
     public void SetMusicVolume(float volume)

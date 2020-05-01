@@ -109,6 +109,16 @@ public static class PlayerPrefManager
         return (PlayerPrefs.HasKey("Music Volume")) ? PlayerPrefs.GetFloat("Music Volume") : 1;
     }
 
+    public static void SetMasterVolume(float index)
+    {
+        PlayerPrefs.SetFloat("Master Volume", index);
+    }
+
+    public static float GetMasterVolume()
+    {
+        return (PlayerPrefs.HasKey("Master Volume")) ? PlayerPrefs.GetFloat("Master Volume") : 1;
+    }
+
     public static void SetQualityLevel(int index)
     {
         PlayerPrefs.SetInt("Quality Level", index);
