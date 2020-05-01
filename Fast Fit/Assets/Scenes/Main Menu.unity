@@ -5953,7 +5953,7 @@ GameObject:
   - component: {fileID: 726732423}
   - component: {fileID: 726732422}
   m_Layer: 0
-  m_Name: TextManager
+  m_Name: Text Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8889,7 +8889,7 @@ GameObject:
   - component: {fileID: 1169416255}
   - component: {fileID: 1169416256}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Menu Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
