@@ -48,9 +48,9 @@ public class MenuTextManager : MonoBehaviour
         controlsTitleText.text = Texts.Controls;
         settingsTitleText.text = Texts.Settings;
 
-        topScoreText.text = Texts.TopScore;
+        topScoreText.text = Texts.Score;
         longestRunText.text = Texts.LongestRun;
-        topFitsInARunText.text = Texts.TopFitsInARun;
+        topFitsInARunText.text = Texts.Fits;
         topStreakText.text = Texts.TopStreak;
         runsText.text = Texts.Runs;
 

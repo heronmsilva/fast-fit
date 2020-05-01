@@ -69,21 +69,6 @@ public static class Texts
         }
     }
 
-    public static string TopFitsInARun
-    {
-        get 
-        {
-            switch (Texts.Language)
-            {
-                case Texts.Portuguese:
-                    return "Quantidade de Acertos";
-                case Texts.English:
-                default:
-                    return "Top Fits in a Run";
-            }
-        }
-    }
-
     public static string TopStreak
     {
         get 
@@ -91,10 +76,10 @@ public static class Texts
             switch (Texts.Language)
             {
                 case Texts.Portuguese:
-                    return "Melhor Sequência";
+                    return "Sequência";
                 case Texts.English:
                 default:
-                    return "Top Streak";
+                    return "Streak";
             }
         }
     }
@@ -151,7 +136,7 @@ public static class Texts
             switch (Texts.Language)
             {
                 case Texts.Portuguese:
-                    return "Toque duas vezes na tela para Avançar Rapidamente";
+                    return "Toque duas vezes na tela para Avançar";
                 case Texts.English:
                 default:
                     return "Double tap the screen to Fast Forward";
@@ -414,17 +399,17 @@ public static class Texts
         }
     }
 
-    public static string YourRecord
+    public static string Record
     {
         get 
         {
             switch (Texts.Language)
             {
                 case Texts.Portuguese:
-                    return "Seu Recorde";
+                    return "Recorde";
                 case Texts.English:
                 default:
-                    return "Your Record";
+                    return "Record";
             }
         }
     }

@@ -115,7 +115,7 @@ public class GameOverManager : MonoBehaviour
 
         TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
         string topTime = string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
-        topTimeText.text = Texts.YourRecord + " " + topTime;
+        topTimeText.text = Texts.Record + " " + topTime;
     }
 
     private void UpdateScore()
@@ -123,7 +123,7 @@ public class GameOverManager : MonoBehaviour
         numberWriter.WriteInt(scoreText, PlayerPrefManager.GetLastScore(), 0.01f);
     
         string topScore = PlayerPrefManager.GetTopScore().ToString();
-        topScoreText.text = Texts.YourRecord + " " + topScore;
+        topScoreText.text = Texts.Record + " " + topScore;
     }
 
     private void UpdateFits()
@@ -131,7 +131,7 @@ public class GameOverManager : MonoBehaviour
         numberWriter.WriteInt(fitsText, PlayerPrefManager.GetLastFits(), 0.01f);
         
         string topFits = PlayerPrefManager.GetTopFits().ToString();
-        topFitsText.text = Texts.YourRecord + " " + topFits;
+        topFitsText.text = Texts.Record + " " + topFits;
     }
 
     private void UpdateStreak()
@@ -139,7 +139,7 @@ public class GameOverManager : MonoBehaviour
         numberWriter.WriteInt(streakText, PlayerPrefManager.GetLastStreak(), 0.01f);
         
         string topStreak = PlayerPrefManager.GetTopStreak().ToString();
-        topStreakText.text = Texts.YourRecord + " " + topStreak;
+        topStreakText.text = Texts.Record + " " + topStreak;
     }
 
     public void TryAgain()
