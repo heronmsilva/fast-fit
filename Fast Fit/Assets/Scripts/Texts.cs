@@ -211,7 +211,7 @@ public static class Texts
             switch (Texts.Language)
             {
                 case Texts.Portuguese:
-                    return "Configurações";
+                    return "Configs";
                 case Texts.English:
                 default:
                     return "Settings";
@@ -320,21 +320,6 @@ public static class Texts
                 case Texts.English:
                 default:
                     return "Continue";
-            }
-        }
-    }
-
-    public static string WatchAd
-    {
-        get 
-        {
-            switch (Texts.Language)
-            {
-                case Texts.Portuguese:
-                    return "Assitir";
-                case Texts.English:
-                default:
-                    return "Watch Ad";
             }
         }
     }

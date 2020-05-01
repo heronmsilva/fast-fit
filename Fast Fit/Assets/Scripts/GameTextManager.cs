@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Michsky.UI.ModernUIPack;
 using TMPro;
 
 public class GameTextManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI pausedTitleText = null;
-
-    [SerializeField] private TextMeshProUGUI resumeText = null;
-    [SerializeField] private TextMeshProUGUI finishText = null;
-
     [SerializeField] private TextMeshProUGUI continueText = null;
-    [SerializeField] private TextMeshProUGUI watchAdText = null;
+
+    [SerializeField] private ButtonManagerBasic resumeButton = null;
+    [SerializeField] private ButtonManagerBasic finishButton = null;
 
     private void Awake() 
     {
@@ -26,12 +25,10 @@ public class GameTextManager : MonoBehaviour
     private void UpdateTexts()
     {
         pausedTitleText.text = Texts.GamePaused;
+        continueText.text = Texts.Continue;
 
-        resumeText.text = Texts.Resume;
-        finishText.text = Texts.Finish;
-
-        continueText.text = Texts.Resume;
-        watchAdText.text = Texts.Finish;
+        resumeButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.Resume;
+        finishButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.Finish;
     }
 
     private void SetupLanguage()

@@ -2202,6 +2202,11 @@ PrefabInstance:
       propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433265758775570097, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c659a622141808d4d9fc05daaf3ec05e, type: 3}
 --- !u!224 &655494140 stripped
@@ -2217,6 +2222,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1763226691}
     m_Modifications:
+    - target: {fileID: 819797999702461853, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     - target: {fileID: 3563282266538300873, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_Material
@@ -2390,12 +2400,28 @@ PrefabInstance:
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_fontStyle
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_textInfo.materialCount
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21539420542967178, guid: 4bd810f1cbcb0f446a8f5a31453e243f,
+        type: 2}
+    - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582614, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
@@ -5719,6 +5745,11 @@ PrefabInstance:
       propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433265758775570097, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c659a622141808d4d9fc05daaf3ec05e, type: 3}
 --- !u!224 &1830434240 stripped
@@ -5936,6 +5967,11 @@ PrefabInstance:
       propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433265758775570097, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c659a622141808d4d9fc05daaf3ec05e, type: 3}
 --- !u!224 &1874643824 stripped
@@ -6141,6 +6177,11 @@ PrefabInstance:
       propertyPath: m_padding
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8433265758775570097, guid: c659a622141808d4d9fc05daaf3ec05e,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c659a622141808d4d9fc05daaf3ec05e, type: 3}
 --- !u!224 &2018650238 stripped
@@ -6156,6 +6197,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1763226691}
     m_Modifications:
+    - target: {fileID: 819797999702461853, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_Name
+      value: TMP SubMeshUI [OpenSans-Regular SDF Material + OpenSans-Bold SDF Atlas]
+      objectReference: {fileID: 0}
     - target: {fileID: 3563282266538300873, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_padding
@@ -6304,12 +6350,12 @@ PrefabInstance:
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
@@ -6324,22 +6370,22 @@ PrefabInstance:
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_text
-      value: Try Again
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_fontStyle
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
       propertyPath: m_textInfo.materialCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
         type: 3}
@@ -6351,6 +6397,12 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 6097820476813582612, guid: 4f1a54e26d4a2ad4c8004f95d42512c6,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21539420542967178, guid: 4bd810f1cbcb0f446a8f5a31453e243f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1a54e26d4a2ad4c8004f95d42512c6, type: 3}
 --- !u!114 &2096737495 stripped

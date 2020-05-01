@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Michsky.UI.ModernUIPack;
 
 public class GameOverTextManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameOverTextManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI newBestFitsText = null;
     [SerializeField] private TextMeshProUGUI newBestStreakText = null;
 
-    [SerializeField] private TextMeshProUGUI tryAgainText = null;
+    [SerializeField] private ButtonManagerBasic tryAgainButton = null;
 
     private void Awake() 
     {
@@ -39,7 +40,7 @@ public class GameOverTextManager : MonoBehaviour
         newBestFitsText.text = Texts.NewRecord;
         newBestStreakText.text = Texts.NewRecord;
 
-        tryAgainText.text = Texts.TryAgain;
+        tryAgainButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.TryAgain;
     }
 
     private void SetupLanguage()
