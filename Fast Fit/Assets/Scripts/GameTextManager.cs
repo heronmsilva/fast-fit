@@ -10,6 +10,9 @@ public class GameTextManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI resumeText = null;
     [SerializeField] private TextMeshProUGUI finishText = null;
 
+    [SerializeField] private TextMeshProUGUI continueText = null;
+    [SerializeField] private TextMeshProUGUI watchAdText = null;
+
     private void Awake() 
     {
         SetupLanguage();
@@ -26,6 +29,9 @@ public class GameTextManager : MonoBehaviour
 
         resumeText.text = Texts.Resume;
         finishText.text = Texts.Finish;
+
+        continueText.text = Texts.Resume;
+        watchAdText.text = Texts.Finish;
     }
 
     private void SetupLanguage()

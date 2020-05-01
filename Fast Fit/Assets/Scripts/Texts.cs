@@ -323,4 +323,34 @@ public static class Texts
             }
         }
     }
+
+    public static string Continue
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Continuar";
+                case Texts.English:
+                default:
+                    return "Continue";
+            }
+        }
+    }
+
+    public static string WatchAd
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Assitir";
+                case Texts.English:
+                default:
+                    return "Watch Ad";
+            }
+        }
+    }
 }
