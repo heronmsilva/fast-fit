@@ -218,4 +218,64 @@ public static class Texts
             }
         }
     }
+
+    public static string Settings
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Configurações";
+                case Texts.English:
+                default:
+                    return "Settings";
+            }
+        }
+    }
+
+    public static string Graphics
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Gráficos";
+                case Texts.English:
+                default:
+                    return "Graphics";
+            }
+        }
+    }
+
+    public static string Music
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Música";
+                case Texts.English:
+                default:
+                    return "Music";
+            }
+        }
+    }
+
+    public static string SoundEffects
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Efeitos Sonoros";
+                case Texts.English:
+                default:
+                    return "Sound Effects";
+            }
+        }
+    }
 }

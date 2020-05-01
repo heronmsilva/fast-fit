@@ -9,6 +9,7 @@ public class MenuTextManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI recordsTitleText = null;
     [SerializeField] private TextMeshProUGUI controlsTitleText = null;
+    [SerializeField] private TextMeshProUGUI settingsTitleText = null;
 
     [SerializeField] private TextMeshProUGUI topScoreText = null;
     [SerializeField] private TextMeshProUGUI longestRunText = null;
@@ -24,6 +25,10 @@ public class MenuTextManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rookieFlipVertically = null;
     [SerializeField] private TextMeshProUGUI proRotateRightText = null;
     [SerializeField] private TextMeshProUGUI proFlipVerticallyText = null;
+
+    [SerializeField] private TextMeshProUGUI graphicsText = null;
+    [SerializeField] private TextMeshProUGUI musicText = null;
+    [SerializeField] private TextMeshProUGUI sfxText = null;
 
     private void Awake() 
     {
@@ -41,6 +46,7 @@ public class MenuTextManager : MonoBehaviour
 
         recordsTitleText.text = Texts.Records;
         controlsTitleText.text = Texts.Controls;
+        settingsTitleText.text = Texts.Settings;
 
         topScoreText.text = Texts.TopScore;
         longestRunText.text = Texts.LongestRun;
@@ -56,6 +62,10 @@ public class MenuTextManager : MonoBehaviour
         rookieFlipVertically.text = Texts.FlipVertically;
         proRotateRightText.text = Texts.RotateRight;
         proFlipVerticallyText.text = Texts.FlipVertically;
+
+        graphicsText.text = Texts.Graphics;
+        musicText.text = Texts.Music;
+        sfxText.text = Texts.SoundEffects;
     }
 
     private void SetupLanguage()
