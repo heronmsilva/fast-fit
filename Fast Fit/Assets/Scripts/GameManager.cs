@@ -272,6 +272,7 @@ public class GameManager : MonoBehaviour
     public void LoadGameOver()
     {
         UpdatePlayerPrefs();
+        PlayGamesController.PostToLeaderboard(score);
         SceneManager.LoadScene("Game Over");
     }
 
