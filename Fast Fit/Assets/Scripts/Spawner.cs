@@ -95,7 +95,7 @@ public class Spawner : MonoBehaviour
         piece.transform.position = new Vector3(minXY.x + 1, maxXY.y - 1);
         
         Vector3 eulerAngles = piece.transform.eulerAngles;
-        eulerAngles = new Vector3(0, 180, 0);
+        eulerAngles = new Vector3(180, 0, 0);
         piece.transform.eulerAngles = eulerAngles;
 
         CreateHole();
