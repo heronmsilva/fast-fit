@@ -19,7 +19,8 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fitsText = null;
     [SerializeField] private TextMeshProUGUI levelText = null;
     [SerializeField] private Image levelFill = null;
-    [SerializeField] private List<Image> lifeImages = new List<Image>();
+    [SerializeField] private List<Image> lifeImages = new List<Image>();    
+    [SerializeField] private AdManager adManager = null;
     
     private GameManager gm;
     private AnimationBuffer animBuffer;
@@ -34,6 +35,12 @@ public class UIHandler : MonoBehaviour
     private void Start()
     {
         startTime = Time.time;
+    }
+
+    private void Update() 
+    {
+        if (GameManager.Instance.IsGameOver && (adManager.isAdPlaying || adManager.isAdRequested))
+            watchAdTimer.GetComponent<Animator>().SetFloat("Speed", 0);
     }
 
     public void ShowMoveTutorial()

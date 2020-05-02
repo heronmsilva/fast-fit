@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
 
         UIHandler.UpdateUIHeader();
 
-        if (gameOver && ! adManager.isAdPlaying)
+        if (gameOver && ! adManager.isAdPlaying && ! adManager.isAdRequested)
         {
             gameOverTimer -= Time.deltaTime;
             if (gameOverTimer < 0)

@@ -4244,6 +4244,7 @@ MonoBehaviour:
   - {fileID: 598127675}
   - {fileID: 1093185538}
   - {fileID: 1274845564}
+  adManager: {fileID: 1836452782}
 --- !u!114 &1525496435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5900,6 +5901,7 @@ MonoBehaviour:
   rewardedPID: rewardedVideo
   bannerPID: banner
   isAdPlaying: 0
+  isAdRequested: 0
 --- !u!4 &1836452783
 Transform:
   m_ObjectHideFlags: 0
