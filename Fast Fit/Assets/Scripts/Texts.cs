@@ -473,4 +473,34 @@ public static class Texts
             }
         }
     }
+
+    public static string HighScore
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Melhor Pontuação";
+                case Texts.English:
+                default:
+                    return "High Score";
+            }
+        }
+    }
+
+    public static string BestStreak
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Melhor Sequência";
+                case Texts.English:
+                default:
+                    return "Best Streak";
+            }
+        }
+    }
 }

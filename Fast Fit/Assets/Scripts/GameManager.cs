@@ -272,7 +272,6 @@ public class GameManager : MonoBehaviour
     public void LoadGameOver()
     {
         UpdatePlayerPrefs();
-        PlayGamesController.PostToLeaderboard(score);
         SceneManager.LoadScene("Game Over");
     }
 
@@ -325,12 +324,19 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefManager.SetLastScore(score);
         if (score > PlayerPrefManager.GetTopScore())
+        {
             PlayerPrefManager.SetTopScore(score);
+            PlayGamesController.PostToHighScoreLeaderboard(score);
+        }
 
         float totalTime = Time.time - startTime;
         PlayerPrefManager.SetLastTime(totalTime);
         if (totalTime > PlayerPrefManager.GetTopTime())
+        {
             PlayerPrefManager.SetTopTime(totalTime);
+            PlayGamesController.PostToRunTimeLeaderboard(score);
+        }
+            
 
         PlayerPrefManager.SetLastFits(fits);
         if (fits > PlayerPrefManager.GetTopFits())
@@ -338,7 +344,11 @@ public class GameManager : MonoBehaviour
         
         PlayerPrefManager.SetLastStreak(bestStreak);
         if (bestStreak > PlayerPrefManager.GetTopStreak())
+        {
             PlayerPrefManager.SetTopStreak(bestStreak);
+            PlayGamesController.PostToBestStreakLeaderboard(score);
+        }
+        
     }
 
     private void IncreaseDifficulty()

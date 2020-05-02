@@ -31,7 +31,7 @@ public class PlayGamesController : MonoBehaviour
         });
     }
 
-    public static void PostToLeaderboard(int score)
+    public static void PostToHighScoreLeaderboard(int score)
     {
         Social.ReportScore(score, GPGSIds.leaderboard_high_score, (bool success) =>
         {
@@ -46,8 +46,48 @@ public class PlayGamesController : MonoBehaviour
         });
     }
 
-    public static void ShowLeaderboardUI()
+    public static void PostToRunTimeLeaderboard(int score)
+    {
+        Social.ReportScore(score, GPGSIds.leaderboard_longest_run, (bool success) =>
+        {
+            if (success)
+            {
+                
+            }
+            else
+            {
+
+            }
+        });
+    }
+
+    public static void PostToBestStreakLeaderboard(int score)
+    {
+        Social.ReportScore(score, GPGSIds.leaderboard_best_streak, (bool success) =>
+        {
+            if (success)
+            {
+                
+            }
+            else
+            {
+
+            }
+        });
+    }
+
+    public static void ShowHighScoreLeaderboardUI()
     {
         PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_high_score);
+    }
+
+    public static void ShowRunTimeLeaderboardUI()
+    {
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_longest_run);
+    }
+
+    public static void ShowBestStreakLeaderboardUI()
+    {
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_best_streak);
     }
 }

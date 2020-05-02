@@ -25,6 +25,8 @@
 public static class GPGSIds
 {
         public const string leaderboard_high_score = "CgkIgur-uuENEAIQAQ"; // <GPGSID>
+        public const string leaderboard_best_streak = "CgkIgur-uuENEAIQAw"; // <GPGSID>
+        public const string leaderboard_longest_run = "CgkIgur-uuENEAIQAg"; // <GPGSID>
 
 }
 
