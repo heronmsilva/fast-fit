@@ -4523,7 +4523,7 @@ GameObject:
   - component: {fileID: 462515849}
   - component: {fileID: 462515848}
   m_Layer: 5
-  m_Name: Horizontal Selector
+  m_Name: Graphics Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6456,6 +6456,8 @@ MonoBehaviour:
   graphicsText: {fileID: 1819270871}
   musicText: {fileID: 1294423547}
   sfxText: {fileID: 476160902}
+  controlsSelector: {fileID: 1603660571}
+  graphicsSelector: {fileID: 462515847}
 --- !u!4 &726732423
 Transform:
   m_ObjectHideFlags: 0
@@ -12929,7 +12931,7 @@ GameObject:
   - component: {fileID: 1603660573}
   - component: {fileID: 1603660572}
   m_Layer: 5
-  m_Name: Horizontal Selector
+  m_Name: Controls Selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

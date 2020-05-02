@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Michsky.UI.ModernUIPack;
 
 public class MenuTextManager : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class MenuTextManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI graphicsText = null;
     [SerializeField] private TextMeshProUGUI musicText = null;
     [SerializeField] private TextMeshProUGUI sfxText = null;
+
+    [SerializeField] private HorizontalSelector controlsSelector = null;
+    [SerializeField] private HorizontalSelector graphicsSelector = null;
 
     private void Awake() 
     {
@@ -66,6 +70,12 @@ public class MenuTextManager : MonoBehaviour
         graphicsText.text = Texts.Graphics;
         musicText.text = Texts.Music;
         sfxText.text = Texts.SoundEffects;
+
+        controlsSelector.itemList[0].itemTitle = Texts.Rookie;
+
+        graphicsSelector.itemList[0].itemTitle = Texts.Low;
+        graphicsSelector.itemList[1].itemTitle = Texts.Medium;
+        graphicsSelector.itemList[2].itemTitle = Texts.High;
     }
 
     private void SetupLanguage()

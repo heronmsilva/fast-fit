@@ -413,4 +413,64 @@ public static class Texts
             }
         }
     }
+
+    public static string Rookie
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Novato";
+                case Texts.English:
+                default:
+                    return "Rookie";
+            }
+        }
+    }
+
+    public static string Low
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Baixo";
+                case Texts.English:
+                default:
+                    return "Low";
+            }
+        }
+    }
+
+    public static string Medium
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Normal";
+                case Texts.English:
+                default:
+                    return "Medium";
+            }
+        }
+    }
+
+    public static string High
+    {
+        get 
+        {
+            switch (Texts.Language)
+            {
+                case Texts.Portuguese:
+                    return "Alto";
+                case Texts.English:
+                default:
+                    return "High";
+            }
+        }
+    }
 }
