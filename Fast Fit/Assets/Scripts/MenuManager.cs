@@ -110,7 +110,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowRankingsWindow()
     {
-        HideWindows();
+        Close();
         PlayGamesController.ShowLeaderboardUI();
     }
 
