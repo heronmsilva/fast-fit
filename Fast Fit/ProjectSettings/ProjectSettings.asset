@@ -257,7 +257,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/heron/Documents/Keystore/fastFit.keystore
+  AndroidKeystoreName: C:/Users/heron/Documents/Keystores/fastFit.keystore
   AndroidKeyaliasName: fast fit
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
