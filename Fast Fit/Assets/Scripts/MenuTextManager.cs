@@ -41,8 +41,6 @@ public class MenuTextManager : MonoBehaviour
     private void Awake() 
     {
         SetupLanguage();
-
-        Texts.Language = Texts.Portuguese;
     }
 
     private void Start()
