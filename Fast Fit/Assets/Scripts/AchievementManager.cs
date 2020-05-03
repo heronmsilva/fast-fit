@@ -29,7 +29,16 @@ public class AchievementManager : MonoBehaviour
     [SerializeField] private float achieve4Fits = 150;
     [SerializeField] private float achieve5Fits = 250;
 
-    private void UpdateLevel1Achievement()
+    public void UpdateAchievements()
+    {
+        UpdateScoreAchievements();
+        UpdateStreakAchievements();
+        UpdateTimeAchievements();
+        UpdateFitsAchievements();
+        UpdateTheCompletionist();
+    }
+
+    public void UpdateLevel1Achievement()
     {
         if (! Achievements.GetLevel1())
         {
@@ -38,7 +47,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateLevel2Achievement()
+    public void UpdateLevel2Achievement()
     {
         if (! Achievements.GetLevel2())
         {
@@ -47,7 +56,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateLevel3Achievement()
+    public void UpdateLevel3Achievement()
     {
         if (! Achievements.GetLevel3())
         {
@@ -56,7 +65,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateLevel4Achievement()
+    public void UpdateLevel4Achievement()
     {
         if (! Achievements.GetLevel4())
         {
@@ -65,7 +74,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateMaxLevelAchievement()
+    public void UpdateMaxLevelAchievement()
     {
         if (! Achievements.GetMaxLevel())
         {
@@ -74,7 +83,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateScoreAchievements()
+    public void UpdateScoreAchievements()
     {
         if (! Achievements.GetICanDoIt() && PlayerPrefManager.GetLastScore() >= achieve1Score)
         {
@@ -113,7 +122,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateStreakAchievements()
+    public void UpdateStreakAchievements()
     {
         if (! Achievements.GetRookie() && PlayerPrefManager.GetLastStreak() >= achieve1Streak)
         {
@@ -146,7 +155,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateTimeAchievements()
+    public void UpdateTimeAchievements()
     {
         if (! Achievements.GetWalker() && PlayerPrefManager.GetLastTime() >= achieve1Time)
         {
@@ -179,7 +188,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateFitsAchievements()
+    public void UpdateFitsAchievements()
     {
         if (! Achievements.GetFitter() && PlayerPrefManager.GetLastFits() >= achieve1Fits)
         {
@@ -212,7 +221,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    private void UpdateTheCompletionist()
+    public void UpdateTheCompletionist()
     {
         if (Achievements.GetTheCompletionist()) return;
 

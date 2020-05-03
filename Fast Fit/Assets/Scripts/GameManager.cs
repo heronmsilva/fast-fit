@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Difficulty startDifficulty = Difficulty.Level0;
     [SerializeField] private GameObject touchControls = null;
     [SerializeField] private AdManager adManager = null;
+    [SerializeField] private AchievementManager achievementManager = null;
 
     private static GameManager instance;
     private static List<string> controls = new List<string> { "ROOKIE", "PRO" };
@@ -177,6 +178,24 @@ public class GameManager : MonoBehaviour
             {
                 fitSequence = 0;
                 IncreaseDifficulty();
+                switch (currDifficulty)
+                {
+                    case Difficulty.Level1:
+                        achievementManager.UpdateLevel1Achievement();
+                        break;
+                    case Difficulty.Level2:
+                        achievementManager.UpdateLevel2Achievement();
+                        break;
+                    case Difficulty.Level3:
+                        achievementManager.UpdateLevel3Achievement();
+                        break;
+                    case Difficulty.Level4:
+                        achievementManager.UpdateLevel4Achievement();
+                        break;
+                    case Difficulty.Level5:
+                        achievementManager.UpdateMaxLevelAchievement();
+                        break;
+                }
                 IncreaseLives();
                 UIHandler.PlayLevelUpAnimation();
                 StartCoroutine(audioHandler.PlayLevelUp(0.4f));
