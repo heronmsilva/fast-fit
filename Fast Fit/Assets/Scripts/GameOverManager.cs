@@ -87,6 +87,7 @@ public class GameOverManager : MonoBehaviour
             return;
         }
 
+        PlayGamesController.PostToHighScoreLeaderboard(PlayerPrefManager.GetLastScore());
         newBestScoreText.GetComponent<Animator>().Play("NewBestScoreShow");
     }
 

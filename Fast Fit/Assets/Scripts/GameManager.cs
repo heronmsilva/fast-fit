@@ -343,10 +343,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefManager.SetLastScore(score);
         if (score > PlayerPrefManager.GetTopScore())
-        {
             PlayerPrefManager.SetTopScore(score);
-            PlayGamesController.PostToHighScoreLeaderboard(score);
-        }
 
         float totalTime = Time.time - startTime;
         PlayerPrefManager.SetLastTime(totalTime);
