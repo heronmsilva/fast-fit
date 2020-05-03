@@ -4,112 +4,96 @@ using UnityEngine;
 
 public static class Achievements
 {
-    public static void SetMeetLevel1(int value)
+    public static void SetLevel1(int value)
     {
-        PlayerPrefs.SetInt("Meet Level 1", value);
+        PlayerPrefs.SetInt("Level 1", value);
     }
 
-    public static bool GetMeetLevel1()
+    public static bool GetLevel1()
     {
-        if (PlayerPrefs.HasKey("Meet Level 1"))
+        if (PlayerPrefs.HasKey("Level 1"))
         {
-            if (PlayerPrefs.GetInt("Meet Level 1") == 1)
+            if (PlayerPrefs.GetInt("Level 1") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetMeetLevel2(int value)
+    public static void SetLevel2(int value)
     {
-        PlayerPrefs.SetInt("Meet Level 2", value);
+        PlayerPrefs.SetInt("Level 2", value);
     }
 
-    public static bool GetMeetLevel2()
+    public static bool GetLevel2()
     {
-        if (PlayerPrefs.HasKey("Meet Level 2"))
+        if (PlayerPrefs.HasKey("Level 2"))
         {
-            if (PlayerPrefs.GetInt("Meet Level 2") == 1)
+            if (PlayerPrefs.GetInt("Level 2") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetMeetLevel3(int value)
+    public static void SetLevel3(int value)
     {
-        PlayerPrefs.SetInt("Meet Level 3", value);
+        PlayerPrefs.SetInt("Level 3", value);
     }
 
-    public static bool GetMeetLevel3()
+    public static bool GetLevel3()
     {
-        if (PlayerPrefs.HasKey("Meet Level 3"))
+        if (PlayerPrefs.HasKey("Level 3"))
         {
-            if (PlayerPrefs.GetInt("Meet Level 3") == 1)
+            if (PlayerPrefs.GetInt("Level 3") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetMeetLevel4(int value)
+    public static void SetLevel4(int value)
     {
-        PlayerPrefs.SetInt("Meet Level 4", value);
+        PlayerPrefs.SetInt("Level 4", value);
     }
 
-    public static bool GetMeetLevel4()
+    public static bool GetLevel4()
     {
-        if (PlayerPrefs.HasKey("Meet Level 4"))
+        if (PlayerPrefs.HasKey("Level 4"))
         {
-            if (PlayerPrefs.GetInt("Meet Level 4") == 1)
+            if (PlayerPrefs.GetInt("Level 4") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetMeetMaxLevel(int value)
+    public static void SetMaxLevel(int value)
     {
-        PlayerPrefs.SetInt("Meet Max Level", value);
+        PlayerPrefs.SetInt("Max Level", value);
     }
 
     public static bool GetMeetMaxLevel()
     {
-        if (PlayerPrefs.HasKey("Meet Max Level"))
+        if (PlayerPrefs.HasKey("Max Level"))
         {
-            if (PlayerPrefs.GetInt("Meet Max Level") == 1)
+            if (PlayerPrefs.GetInt("Max Level") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetIGotIt(int value)
+    public static void SetICanDoIt(int value)
     {
-        PlayerPrefs.SetInt("I got it", value);
+        PlayerPrefs.SetInt("I can do it", value);
     }
 
-    public static bool GetIGotIt()
+    public static bool GetICanDoIt()
     {
-        if (PlayerPrefs.HasKey("I got it"))
+        if (PlayerPrefs.HasKey("I can do it"))
         {
-            if (PlayerPrefs.GetInt("I got it") == 1)
-                return true;
-        }
-        
-        return false;
-    }
-
-    public static void SetBlocksAreMyFriend(int value)
-    {
-        PlayerPrefs.SetInt("Blocks are my friends", value);
-    }
-
-    public static bool GetBlocksAreMyFriend()
-    {
-        if (PlayerPrefs.HasKey("Blocks are my friends"))
-        {
-            if (PlayerPrefs.GetInt("Blocks are my friends") == 1)
+            if (PlayerPrefs.GetInt("I can do it") == 1)
                 return true;
         }
         
@@ -126,6 +110,22 @@ public static class Achievements
         if (PlayerPrefs.HasKey("Im Improving"))
         {
             if (PlayerPrefs.GetInt("Im Improving") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetBlocksAreMyFriend(int value)
+    {
+        PlayerPrefs.SetInt("Blocks are my friends", value);
+    }
+
+    public static bool GetBlocksAreMyFriend()
+    {
+        if (PlayerPrefs.HasKey("Blocks are my friends"))
+        {
+            if (PlayerPrefs.GetInt("Blocks are my friends") == 1)
                 return true;
         }
         
@@ -196,64 +196,224 @@ public static class Achievements
         return false;
     }
 
-    public static void SetApprentice(int value)
+    public static void SetStudent(int value)
     {
-        PlayerPrefs.SetInt("Apprentice", value);
+        PlayerPrefs.SetInt("Student", value);
     }
 
-    public static bool GetApprentice()
+    public static bool GetStudent()
     {
-        if (PlayerPrefs.HasKey("Apprentice"))
+        if (PlayerPrefs.HasKey("Student"))
         {
-            if (PlayerPrefs.GetInt("Apprentice") == 1)
+            if (PlayerPrefs.GetInt("Student") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetTeacher(int value)
+    public static void SetMathematician(int value)
     {
-        PlayerPrefs.SetInt("Teacher", value);
+        PlayerPrefs.SetInt("Mathematician", value);
     }
 
-    public static bool GetTeacher()
+    public static bool GetMathematician()
     {
-        if (PlayerPrefs.HasKey("Teacher"))
+        if (PlayerPrefs.HasKey("Mathematician"))
         {
-            if (PlayerPrefs.GetInt("Teacher") == 1)
+            if (PlayerPrefs.GetInt("Mathematician") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetBlockBuilder(int value)
+    public static void SetGeometer(int value)
     {
-        PlayerPrefs.SetInt("Block Builder", value);
+        PlayerPrefs.SetInt("Geometer", value);
     }
 
-    public static bool GetBlockBuilder()
+    public static bool GetGeometer()
     {
-        if (PlayerPrefs.HasKey("Block Builder"))
+        if (PlayerPrefs.HasKey("Geometer"))
         {
-            if (PlayerPrefs.GetInt("Block Builder") == 1)
+            if (PlayerPrefs.GetInt("Geometer") == 1)
                 return true;
         }
         
         return false;
     }
 
-    public static void SetBreaker(int value)
+    public static void SetEngineer(int value)
     {
-        PlayerPrefs.SetInt("Breaker", value);
+        PlayerPrefs.SetInt("Engineer", value);
     }
 
-    public static bool GetBreaker()
+    public static bool GetEngineer()
     {
-        if (PlayerPrefs.HasKey("Breaker"))
+        if (PlayerPrefs.HasKey("Engineer"))
         {
-            if (PlayerPrefs.GetInt("Breaker") == 1)
+            if (PlayerPrefs.GetInt("Engineer") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetWalker(int value)
+    {
+        PlayerPrefs.SetInt("Walker", value);
+    }
+
+    public static bool GetWalker()
+    {
+        if (PlayerPrefs.HasKey("Walker"))
+        {
+            if (PlayerPrefs.GetInt("Walker") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetHurried(int value)
+    {
+        PlayerPrefs.SetInt("Hurried", value);
+    }
+
+    public static bool GetHurried()
+    {
+        if (PlayerPrefs.HasKey("Hurried"))
+        {
+            if (PlayerPrefs.GetInt("Hurried") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetRunner(int value)
+    {
+        PlayerPrefs.SetInt("Runner", value);
+    }
+
+    public static bool GetRunner()
+    {
+        if (PlayerPrefs.HasKey("Runner"))
+        {
+            if (PlayerPrefs.GetInt("Runner") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetSurvivor(int value)
+    {
+        PlayerPrefs.SetInt("Survivor", value);
+    }
+
+    public static bool GetSurvivor()
+    {
+        if (PlayerPrefs.HasKey("Survivor"))
+        {
+            if (PlayerPrefs.GetInt("Survivor") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetTimeTraveller(int value)
+    {
+        PlayerPrefs.SetInt("Time Traveller", value);
+    }
+
+    public static bool GetTimeTraveller()
+    {
+        if (PlayerPrefs.HasKey("Time Traveller"))
+        {
+            if (PlayerPrefs.GetInt("Time Traveller") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetFitter(int value)
+    {
+        PlayerPrefs.SetInt("Fitter", value);
+    }
+
+    public static bool GetFitter()
+    {
+        if (PlayerPrefs.HasKey("Fitter"))
+        {
+            if (PlayerPrefs.GetInt("Fitter") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetBossFitter(int value)
+    {
+        PlayerPrefs.SetInt("Boss Fitter", value);
+    }
+
+    public static bool GetBossFitter()
+    {
+        if (PlayerPrefs.HasKey("Boss Fitter"))
+        {
+            if (PlayerPrefs.GetInt("Boss Fitter") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetBlockManager(int value)
+    {
+        PlayerPrefs.SetInt("Block Manager", value);
+    }
+
+    public static bool GetBlockManager()
+    {
+        if (PlayerPrefs.HasKey("Block Manager"))
+        {
+            if (PlayerPrefs.GetInt("Block Manager") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetGoodShot(int value)
+    {
+        PlayerPrefs.SetInt("Good Shot", value);
+    }
+
+    public static bool GetGoodShot()
+    {
+        if (PlayerPrefs.HasKey("Good Shot"))
+        {
+            if (PlayerPrefs.GetInt("Good Shot") == 1)
+                return true;
+        }
+        
+        return false;
+    }
+
+    public static void SetMasterCalculator(int value)
+    {
+        PlayerPrefs.SetInt("Master Calculator", value);
+    }
+
+    public static bool GetMasterCalculator()
+    {
+        if (PlayerPrefs.HasKey("Master Calculator"))
+        {
+            if (PlayerPrefs.GetInt("Master Calculator") == 1)
                 return true;
         }
         
