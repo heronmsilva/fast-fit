@@ -46,9 +46,9 @@ public class PlayGamesController : MonoBehaviour
         });
     }
 
-    public static void PostToRunTimeLeaderboard(int score)
+    public static void PostToRunTimeLeaderboard(float time)
     {
-        Social.ReportScore(score, GPGSIds.leaderboard_longest_run, (bool success) =>
+        Social.ReportScore((int) time, GPGSIds.leaderboard_longest_run, (bool success) =>
         {
             if (success)
             {
@@ -61,9 +61,9 @@ public class PlayGamesController : MonoBehaviour
         });
     }
 
-    public static void PostToBestStreakLeaderboard(int score)
+    public static void PostToBestStreakLeaderboard(int streak)
     {
-        Social.ReportScore(score, GPGSIds.leaderboard_best_streak, (bool success) =>
+        Social.ReportScore(streak, GPGSIds.leaderboard_best_streak, (bool success) =>
         {
             if (success)
             {

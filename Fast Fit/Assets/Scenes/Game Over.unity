@@ -758,6 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberWriter: {fileID: 101255071}
   adManager: {fileID: 1126093441}
+  achievementManager: {fileID: 1738880130}
   scoreText: {fileID: 1084302828}
   topScoreText: {fileID: 773176736}
   newBestScoreText: {fileID: 1478510234}
@@ -5030,6 +5031,16 @@ MonoBehaviour:
   achieve3Streak: 60
   achieve4Streak: 100
   achieve5Streak: 150
+  achieve1Time: 60
+  achieve2Time: 120
+  achieve3Time: 240
+  achieve4Time: 390
+  achieve5Time: 600
+  achieve1Fits: 15
+  achieve2Fits: 35
+  achieve3Fits: 70
+  achieve4Fits: 150
+  achieve5Fits: 250
 --- !u!4 &1738880131
 Transform:
   m_ObjectHideFlags: 0

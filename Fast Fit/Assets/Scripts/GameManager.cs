@@ -353,10 +353,9 @@ public class GameManager : MonoBehaviour
         if (totalTime > PlayerPrefManager.GetTopTime())
         {
             PlayerPrefManager.SetTopTime(totalTime);
-            PlayGamesController.PostToRunTimeLeaderboard(score);
+            PlayGamesController.PostToRunTimeLeaderboard(totalTime);
         }
             
-
         PlayerPrefManager.SetLastFits(fits);
         if (fits > PlayerPrefManager.GetTopFits())
             PlayerPrefManager.SetTopFits(fits);
@@ -365,9 +364,8 @@ public class GameManager : MonoBehaviour
         if (bestStreak > PlayerPrefManager.GetTopStreak())
         {
             PlayerPrefManager.SetTopStreak(bestStreak);
-            PlayGamesController.PostToBestStreakLeaderboard(score);
+            PlayGamesController.PostToBestStreakLeaderboard(bestStreak);
         }
-        
     }
 
     private void IncreaseDifficulty()
