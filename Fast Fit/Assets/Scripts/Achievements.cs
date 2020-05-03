@@ -73,7 +73,7 @@ public static class Achievements
         PlayerPrefs.SetInt("Max Level", value);
     }
 
-    public static bool GetMeetMaxLevel()
+    public static bool GetMaxLevel()
     {
         if (PlayerPrefs.HasKey("Max Level"))
         {
