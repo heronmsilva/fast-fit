@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
-    [SerializeField] private int achieve1Score = 5000;
-    [SerializeField] private int achieve2Score = 25000;
-    [SerializeField] private int achieve3Score = 50000;
-    [SerializeField] private int achieve4Score = 100000;
-    [SerializeField] private int achieve5Score = 175000;
-    [SerializeField] private int achieve6Score = 250000;
+    [SerializeField] private int achieve1Score = 25000;
+    [SerializeField] private int achieve2Score = 100000;
+    [SerializeField] private int achieve3Score = 350000;
+    [SerializeField] private int achieve4Score = 750000;
+    [SerializeField] private int achieve5Score = 5000000;
+    [SerializeField] private int achieve6Score = 10000000;
 
-    [SerializeField] private int achieve1Streak = 7;
+    [SerializeField] private int achieve1Streak = 10;
     [SerializeField] private int achieve2Streak = 25;
-    [SerializeField] private int achieve3Streak = 55;
+    [SerializeField] private int achieve3Streak = 60;
     [SerializeField] private int achieve4Streak = 100;
-    [SerializeField] private int achieve5Streak = 175;
+    [SerializeField] private int achieve5Streak = 200;
 
     [SerializeField] private float achieve1Time = 60;
     [SerializeField] private float achieve2Time = 120;
     [SerializeField] private float achieve3Time = 240;
-    [SerializeField] private float achieve4Time = 390;
-    [SerializeField] private float achieve5Time = 600;
+    [SerializeField] private float achieve4Time = 540;
+    [SerializeField] private float achieve5Time = 900;
 
     [SerializeField] private float achieve1Fits = 15;
-    [SerializeField] private float achieve2Fits = 35;
-    [SerializeField] private float achieve3Fits = 70;
+    [SerializeField] private float achieve2Fits = 40;
+    [SerializeField] private float achieve3Fits = 85;
     [SerializeField] private float achieve4Fits = 150;
     [SerializeField] private float achieve5Fits = 250;
 
