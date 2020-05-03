@@ -25,14 +25,13 @@
 public static class GPGSIds
 {
         public const string achievement_max_level = "CgkIgur-uuENEAIQCA"; // <GPGSID>
-        public const string achievement_the_completionist = "CgkIgur-uuENEAIQFA"; // <GPGSID>
+        public const string achievement_the_completionist = "CgkIgur-uuENEAIQHw"; // <GPGSID>
         public const string achievement_boss_fitter = "CgkIgur-uuENEAIQGw"; // <GPGSID>
         public const string achievement_engineer = "CgkIgur-uuENEAIQEw"; // <GPGSID>
         public const string achievement_i_can_do_it = "CgkIgur-uuENEAIQCQ"; // <GPGSID>
         public const string achievement_im_improving = "CgkIgur-uuENEAIQCg"; // <GPGSID>
         public const string achievement_block_manager = "CgkIgur-uuENEAIQHA"; // <GPGSID>
         public const string achievement_geometer = "CgkIgur-uuENEAIQEg"; // <GPGSID>
-        public const string leaderboard_longest_run = "CgkIgur-uuENEAIQAg"; // <GPGSID>
         public const string achievement_hurried = "CgkIgur-uuENEAIQFg"; // <GPGSID>
         public const string achievement_the_professional = "CgkIgur-uuENEAIQDg"; // <GPGSID>
         public const string achievement_good_shot = "CgkIgur-uuENEAIQHQ"; // <GPGSID>
@@ -52,7 +51,6 @@ public static class GPGSIds
         public const string achievement_this_is_actually_easy = "CgkIgur-uuENEAIQDA"; // <GPGSID>
         public const string achievement_survivor = "CgkIgur-uuENEAIQGA"; // <GPGSID>
         public const string leaderboard_high_score = "CgkIgur-uuENEAIQAQ"; // <GPGSID>
-        public const string leaderboard_best_streak = "CgkIgur-uuENEAIQAw"; // <GPGSID>
         public const string achievement_master_calculator = "CgkIgur-uuENEAIQHg"; // <GPGSID>
 
 }

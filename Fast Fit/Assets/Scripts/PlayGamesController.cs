@@ -36,16 +36,6 @@ public class PlayGamesController : MonoBehaviour
         Social.ReportScore(score, GPGSIds.leaderboard_high_score, null);
     }
 
-    public static void PostToRunTimeLeaderboard(float time)
-    {
-        Social.ReportScore((int) time, GPGSIds.leaderboard_longest_run, null);
-    }
-
-    public static void PostToBestStreakLeaderboard(int streak)
-    {
-        Social.ReportScore(streak, GPGSIds.leaderboard_best_streak, null);
-    }
-
     public static void UnlockLevel1Achievement()
     {
         Social.ReportProgress(GPGSIds.achievement_level_1, 100f, null);
@@ -184,16 +174,6 @@ public class PlayGamesController : MonoBehaviour
     public static void ShowHighScoreLeaderboardUI()
     {
         PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_high_score);
-    }
-
-    public static void ShowRunTimeLeaderboardUI()
-    {
-        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_longest_run);
-    }
-
-    public static void ShowBestStreakLeaderboardUI()
-    {
-        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_best_streak);
     }
 
     public static void ShowAchievementsUI()
