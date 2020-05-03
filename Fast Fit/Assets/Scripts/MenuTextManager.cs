@@ -34,10 +34,6 @@ public class MenuTextManager : MonoBehaviour
     [SerializeField] private HorizontalSelector controlsSelector = null;
     [SerializeField] private HorizontalSelector graphicsSelector = null;
 
-    [SerializeField] private ButtonManagerBasic highScoreButton = null;
-    [SerializeField] private ButtonManagerBasic longestRunButton = null;
-    [SerializeField] private ButtonManagerBasic bestStreakButton = null;
-
     private void Awake() 
     {
         SetupLanguage();
@@ -80,10 +76,6 @@ public class MenuTextManager : MonoBehaviour
         graphicsSelector.itemList[0].itemTitle = Texts.Low;
         graphicsSelector.itemList[1].itemTitle = Texts.Medium;
         graphicsSelector.itemList[2].itemTitle = Texts.High;
-
-        highScoreButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.HighScore;
-        longestRunButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.LongestRun;
-        bestStreakButton.GetComponent<ButtonManagerBasic>().buttonText = Texts.BestStreak;
     }
 
     private void SetupLanguage()
