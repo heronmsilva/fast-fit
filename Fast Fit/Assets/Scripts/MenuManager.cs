@@ -104,6 +104,12 @@ public class MenuManager : MonoBehaviour
         mainWindow.SetActive(true);
     }
 
+    public void ShowAchievementsWindow()
+    {
+        Close();
+        PlayGamesController.ShowAchievementsUI();
+    }
+
     public void ShowRecordsWindow()
     {
         HideWindows();
