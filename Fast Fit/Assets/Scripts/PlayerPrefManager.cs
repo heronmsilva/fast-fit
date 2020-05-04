@@ -7,6 +7,24 @@ public static class PlayerPrefManager
         PlayerPrefs.DeleteAll();
     }
 
+    public static void SetIsLoggedIn(int value)
+    {
+        PlayerPrefs.SetInt("Is Logged In", value);
+    }
+
+    public static bool GetIsLoggedIn()
+    {
+        if (PlayerPrefs.HasKey("Is Logged In"))
+        {
+            if (PlayerPrefs.GetInt("Is Logged In") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
     public static void SetPlayedOffline(int value)
     {
         PlayerPrefs.SetInt("Played Offline", value);
