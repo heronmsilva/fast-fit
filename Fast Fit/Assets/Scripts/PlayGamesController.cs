@@ -7,6 +7,8 @@ using GooglePlayGames.BasicApi;
 
 public class PlayGamesController : MonoBehaviour
 {
+    [SerializeField] private AchievementManager achievementManager;
+
     private void Start()
     {
         AuthenticateUser();
@@ -22,11 +24,16 @@ public class PlayGamesController : MonoBehaviour
         {
             if (success == true)
             {
-                
+                if (PlayerPrefManager.GetPlayedOffline())
+                {
+                    achievementManager.UpdateTopAchievements();
+                    PostToHighScoreLeaderboard(PlayerPrefManager.GetTopScore());
+                    PlayerPrefManager.SetPlayedOffline(0);
+                }
             }
             else
             {
-
+                PlayerPrefManager.SetPlayedOffline(1);
             }
         });
     }

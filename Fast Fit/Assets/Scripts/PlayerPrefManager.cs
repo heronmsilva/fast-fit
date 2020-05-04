@@ -7,6 +7,24 @@ public static class PlayerPrefManager
         PlayerPrefs.DeleteAll();
     }
 
+    public static void SetPlayedOffline(int value)
+    {
+        PlayerPrefs.SetInt("Played Offline", value);
+    }
+
+    public static bool GetPlayedOffline()
+    {
+        if (PlayerPrefs.HasKey("Played Offline"))
+        {
+            if (PlayerPrefs.GetInt("Played Offline") == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        else return false;
+    }
+
     public static void SetAttempts(int attempts)
     {
         PlayerPrefs.SetInt("Attempts", attempts);

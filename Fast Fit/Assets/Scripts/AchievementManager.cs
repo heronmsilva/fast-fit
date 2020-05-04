@@ -31,10 +31,21 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateAchievements()
     {
-        UpdateScoreAchievements();
-        UpdateStreakAchievements();
-        UpdateTimeAchievements();
-        UpdateFitsAchievements();
+        UpdateScoreAchievements(PlayerPrefManager.GetLastScore());
+        UpdateStreakAchievements(PlayerPrefManager.GetLastStreak());
+        UpdateTimeAchievements(PlayerPrefManager.GetLastTime());
+        UpdateFitsAchievements(PlayerPrefManager.GetLastFits());
+
+        UpdateTheCompletionist();
+    }
+
+    public void UpdateTopAchievements()
+    {
+        UpdateScoreAchievements(PlayerPrefManager.GetTopScore());
+        UpdateStreakAchievements(PlayerPrefManager.GetTopStreak());
+        UpdateTimeAchievements(PlayerPrefManager.GetTopTime());
+        UpdateFitsAchievements(PlayerPrefManager.GetTopFits());
+
         UpdateTheCompletionist();
     }
 
@@ -83,138 +94,138 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    public void UpdateScoreAchievements()
+    public void UpdateScoreAchievements(int score)
     {
-        if (! Achievements.GetICanDoIt() && PlayerPrefManager.GetLastScore() >= achieve1Score)
+        if (! Achievements.GetICanDoIt() && score >= achieve1Score)
         {
             Achievements.SetICanDoIt(1);
             PlayGamesController.UnlockICanDoItAchievement();
         }
 
-        if (! Achievements.GetImImproving() && PlayerPrefManager.GetLastScore() >= achieve2Score)
+        if (! Achievements.GetImImproving() && score >= achieve2Score)
         {
             Achievements.SetImImproving(1);
             PlayGamesController.UnlockImImprovingAchievement();
         }
 
-        if (! Achievements.GetBlocksAreMyFriend() && PlayerPrefManager.GetLastScore() >= achieve3Score)
+        if (! Achievements.GetBlocksAreMyFriend() && score >= achieve3Score)
         {
             Achievements.SetBlocksAreMyFriend(1);
             PlayGamesController.UnlockBlocksAreMyFriendsAchievement();
         }
 
-        if (! Achievements.GetThisIsActuallyEasy() && PlayerPrefManager.GetLastScore() >= achieve4Score)
+        if (! Achievements.GetThisIsActuallyEasy() && score >= achieve4Score)
         {
             Achievements.SetThisIsActuallyEasy(1);
             PlayGamesController.UnlockThisIsActuallyEasyAchievement();
         }
 
-        if (! Achievements.GetTheMaster() && PlayerPrefManager.GetLastScore() >= achieve5Score)
+        if (! Achievements.GetTheMaster() && score >= achieve5Score)
         {
             Achievements.SetTheMaster(1);
             PlayGamesController.UnlockTheMasterAchievement();
         }
 
-        if (! Achievements.GetTheProfessional() && PlayerPrefManager.GetLastScore() >= achieve6Score)
+        if (! Achievements.GetTheProfessional() && score >= achieve6Score)
         {
             Achievements.SetTheProfessional(1);
             PlayGamesController.UnlockTheProfessionalAchievement();
         }
     }
 
-    public void UpdateStreakAchievements()
+    public void UpdateStreakAchievements(int streak)
     {
-        if (! Achievements.GetRookie() && PlayerPrefManager.GetLastStreak() >= achieve1Streak)
+        if (! Achievements.GetRookie() && streak >= achieve1Streak)
         {
             Achievements.SetRookie(1);
             PlayGamesController.UnlockRookieAchievement();
         }
 
-        if (! Achievements.GetStudent() && PlayerPrefManager.GetLastStreak() >= achieve2Streak)
+        if (! Achievements.GetStudent() && streak >= achieve2Streak)
         {
             Achievements.SetStudent(1);
             PlayGamesController.UnlockStudentAchievement();
         }
 
-        if (! Achievements.GetMathematician() && PlayerPrefManager.GetLastStreak() >= achieve3Streak)
+        if (! Achievements.GetMathematician() && streak >= achieve3Streak)
         {
             Achievements.SetMathematician(1);
             PlayGamesController.UnlockMathematicianAchievement();
         }
 
-        if (! Achievements.GetGeometer() && PlayerPrefManager.GetLastStreak() >= achieve4Streak)
+        if (! Achievements.GetGeometer() && streak >= achieve4Streak)
         {
             Achievements.SetGeometer(1);
             PlayGamesController.UnlockGeometerAchievement();
         }
 
-        if (! Achievements.GetEngineer() && PlayerPrefManager.GetLastStreak() >= achieve5Streak)
+        if (! Achievements.GetEngineer() && streak >= achieve5Streak)
         {
             Achievements.SetEngineer(1);
             PlayGamesController.UnlockEngineerAchievement();
         }
     }
 
-    public void UpdateTimeAchievements()
+    public void UpdateTimeAchievements(float time)
     {
-        if (! Achievements.GetWalker() && PlayerPrefManager.GetLastTime() >= achieve1Time)
+        if (! Achievements.GetWalker() && time >= achieve1Time)
         {
             Achievements.SetWalker(1);
             PlayGamesController.UnlockWalkerAchievement();
         }
 
-        if (! Achievements.GetHurried() && PlayerPrefManager.GetLastTime() >= achieve2Time)
+        if (! Achievements.GetHurried() && time >= achieve2Time)
         {
             Achievements.SetHurried(1);
             PlayGamesController.UnlockHurriedAchievement();
         }
 
-        if (! Achievements.GetRunner() && PlayerPrefManager.GetLastTime() >= achieve3Time)
+        if (! Achievements.GetRunner() && time >= achieve3Time)
         {
             Achievements.SetRunner(1);
             PlayGamesController.UnlockRunnerAchievement();
         }
 
-        if (! Achievements.GetSurvivor() && PlayerPrefManager.GetLastTime() >= achieve4Time)
+        if (! Achievements.GetSurvivor() && time >= achieve4Time)
         {
             Achievements.SetSurvivor(1);
             PlayGamesController.UnlockSurvivorAchievement();
         }
 
-        if (! Achievements.GetTimeTraveller() && PlayerPrefManager.GetLastTime() >= achieve5Time)
+        if (! Achievements.GetTimeTraveller() && time >= achieve5Time)
         {
             Achievements.SetTimeTraveller(1);
             PlayGamesController.UnlockTimeTravellerAchievement();
         }
     }
 
-    public void UpdateFitsAchievements()
+    public void UpdateFitsAchievements(int fits)
     {
-        if (! Achievements.GetFitter() && PlayerPrefManager.GetLastFits() >= achieve1Fits)
+        if (! Achievements.GetFitter() && fits >= achieve1Fits)
         {
             Achievements.SetFitter(1);
             PlayGamesController.UnlockFitterAchievement();
         }
 
-        if (! Achievements.GetBossFitter() && PlayerPrefManager.GetLastFits() >= achieve2Fits)
+        if (! Achievements.GetBossFitter() && fits >= achieve2Fits)
         {
             Achievements.SetBossFitter(1);
             PlayGamesController.UnlockBossFitterAchievement();
         }
 
-        if (! Achievements.GetBlockManager() && PlayerPrefManager.GetLastFits() >= achieve3Fits)
+        if (! Achievements.GetBlockManager() && fits >= achieve3Fits)
         {
             Achievements.SetBlockManager(1);
             PlayGamesController.UnlockBlockManagerAchievement();
         }
 
-        if (! Achievements.GetGoodShot() && PlayerPrefManager.GetLastFits() >= achieve4Fits)
+        if (! Achievements.GetGoodShot() && fits >= achieve4Fits)
         {
             Achievements.SetGoodShot(1);
             PlayGamesController.UnlockGoodShotAchievement();
         }
 
-        if (! Achievements.GetMasterCalculator() && PlayerPrefManager.GetLastFits() >= achieve5Fits)
+        if (! Achievements.GetMasterCalculator() && fits >= achieve5Fits)
         {
             Achievements.SetMasterCalculator(1);
             PlayGamesController.UnlockMasterCalculatorAchievement();
