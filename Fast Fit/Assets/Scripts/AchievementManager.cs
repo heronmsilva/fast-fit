@@ -9,7 +9,7 @@ public class AchievementManager : MonoBehaviour
     [SerializeField] private int achieve3Score = 350000;
     [SerializeField] private int achieve4Score = 750000;
     [SerializeField] private int achieve5Score = 5000000;
-    [SerializeField] private int achieve6Score = 10000000;
+    [SerializeField] private int achieve6Score = 12000000;
 
     [SerializeField] private int achieve1Streak = 10;
     [SerializeField] private int achieve2Streak = 25;
