@@ -25,6 +25,10 @@ public class GameOverManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private bool finishedUpdate = true;
+
+    private IEnumerator coroutine;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -32,13 +36,70 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(UpdateGameOverUI());
+        coroutine = UpdateGameOverUI();
+        StartCoroutine(coroutine);
 
         achievementManager.UpdateAchievements();
     }
 
+    private void Update()
+    {
+        if (! finishedUpdate)
+        {
+            #if UNITY_EDITOR
+                if (Input.GetMouseButtonUp(0))
+                {
+                    finishedUpdate = true;
+                    StopCoroutine(coroutine);
+                    numberWriter.Stop();
+                    ShowGameOverUIData();
+                    audioSource.Stop();
+                }
+            #endif
+
+            #if UNITY_ANDROID || UNITY_IOS
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+                    switch (touch.phase)
+                    {
+                        case TouchPhase.Ended:
+                        case TouchPhase.Canceled:
+                            finishedUpdate = true;
+                            StopCoroutine(coroutine);
+                            numberWriter.Stop();
+                            ShowGameOverUIData();
+                            audioSource.Stop();
+                            break;
+                    }   
+                }
+            #endif
+        }
+    }
+
+    private void ShowGameOverUIData()
+    {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetLastTime());
+        timeText.text = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+        TimeSpan topTimeSpan = TimeSpan.FromSeconds(PlayerPrefManager.GetTopTime());
+        topTimeText.text = Texts.Record + " " + string.Format("{0:D2}:{1:D2}", topTimeSpan.Minutes, topTimeSpan.Seconds);
+
+        scoreText.text = PlayerPrefManager.GetLastScore().ToString();
+        topScoreText.text = Texts.Record + " " + PlayerPrefManager.GetTopScore().ToString();
+        fitsText.text = PlayerPrefManager.GetLastFits().ToString();
+        topFitsText.text = Texts.Record + " " + PlayerPrefManager.GetTopFits().ToString();
+        streakText.text = PlayerPrefManager.GetLastStreak().ToString();
+        topStreakText.text = Texts.Record + " " + PlayerPrefManager.GetTopStreak().ToString();
+
+        ShowTopTime(10);
+        ShowTopScore(10);
+        ShowTopFits(10);
+        ShowTopStreak(10);
+    }
+
     private IEnumerator UpdateGameOverUI()
     {
+        finishedUpdate = false;
         audioSource.Play();
 
         UpdateTime();
@@ -66,51 +127,60 @@ public class GameOverManager : MonoBehaviour
         
         ShowTopStreak();
         audioSource.Stop();
+        finishedUpdate = true;
     }
 
-    private void ShowTopTime()
+    private void ShowTopTime(int speed = 1)
     {
         if (PlayerPrefManager.GetLastTime() < PlayerPrefManager.GetTopTime())
         {
+            topTimeText.GetComponent<Animator>().SetFloat("Speed", speed);
             topTimeText.GetComponent<Animator>().Play("TopTimeShow");
             return;
         }
 
+        newBestTimeText.GetComponent<Animator>().SetFloat("Speed", speed);
         newBestTimeText.GetComponent<Animator>().Play("NewBestTimeShow");
     }
 
-    private void ShowTopScore()
+    private void ShowTopScore(int speed = 1)
     {
         if (PlayerPrefManager.GetLastScore() < PlayerPrefManager.GetTopScore())
         {
+            topScoreText.GetComponent<Animator>().SetFloat("Speed", speed);
             topScoreText.GetComponent<Animator>().Play("TopScoreShow");
             return;
         }
 
+        newBestScoreText.GetComponent<Animator>().SetFloat("Speed", speed);
         newBestScoreText.GetComponent<Animator>().Play("NewBestScoreShow");
 
         PlayGamesController.PostToHighScoreLeaderboard(PlayerPrefManager.GetTopScore());
     }
 
-    private void ShowTopFits()
+    private void ShowTopFits(int speed = 1)
     {
         if (PlayerPrefManager.GetLastFits() < PlayerPrefManager.GetTopFits())
         {
+            topFitsText.GetComponent<Animator>().SetFloat("Speed", speed);
             topFitsText.GetComponent<Animator>().Play("TopFitsShow");
             return;
         }
 
+        newBestFitsText.GetComponent<Animator>().SetFloat("Speed", speed);
         newBestFitsText.GetComponent<Animator>().Play("NewBestFitsShow");
     }
 
-    private void ShowTopStreak()
+    private void ShowTopStreak(int speed = 1)
     {
         if (PlayerPrefManager.GetLastStreak() < PlayerPrefManager.GetTopStreak())
         {
+            topStreakText.GetComponent<Animator>().SetFloat("Speed", speed);
             topStreakText.GetComponent<Animator>().Play("TopStreakShow");
             return;
         }
 
+        newBestStreakText.GetComponent<Animator>().SetFloat("Speed", speed);
         newBestStreakText.GetComponent<Animator>().Play("NewBestStreakShow");
     }
 

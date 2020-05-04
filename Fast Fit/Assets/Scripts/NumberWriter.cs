@@ -13,6 +13,11 @@ public class NumberWriter : MonoBehaviour
     private float timer;
     private bool isTime;
 
+    public void Stop()
+    {
+        uiText = null;
+    }
+
     public bool IsReady()
     {
         return uiText == null;
