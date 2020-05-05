@@ -131,6 +131,8 @@ public class Spawner : MonoBehaviour
         if (gm.GetCameraAspect() <= 1.61)
         {
             wallPrefab = wideWallPrefab;
+            Camera.main.transform.position += new Vector3(0, 0.1f, 0);
+            pieceStartPoint.transform.position += new Vector3(0, -0.5f, 0);
             return;
         }
         
