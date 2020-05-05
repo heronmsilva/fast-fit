@@ -4168,6 +4168,8 @@ MonoBehaviour:
     type: 3}
   tallWallPrefab: {fileID: 1434127403852060324, guid: 17c02f09dc1ef9a4eababbf7154f6d92,
     type: 3}
+  wideWallPrefab: {fileID: 1244329219695640595, guid: b4ceee9406f3ce74b9d06f6b964a742c,
+    type: 3}
   floatingTextPrefab: {fileID: 3503307598438714283, guid: bf0916b6064e17941b1cf855a302ab8f,
     type: 3}
   dynamicContainer: {fileID: 127126778}

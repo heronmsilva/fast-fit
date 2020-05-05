@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject defaultWallPrefab = null;
     [SerializeField] private GameObject tallWallPrefab = null;
+    [SerializeField] private GameObject wideWallPrefab = null;
     [SerializeField] private GameObject floatingTextPrefab = null;
     [SerializeField] private GameObject dynamicContainer = null;
     [SerializeField] private GameObject pieceStartPoint = null;
@@ -124,6 +125,12 @@ public class Spawner : MonoBehaviour
         if (gm.GetCameraAspect() >= 2)
         {
             wallPrefab = tallWallPrefab;
+            return;
+        }
+
+        if (gm.GetCameraAspect() <= 1.61)
+        {
+            wallPrefab = wideWallPrefab;
             return;
         }
         
