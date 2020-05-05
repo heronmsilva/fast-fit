@@ -195,7 +195,7 @@ public class GameOverManager : MonoBehaviour
 
     private void UpdateScore()
     {
-        numberWriter.WriteInt(scoreText, PlayerPrefManager.GetLastScore(), 0.01f);
+        numberWriter.WriteInt(scoreText, PlayerPrefManager.GetLastScore(), 0.005f);
     
         string topScore = PlayerPrefManager.GetTopScore().ToString();
         topScoreText.text = Texts.Record + " " + topScore;
