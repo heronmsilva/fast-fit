@@ -376,7 +376,7 @@ public class GameManager : MonoBehaviour
         int difficultyMultiplier = (int) currDifficulty + 1;
         int fastForwardMultiplier = (fastForward) ? 2 : 1;
         int streakMultiplier = (int) (streak / 10) + 1;
-        int points = (int) (fits * speed * streakMultiplier * difficultyMultiplier * fastForwardMultiplier);
+        int points = (int) (fits * (speed + (10 / (Time.time - startTime))) * streakMultiplier * difficultyMultiplier * fastForwardMultiplier);
         spawner.ShowScoredPoints(points);
         score += points;
     }
