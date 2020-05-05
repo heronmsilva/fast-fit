@@ -271,7 +271,10 @@ public class GameManager : MonoBehaviour
             audioHandler.StopBackgroundSound();
             audioHandler.PlayGameOver();
             touchControls.SetActive(false);
-            UIHandler.GameOver();
+            if (Application.internetReachability == NetworkReachability.NotReachable)
+                StartCoroutine(DelayLoadGameOver(2f)); // No internet connection, load game over directly
+            else
+                UIHandler.GameOver();
             handledGameOver = true;
         }
     }
@@ -291,6 +294,13 @@ public class GameManager : MonoBehaviour
     public void LoadGameOver()
     {
         UpdatePlayerPrefs();
+        SceneManager.LoadScene("Game Over");
+    }
+
+    public IEnumerator DelayLoadGameOver(float delay)
+    {
+        UpdatePlayerPrefs();
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("Game Over");
     }
 
