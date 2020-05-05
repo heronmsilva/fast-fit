@@ -13,7 +13,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     public bool isAdRequested;
 
     private string gameId;
-    private bool testMode = true;
+    private bool testMode;
 
     private void Start()
     {
