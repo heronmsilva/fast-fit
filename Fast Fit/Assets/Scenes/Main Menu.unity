@@ -9320,6 +9320,7 @@ MonoBehaviour:
   topStreakText: {fileID: 295842706}
   attemptsText: {fileID: 905037576}
   audioMixer: {fileID: 24100000, guid: e5f75ca6cb599e745a078cd7f5120c74, type: 2}
+  playGamesController: {fileID: 1459125266}
 --- !u!82 &1169416256
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11670,6 +11671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievementManager: {fileID: 809936046}
+  authenticated: 0
 --- !u!4 &1459125267
 Transform:
   m_ObjectHideFlags: 0

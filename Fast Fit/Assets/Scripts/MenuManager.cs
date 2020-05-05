@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
@@ -21,6 +22,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI attemptsText = null;
 
     [SerializeField] private AudioMixer audioMixer = null;
+    [SerializeField] private PlayGamesController playGamesController = null;
 
     private AudioSource audioSource;
 
@@ -40,6 +42,16 @@ public class MenuManager : MonoBehaviour
 
         HideWindows();
         mainWindow.SetActive(true);
+
+        StartCoroutine(UpdateLeaderboard());
+    }
+
+    private IEnumerator UpdateLeaderboard()
+    {
+        while (! playGamesController.authenticated)
+            yield return null;
+
+        PlayGamesController.PostToHighScoreLeaderboard(PlayerPrefManager.GetTopScore());
     }
 
     private void SetupQualitySettings()

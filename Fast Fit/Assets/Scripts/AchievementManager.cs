@@ -31,8 +31,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateAchievements()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         UpdateScoreAchievements(PlayerPrefManager.GetLastScore());
         UpdateStreakAchievements(PlayerPrefManager.GetLastStreak());
         UpdateTimeAchievements(PlayerPrefManager.GetLastTime());
@@ -41,22 +39,8 @@ public class AchievementManager : MonoBehaviour
         UpdateTheCompletionist();
     }
 
-    public void UpdateTopAchievements()
-    {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
-        UpdateScoreAchievements(PlayerPrefManager.GetTopScore());
-        UpdateStreakAchievements(PlayerPrefManager.GetTopStreak());
-        UpdateTimeAchievements(PlayerPrefManager.GetTopTime());
-        UpdateFitsAchievements(PlayerPrefManager.GetTopFits());
-
-        UpdateTheCompletionist();
-    }
-
     public void UpdateLevel1Achievement()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetLevel1())
         {
             Achievements.SetLevel1(1);
@@ -66,8 +50,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateLevel2Achievement()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetLevel2())
         {
             Achievements.SetLevel2(1);
@@ -77,8 +59,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateLevel3Achievement()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetLevel3())
         {
             Achievements.SetLevel3(1);
@@ -88,8 +68,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateLevel4Achievement()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetLevel4())
         {
             Achievements.SetLevel4(1);
@@ -99,8 +77,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateMaxLevelAchievement()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetMaxLevel())
         {
             Achievements.SetMaxLevel(1);
@@ -110,8 +86,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateScoreAchievements(int score)
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetICanDoIt() && score >= achieve1Score)
         {
             Achievements.SetICanDoIt(1);
@@ -151,8 +125,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateStreakAchievements(int streak)
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetRookie() && streak >= achieve1Streak)
         {
             Achievements.SetRookie(1);
@@ -186,8 +158,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateTimeAchievements(float time)
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetWalker() && time >= achieve1Time)
         {
             Achievements.SetWalker(1);
@@ -221,8 +191,6 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateFitsAchievements(int fits)
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()) return;
-
         if (! Achievements.GetFitter() && fits >= achieve1Fits)
         {
             Achievements.SetFitter(1);
@@ -256,7 +224,7 @@ public class AchievementManager : MonoBehaviour
 
     public void UpdateTheCompletionist()
     {
-        if (! PlayerPrefManager.GetIsLoggedIn()|| Achievements.GetTheCompletionist()) return;
+        if (Achievements.GetTheCompletionist()) return;
 
         if (Achievements.GetLevel1()
         && Achievements.GetLevel2()
