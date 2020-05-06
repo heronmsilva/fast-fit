@@ -305,10 +305,14 @@ public class Spawner : MonoBehaviour
 
     private void RandomizePieceRotation()
     {
-        int randMult = UnityEngine.Random.Range(0, 4);
+        int randMultZ = UnityEngine.Random.Range(0, 4);
+        int randMultY = UnityEngine.Random.Range(0, 2);
+
+        Vector3 zRotate = new Vector3(0, 0, 90) * randMultZ;
+        Vector3 yRotate = new Vector3(0, 180, 0) * randMultY;
 
         Vector3 eulerAngles = piece.transform.eulerAngles;
-        eulerAngles = new Vector3(0, 0, 90) * randMult;
+        eulerAngles = zRotate + yRotate;
         piece.transform.eulerAngles = eulerAngles;
     }
 
