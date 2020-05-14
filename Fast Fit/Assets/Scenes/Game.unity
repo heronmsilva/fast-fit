@@ -4140,7 +4140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallDistance: 40
-  startSpeed: 5
+  startSpeed: 3
   speedIncreaseDelta: 0.1
   pitchIncreaseDelta: 0.001
   watchAnAdTimer: 5
